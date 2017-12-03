@@ -154,10 +154,35 @@ header .logo-container img {
 header .login-container {
   padding-right: 20px;
 }
+header .login-container .login-form-container {
+  display: none;
+}
+header .login-container .login-form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header .login-container .login-form-container form button {
+  flex: 0 1 30%;
+  margin-right: 5px;
+}
+header .login-container .login-form-container form button:last-child {
+  margin-right: 0;
+}
 header .login-container .login {
   font-size: 20px;
   color: #fff;
   cursor: pointer;
+}
+header .login-container .login.active + .login-form-container {
+  display: block;
+  position: absolute;
+  width: 300px;
+  min-height: 150px;
+  background: #fff;
+  right: 0;
+  top: 72px;
+  padding: 15px;
 }
 footer {
   background: red;

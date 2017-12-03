@@ -23,8 +23,11 @@ $eigth=$_REQUEST['eigth'];
 		<button name="two">2</button>
 		<button name="one">1</button>
 		<button name="zero">0</button>
+		<button name="zero">0</button>
 		<button name="login" type="Submit">Log in</button>
+
 	</form>
-</div>
+
 
 <input type="text" name="passwordshow" placeholder="<?php echo $seven; ?>">
+</div>
