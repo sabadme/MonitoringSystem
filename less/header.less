@@ -1,7 +1,36 @@
 header {
-	background: red;
+	background: #464444;
+	display: flex;
+	padding: 10px;
+	justify-content: space-between;	
+	align-items: center;
 
-	div {
-		background: blue;
+	.logo-container {
+		display: flex;
+		width: 50%;
+		align-items: center;
+
+
+		span {
+			font-family: 'Open Sans';
+			font-size: 30px;
+			padding-left: 10px;
+			color: #fff;
+		}
+
+		img {
+			max-width: 50px;
+			height: 50px;
+		}
+	}
+
+	.login-container {
+		padding-right: 20px;
+
+		.login {
+			font-size: 20px;
+			color: #fff;
+			cursor: pointer;
+		}
 	}
 }

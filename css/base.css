@@ -129,36 +129,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-header {
-  background: #464444;
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-}
-header .logo-container {
-  display: flex;
-  width: 50%;
-  align-items: center;
-}
-header .logo-container span {
-  font-family: 'Open Sans';
-  font-size: 30px;
-  padding-left: 10px;
-  color: #fff;
-}
-header .logo-container img {
-  max-width: 50px;
-  height: 50px;
-}
-header .login-container {
-  padding-right: 20px;
-}
-header .login-container .login {
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-}
-footer {
-  background: red;
-}

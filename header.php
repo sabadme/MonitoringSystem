@@ -1,11 +1,15 @@
 <header>
 
 <div class="logo-container">
-	<img />
+	<img src="images/lccb.png" />
 
-	<span>Sample</span>
+	<span>Online Equipment Monitoring System</span>
 </div>
 
-<?php include"login.php"; ?>
+
+<div class="login-container">
+	<span class="login">LOGIN</span>
+	<?php include"login.php"; ?>
+</div>
 
 </header>
