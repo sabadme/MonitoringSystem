@@ -108,7 +108,8 @@ section {
 body {
   background: #e7e7e7;
   line-height: 1;
-  height: 100%;
+  height: inherit;
+  min-height: 500px;
 }
 ol,
 ul {
@@ -184,6 +185,40 @@ header .login-container .login.active + .login-form-container {
   top: 72px;
   padding: 15px;
 }
-footer {
-  background: red;
+footer .topfooter {
+  background: #93c6c7;
+  display: flex;
+  align-items: center;
+}
+footer .left-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+footer .left-container a {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #287f81;
+}
+footer .right-container {
+  width: 50%;
+  text-align: center;
+}
+footer .right-container .logo img {
+  margin-top: 20px;
+  width: 380px;
+}
+footer .right-container .dept-logo img {
+  width: 70px;
+  margin-bottom: 20px;
+}
+footer .botfooter {
+  background: #287f81;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: #fff;
 }
