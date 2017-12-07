@@ -6,9 +6,14 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jQuery.print.js"></script>
 </head>
+
 <body>
+
 	<?php include"header.php"; ?>
+	<?php include"footer.php"; ?>
 </body>
+
+	
 </html>
 
 <script>
@@ -25,3 +30,5 @@
 		});
 	});
 </script>
+
+

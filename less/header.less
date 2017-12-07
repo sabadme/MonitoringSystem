@@ -27,10 +27,40 @@ header {
 	.login-container {
 		padding-right: 20px;
 
+		.login-form-container {
+			display: none;
+
+			form {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+
+				button {
+					flex: 0 1 30%;
+					margin-right: 5px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
 		.login {
 			font-size: 20px;
 			color: #fff;
 			cursor: pointer;
+
+			&.active + .login-form-container {
+				display: block;
+				position: absolute;
+				width: 300px;
+				min-height: 150px;
+				background: #fff;
+				right: 0;
+    			top: 72px;
+    			padding: 15px;
+			}
 		}
 	}
 }

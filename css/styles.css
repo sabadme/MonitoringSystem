@@ -108,7 +108,8 @@ section {
 body {
   background: #e7e7e7;
   line-height: 1;
-  height: 100%;
+  height: inherit;
+  min-height: 500px;
 }
 ol,
 ul {
@@ -154,11 +155,70 @@ header .logo-container img {
 header .login-container {
   padding-right: 20px;
 }
+header .login-container .login-form-container {
+  display: none;
+}
+header .login-container .login-form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header .login-container .login-form-container form button {
+  flex: 0 1 30%;
+  margin-right: 5px;
+}
+header .login-container .login-form-container form button:last-child {
+  margin-right: 0;
+}
 header .login-container .login {
   font-size: 20px;
   color: #fff;
   cursor: pointer;
 }
-footer {
-  background: red;
+header .login-container .login.active + .login-form-container {
+  display: block;
+  position: absolute;
+  width: 300px;
+  min-height: 150px;
+  background: #fff;
+  right: 0;
+  top: 72px;
+  padding: 15px;
+}
+footer .topfooter {
+  background: #93c6c7;
+  display: flex;
+  align-items: center;
+}
+footer .left-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+footer .left-container a {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #287f81;
+}
+footer .right-container {
+  width: 50%;
+  text-align: center;
+}
+footer .right-container .logo img {
+  margin-top: 20px;
+  width: 380px;
+}
+footer .right-container .dept-logo img {
+  width: 70px;
+  margin-bottom: 20px;
+}
+footer .botfooter {
+  background: #287f81;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: #fff;
 }
