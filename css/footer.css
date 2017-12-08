@@ -1,20 +1,44 @@
+footer {
+  margin-top: auto;
+}
 footer .topfooter {
-  background: #93c6c7;
+  background: #bdd5fc;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
+  -o-align-items: center;
   align-items: center;
+  padding: 25px;
 }
 footer .left-container {
-  padding: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
   width: 50%;
   text-align: center;
-  justify-content: center;
 }
 footer .left-container a {
   margin-bottom: 20px;
-  font-size: 20px;
-  color: #287f81;
+  font-size: 1.2857142857142858rem;
+  font-family: 'Open Sans';
+}
+footer .left-container a:last-child {
+  margin-bottom: 0;
 }
 footer .right-container {
   width: 50%;
@@ -22,16 +46,25 @@ footer .right-container {
 }
 footer .right-container .logo img {
   margin-top: 20px;
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
+}
+footer .right-container .dept-logo {
+  margin-top: 10px;
 }
 footer .right-container .dept-logo img {
-  width: 70px;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 50px;
+  margin-right: 10px;
+}
+footer .right-container .dept-logo img:last-child {
+  margin-right: 0;
 }
 footer .botfooter {
-  background: #287f81;
+  background: #0250b9;
   text-align: center;
   padding: 20px;
-  font-size: 15px;
+  font-size: 1.0714285714285714rem;
+  font-family: 'Open Sans';
   color: #fff;
 }

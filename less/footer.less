@@ -1,24 +1,30 @@
+@import "variable.less";
+
 footer {
+	margin-top: auto;
 
 	.topfooter {
-		
-		background: #93c6c7;
-		display: flex;
-		align-items: center;
+		background: @sail;
+		.flex-layout;
+		.flex-align(center);
+		padding: 25px;
 	}
 
 	.left-container {
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
+		.flex-layout;
+		.flex-direction(column);
+		.flex-justify-content(center);
 		width: 50%;
 		text-align: center;	
-		justify-content: center;
 
 		a {
 			margin-bottom: 20px;
-			font-size: 20px;
-			color: #287f81;
+			.font-size(18);
+			font-family: 'Open Sans';
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -27,25 +33,34 @@ footer {
 		text-align: center;	
 
 		.logo {
-				img{
-					margin-top: 20px;
-					width: 380px;
-					}
+			img {
+				margin-top: 20px;
+				width: 100%;
+				max-width: 380px;
+			}
 	  	}
 
 	  	.dept-logo{
-	  			img {
-	  				width: 70px;
-	  				margin-bottom: 20px;
+	  		margin-top: 10px;
+
+	  		img {
+	  			width: 100%;
+	  			max-width: 50px;
+	  			margin-right: 10px;
+
+	  			&:last-child {
+	  				margin-right: 0;
 	  			}
+	  		}	
 	  	}
 	}
 
 	.botfooter {
-	background: #287f81;
+	background: @cobalt;
 	text-align: center;
 	padding: 20px;
-	font-size: 15px;
-	color: #fff;
+	.font-size(15);
+	font-family: 'Open Sans';
+	color: @white;
 	}
 }

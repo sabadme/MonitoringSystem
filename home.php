@@ -7,17 +7,36 @@
 	<script type="text/javascript" src="js/jQuery.print.js"></script>
 </head>
 
-<body>
+<body class="home-index">
+	<div class="block-loader">
+  
+ 		<div class="loader-gear"></div> 
+	</div>
 
-	<?php include"header.php"; ?>
-	<?php include"footer.php"; ?>
+	<div class="page-wrapper">
+		<?php include"header.php"; ?>
+
+		<div class="page-main">
+			<div class="banner-slider">
+				<ul>
+					<li><img src="images/banner-placeholder.jpg" /></li>
+					<li><img src="images/banner-placeholder.jpg" /></li>
+					<li><img src="images/banner-placeholder.jpg" /></li>
+					<li><img src="images/banner-placeholder.jpg" /></li>
+					<li><img src="images/banner-placeholder.jpg" /></li>
+				</ul>
+			</div>
+		</div>
+		
+		<?php include"footer.php"; ?>
+	</div>
 </body>
 
 	
 </html>
 
 <script>
-	$(document).ready(function(){
+	function addActive(){
 		$('.login').click(function(){
 			if ($('.login').hasClass('active')) {
 				$(this).removeClass('active');
@@ -28,6 +47,20 @@
 			}
 
 		});
+
+		$('.login-form-container').mouseleave(function(){
+			$('.login').removeClass('active');
+		});
+	}
+
+	jQuery(document).ready(function(){
+		$('.block-loader').fadeOut("slow");
+		$('body').addClass('loaded');
+		addActive();
+	});
+
+	jQuery(window).on('unload', function(){
+		$('.block-loader').fadeIn("slow");
 	});
 </script>
 

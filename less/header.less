@@ -1,21 +1,24 @@
+@import "variable.less";
+
 header {
-	background: #464444;
-	display: flex;
-	padding: 10px;
+	background: @cobalt;
+	.flex-layout;
+	.flex-align(center);
+	.flex-justify-content(space-between);
+	padding: 20px;
 	justify-content: space-between;	
 	align-items: center;
 
 	.logo-container {
-		display: flex;
+		.flex-layout;
+		.flex-align(center);
 		width: 50%;
-		align-items: center;
-
 
 		span {
 			font-family: 'Open Sans';
-			font-size: 30px;
+			.font-size(25);
 			padding-left: 10px;
-			color: #fff;
+			color: @white;
 		}
 
 		img {
@@ -31,12 +34,12 @@ header {
 			display: none;
 
 			form {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
+				.flex-layout;
+				.flex-wrap(wrap);
+				.flex-justify-content(center);
 
 				button {
-					flex: 0 1 30%;
+					.flex-value(0 1 30%);
 					margin-right: 5px;
 
 					&:last-child {
@@ -47,8 +50,9 @@ header {
 		}
 
 		.login {
-			font-size: 20px;
-			color: #fff;
+			.font-size(20);
+			font-family: 'Open Sans';
+			color: @white;
 			cursor: pointer;
 
 			&.active + .login-form-container {

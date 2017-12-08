@@ -1,18 +1,34 @@
 header {
-  background: #464444;
+  background: #0250b9;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  padding: 10px;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  padding: 20px;
   justify-content: space-between;
   align-items: center;
 }
 header .logo-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  width: 50%;
+  -webkit-align-items: center;
+  -o-align-items: center;
   align-items: center;
+  width: 50%;
 }
 header .logo-container span {
   font-family: 'Open Sans';
-  font-size: 30px;
+  font-size: 1.7857142857142858rem;
   padding-left: 10px;
   color: #fff;
 }
@@ -27,11 +43,25 @@ header .login-container .login-form-container {
   display: none;
 }
 header .login-container .login-form-container form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
   justify-content: center;
 }
 header .login-container .login-form-container form button {
+  -webkit-flex: 0 1 30%;
+  -ms-flex: 0 1 30%;
   flex: 0 1 30%;
   margin-right: 5px;
 }
@@ -39,7 +69,8 @@ header .login-container .login-form-container form button:last-child {
   margin-right: 0;
 }
 header .login-container .login {
-  font-size: 20px;
+  font-size: 1.4285714285714286rem;
+  font-family: 'Open Sans';
   color: #fff;
   cursor: pointer;
 }

@@ -3,9 +3,9 @@
 <div class="topfooter">
 
 	<div class="left-container">
-		<a>ABOUT</a>
-		<a>GUIDE</a>
-		<a>CONTACT</a>
+		<a href="#" title="About Us">ABOUT</a>
+		<a href="#" title="Guide">GUIDE</a>
+		<a href="#" title="Contact Us">CONTACT</a>
 
 	</div>
 
@@ -29,6 +29,5 @@
 <div class="botfooter"> 
 	<p>Copyright Ⓒ 2017 Pakinason Corporation. All Rights Reserved</p>
 </div>
-
 
 </footer>
