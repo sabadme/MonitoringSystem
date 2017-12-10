@@ -27,7 +27,7 @@
 </div>
 
 <div class="botfooter"> 
-	<p>Copyright Ⓒ 2017 Pakinason Corporation. All Rights Reserved</p>
+	<p>Copyright Ⓒ 2017 Runikaperdihan Inc. All Rights Reserved</p>
 </div>
 
 </footer>
