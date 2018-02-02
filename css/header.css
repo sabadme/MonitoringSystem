@@ -55,12 +55,17 @@ header .login-container .mainUser-container .username {
   color: #fff;
   margin-right: 10px;
 }
-header .login-container .mainUser-container .logout {
-  display: block;
-  width: 20px;
+header .login-container .mainUser-container .logout:after {
+  content: '\e904';
+  display: inline-block;
+  margin-left: 10px;
+  font-family: 'monitoring';
+  font-size: 1.4285714285714286rem;
+  color: #fff;
+  vertical-align: middle;
 }
-header .login-container .mainUser-container .logout img {
-  width: inherit;
+header .login-container .mainUser-container .logout:hover:after {
+  opacity: 0.8;
 }
 header .login-container .login-form-container {
   display: none;

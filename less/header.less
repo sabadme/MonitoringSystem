@@ -43,11 +43,18 @@ header {
 			}
 
 			.logout {
-				display: block;
-				width: 20px;
+				&:after {
+					content: @logout-icon;
+				    display: inline-block;
+				    margin-left: 10px;
+				    font-family: @font-monitoring-icon;
+				    .font-size(20);
+				    color: @white;
+				    vertical-align: middle;
+				}
 
-				img {
-					width: inherit;
+				&:hover:after {
+					opacity: 0.8;
 				}
 			}
 		}

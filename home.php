@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,21 @@
 	</div>
 
 	<div class="page-wrapper">
-		<?php include"header.php"; ?>
+	
+		<header>
+
+			<div class="logo-container">
+				<img src="images/lccb.png" />
+
+				<span>Online Equipment Monitoring System</span>
+			</div>
+
+			<div class="login-container">
+				<span class="login">LOGIN</span>
+				<?php include"login.php"; ?> 
+			</div>
+
+		</header>
 
 		<div class="page-main">
 			<div class="banner-slider owl-carousel">
@@ -28,44 +43,38 @@
 			</div>
 		
 
-		<div class="page-text-container">
-			<div class="page-text">
-				<img src="images/scaning.png">
-				<div>				
-				<span>MANAGE / MONITOR EQUIPMENTS</span>
-				<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.
-				</p>
+			<div class="page-text-container">
+				<div class="page-text">
+					<img src="images/scaning.png">
+					<div>				
+						<span>MANAGE / MONITOR EQUIPMENTS</span>
+						<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.
+						</p>
+					</div>
+				</div>
+
+				<div class="page-text">
+					<img src="images/printing.png">
+
+					<div>
+						<span>GENERATE / PRINT QR CODES</span>
+						<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.
+						</p>
+					</div>
+				</div>
+
+				<div class="page-text">
+					<img src="images/monitoring.png">
+					<div>
+						<span>SCAN GENERATED QR CODES</span>
+						<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.
+						</p>
+					</div>
 				</div>
 			</div>
 
-			<div class="page-text">
-				<img src="images/printing.png">
-
-				<div>
-				<span>GENERATE / PRINT QR CODES</span>
-				<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.
-				</p>
-				</div>
-			</div>
-
-			<div class="page-text">
-				<img src="images/monitoring.png">
-				<div>
-				<span>SCAN GENERATED QR CODES</span>
-				<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua.
-				</p>
-				</div>
-			</div>
 		</div>
 
-		</div>
-
-
-
-
-
-
-		
 		<?php include"footer.php"; ?>
 	</div>
 </body>

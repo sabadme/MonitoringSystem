@@ -1,0 +1,67 @@
+.catalog-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  padding: 0 25px;
+}
+.equipments {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 32%;
+  -ms-flex: 0 1 32%;
+  flex: 0 1 32%;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  border: 1px solid #212121;
+  padding: 10px;
+  margin-left: 23px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  background: #fff;
+}
+.equipments:nth-child(3n + 1) {
+  margin-left: 0;
+}
+.equipments .equipment-code {
+  margin-bottom: 10px;
+}
+.equipments .equipment-name {
+  font-size: 1.4285714285714286rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.equipments .equipment-start,
+.equipments .equipment-end {
+  font-size: 0.9285714285714286rem;
+  color: #808080;
+}
+.equipments a {
+  margin: 20px;
+}
+.equipments img {
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

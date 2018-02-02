@@ -1,4 +1,6 @@
-
+<?php 
+session_start();
+ ?>
 <div class="login-form-container">
 
 <form action="" method="POST">

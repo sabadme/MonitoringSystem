@@ -16,10 +16,10 @@
 		</div>
 
 		<div class="dept-logo">
-			<img src="images/lccb.png">	
-			<img src="images/lccb.png">
-			<img src="images/lccb.png">		
-			<img src="images/lccb.png">
+			<img src="images/sbit.png">	
+			<img src="images/SARFAID.png">
+			<img src="images/SLATE.png">		
+			<img src="images/SHTM.png">
 			<img src="images/lccb.png">
 		</div>
 	</div>

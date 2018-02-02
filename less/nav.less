@@ -1,0 +1,145 @@
+@import "variable.less";
+
+.main-index .page-main-inner {
+	    padding: 70px 20px 0;
+}
+
+.main-nav {
+	background: @sail;
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid @cobalt;
+	z-index: 2;
+
+	.menu {
+		.flex-layout;
+		.flex-justify-content(center);
+		max-width: @page-max_width;
+		margin: 0 auto;
+		padding: 0 20px;
+
+		li {
+			margin-right: 30px;
+			.flex-value(0 1 25%);
+			
+			.manage {
+				position: relative;
+
+				ul {
+					display: none;
+				}
+
+				&:hover > ul {
+					display: block;
+					width: 100%;
+					position: absolute;
+					background: @sail;
+					left: 0;
+					top: 100%;
+
+					li {
+						margin-right: 0;
+						border-top: 1px solid @white;
+					}
+				}
+			}
+
+			&:hover {
+				cursor: pointer;
+				background: @cobalt;
+
+				a {
+					color: @white;
+				}
+			}
+
+			button {
+				margin: 0;
+			}
+
+			button, .manage {
+				font-family: @font-family-base;
+				.font-size(14);
+				.flex-layout;
+				.flex-align(center);
+				.flex-justify-content(center);
+				color: @mine-shaft;
+				background: none;
+				border: 0;
+				padding: 15px 10px;
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+				font-weight: 600;
+
+				&:hover {
+					color: @white;
+
+					&:before {
+						color: @white;
+					}
+				}
+
+				&:before {
+					content: '';
+				    display: inline-block;
+				    margin-right: 10px;
+				    font-family: @font-monitoring-icon;
+				    .font-size(20);
+				    color: @mine-shaft;
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&.dashboard:before {
+				    content: @dashboard-icon;
+				}
+
+				&.manage:before {				   
+				    content: @manage-icon;
+				}
+
+				&.adduser:before {				   
+				    content: @adduser-icon;
+				}
+
+				&.catalog:before {				   
+				    content: @equipment-icon;
+				}
+
+				&.reports:before {
+				    background: url(../images/svg/report-symbol.svg) no-repeat;
+				    background-size: contain;
+				    background-position: 100%;
+				}
+
+				&.generatemenu:before {
+				    background: url(../images/svg/qr-code.svg) no-repeat;
+				    background-size: contain;
+				    background-position: 100%;
+				}
+
+				span {
+					vertical-align: middle;
+				}
+			}
+
+			&:last-child a {
+				margin-right: 0;
+			}
+
+			img {
+				max-width: 30px;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-device-width : 1064px) {
+	.main-nav .menu li {
+		.flex-value(0 1 19%);
+	}
+}

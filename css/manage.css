@@ -1,0 +1,75 @@
+.manage-container {
+  margin: 100px 0 50px;
+  padding: 0 20px;
+}
+.manage-container .title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.142857142857143rem;
+  color: #000;
+  text-transform: uppercase;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+.manage-container .manage-inner-container {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.manage-container form {
+  -webkit-flex-basis: 30%;
+  -moz-flex-basis: 30%;
+  flex-basis: 30%;
+  padding-right: 40px;
+  border-right: 1px solid #e7e7e7;
+}
+.manage-container form input {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.manage-container table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #848484;
+  border-top: 0;
+}
+.manage-container th,
+.manage-container td {
+  padding: 8px;
+  text-align: center;
+}
+.manage-container td:first-child {
+  text-transform: capitalize;
+}
+.manage-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.manage-container th {
+  background-color: #0250b9;
+  color: #fff;
+}
+.manage-container #wrapper {
+  width: 100%;
+  padding-left: 40px;
+}
+.manage-container #wrapper th,
+.manage-container #wrapper td {
+  width: 1%;
+}
+.manage-container #wrapper thead > tr {
+  position: relative;
+  display: block;
+}
+.manage-container #wrapper tbody {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}

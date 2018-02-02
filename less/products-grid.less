@@ -1,0 +1,53 @@
+@import "variable.less";
+
+.catalog-container {
+	.flex-layout;
+	.flex-wrap(wrap);
+	margin-top: 80px;
+    padding: 0 25px;
+}
+
+.equipments {
+	.flex-layout;
+	.flex-direction(column);
+	.flex-value(0 1 32%);
+	.flex-justify-content(space-between);
+	border: 1px solid @mine-shaft;
+	padding: 10px;
+	margin-left: 23px;
+	margin-bottom: 10px;
+	font-family: @font-family-base;
+	text-transform: uppercase;
+	background: @white;
+
+	&:nth-child(3n + 1) {
+		margin-left: 0;
+	}
+
+	.equipment-code {
+		margin-bottom: 10px;
+	}
+
+	.equipment-name {
+		.font-size(20);
+		margin-bottom: 10px;
+		font-weight: 600;
+	}
+
+	.equipment-start, .equipment-end {
+		.font-size(13);
+		color: #808080;
+	}
+
+	a {
+		margin: 20px;
+	}
+
+	img {
+		width: 100%;
+	    height: auto;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	}
+}

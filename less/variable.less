@@ -18,6 +18,8 @@
 @border-color: #e7e7e7;
 @mine-shaft: #212121;
 @white: #fff;
+@color-gray: #848484;
+@color-black: #000;
 
 //
 //  Page Width
@@ -41,6 +43,18 @@
 //
 //  Flex Layout
 //  ---------------------------------------------
+
+//
+//  Fonts
+//  ---------------------------------------------
+@font-family-base: sans-serif;
+@font-monitoring-icon: 'monitoring';
+@dashboard-icon: '\e902';
+@manage-icon: '\e905';
+@adduser-icon: '\e900';
+@logout-icon: '\e904';
+@equipment-icon: '\e90b';
+
 
 .flex-layout () {
     display: -webkit-box;
@@ -118,6 +132,30 @@
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
     border-radius: @radius;
+}
+
+.round-borders-top-left (@radius) {
+    -webkit-border-top-left-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    border-top-left-radius: @radius;
+}
+
+.round-borders-top-right (@radius) {
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+    border-top-right-radius: @radius;
+}
+
+.round-borders-bottom-left (@radius) {
+    -webkit-border-bottom-left-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    border-bottom-left-radius: @radius;
+}
+
+.round-borders-bottom-right (@radius) {
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomright: @radius;
+    border-bottom-right-radius: @radius;
 }
 
 //

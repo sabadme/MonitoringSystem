@@ -1,8 +1,9 @@
 
 <?php 
 session_start();
-error_reporting(0);
+
 $accountname=$_SESSION['account'];
+echo $accountname;
 ?>
 <header>
 
@@ -12,11 +13,11 @@ $accountname=$_SESSION['account'];
 	<span>Online Equipment Monitoring System</span>
 </div>	
 <div class="login-container">
-	<?php if ($accountname): ?>
+	<?php if ($accountname =="Admin"): ?>
 		<div class="mainUser-container">
 			<span class="username"><?php echo $accountname; ?></span>
 
-			<a href="logout.php" class="logout"><img src="images/svg/logout.svg" alt="LOGOUT" /></a>
+			<a href="logout.php" class="logout" />
 		</div>
 	<?php else: ?>
 		<span class="login">LOGIN</span>

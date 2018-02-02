@@ -1,5 +1,9 @@
+<?php 
+session_start();
 
-
+error_reporting(0);
+$accountname=$_SESSION['account'];
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,15 +18,44 @@
 
 <body class="main-index">
 	<div class="block-loader">
-  
+  	
  		<div class="loader-gear"></div> 
 	</div>
 
 	<div class="page-wrapper">
-		<?php include"header.php"; ?>
+		
+<?php 
+
+
+?>
+<header>
+
+<div class="logo-container">
+	<img src="images/lccb.png" />
+
+	<span>Online Equipment Monitoring System</span>
+</div>	
+<div class="login-container">
+	<?php if ($accountname =="Admin"): ?>
+		<div class="mainUser-container">
+			<span class="username"><?php echo $accountname; ?></span>
+
+			<a href="logout.php" class="logout"><!-- <img src="images/svg/logout.svg" alt="LOGOUT" /> --></a>
+		</div>
+	<?php else: ?>
+		<span class="login">LOGIN</span>
+	<?php endif; ?>
+
+	<?php include"login.php"; ?> 	
+</div>
+
+</header>
+
 
 		<div class="page-main">
-			<?php include"dashboard.php"; ?>
+			<?php include"navigation.php"; ?>
+			<?php include"admin/function.php"; ?>
+			<?php echo "<img src='qr_img0.50j/php/qr_img.php?d=$final_value'>"; ?>
 		</div>
 
 		<?php include"footer.php"; ?>
