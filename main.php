@@ -55,7 +55,8 @@ $accountname=$_SESSION['account'];
 		<div class="page-main">
 			<?php include"navigation.php"; ?>
 			<?php include"admin/function.php"; ?>
-			<?php echo "<img src='qr_img0.50j/php/qr_img.php?d=$final_value'>"; ?>
+			<?php echo $qrimg; ?>
+
 		</div>
 
 		<?php include"footer.php"; ?>

@@ -24,14 +24,11 @@ if(isset($_REQUEST['save_equipment'])){
 	$equipment_start=$_REQUEST['equipment_start'];
 	$equipment_end=$_REQUEST['equipment_end'];
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
+    $qrimg = "<img src='module_qr/php/qr_img.php?d=$equipment_code'>";
 
 
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db); 
+
+include"admin/connection.php";
 
 $upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$equipment_code','$equipment_name','$equipment_start','$equipment_end','$name')");
 echo mysql_error();  

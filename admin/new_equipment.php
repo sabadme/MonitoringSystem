@@ -28,20 +28,21 @@ while($data_profile_display=mysql_fetch_array($profile_display)){
      $equipment_name=$data_profile_display['equipment_name'];
      $equipment_start=$data_profile_display['equipment_start'];
      $equipment_end=$data_profile_display['equipment_end'];
+     $equipment_id=$data_profile_display['id'];
 
  
 if($image==$file_name){
         
 ?>
 <div class="equipments">
-	<a href="">
-        <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "EquipmentPicture/$image" ?>);">
-    </a>
+    <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "EquipmentPicture/$image" ?>);">
 	<span class="equipment-code"><?php echo $equipment_code; ?></span>
 	<span class="equipment-name"><?php echo $equipment_name; ?></span>
 	<span class="equipment-start">Registered: <?php echo $equipment_start; ?></span>
 	<span class="equipment-end">Expiration Date: <?php echo $equipment_end; ?></span>
-	<button name="equipment_page" type="submit">View Equipment</button>
+    <form action="" method="POST">
+	<button name="equipment_page" type="submit" value="<?php echo $equipment_id; ?>">View Equipment</button>
+    </form>
 </div>
 <?php
 }
