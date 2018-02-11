@@ -1,0 +1,86 @@
+.product-page-container {
+  margin: 80px 0 250px;
+  padding: 0 20px;
+}
+.product-page-container .product-inner-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  border: 1px solid #ccc;
+}
+.product-page-container .product-inner-container .image-container,
+.product-page-container .product-inner-container .product-info-container {
+  width: 50%;
+}
+.product-page-container .product-inner-container .image-container {
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+.product-page-container .product-inner-container .image-container img {
+  background-position: center !important;
+  background-size: contain !important;
+  width: 100%;
+  max-width: 75%;
+  margin: 20px 0;
+}
+.product-page-container .product-inner-container .product-info-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+.product-page-container .product-inner-container .product-info-container h1 {
+  font-size: 2.857142857142857rem;
+  font-family: sans-serif;
+  margin: 20px 0;
+  padding: 0 50px;
+  text-transform: uppercase;
+}
+.product-page-container .product-inner-container .product-info-container span {
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  padding: 0 50px;
+}
+.product-page-container .product-inner-container .product-info-container span.equipment-code {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.product-page-container .product-inner-container .product-info-container span:last-child {
+  margin-bottom: 0;
+}
+.product-page-container .product-inner-container .product-info-container span b {
+  text-transform: uppercase;
+}
+.product-page-container .product-inner-container .product-info-container .qr-img-container {
+  padding: 0 50px;
+}
+.product-page-container .product-inner-container .product-info-container .qr-img-container img {
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #ccc;
+}
+.product-page-container .product-inner-container .product-info-container .qr-img-container .button {
+  display: block;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0250b9;
+  padding: 10px;
+  max-width: 250px;
+  font-weight: 600;
+  text-align: center;
+}
+.product-page-container .product-banner-container {
+  margin-bottom: 20px;
+}
+.product-page-container .product-banner-container img {
+  width: 100%;
+}

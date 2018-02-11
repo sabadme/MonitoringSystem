@@ -36,7 +36,7 @@ if($image==$file_name){
 ?>
 <div class="equipments">
     <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "EquipmentPicture/$image" ?>);">
-	<span class="equipment-code"><?php echo $equipment_code; ?></span>
+	<span class="equipment-code"><b>QR Code:  </b><?php echo $equipment_code; ?></span>
 	<span class="equipment-name"><?php echo $equipment_name; ?></span>
 	<span class="equipment-start">Registered: <?php echo $equipment_start; ?></span>
 	<span class="equipment-end">Expiration Date: <?php echo $equipment_end; ?></span>

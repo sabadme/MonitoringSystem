@@ -108,6 +108,10 @@
 .main-nav .menu li .manage.dashboard:before {
   content: '\e902';
 }
+.main-nav .menu li button.addequipment:before,
+.main-nav .menu li .manage.addequipment:before {
+  content: '\e90c';
+}
 .main-nav .menu li button.manage:before,
 .main-nav .menu li .manage.manage:before {
   content: '\e905';

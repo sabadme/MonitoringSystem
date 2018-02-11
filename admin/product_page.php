@@ -30,15 +30,26 @@ if($image==$file_name){
     
 ?>
 <div class="product-page-container">
-	<div class="image-container">
-        <img src="images/placeholder-product.png" style="background: url(<?php echo "EquipmentPicture/$image" ?>) no-repeat;">
-    	
+    <div class="product-banner-container">
+        <img src="images/product-page-banner.jpg" />
     </div>
-    <div class="product-info-container">
-		<span class="equipment-code"><?php echo $equipment_code; ?></span>
-		<span class="equipment-name"><?php echo $equipment_name; ?></span>
-		<span class="equipment-start">Registered: <?php echo $equipment_start; ?></span>
-		<span class="equipment-end">Expiration Date: <?php echo $equipment_end; ?></span>
+
+    <div class="product-inner-container">
+        <div class="image-container">
+            <img src="images/placeholder-product.png" style="background: url(<?php echo "EquipmentPicture/$image" ?>) no-repeat;">
+
+        </div>
+        <div class="product-info-container">
+            <span class="equipment-code"><b>Equipment QR/Code:</b> <?php echo $equipment_code; ?></span>
+            <h1 class="equipment-name"><?php echo $equipment_name; ?></h1>
+            <span class="equipment-start"><b>Registered:</b> <?php echo $equipment_start; ?></span>
+            <span class="equipment-end"><b>Expiration Date:</b> <?php echo $equipment_end; ?></span>
+            <div class="qr-img-container">
+                <img class="qr-img" src="images/sample-qr.png" />
+                <a class="button">Print QR</a>
+            </div>
+
+        </div>
     </div>
 </div>
 <?php
