@@ -9,7 +9,7 @@ if(isset($_REQUEST['dashboard'])){
 	include"admin/add_equipment_design.php";
 }else if(isset($_REQUEST['Catalog'])){
 	
-	include"admin/catalog-index.php";
+	include"admin/catalog-function.php";
 }else if(isset($_REQUEST['generate_code'])){
 	include"admin/add_equipment_design.php";
 } else if(isset($_REQUEST['equipment_page'])){

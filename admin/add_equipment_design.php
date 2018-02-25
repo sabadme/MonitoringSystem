@@ -8,7 +8,7 @@ include"admin/generate_code.php";
 		
 		<form action="" method="POST"  enctype="multipart/form-data">
 			<input type="file" name="imgs"/>
-			<input type="text" name="equipment_code" placeholder="Eqiupment Code" value="<?php echo $str; ?>">
+			<input type="text" name="equipment_code" placeholder="Eqiupment Code" value="<?php echo $str; ?>" disabled>
 			<input type="text" name="equipment_name" placeholder="Equipment Name">
 			<input type="date" name="equipment_start" required>
 			<input type="date" name="equipment_end">

@@ -45,7 +45,14 @@ if($image==$file_name){
             <span class="equipment-start"><b>Registered:</b> <?php echo $equipment_start; ?></span>
             <span class="equipment-end"><b>Expiration Date:</b> <?php echo $equipment_end; ?></span>
             <div class="qr-img-container">
-                <img class="qr-img" src="images/sample-qr.png" />
+
+<?php
+$views=mysql_query("SELECT * FROM equipment WHERE `id`='$equipment_id'");
+$data_views=mysql_fetch_array($views);
+$get_equipmentcode=$data_views['equipment_code'];
+
+echo "<img src='QRimg/".$get_equipmentcode.".png'>";
+?>  
                 <a class="button">Print QR</a>
             </div>
 
@@ -58,7 +65,9 @@ if($image==$file_name){
 }
 }
 
-}  
-
 }
+}
+
+
 ?>
+

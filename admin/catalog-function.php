@@ -1,84 +1,65 @@
-<?php 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db); 
-
-?>
-<div class="catalog-container">
 <?php
 
-$result_per_page=10;
-
-$dir_path="EquipmentPicture/";
-$option="";
-
-$profile_display=mysql_query("SELECT * FROM equipment");
-$result=mysql_num_rows($profile_display);   
-
- $number_of_pages=ceil($result / $result_per_page);  
-
- 
-
-if(!isset($_GET['page'])){
-    $page=1;
-}else{
-    $page=$_GET['page'];
-}
+    $servername ="localhost";
+    $username="root";
+    $password="";
+    $db="monitoringsystemdatabase";
 
 
- $this_page_first_result=($page-1)*$result_per_page;
+    $conn =mysql_connect($servername,$username,$password);
+    mysql_select_db($db); 
 
+/* Shows "The Horse's Mouth" Blog at 10 entries per
+page, including links to see the other pages. */
 
-for ($page=1; $page <= $number_of_pages; $page++) { 
-    echo '<a href="catalog-index.php?page='. $page .'">' .$page . '</a>';
-}
+$perpage = 6;
+$lynx = $html = "";
+$startat = $_REQUEST['page'] * $perpage;
 
-if(is_dir($dir_path)){
-    $files=opendir($dir_path);
-    if($files){
-        while(($file_name=readdir($files)) !== FALSE){
-            if($file_name != '.' &&  $file_name != '..'){
+$q = mysql_query("SELECT count(id) FROM equipment");
+$row = mysql_fetch_array($q);
+$pages = ($row[0] + $perpage - 1) / $perpage;
+?>
+<div class="catalog-container" id="demo">
+<?php
             
-             } 
 
+$q = mysql_query("SELECT * FROM equipment ORDER BY id desc limit $startat,$perpage");
 
+while ($row = mysql_fetch_assoc($q)) {
+    $images=$row['equipment_filename'];
+    $image = "EquipmentPicture/".$images;
 
-$sql=mysql_query("SELECT * FROM equipment LIMIT $this_page_first_result,$result_per_page");
-while($row=mysql_fetch_array($sql)){
-    $equipment_code=$row['equipment_code'];
-    $equipment_name=$row['equipment_name'];
-    $equipment_start=$row['equipment_start'];
-    $equipment_end=$row['equipment_end'];
-    $image=$row['equipment_filename'];
-
-    if($image==$file_name){
     
+    $html .= "<div class='equipments'>
+            <img src='images/placeholder-grid.png' style='background-image: url($image)'/>
+            <span class='equipment-code'>$row[equipment_code]</span>
+            <span class='equipment-name'>$row[equipment_name]</span>
+            <span class='equipment-start'>$row[equipment_start]</span>
+            <span class='equipment-end'>$row[equipment_end]</span>
+            <form action='' method='POST'>
+            <button name='equipment_page' type='submit' value=$row[id]>View Equipment</button>
+            </form></div>";
+
+};
+
+for ($k=0; $k<$pages; $k++) {
+        if ($k != $_REQUEST['page']) {
+         $lynx .= " <a href=catalog-index.php"."?page=$k>".($k+1)."</a>";
+        } else {
+         $lynx .= " <b>--".($k+1)."--</b>";
+        }
+
+}
 ?>
-<div class="equipments">
-    <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "EquipmentPicture/$image" ?>);">
-    <span class="equipment-code"><?php echo $equipment_code; ?></span>
-    <span class="equipment-name"><?php echo $equipment_name; ?></span>
-    <span class="equipment-start">Registered: <?php echo $equipment_start; ?></span>
-    <span class="equipment-end">Expiration Date: <?php echo $equipment_end; ?></span>
-    <form action="" method="POST">
-    <button name="equipment_page" type="submit" value="<?php echo $catalog_id; ?>">View Equipment</button>
-    </form>
+
+
+<?= $html ?>
+
+<div class="pagination">    
+Please choose the next page you want to view:
+<?= $lynx ?>
 </div>
-<?php
-}
-}
-
-
-}
-}
-?>
 </div>
-<?php
-}  
 
-?>
+  

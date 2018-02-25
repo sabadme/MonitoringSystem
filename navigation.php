@@ -15,7 +15,7 @@
 					</li>
 				</ul>
 			</li>
-			<li><button type="submit" name="Catalog" class="catalog">EQUIPMENTS</button></li>
+			<li><a class="button" href="catalog-index.php?page=0">Equipments</a></li>
 		</ul>
 	</form>
 </nav>

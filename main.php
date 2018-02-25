@@ -1,9 +1,12 @@
 <?php 
 session_start();
 
-error_reporting(0);
 $accountname=$_SESSION['account'];
  ?>
+ <?php 
+if(isset($accountname)){
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +14,11 @@ $accountname=$_SESSION['account'];
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
 	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+	<link type="text/css" rel="stylesheet" href="css/simplePagination.css"/>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jQuery.print.js"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
 </head>
 
 <body class="main-index">
@@ -32,6 +37,7 @@ $accountname=$_SESSION['account'];
 
 <div class="logo-container">
 	<img src="images/lccb.png" />
+
 
 	<span>Online Equipment Monitoring System</span>
 </div>	
@@ -55,8 +61,7 @@ $accountname=$_SESSION['account'];
 		<div class="page-main">
 			<?php include"navigation.php"; ?>
 			<?php include"admin/function.php"; ?>
-			<?php echo $qrimg; ?>
-
+			
 		</div>
 
 		<?php include"footer.php"; ?>
@@ -65,7 +70,11 @@ $accountname=$_SESSION['account'];
 
 	
 </html>
-
+<?php 
+}else{
+	header("location:home.php");
+}	
+ ?>
 <script>
 	function addActive(){
 		$('.login').click(function(){

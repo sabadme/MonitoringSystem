@@ -24,10 +24,41 @@ if(isset($_REQUEST['save_equipment'])){
 	$equipment_start=$_REQUEST['equipment_start'];
 	$equipment_end=$_REQUEST['equipment_end'];
 
-    $qrimg = "<img src='module_qr/php/qr_img.php?d=$equipment_code'>";
+    $qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$equipment_code'>";
 
+    echo "<canvas id='myCanvas' style='visibility:hidden' />";
 
+    echo "
 
+    	<script>
+			window.onload = function() {
+			    
+			    var c=document.getElementById('myCanvas');
+			    var ctx=c.getContext('2d');
+			    c.width = 130;
+			    c.height = 130;
+			    var img=document.getElementById('generated_img');
+			    ctx.drawImage(img,10,10);
+
+			    var canvas_icon = c.toDataURL('image/png');
+
+			    function success(response){
+
+			    	// alert(response);
+
+			    }
+
+			    $.ajax({
+			    	type: 'POST',
+			    	url: 'save_generated.php',
+			    	data: { image: canvas_icon, img_name: '$equipment_code'},
+			    	success: success
+			    });
+
+			};	
+    	</script>
+
+    ";
 include"admin/connection.php";
 
 $upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$equipment_code','$equipment_name','$equipment_start','$equipment_end','$name')");

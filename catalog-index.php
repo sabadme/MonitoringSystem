@@ -1,7 +1,6 @@
 <?php 
 session_start();
-/*
-error_reporting(0);*/
+error_reporting(0);
 $accountname=$_SESSION['account'];
  ?>
 <!DOCTYPE html>
@@ -50,12 +49,10 @@ $accountname=$_SESSION['account'];
 </div>
 
 </header>
-
-
 		<div class="page-main">
-			
+			<?php include "navigation.php"; ?>
+	
 			<?php include"admin/catalog-function.php"; ?>
-			<?php echo $qrimg; ?>
 
 		</div>
 
@@ -94,4 +91,6 @@ $accountname=$_SESSION['account'];
 	jQuery(window).on('unload', function(){
 		$('.block-loader').fadeIn("slow");
 	});
+
+	
 </script>
