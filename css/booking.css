@@ -1,0 +1,121 @@
+.booking-container {
+  margin: 90px 0 50px;
+  padding: 0 25px;
+}
+.booking-container .booking-wrapper-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.booking-container .title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.142857142857143rem;
+  color: #000;
+  text-transform: uppercase;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+.booking-container .subtitle {
+  font-size: 1.4285714285714286rem;
+  display: inline-block;
+  color: #000;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+}
+.booking-container .booking-wrapper,
+.booking-container .booking-table {
+  border: 1px solid #b4b4b4;
+  padding: 20px;
+  font-family: sans-serif;
+}
+.booking-container .booking-wrapper {
+  -webkit-flex-basis: 30%;
+  -moz-flex-basis: 30%;
+  flex-basis: 30%;
+}
+.booking-container .booking-table {
+  margin-left: 30px;
+  -webkit-flex-basis: 70%;
+  -moz-flex-basis: 70%;
+  flex-basis: 70%;
+}
+.booking-container .booking-table table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #848484;
+  border-top: 0;
+}
+.booking-container .booking-table th,
+.booking-container .booking-table td {
+  padding: 8px;
+  text-align: center;
+}
+.booking-container .booking-table td:first-child {
+  text-transform: capitalize;
+}
+.booking-container .booking-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.booking-container .booking-table th {
+  background-color: #0250b9;
+  color: #fff;
+}
+.booking-container .booking-table .search {
+  margin: 0 0 10px !important;
+}
+.booking-container .booking-table select {
+  padding: 10px;
+  width: 100%;
+}
+.booking-container .booking-table #wrapper {
+  width: 100%;
+}
+.booking-container .booking-table #wrapper th,
+.booking-container .booking-table #wrapper td {
+  width: 1%;
+}
+.booking-container .booking-table #wrapper thead > tr {
+  position: relative;
+  display: block;
+}
+.booking-container .booking-table #wrapper tbody {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.booking-container .field {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+.booking-container .field.equipments-field input {
+  margin-bottom: 10px;
+}
+.booking-container .field label,
+.booking-container .field span {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.booking-container .field input,
+.booking-container .field select {
+  padding: 5px;
+}
+.booking-container .field .wrapper {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #b4b4b4;
+  padding: 20px;
+}

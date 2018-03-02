@@ -2004,6 +2004,7 @@ footer .botfooter {
   margin: 0;
 }
 .main-nav .menu li button,
+.main-nav .menu li .button,
 .main-nav .menu li .manage {
   font-family: sans-serif;
   font-size: 1rem;
@@ -2030,14 +2031,17 @@ footer .botfooter {
   font-weight: 600;
 }
 .main-nav .menu li button:hover,
+.main-nav .menu li .button:hover,
 .main-nav .menu li .manage:hover {
   color: #fff;
 }
 .main-nav .menu li button:hover:before,
+.main-nav .menu li .button:hover:before,
 .main-nav .menu li .manage:hover:before {
   color: #fff;
 }
 .main-nav .menu li button:before,
+.main-nav .menu li .button:before,
 .main-nav .menu li .manage:before {
   content: '';
   display: inline-block;
@@ -2047,42 +2051,51 @@ footer .botfooter {
   color: #212121;
 }
 .main-nav .menu li button:focus,
+.main-nav .menu li .button:focus,
 .main-nav .menu li .manage:focus {
   outline: none;
 }
 .main-nav .menu li button.dashboard:before,
+.main-nav .menu li .button.dashboard:before,
 .main-nav .menu li .manage.dashboard:before {
   content: '\e902';
 }
 .main-nav .menu li button.addequipment:before,
+.main-nav .menu li .button.addequipment:before,
 .main-nav .menu li .manage.addequipment:before {
   content: '\e90c';
 }
 .main-nav .menu li button.manage:before,
+.main-nav .menu li .button.manage:before,
 .main-nav .menu li .manage.manage:before {
   content: '\e905';
 }
 .main-nav .menu li button.adduser:before,
+.main-nav .menu li .button.adduser:before,
 .main-nav .menu li .manage.adduser:before {
   content: '\e900';
 }
 .main-nav .menu li button.catalog:before,
+.main-nav .menu li .button.catalog:before,
 .main-nav .menu li .manage.catalog:before {
   content: '\e90b';
 }
 .main-nav .menu li button.reports:before,
+.main-nav .menu li .button.reports:before,
 .main-nav .menu li .manage.reports:before {
   background: url(../images/svg/report-symbol.svg) no-repeat;
   background-size: contain;
   background-position: 100%;
 }
 .main-nav .menu li button.generatemenu:before,
+.main-nav .menu li .button.generatemenu:before,
 .main-nav .menu li .manage.generatemenu:before {
   background: url(../images/svg/qr-code.svg) no-repeat;
   background-size: contain;
   background-position: 100%;
 }
 .main-nav .menu li button span,
+.main-nav .menu li .button span,
 .main-nav .menu li .manage span {
   vertical-align: middle;
 }
@@ -2129,7 +2142,7 @@ footer .botfooter {
   -moz-flex-basis: 30%;
   flex-basis: 30%;
   padding-right: 40px;
-  border-right: 1px solid #e7e7e7;
+  border-right: 1px solid #b4b4b4;
 }
 .manage-container form input {
   display: block;
@@ -2158,6 +2171,13 @@ footer .botfooter {
   background-color: #0250b9;
   color: #fff;
 }
+.manage-container .search {
+  margin: 0 0 10px !important;
+}
+.manage-container select {
+  padding: 10px;
+  width: 100%;
+}
 .manage-container #wrapper {
   width: 100%;
   padding-left: 40px;
@@ -2175,7 +2195,42 @@ footer .botfooter {
   max-height: 250px;
   overflow-y: auto;
 }
+.manage-container.add-room label,
+.manage-container.room-management label {
+  font-size: 1.0714285714285714rem;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+.manage-container.add-room input,
+.manage-container.room-management input {
+  padding: 10px;
+  margin-left: 10px;
+}
+.manage-container.add-room #wrapper,
+.manage-container.room-management #wrapper {
+  max-width: 700px;
+  padding-left: 0;
+  margin-top: 20px;
+}
+.manage-container.add-room button,
+.manage-container.room-management button {
+  max-width: 150px;
+  margin-top: 20px;
+  width: 100%;
+}
+.manage-container.add-room table,
+.manage-container.room-management table {
+  margin-top: 10px;
+}
+.manage-container.room-management #wrapper,
+.manage-container.room-management table {
+  margin-top: 0;
+}
 .catalog-container {
+  margin-top: 80px;
+  padding: 0 25px;
+}
+.equipments-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2186,8 +2241,6 @@ footer .botfooter {
   -o-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-top: 80px;
-  padding: 0 25px;
 }
 .equipments {
   display: -webkit-box;
@@ -2242,6 +2295,28 @@ footer .botfooter {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.pagination {
+  margin: 20px 0;
+  font-weight: 600;
+}
+.pagination span {
+  font-size: 1.0714285714285714rem;
+  font-family: sans-serif;
+}
+.pagination a {
+  background: #848484;
+  padding: 5px 10px;
+  color: #fff;
+}
+.pagination a:hover {
+  background: #0250b9;
+  color: #fff;
+}
+.pagination b {
+  padding: 5px 10px;
+  background: #0250b9;
+  color: #fff;
 }
 .dashboard-container {
   margin-top: 60px;
@@ -2387,4 +2462,125 @@ footer .botfooter {
 }
 .product-page-container .product-banner-container img {
   width: 100%;
+}
+.booking-container {
+  margin: 90px 0 50px;
+  padding: 0 25px;
+}
+.booking-container .booking-wrapper-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.booking-container .title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.142857142857143rem;
+  color: #000;
+  text-transform: uppercase;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+.booking-container .subtitle {
+  font-size: 1.4285714285714286rem;
+  display: inline-block;
+  color: #000;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+}
+.booking-container .booking-wrapper,
+.booking-container .booking-table {
+  border: 1px solid #b4b4b4;
+  padding: 20px;
+  font-family: sans-serif;
+}
+.booking-container .booking-wrapper {
+  -webkit-flex-basis: 30%;
+  -moz-flex-basis: 30%;
+  flex-basis: 30%;
+}
+.booking-container .booking-table {
+  margin-left: 30px;
+  -webkit-flex-basis: 70%;
+  -moz-flex-basis: 70%;
+  flex-basis: 70%;
+}
+.booking-container .booking-table table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #848484;
+  border-top: 0;
+}
+.booking-container .booking-table th,
+.booking-container .booking-table td {
+  padding: 8px;
+  text-align: center;
+}
+.booking-container .booking-table td:first-child {
+  text-transform: capitalize;
+}
+.booking-container .booking-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.booking-container .booking-table th {
+  background-color: #0250b9;
+  color: #fff;
+}
+.booking-container .booking-table .search {
+  margin: 0 0 10px !important;
+}
+.booking-container .booking-table select {
+  padding: 10px;
+  width: 100%;
+}
+.booking-container .booking-table #wrapper {
+  width: 100%;
+}
+.booking-container .booking-table #wrapper th,
+.booking-container .booking-table #wrapper td {
+  width: 1%;
+}
+.booking-container .booking-table #wrapper thead > tr {
+  position: relative;
+  display: block;
+}
+.booking-container .booking-table #wrapper tbody {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.booking-container .field {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+.booking-container .field.equipments-field input {
+  margin-bottom: 10px;
+}
+.booking-container .field label,
+.booking-container .field span {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.booking-container .field input,
+.booking-container .field select {
+  padding: 5px;
+}
+.booking-container .field .wrapper {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #b4b4b4;
+  padding: 20px;
 }

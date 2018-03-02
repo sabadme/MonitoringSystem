@@ -20,7 +20,8 @@ $q = mysql_query("SELECT count(id) FROM equipment");
 $row = mysql_fetch_array($q);
 $pages = ($row[0] + $perpage - 1) / $perpage;
 ?>
-<div class="catalog-container" id="demo">
+<div class="catalog-container">
+    <div class="equipments-container">
 <?php
             
 
@@ -47,7 +48,7 @@ for ($k=0; $k<$pages; $k++) {
         if ($k != $_REQUEST['page']) {
          $lynx .= " <a href=catalog-index.php"."?page=$k>".($k+1)."</a>";
         } else {
-         $lynx .= " <b>--".($k+1)."--</b>";
+         $lynx .= " <b>".($k+1)."</b>";
         }
 
 }
@@ -55,9 +56,9 @@ for ($k=0; $k<$pages; $k++) {
 
 
 <?= $html ?>
-
-<div class="pagination">    
-Please choose the next page you want to view:
+    </div>
+<div class="pagination">
+<span>SHOW </span>
 <?= $lynx ?>
 </div>
 </div>

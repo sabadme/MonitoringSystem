@@ -58,6 +58,7 @@
   margin: 0;
 }
 .main-nav .menu li button,
+.main-nav .menu li .button,
 .main-nav .menu li .manage {
   font-family: sans-serif;
   font-size: 1rem;
@@ -84,14 +85,17 @@
   font-weight: 600;
 }
 .main-nav .menu li button:hover,
+.main-nav .menu li .button:hover,
 .main-nav .menu li .manage:hover {
   color: #fff;
 }
 .main-nav .menu li button:hover:before,
+.main-nav .menu li .button:hover:before,
 .main-nav .menu li .manage:hover:before {
   color: #fff;
 }
 .main-nav .menu li button:before,
+.main-nav .menu li .button:before,
 .main-nav .menu li .manage:before {
   content: '';
   display: inline-block;
@@ -101,42 +105,51 @@
   color: #212121;
 }
 .main-nav .menu li button:focus,
+.main-nav .menu li .button:focus,
 .main-nav .menu li .manage:focus {
   outline: none;
 }
 .main-nav .menu li button.dashboard:before,
+.main-nav .menu li .button.dashboard:before,
 .main-nav .menu li .manage.dashboard:before {
   content: '\e902';
 }
 .main-nav .menu li button.addequipment:before,
+.main-nav .menu li .button.addequipment:before,
 .main-nav .menu li .manage.addequipment:before {
   content: '\e90c';
 }
 .main-nav .menu li button.manage:before,
+.main-nav .menu li .button.manage:before,
 .main-nav .menu li .manage.manage:before {
   content: '\e905';
 }
 .main-nav .menu li button.adduser:before,
+.main-nav .menu li .button.adduser:before,
 .main-nav .menu li .manage.adduser:before {
   content: '\e900';
 }
 .main-nav .menu li button.catalog:before,
+.main-nav .menu li .button.catalog:before,
 .main-nav .menu li .manage.catalog:before {
   content: '\e90b';
 }
 .main-nav .menu li button.reports:before,
+.main-nav .menu li .button.reports:before,
 .main-nav .menu li .manage.reports:before {
   background: url(../images/svg/report-symbol.svg) no-repeat;
   background-size: contain;
   background-position: 100%;
 }
 .main-nav .menu li button.generatemenu:before,
+.main-nav .menu li .button.generatemenu:before,
 .main-nav .menu li .manage.generatemenu:before {
   background: url(../images/svg/qr-code.svg) no-repeat;
   background-size: contain;
   background-position: 100%;
 }
 .main-nav .menu li button span,
+.main-nav .menu li .button span,
 .main-nav .menu li .manage span {
   vertical-align: middle;
 }

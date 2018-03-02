@@ -1,4 +1,8 @@
 .catalog-container {
+  margin-top: 80px;
+  padding: 0 25px;
+}
+.equipments-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -9,8 +13,6 @@
   -o-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-top: 80px;
-  padding: 0 25px;
 }
 .equipments {
   display: -webkit-box;
@@ -65,4 +67,26 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.pagination {
+  margin: 20px 0;
+  font-weight: 600;
+}
+.pagination span {
+  font-size: 1.0714285714285714rem;
+  font-family: sans-serif;
+}
+.pagination a {
+  background: #848484;
+  padding: 5px 10px;
+  color: #fff;
+}
+.pagination a:hover {
+  background: #0250b9;
+  color: #fff;
+}
+.pagination b {
+  padding: 5px 10px;
+  background: #0250b9;
+  color: #fff;
 }

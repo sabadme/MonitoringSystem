@@ -60,6 +60,14 @@
 	    color: @white;
 	}
 
+	.search {
+		margin: 0 0 10px !important;
+	}
+
+	select {
+		padding: 10px;
+		width: 100%;
+	}
 
 	#wrapper {
 		width: 100%;
@@ -79,6 +87,43 @@
 			display: block;
 			max-height: 250px;
 			overflow-y: auto;
+		}
+	}
+
+	&.add-room,
+	&.room-management {
+		label {
+			.font-size(15);
+			text-transform: uppercase;
+			font-family: @font-family-base;
+		}
+
+		input {
+			padding: 10px;
+			margin-left: 10px;
+		}
+
+		#wrapper {
+			max-width: 700px;
+			padding-left: 0;
+			margin-top: 20px;
+		}
+
+		button {
+			max-width: 150px;
+			margin-top: 20px;
+			width: 100%;
+		}
+
+		table {
+			margin-top: 10px;
+		}
+	}
+
+	&.room-management {
+		#wrapper,
+		table {
+			margin-top: 0;
 		}
 	}
 }

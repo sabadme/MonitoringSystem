@@ -3,7 +3,9 @@
 <nav class="main-nav">
 	<form action="" method="POST">
 		<ul class="menu">	
-			<li><button type="submit" name="dashboard" class="dashboard">DASHBOARD</button></li>
+			<li>
+                <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
+            </li>
 			<li class="manage-btn">
 				<span class="manage">MANAGE</button>
 				<ul>
@@ -13,9 +15,20 @@
 					<li>
 						<button class="addequipment" name="add_equipment" type="submit">Add Equipment</span>
 					</li>
+                    <li>
+                        <button class="addroom" name="add_room" type="submit">Add Room</button>
+                    </li>
+                    <li>
+                        <button class="rooms" name="rooms" type="submit">Rooms</button>
+                    </li>
 				</ul>
 			</li>
-			<li><a class="button" href="catalog-index.php?page=0">Equipments</a></li>
+			<li>
+                <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
+            </li>
+            <li>
+                <button class="booking" name="booking" type="submit">Booking</button>
+            </li>
 		</ul>
 	</form>
 </nav>

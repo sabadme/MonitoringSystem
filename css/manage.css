@@ -27,7 +27,7 @@
   -moz-flex-basis: 30%;
   flex-basis: 30%;
   padding-right: 40px;
-  border-right: 1px solid #e7e7e7;
+  border-right: 1px solid #b4b4b4;
 }
 .manage-container form input {
   display: block;
@@ -56,6 +56,13 @@
   background-color: #0250b9;
   color: #fff;
 }
+.manage-container .search {
+  margin: 0 0 10px !important;
+}
+.manage-container select {
+  padding: 10px;
+  width: 100%;
+}
 .manage-container #wrapper {
   width: 100%;
   padding-left: 40px;
@@ -72,4 +79,35 @@
   display: block;
   max-height: 250px;
   overflow-y: auto;
+}
+.manage-container.add-room label,
+.manage-container.room-management label {
+  font-size: 1.0714285714285714rem;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+.manage-container.add-room input,
+.manage-container.room-management input {
+  padding: 10px;
+  margin-left: 10px;
+}
+.manage-container.add-room #wrapper,
+.manage-container.room-management #wrapper {
+  max-width: 700px;
+  padding-left: 0;
+  margin-top: 20px;
+}
+.manage-container.add-room button,
+.manage-container.room-management button {
+  max-width: 150px;
+  margin-top: 20px;
+  width: 100%;
+}
+.manage-container.add-room table,
+.manage-container.room-management table {
+  margin-top: 10px;
+}
+.manage-container.room-management #wrapper,
+.manage-container.room-management table {
+  margin-top: 0;
 }

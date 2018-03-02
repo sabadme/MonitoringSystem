@@ -1,0 +1,128 @@
+@import "variable.less";
+
+.booking-container {
+  margin: 90px 0 50px;
+  padding: 0 25px;
+
+  .booking-wrapper-container {
+    .flex-layout;
+  }
+
+  .title {
+    display: block;
+    font-family: @font-family-base;
+    .font-size(30);
+    color: @color-black;
+    text-transform: uppercase;
+    max-width: @page-max_width;
+    width: 100%;
+    margin: 0 auto 30px;
+  }
+
+  .subtitle {
+    .font-size(20);
+    display: inline-block;
+    color: @color-black;
+    text-transform: uppercase;
+    font-family: @font-family-base;
+    margin-bottom: 20px;
+  }
+
+  .booking-wrapper,
+  .booking-table {
+    border: 1px solid @border-color;
+    padding: 20px;
+    font-family: @font-family-base;
+  }
+
+  .booking-wrapper {
+    .flex-basis(30%);
+  }
+
+  .booking-table {
+    margin-left: 30px;
+    .flex-basis(70%);
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid @color-gray;
+      border-top: 0;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    td:first-child {
+      text-transform: capitalize;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th {
+      background-color: @cobalt;
+      color: @white;
+    }
+
+    .search {
+      margin: 0 0 10px !important;
+    }
+
+    select {
+      padding: 10px;
+      width: 100%;
+    }
+
+    #wrapper {
+      width: 100%;
+
+      th,
+      td {
+        width: 1%;
+      }
+
+      thead > tr {
+        position: relative;
+        display: block;
+      }
+
+      tbody {
+        display: block;
+        max-height: 250px;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  .field {
+    margin-bottom: 15px;
+    .flex-layout;
+    .flex-direction(column);
+
+    &.equipments-field {
+      input {
+        margin-bottom: 10px;
+      }
+    }
+
+    label, span {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    input, select {
+      padding: 5px;
+    }
+
+    .wrapper {
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid @border-color;
+      padding: 20px;
+    }
+  }
+}
