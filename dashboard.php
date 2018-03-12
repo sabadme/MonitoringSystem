@@ -1,6 +1,10 @@
 <div class="dashboard-container">
+    <div class="booker">
+        <?php include"admin/booker.php"; ?>
+    </div>
 	<div class="new-equipments-container">
 		<strong> New Equipments </strong>
+
 		<div class="new-equipments-block owl-carousel">
 
 			<?php include"admin/new_equipment.php"; ?>

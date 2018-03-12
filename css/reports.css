@@ -1,0 +1,14 @@
+.reports-container {
+  margin-top: 70px;
+  padding: 20px;
+}
+.reports-container .title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.142857142857143rem;
+  color: #000;
+  text-transform: uppercase;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto 30px;
+}

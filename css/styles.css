@@ -188,6 +188,62 @@ button {
 button:hover {
   background: #025bd2;
 }
+form {
+  -webkit-flex-basis: 30%;
+  -moz-flex-basis: 30%;
+  flex-basis: 30%;
+}
+form input {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #848484;
+  border-top: 0;
+}
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+td:first-child {
+  text-transform: capitalize;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+th {
+  background-color: #0250b9;
+  color: #fff;
+}
+.search {
+  margin: 0 0 10px !important;
+}
+select {
+  padding: 10px;
+  width: 100%;
+}
+#wrapper {
+  width: 100%;
+  padding-left: 40px;
+}
+#wrapper th,
+#wrapper td {
+  width: 1%;
+}
+#wrapper thead > tr {
+  position: relative;
+  display: block;
+}
+#wrapper tbody {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}
 .block-loader {
   width: 100%;
   background: #fff;
@@ -2029,6 +2085,7 @@ footer .botfooter {
   width: 100%;
   height: 100%;
   font-weight: 600;
+  text-transform: uppercase;
 }
 .main-nav .menu li button:hover,
 .main-nav .menu li .button:hover,
@@ -2128,72 +2185,50 @@ footer .botfooter {
   margin: 0 auto 30px;
 }
 .manage-container .manage-inner-container {
-  max-width: 1230px;
-  width: 100%;
-  margin: 0 auto;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-}
-.manage-container form {
-  -webkit-flex-basis: 30%;
-  -moz-flex-basis: 30%;
-  flex-basis: 30%;
-  padding-right: 40px;
-  border-right: 1px solid #b4b4b4;
-}
-.manage-container form input {
-  display: block;
-  padding: 10px;
-  margin-bottom: 10px;
+  max-width: 1230px;
   width: 100%;
+  margin: 0 auto;
 }
-.manage-container table {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #848484;
-  border-top: 0;
+.manage-container.equipment-registration .manage-inner-container {
+  padding: 30px;
+  border: 1px solid #b4b4b4;
 }
-.manage-container th,
-.manage-container td {
-  padding: 8px;
-  text-align: center;
+.manage-container.equipment-registration .tabs {
+  position: relative;
 }
-.manage-container td:first-child {
-  text-transform: capitalize;
+.manage-container.equipment-registration .tabs li {
+  position: absolute;
+  top: 0;
+  padding: 15px 20px;
+  border: 1px solid #b4b4b4;
+  border-bottom: 0;
+  cursor: pointer;
 }
-.manage-container tr:nth-child(even) {
-  background-color: #f2f2f2;
+.manage-container.equipment-registration .tabs li + div {
+  display: none;
 }
-.manage-container th {
-  background-color: #0250b9;
+.manage-container.equipment-registration .tabs li span {
+  font-family: sans-serif;
+  font-size: 1.2142857142857142rem;
+  text-transform: uppercase;
+}
+.manage-container.equipment-registration .tabs li:nth-of-type(2) {
+  left: 103px;
+}
+.manage-container.equipment-registration .tabs li.active {
+  background: #0250b9;
+}
+.manage-container.equipment-registration .tabs li.active span {
   color: #fff;
 }
-.manage-container .search {
-  margin: 0 0 10px !important;
-}
-.manage-container select {
-  padding: 10px;
-  width: 100%;
-}
-.manage-container #wrapper {
-  width: 100%;
-  padding-left: 40px;
-}
-.manage-container #wrapper th,
-.manage-container #wrapper td {
-  width: 1%;
-}
-.manage-container #wrapper thead > tr {
-  position: relative;
+.manage-container.equipment-registration .tabs li.active + div {
   display: block;
-}
-.manage-container #wrapper tbody {
-  display: block;
-  max-height: 250px;
-  overflow-y: auto;
+  padding-top: 47px;
 }
 .manage-container.add-room label,
 .manage-container.room-management label {
@@ -2319,10 +2354,45 @@ footer .botfooter {
   color: #fff;
 }
 .dashboard-container {
-  margin-top: 60px;
+  margin-top: 90px;
+}
+.dashboard-container .booker {
+  margin: 0 25px;
+}
+.dashboard-container .booker .flex-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.dashboard-container .booker .booking-table {
+  padding: 20px;
+  border: 1px solid #b4b4b4;
+}
+.dashboard-container .booker .booking-table span {
+  font-size: 1.2142857142857142rem;
+  font-family: sans-serif;
+}
+.dashboard-container .booker .booking-table strong {
+  font-size: 1.7857142857142858rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.dashboard-container .booker #wrapper {
+  padding-left: 0;
 }
 .dashboard-container .new-equipments-container {
-  margin: 90px 25px 0;
+  margin: 40px 25px 0;
   position: relative;
 }
 .dashboard-container .new-equipments-container .new-equipments-block {
@@ -2583,4 +2653,76 @@ footer .botfooter {
   overflow-y: auto;
   border: 1px solid #b4b4b4;
   padding: 20px;
+}
+.reports-container {
+  margin-top: 70px;
+  padding: 20px;
+}
+.reports-container .title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.142857142857143rem;
+  color: #000;
+  text-transform: uppercase;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.modal .modal-content {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 1000px 1000px #848484;
+  -moz-box-shadow: 0 0 1000px 1000px #848484;
+  box-shadow: 0 0 1000px 1000px #848484;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  width: 500px;
+  height: 450px;
+}
+.modal h1 {
+  font-size: 2.142857142857143rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.modal strong {
+  font-size: 1.4285714285714286rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: normal;
+  display: block;
+}
+.modal textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+  width: 100%;
+  padding: 10px;
+  min-height: 150px;
+  resize: none;
+  overflow-y: auto;
+}
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.modal .close:hover {
+  opacity: 0.8;
 }

@@ -2,10 +2,41 @@
 
 
 .dashboard-container {
-	margin-top: 60px;
+	margin-top: 90px;
+
+	.booker {
+		margin: 0 25px;
+
+		.flex-container {
+			.flex-layout;
+			.flex-justify-content(space-between);
+			.flex-align(center);
+			margin-bottom: 30px;
+		}
+
+		.booking-table {
+			padding: 20px;
+			border: 1px solid @border-color;
+
+			span {
+				.font-size(17);
+				font-family: @font-family-base;
+			}
+
+			strong {
+				.font-size(25);
+				font-family: @font-family-base;
+				text-transform: uppercase;
+			}
+		}
+
+		#wrapper {
+			 padding-left: 0;
+		}
+	}
 
 	.new-equipments-container {
-		margin: 90px 25px 0;
+		margin: 40px 25px 0;
 		position: relative;
 
 		.new-equipments-block {

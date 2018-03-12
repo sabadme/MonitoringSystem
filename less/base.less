@@ -114,6 +114,72 @@ button {
     }
 }
 
+form {
+    .flex-basis(30%);
+
+    input {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid @color-gray;
+    border-top: 0;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+td:first-child {
+    text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: @cobalt;
+    color: @white;
+}
+
+.search {
+    margin: 0 0 10px !important;
+}
+
+select {
+    padding: 10px;
+    width: 100%;
+}
+
+#wrapper {
+    width: 100%;
+    padding-left: 40px;
+
+    th,
+    td {
+        width: 1%;
+    }
+
+    thead > tr {
+        position: relative;
+        display: block;
+    }
+
+    tbody {
+        display: block;
+        max-height: 250px;
+        overflow-y: auto;
+    }
+}
+
 .block-loader {
     width: 100%; 
     background: @white; 

@@ -13,72 +13,50 @@
   margin: 0 auto 30px;
 }
 .manage-container .manage-inner-container {
-  max-width: 1230px;
-  width: 100%;
-  margin: 0 auto;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-}
-.manage-container form {
-  -webkit-flex-basis: 30%;
-  -moz-flex-basis: 30%;
-  flex-basis: 30%;
-  padding-right: 40px;
-  border-right: 1px solid #b4b4b4;
-}
-.manage-container form input {
-  display: block;
-  padding: 10px;
-  margin-bottom: 10px;
+  max-width: 1230px;
   width: 100%;
+  margin: 0 auto;
 }
-.manage-container table {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #848484;
-  border-top: 0;
+.manage-container.equipment-registration .manage-inner-container {
+  padding: 30px;
+  border: 1px solid #b4b4b4;
 }
-.manage-container th,
-.manage-container td {
-  padding: 8px;
-  text-align: center;
+.manage-container.equipment-registration .tabs {
+  position: relative;
 }
-.manage-container td:first-child {
-  text-transform: capitalize;
+.manage-container.equipment-registration .tabs li {
+  position: absolute;
+  top: 0;
+  padding: 15px 20px;
+  border: 1px solid #b4b4b4;
+  border-bottom: 0;
+  cursor: pointer;
 }
-.manage-container tr:nth-child(even) {
-  background-color: #f2f2f2;
+.manage-container.equipment-registration .tabs li + div {
+  display: none;
 }
-.manage-container th {
-  background-color: #0250b9;
+.manage-container.equipment-registration .tabs li span {
+  font-family: sans-serif;
+  font-size: 1.2142857142857142rem;
+  text-transform: uppercase;
+}
+.manage-container.equipment-registration .tabs li:nth-of-type(2) {
+  left: 103px;
+}
+.manage-container.equipment-registration .tabs li.active {
+  background: #0250b9;
+}
+.manage-container.equipment-registration .tabs li.active span {
   color: #fff;
 }
-.manage-container .search {
-  margin: 0 0 10px !important;
-}
-.manage-container select {
-  padding: 10px;
-  width: 100%;
-}
-.manage-container #wrapper {
-  width: 100%;
-  padding-left: 40px;
-}
-.manage-container #wrapper th,
-.manage-container #wrapper td {
-  width: 1%;
-}
-.manage-container #wrapper thead > tr {
-  position: relative;
+.manage-container.equipment-registration .tabs li.active + div {
   display: block;
-}
-.manage-container #wrapper tbody {
-  display: block;
-  max-height: 250px;
-  overflow-y: auto;
+  padding-top: 47px;
 }
 .manage-container.add-room label,
 .manage-container.room-management label {

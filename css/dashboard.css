@@ -1,8 +1,43 @@
 .dashboard-container {
-  margin-top: 60px;
+  margin-top: 90px;
+}
+.dashboard-container .booker {
+  margin: 0 25px;
+}
+.dashboard-container .booker .flex-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.dashboard-container .booker .booking-table {
+  padding: 20px;
+  border: 1px solid #b4b4b4;
+}
+.dashboard-container .booker .booking-table span {
+  font-size: 1.2142857142857142rem;
+  font-family: sans-serif;
+}
+.dashboard-container .booker .booking-table strong {
+  font-size: 1.7857142857142858rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.dashboard-container .booker #wrapper {
+  padding-left: 0;
 }
 .dashboard-container .new-equipments-container {
-  margin: 90px 25px 0;
+  margin: 40px 25px 0;
   position: relative;
 }
 .dashboard-container .new-equipments-container .new-equipments-block {

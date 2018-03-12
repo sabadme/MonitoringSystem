@@ -23,6 +23,9 @@ if (isset($_REQUEST['dashboard'])) {
 } else if (isset($_REQUEST['booking'])) {
 
     include "admin/booking_page.php";
+} else if (isset($_REQUEST['reports'])) {
+
+    include "admin/reports.php";
 } else {
     include "dashboard.php";
 }

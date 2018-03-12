@@ -83,6 +83,7 @@
   width: 100%;
   height: 100%;
   font-weight: 600;
+  text-transform: uppercase;
 }
 .main-nav .menu li button:hover,
 .main-nav .menu li .button:hover,

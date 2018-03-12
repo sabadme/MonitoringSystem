@@ -29,6 +29,9 @@
             <li>
                 <button class="booking" name="booking" type="submit">Booking</button>
             </li>
+            <li>
+                <button class="reports" name="reports" type="submit">Reports</button>
+            </li>
 		</ul>
 	</form>
 </nav>
