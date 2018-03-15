@@ -1,33 +1,24 @@
+<?php include "admin/modal.php"; ?>
+
 <div class="manage-container">
-	<strong class="title">Account Registration</strong>
+	<strong class="title">REPORT FORM</strong>
 
 	<div class="manage-inner-container">
-		<form class="manage-form" action="" method="POST">
-			<select name="status">
-				<option>Teacher</option>
-				<option>Student Assistant</option>
-			</select>
-			<input type="text" name="firstname" placeholder="Firstname">
-			<input type="text" name="lastname" placeholder="Lastname">
-			<input type="text" name="username" placeholder="username">
-			<input type="password" name="password" placeholder="password">
-			<button type="submit" name="add_user">Add</button>
-		</form>
+	
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
 			<input type="text" class="searchbtn" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 			</div>
 				<table id="myTable">
 				<thead>
-					<th>FIRSTNAME</th>
-					<th>LASTNAME</th>
-					<th>Position</th>
-					<th>Status</th>
-					<th>Action</th>
+					<th>Equipment</th>
+					<th>Equipment Name</th>
+					<th>Equipment Code</th>
+					<th>Report</th>
 				</thead>
 
 				<tbody>
-					<?php include"admin/user_table.php"; ?>
+					<?php include"Office/report_equipment_table.php"; ?>
 				</tbody>
 			</table>
 		</div>

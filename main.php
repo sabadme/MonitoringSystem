@@ -1,10 +1,11 @@
 <?php 
 session_start();
-
+error_reporting(0);
 $accountname=$_SESSION['account'];
+$status=$_SESSION['status'];
  ?>
  <?php 
-if(isset($accountname)){
+if(isset($status)){
  ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ if(isset($accountname)){
 	<span>Online Equipment Monitoring System</span>
 </div>	
 <div class="login-container">
-	<?php if ($accountname =="Admin"): ?>
+	<?php if ($accountname): ?>
 		<div class="mainUser-container">
 			<span class="username"><?php echo $accountname; ?></span>
 
@@ -60,8 +61,22 @@ if(isset($accountname)){
 
 		<div class="page-main">
 			<?php include"navigation.php"; ?>
+			<?php 
+			if($status=="Admin"){
+
+			 ?>
 			<?php include"admin/function.php"; ?>
+			<?php 
+			}else if($status=="Office"){
+				$accountname;
+			 ?>
+			<?php include"Office/function.php"; ?>
+			<?php 
+			}
+			 ?>
+		
 			
+						
 		</div>
 
 		<?php include"footer.php"; ?>
@@ -97,7 +112,7 @@ if(isset($accountname)){
         var modal = document.getElementById('myModal');
 
         // Get the button that opens the modal
-        var btn = document.getElementById("reportBtn");
+        var btn = document.getElementsByClassName("reportBtn")[0];
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
@@ -118,6 +133,11 @@ if(isset($accountname)){
                 modal.style.display = "none";
             }
         }
+
+        $.ajax({
+			    	type: 'POST',
+			    	url: 'admin/modal.php'
+			    });
     }
 
 	

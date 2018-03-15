@@ -1,17 +1,12 @@
 <div class="manage-container">
-	<strong class="title">Account Registration</strong>
+	<strong class="title">Office Registration</strong>
 
 	<div class="manage-inner-container">
 		<form class="manage-form" action="" method="POST">
-			<select name="status">
-				<option>Teacher</option>
-				<option>Student Assistant</option>
-			</select>
-			<input type="text" name="firstname" placeholder="Firstname">
-			<input type="text" name="lastname" placeholder="Lastname">
+			<input type="text" name="account" placeholder="Account Name">
 			<input type="text" name="username" placeholder="username">
 			<input type="password" name="password" placeholder="password">
-			<button type="submit" name="add_user">Add</button>
+			<button type="submit" name="addoffices">Add</button>
 		</form>
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
@@ -19,15 +14,14 @@
 			</div>
 				<table id="myTable">
 				<thead>
-					<th>FIRSTNAME</th>
-					<th>LASTNAME</th>
-					<th>Position</th>
+					<th>Office</th>
 					<th>Status</th>
-					<th>Action</th>
-				</thead>
+					<th>Enable</th>
+					<th>Equipment Assign</th>
+				</thead>	
 
 				<tbody>
-					<?php include"admin/user_table.php"; ?>
+					<?php include"admin/office_table.php"; ?>
 				</tbody>
 			</table>
 		</div>

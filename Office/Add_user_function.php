@@ -1,16 +1,14 @@
 <?php 
-if(isset($_REQUEST['add_user'])){
+if(isset($_REQUEST['add_user_SA'])){
+
+$accountname=$_SESSION['account'];
 
 $firstname=$_REQUEST['firstname'];
 $lastname=$_REQUEST['lastname'];
 $user=$_REQUEST['username'];
 $pass=$_REQUEST['password'];
-$account="User";
-$status=$_REQUEST['status'];
-
-$FL=$firstname.' '.$lastname;
-$under="Admin";
-$ed_status="Enabled";
+$account = $firstname . ' ' . $lastname;
+$status="SA";
 
 $servername ="localhost";
 $username="root";
@@ -21,7 +19,7 @@ $db="monitoringsystemdatabase";
 $conn =mysql_connect($servername,$username,$password1);
 mysql_select_db($db);
 
-$adduser=mysql_query("INSERT INTO tbl_login VALUES(0,'$FL','$user','$pass','$firstname','$lastname','$status','$under','$ed_status')");
+$adduser=mysql_query("INSERT INTO tbl_login VALUES(0,'$account','$user','$pass','$firstname','$lastname','$status','$accountname')");
 echo mysql_error();     
   
 if($adduser){ ?> <script> 

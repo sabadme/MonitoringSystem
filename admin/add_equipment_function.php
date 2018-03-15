@@ -25,7 +25,7 @@ if(isset($_REQUEST['save_equipment'])){
 	$equipment_end=$_REQUEST['equipment_end'];
 
     $qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$equipment_code'>";
-
+    ?><div style="display:none"><?php echo $qrimg;?></div> <?php
     echo "<canvas id='myCanvas' style='visibility:hidden' />";
 
     echo "
@@ -61,7 +61,9 @@ if(isset($_REQUEST['save_equipment'])){
     ";
 include"admin/connection.php";
 
-$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$equipment_code','$equipment_name','$equipment_start','$equipment_end','$name')");
+$status="Unassigned";
+
+$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$equipment_code','$equipment_name','$equipment_start','$equipment_end','$name','$status')");
 echo mysql_error();  
 if($upload_image){
 	

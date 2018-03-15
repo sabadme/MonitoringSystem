@@ -19,7 +19,7 @@
                 <td>AC-501</td>
                 <td>asd21zzd2ad</td>
                 <td>
-                    <button id="reportBtn">Send Report</button>
+                    <button class="reportBtn">Send Report</button>
                 </td>
             </tr>
             </tbody>

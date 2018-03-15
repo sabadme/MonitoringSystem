@@ -1,9 +1,15 @@
+<?php 
+if(isset($_REQUEST['officeequipmentassign'])){
+
+    $officeequipmentassign=$_REQUEST['officeequipmentassign'];
+
+ ?>
 <div class="manage-container add-room">
-    <strong class="title">Room Registration</strong>
+    <strong class="title">Room Select Equipment</strong>
   <form action="" method="POST">
     <div class="field">
-        <label>Room Name: </label>
-        <input type="text" name="roomName" required />
+  
+     
     </div>
 
     <div class="manage-inner-container">
@@ -19,7 +25,7 @@
 
                 <tbody> 
                 <?php
-               $servername ="localhost";
+$servername ="localhost";
 $username="root";
 $password="";
 $db="monitoringsystemdatabase";
@@ -41,7 +47,7 @@ mysql_select_db($db);
                         <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$get_equipmentcode."'>" ?></td>
                         <td><?php echo $data_equipment['equipment_name']; ?></td>
                         <td><?php echo $data_equipment['equipment_code']; ?></td>
-                        <td><input type="checkbox" value="<?php echo $data_equipment['equipment_name']; ?>"  name="check_list[]"></td>  
+                        <td><input type="checkbox" value="<?php echo $data_equipment['equipment_name']; ?>"  name="check_lists[]"></td>  
                     </tr>
                     <?php
                 }
@@ -54,9 +60,12 @@ mysql_select_db($db);
         </div>
     </div>
   
-        <button name="save_room" type="submit">Save</button>
+        <button name="save_selected_equipment" type="submit" value="<?php echo $officeequipmentassign; ?>">Save</button>
     </form>
 </div>
+<?php 
+}
+ ?>
 <!-- 
 <script>
 $(document).ready(function(){

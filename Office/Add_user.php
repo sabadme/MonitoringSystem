@@ -3,15 +3,11 @@
 
 	<div class="manage-inner-container">
 		<form class="manage-form" action="" method="POST">
-			<select name="status">
-				<option>Teacher</option>
-				<option>Student Assistant</option>
-			</select>
 			<input type="text" name="firstname" placeholder="Firstname">
 			<input type="text" name="lastname" placeholder="Lastname">
 			<input type="text" name="username" placeholder="username">
 			<input type="password" name="password" placeholder="password">
-			<button type="submit" name="add_user">Add</button>
+			<button type="submit" name="add_user_SA">Add</button>
 		</form>
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
@@ -21,13 +17,10 @@
 				<thead>
 					<th>FIRSTNAME</th>
 					<th>LASTNAME</th>
-					<th>Position</th>
-					<th>Status</th>
-					<th>Action</th>
 				</thead>
 
 				<tbody>
-					<?php include"admin/user_table.php"; ?>
+					<?php include"Office/office_SA_table.php"; ?>
 				</tbody>
 			</table>
 		</div>

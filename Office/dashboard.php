@@ -1,13 +1,9 @@
 <div class="dashboard-container">
-    <div class="booker">
-        <?php include"admin/booker.php"; ?>
-    </div>
 	<div class="new-equipments-container">
 		<strong> New Equipments </strong>
-
 		<div class="new-equipments-block owl-carousel">
 
-			<?php include"admin/new_equipment.php"; ?>
+			<?php include"office/office_equipment.php"; ?>
 		</div>
 	</div>
 </div>
@@ -15,7 +11,7 @@
 <script>
 	function loadCarousel() {
         var itemListContainer = $('.new-equipments-block');
-            itemListContainer.show();   
+            itemListContainer.show();
     }
 
     function owlCarousel() {

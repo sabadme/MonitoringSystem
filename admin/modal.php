@@ -1,10 +1,16 @@
+<?php 
+if(isset($_REQUEST['equipment_report']))
+    $equipment_report=$_REQUEST['equipment_report'];
+{
+ ?>
+
 <div id="myModal" class="modal" style="display: none;">
 
     <!-- Modal content -->
     <div class="modal-content">
         <h1>Create Report</h1>
 
-        <strong>Lenuel Betita</strong>
+        <strong>Lenuel Betita <?php echo $equipment_report; ?></strong>
         <strong>Room: MC-504</strong>
         <strong>Equipment: Aircon</strong>
         <span class="close">&times; </span>
@@ -18,7 +24,9 @@
 
     </div>
 </div>
-
+<?php
+} 
+ ?>
 
 <!--<script>
     // Get the modal

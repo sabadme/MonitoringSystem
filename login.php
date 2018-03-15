@@ -30,10 +30,23 @@ $sql_row=mysql_fetch_array($sql);
 
 $id=$sql_row['id'];
 $account=$sql_row['account'];
+$ed_status=$sql_row['ED_status'];
+$status=$sql_row['Status'];
 
 if($user==$sql_row['username'] && $pass==$sql_row['password']){
+
+
+	if($ed_status=="Enabled"){
 	$_SESSION['account']=$account;
+	$_SESSION['status']=$status;
 	header("location:main.php?id=$id");
+	}else{
+		?>
+			<script> 
+		 alert("Your account has been disabled. Please check your account at the admin office.");
+		 </script> 
+		<?php
+	}
 
 
 }else{
