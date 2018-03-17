@@ -15,21 +15,26 @@
 		margin: 0 auto 30px;
 	}
 
-	.manage-inner-container {
+	.inner-form-container {
 		.flex-layout;
-		max-width: @page-max_width;
 		width: 100%;
 		margin: 0 auto;
 	}
 
-	&.equipment-registration {
-		.manage-inner-container {
+	&.registration {
+		.inner-form-container {
 			padding: 30px;
 			border: 1px solid @border-color;
 		}
 
 		.tabs {
 			position: relative;
+
+			&.accounts {
+				li:nth-of-type(2) {
+					left: 100px;
+				}
+			}
 
 			li {
 				position: absolute;
@@ -67,42 +72,47 @@
 				}
 			}
 		}
-	}
 
-	&.add-room,
-	&.room-management {
-		label {
-			.font-size(15);
-			text-transform: uppercase;
-			font-family: @font-family-base;
-		}
+		.tabs-container {
+			&.room-management {
+				label {
+					.font-size(15);
+					text-transform: uppercase;
+					font-family: @font-family-base;
+				}
 
-		input {
-			padding: 10px;
-			margin-left: 10px;
-		}
+				input {
+					padding: 10px;
+					margin-left: 10px;
+				}
 
-		#wrapper {
-			max-width: 700px;
-			padding-left: 0;
-			margin-top: 20px;
-		}
+				#wrapper {
+					max-width: 700px;
+					padding-left: 0;
+					margin-top: 20px;
+				}
 
-		button {
-			max-width: 150px;
-			margin-top: 20px;
-			width: 100%;
-		}
+				button {
+					max-width: 150px;
+					margin-top: 20px;
+					width: 100%;
+				}
 
-		table {
-			margin-top: 10px;
-		}
-	}
+				table {
+					margin-top: 10px;
+				}
 
-	&.room-management {
-		#wrapper,
-		table {
-			margin-top: 0;
+				.inner-form-container {
+					display: block;
+				}
+
+				.tabs {
+					width: 50%;
+					li:nth-of-type(2) {
+						left: 115px;
+					}
+				}
+			}
 		}
 	}
 }

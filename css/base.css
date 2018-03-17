@@ -200,13 +200,27 @@ form input {
   width: 100%;
 }
 table {
-  border-collapse: collapse;
   width: 100%;
   border: 1px solid #848484;
   border-top: 0;
 }
+thead {
+  width: calc(99%);
+}
+tbody {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
 th,
 td {
+  /*width: 1%;*/
   padding: 8px;
   text-align: center;
 }
@@ -228,21 +242,24 @@ select {
   width: 100%;
 }
 #wrapper {
-  width: 100%;
+  width: 65%;
   padding-left: 40px;
-}
-#wrapper th,
-#wrapper td {
-  width: 1%;
-}
-#wrapper thead > tr {
-  position: relative;
-  display: block;
-}
-#wrapper tbody {
-  display: block;
-  max-height: 250px;
-  overflow-y: auto;
+  /*
+    th,
+    td {
+        width: 1%;
+    }
+
+    thead > tr {
+        position: relative;
+        display: block;
+    }
+
+    tbody {
+        display: block;
+        max-height: 250px;
+        overflow-y: auto;
+    }*/
 }
 .block-loader {
   width: 100%;

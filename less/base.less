@@ -126,13 +126,29 @@ form {
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
     border: 1px solid @color-gray;
     border-top: 0;
 }
 
+thead {
+    width: calc( 100% - 1em);
+}
+
+tbody {
+    display: block;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
 th, td {
+    /*width: 1%;*/
     padding: 8px;
     text-align: center;
 }
@@ -160,9 +176,9 @@ select {
 }
 
 #wrapper {
-    width: 100%;
+    width: 65%;
     padding-left: 40px;
-
+/*
     th,
     td {
         width: 1%;
@@ -177,7 +193,7 @@ select {
         display: block;
         max-height: 250px;
         overflow-y: auto;
-    }
+    }*/
 }
 
 .block-loader {

@@ -1,7 +1,5 @@
-<div class="manage-container">
-	<strong class="title">Office Registration</strong>
-
-	<div class="manage-inner-container">
+<div class="form-container">
+	<div class="inner-form-container">
 		<form class="manage-form" action="" method="POST">
 			<input type="text" name="account" placeholder="Account Name">
 			<input type="text" name="username" placeholder="username">

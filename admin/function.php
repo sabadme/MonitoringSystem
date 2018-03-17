@@ -12,10 +12,9 @@ include "admin/office_enable.php";
 
 if (isset($_REQUEST['dashboard'])) {
     include "dashboard.php";
-} else if (isset($_REQUEST['adduser'])) {
-    include "admin/add_user_design.php";
+} else if (isset($_REQUEST['accounts'])) {
+    include "admin/users.php";
 } else if (isset($_REQUEST['add_equipment'])) {
-
     include "admin/add_equipment_design.php";
 } else if (isset($_REQUEST['Catalog'])) {
 
@@ -30,7 +29,7 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/add_room_page.php";
 } else if (isset($_REQUEST['rooms'])) {
 
-    include "admin/rooms.php";
+    include "admin/rooms_manage.php";
 } else if (isset($_REQUEST['booking'])) {
 
     include "admin/booking_page.php";
@@ -43,9 +42,9 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/room_status.php";
 } else if (isset($_REQUEST['Update_roomStatus'])) {
     include "admin/room_status1.php";
-} else if (isset($_REQUEST['addoffice'])) {
+}/* else if (isset($_REQUEST['addoffice'])) {
     include "admin/add_office_design.php";
-} else if (isset($_REQUEST['addoffices'])) {
+}*/ else if (isset($_REQUEST['addoffices'])) {
     include "admin/add_office_design.php";
 } else if (isset($_REQUEST['officeequipmentassign'])) {
     include "admin/office_select_equipment.php";

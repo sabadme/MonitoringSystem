@@ -8,12 +8,11 @@ $db="monitoringsystemdatabase";
 $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
  ?>
-<div class="manage-container room-management">
-    <strong class="title">Room Management</strong>
+<div class="form-container">
 
-    <input class="search" type="text" placeholder="search room..." />
-    <div class="manage-inner-container">
 
+    <div class="inner-form-container">
+        <input class="search" type="text" placeholder="search room..." />
         <div class="table-container" id="wrapper">
             <table>
                 <thead>

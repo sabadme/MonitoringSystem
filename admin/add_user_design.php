@@ -1,7 +1,5 @@
-<div class="manage-container">
-	<strong class="title">Account Registration</strong>
-
-	<div class="manage-inner-container">
+<div class="form-container">
+	<div class="inner-form-container">
 		<form class="manage-form" action="" method="POST">
 			<select name="status">
 				<option>Teacher</option>

@@ -200,13 +200,27 @@ form input {
   width: 100%;
 }
 table {
-  border-collapse: collapse;
   width: 100%;
   border: 1px solid #848484;
   border-top: 0;
 }
+thead {
+  width: calc(99%);
+}
+tbody {
+  display: block;
+  max-height: 250px;
+  overflow-y: auto;
+}
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
 th,
 td {
+  /*width: 1%;*/
   padding: 8px;
   text-align: center;
 }
@@ -228,21 +242,24 @@ select {
   width: 100%;
 }
 #wrapper {
-  width: 100%;
+  width: 65%;
   padding-left: 40px;
-}
-#wrapper th,
-#wrapper td {
-  width: 1%;
-}
-#wrapper thead > tr {
-  position: relative;
-  display: block;
-}
-#wrapper tbody {
-  display: block;
-  max-height: 250px;
-  overflow-y: auto;
+  /*
+    th,
+    td {
+        width: 1%;
+    }
+
+    thead > tr {
+        position: relative;
+        display: block;
+    }
+
+    tbody {
+        display: block;
+        max-height: 250px;
+        overflow-y: auto;
+    }*/
 }
 .block-loader {
   width: 100%;
@@ -2031,13 +2048,13 @@ footer .botfooter {
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
 }
-.main-nav .menu li .manage {
+.main-nav .menu li.manage-btn {
   position: relative;
 }
-.main-nav .menu li .manage ul {
+.main-nav .menu li.manage-btn ul {
   display: none;
 }
-.main-nav .menu li .manage:hover > ul {
+.main-nav .menu li.manage-btn:hover > ul {
   display: block;
   width: 100%;
   position: absolute;
@@ -2045,7 +2062,7 @@ footer .botfooter {
   left: 0;
   top: 100%;
 }
-.main-nav .menu li .manage:hover > ul li {
+.main-nav .menu li.manage-btn:hover > ul li {
   margin-right: 0;
   border-top: 1px solid #fff;
 }
@@ -2184,24 +2201,26 @@ footer .botfooter {
   width: 100%;
   margin: 0 auto 30px;
 }
-.manage-container .manage-inner-container {
+.manage-container .inner-form-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  max-width: 1230px;
   width: 100%;
   margin: 0 auto;
 }
-.manage-container.equipment-registration .manage-inner-container {
+.manage-container.registration .inner-form-container {
   padding: 30px;
   border: 1px solid #b4b4b4;
 }
-.manage-container.equipment-registration .tabs {
+.manage-container.registration .tabs {
   position: relative;
 }
-.manage-container.equipment-registration .tabs li {
+.manage-container.registration .tabs.accounts li:nth-of-type(2) {
+  left: 100px;
+}
+.manage-container.registration .tabs li {
   position: absolute;
   top: 0;
   padding: 15px 20px;
@@ -2209,57 +2228,57 @@ footer .botfooter {
   border-bottom: 0;
   cursor: pointer;
 }
-.manage-container.equipment-registration .tabs li + div {
+.manage-container.registration .tabs li + div {
   display: none;
 }
-.manage-container.equipment-registration .tabs li span {
+.manage-container.registration .tabs li span {
   font-family: sans-serif;
   font-size: 1.2142857142857142rem;
   text-transform: uppercase;
 }
-.manage-container.equipment-registration .tabs li:nth-of-type(2) {
+.manage-container.registration .tabs li:nth-of-type(2) {
   left: 103px;
 }
-.manage-container.equipment-registration .tabs li.active {
+.manage-container.registration .tabs li.active {
   background: #0250b9;
 }
-.manage-container.equipment-registration .tabs li.active span {
+.manage-container.registration .tabs li.active span {
   color: #fff;
 }
-.manage-container.equipment-registration .tabs li.active + div {
+.manage-container.registration .tabs li.active + div {
   display: block;
   padding-top: 47px;
 }
-.manage-container.add-room label,
-.manage-container.room-management label {
+.manage-container.registration .tabs-container.room-management label {
   font-size: 1.0714285714285714rem;
   text-transform: uppercase;
   font-family: sans-serif;
 }
-.manage-container.add-room input,
-.manage-container.room-management input {
+.manage-container.registration .tabs-container.room-management input {
   padding: 10px;
   margin-left: 10px;
 }
-.manage-container.add-room #wrapper,
-.manage-container.room-management #wrapper {
+.manage-container.registration .tabs-container.room-management #wrapper {
   max-width: 700px;
   padding-left: 0;
   margin-top: 20px;
 }
-.manage-container.add-room button,
-.manage-container.room-management button {
+.manage-container.registration .tabs-container.room-management button {
   max-width: 150px;
   margin-top: 20px;
   width: 100%;
 }
-.manage-container.add-room table,
-.manage-container.room-management table {
+.manage-container.registration .tabs-container.room-management table {
   margin-top: 10px;
 }
-.manage-container.room-management #wrapper,
-.manage-container.room-management table {
-  margin-top: 0;
+.manage-container.registration .tabs-container.room-management .inner-form-container {
+  display: block;
+}
+.manage-container.registration .tabs-container.room-management .tabs {
+  width: 50%;
+}
+.manage-container.registration .tabs-container.room-management .tabs li:nth-of-type(2) {
+  left: 115px;
 }
 .catalog-container {
   margin-top: 80px;

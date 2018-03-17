@@ -1,5 +1,5 @@
-<div class="equipment-form-container">
-    <div class="manage-inner-container">
+<div class="form-container">
+    <div class="inner-form-container">
 
         <form action="" method="POST"  enctype="multipart/form-data">
             <input type="file" name="imgs"/>

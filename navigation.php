@@ -12,26 +12,26 @@ if($status=="Admin"){
                 <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
             </li>
 			<li class="manage-btn">
-				<span class="manage">MANAGE</button>
+				<span class="manage">MANAGE</span>
 				<ul>
 					<li>
-						<button class="adduser" name="adduser" type="submit">Add User</button>
+						<button class="adduser" name="accounts" type="submit">Accounts</button>
 					</li>
 					<li>
-						<button class="addequipment" name="add_equipment" type="submit">Add Equipment</span>
+						<button class="addequipment" name="add_equipment" type="submit">Equipments</button>
 					</li>
-                    <li>
+                 <!--<li>
                         <button class="addroom" name="add_room" type="submit">Add Room</button>
-                    </li>
+                    </li>-->
                     <li>
                         <button class="rooms" name="rooms" type="submit">Rooms</button>
                     </li>
-                    <li>
+                    <!--<li>
                         <button class="rooms" name="addoffice" type="submit">Add Office</button>
                     </li>
                       <li>
                         <button class="rooms" name="addteacher" type="submit">Add Teacher</button>
-                    </li>
+                    </li>-->
 				</ul>
 			</li>
 			<!-- <li>
@@ -54,7 +54,7 @@ if($status=="Admin"){
                 <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
             </li>
             	<li class="manage-btn">
-				<span class="manage">MANAGE</button>
+				<span class="manage">MANAGE</span>
 				<ul>
 					<li>
 						<button class="adduser" name="addSA" type="submit">Add User</button>

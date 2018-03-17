@@ -27,7 +27,7 @@
                 </thead>
 
                 <tbody>
-                <?php include"admin/equipment_table.php"; ?>
+                <?php //include"admin/equipment_table.php"; ?>
                 </tbody>
             </table>
         </div>

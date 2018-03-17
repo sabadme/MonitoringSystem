@@ -29,13 +29,13 @@
   -ms-flex: 0 1 25%;
   flex: 0 1 25%;
 }
-.main-nav .menu li .manage {
+.main-nav .menu li.manage-btn {
   position: relative;
 }
-.main-nav .menu li .manage ul {
+.main-nav .menu li.manage-btn ul {
   display: none;
 }
-.main-nav .menu li .manage:hover > ul {
+.main-nav .menu li.manage-btn:hover > ul {
   display: block;
   width: 100%;
   position: absolute;
@@ -43,7 +43,7 @@
   left: 0;
   top: 100%;
 }
-.main-nav .menu li .manage:hover > ul li {
+.main-nav .menu li.manage-btn:hover > ul li {
   margin-right: 0;
   border-top: 1px solid #fff;
 }

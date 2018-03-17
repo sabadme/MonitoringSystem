@@ -1,19 +1,16 @@
-<?php 
-include"admin/generate_code.php";
- ?>
 <div class="manage-container registration">
-	<strong class="title">Equipments Registration</strong>
+    <strong class="title">ACCOUNTS</strong>
 
     <div class="tabs-container">
-        <ul class="tabs">
+        <ul class="tabs accounts">
             <li class="active">
-                <span>Single</span>
+                <span>USERS</span>
             </li>
-                <?php include "admin/single_equipment.php"; ?>
+            <?php include "admin/add_user_design.php"; ?>
             <li>
-                <span>Set</span>
+                <span>OFFICES</span>
             </li>
-                <?php include "admin/set_equipment.php"; ?>
+            <?php include "admin/add_office_design.php"; ?>
         </ul>
     </div>
 </div>
