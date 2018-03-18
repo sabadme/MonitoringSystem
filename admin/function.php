@@ -9,6 +9,9 @@ include "admin/enable.php";
 include "admin/disable.php";
 include "admin/office_disabled.php";
 include "admin/office_enable.php";
+include "admin/booking_function.php";
+include "admin/booking_approved.php";
+include "admin/notification_update.php";
 
 if (isset($_REQUEST['dashboard'])) {
     include "dashboard.php";
@@ -60,7 +63,18 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/add_office_design.php";
 } else if (isset($_REQUEST['officeenable'])) {
     include "admin/add_office_design.php";
+} else if (isset($_REQUEST['save_booking'])) {
+    include "admin/booking_page.php";
+} else if (isset($_REQUEST['notif'])) {
+    include "admin/booking_page.php";
+} else if (isset($_REQUEST['approve_booking'])) {
+    include "admin/booking_page.php";
+} else if (isset($_REQUEST['viewreports'])) {
+    include "admin/viewreports.php";
+}  else if (isset($_REQUEST['equipment_list'])) {
+    include "admin/equipment_list.php";
 } else {
     include "dashboard.php";
 }
-?>
+?>  
+

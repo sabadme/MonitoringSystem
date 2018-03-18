@@ -29,6 +29,29 @@ if (mysql_query($update_status)) {?>
     <script>alert("Error"); </script>
     <?php
 }
+
+$get_equipmentName=mysql_query("SELECT * FROM room WHERE id='$Update_roomStatus'");
+$data_equipmentName=mysql_fetch_array($get_equipmentName);
+$equipment_name=$data_equipmentName['equipment'];
+
+$get_equipmentId=mysql_query("SELECT * FROM equipment WHERE equipment_name='$equipment_name'");
+$data_equipmentId=mysql_fetch_array($get_equipmentId);
+$equipment_id=$data_equipmentId['id'];
+
+
+
+$update_statuss="UPDATE equipment SET `equipment_status`='$equipment_action' WHERE id='$equipment_id'";
+
+if (mysql_query($update_statuss)) {?>
+<script>
+	alert("UPDATE STATUS");
+</script>
+
+     <?php
+} else {?>
+    <script>alert("Error"); </script>
+    <?php
+}
 mysql_close($conn);
 }
  ?>

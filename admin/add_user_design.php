@@ -6,6 +6,7 @@
 				<option>Student Assistant</option>
 			</select>
 			<input type="text" name="firstname" placeholder="Firstname">
+			<input type="text" name="middlename" placeholder="Middlename">
 			<input type="text" name="lastname" placeholder="Lastname">
 			<input type="text" name="username" placeholder="username">
 			<input type="password" name="password" placeholder="password">
@@ -19,6 +20,7 @@
 				<thead>
 					<th>FIRSTNAME</th>
 					<th>LASTNAME</th>
+					<th>MIDDLENAME</th>
 					<th>Position</th>
 					<th>Status</th>
 					<th>Action</th>

@@ -37,9 +37,20 @@ if($status=="Admin"){
 			<!-- <li>
                 <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
             </li> -->
-            <li>
+        <!--     <li>
                 <button class="booking" name="booking" type="submit">Booking</button>
+            </li> -->
+             <li>
+                <button class="booking" name="viewreports" type="submit">Reports</button>
             </li>
+                <li>
+                <button class="booking" name="notif" type="submit">Booking</button>
+                <?php include"admin/notifacation.php"; ?>
+                <span><?php echo $count; ?></span>
+            </li>
+              <li>
+                        <button class="rooms" name="equipment_list" type="submit">Equipment List</button>
+                    </li>
 		</ul>
 	</form>
 </nav>
@@ -77,7 +88,7 @@ if($status=="Admin"){
 </nav>
 <?php
 }else{
-	echo $status;
+
 ?>
 	<nav class="main-nav">
 	<form action="" method="POST">
@@ -86,9 +97,7 @@ if($status=="Admin"){
 			<li>
                 <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
             </li>
-            <li>
-                <button type="submit" name="SAreport" class="dashboard"> Report</button>
-            </li>
+
 			
 			<!-- <li>
                 <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>

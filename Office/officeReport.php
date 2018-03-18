@@ -1,4 +1,4 @@
-<?php include "admin/modal.php"; ?>
+<!-- <?php //include "admin/modal.php"; ?> -->
 
 <div class="manage-container">
 	<strong class="title">REPORT FORM</strong>

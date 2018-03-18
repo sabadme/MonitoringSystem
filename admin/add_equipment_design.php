@@ -7,7 +7,7 @@ include"admin/generate_code.php";
     <div class="tabs-container">
         <ul class="tabs">
             <li class="active">
-                <span>Single</span>
+                <span>Single</span> 
             </li>
                 <?php include "admin/single_equipment.php"; ?>
             <li>

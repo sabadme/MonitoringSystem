@@ -1,6 +1,6 @@
 <?php 
 session_start();
-error_reporting(0);
+
 $accountname=$_SESSION['account'];
 $status=$_SESSION['status'];
  ?>
@@ -55,7 +55,7 @@ if(isset($status)){
 
 	<?php include"login.php"; ?> 	
 </div>
-
+	
 </header>
 
 
@@ -72,7 +72,11 @@ if(isset($status)){
 			 ?>
 			<?php include"Office/function.php"; ?>
 			<?php 
+			}else if($status=="Teacher"){
+				$accountname;
+			 include"teacher/function.php";
 			}
+
 			 ?>
 		
 			
@@ -108,7 +112,7 @@ if(isset($status)){
 		});
 	}
 
-	function openModal() {
+	/*function openModal() {
         var modal = document.getElementById('myModal');
 
         // Get the button that opens the modal
@@ -134,18 +138,15 @@ if(isset($status)){
             }
         }
 
-        $.ajax({
-			    	type: 'POST',
-			    	url: 'admin/modal.php'
-			    });
-    }
+        
+    }*/
 
 	
 	jQuery(document).ready(function(){
 		$('.block-loader').fadeOut("slow");
 		$('body').addClass('loaded');
 		addActive();
-        openModal();
+        /*openModal();*/
 	});
 
 	jQuery(window).on('unload', function(){
