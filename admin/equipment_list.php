@@ -3,60 +3,61 @@
 	<strong class="title">Equipments Registration</strong>
 
     <div class="tabs-container">
+   
         <ul class="tabs list">
-            <li class="active">
-                <span>Broken</span> 
-            </li>
-                <?php include "admin/brooken_equipment.php"; ?>
             <li>
-                <span>Expired</span>
+                <form action="" method="POST">
+               <button type="submit" name="broken">Broken</button>
+               </form>
             </li>
-               <?php include "admin/brooken_equipment.php"; ?>
+            
+              <?php 
+              if(isset($_REQUEST['broken'])){
+              include "admin/brooken_equipment.php"; 
+              }
+              ?>
+
+
+            <li>
+            <form action="" method="POST">
+               <button type="submit" name="expired">Expired</button>
+               </form>
+            </li>
+               <?php 
+                if(isset($_REQUEST['expired'])){
+               include "admin/expired.php"; 
+                 }
+               ?>
+
+
+
              <li>
-                <span>Unassigned</span>
+                <form action="" method="POST">
+               <button type="submit" name="unassigned">Unassigned</button>
+               </form>
             </li>
-                <?php include "admin/brooken_equipment.php"; ?>
+                <?php 
+                if(isset($_REQUEST['unassigned'])){
+                include "admin/unassigned.php"; 
+            }
+                ?>
+
+
+
             <li>
-                <span>Up to date</span>
+                <form action="" method="POST">
+               <button type="submit" name="Uptodate">Up to date</button>
+               </form>
             </li>
-                <?php include "admin/brooken_equipment.php"; ?>
+                 <?php 
+                 if(isset($_REQUEST['Uptodate'])){
+                 include "admin/Uptodate.php"; 
+                 }
+                 ?>
         </ul>
+        
     </div>
+
 </div>
 	</div>
 
-<script>
-    $(document).ready(function(){
-        $('.tabs li').click(function(){
-
-            $(this).each(function(){
-                $(this).addClass('active');
-
-                if($(this).siblings().hasClass('active')) {
-                    $(this).siblings().removeClass('active');
-                }
-            });
-        });
-    });
-
-    function myFunction() {
-        // Declare variables
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-</script>

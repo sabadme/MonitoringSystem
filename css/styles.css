@@ -1,3 +1,15 @@
+.manage-container.registration .tabs li:nth-of-type(2) {
+  left: 113px !important;
+}
+
+.manage-container.registration .tabs li:nth-of-type(3) {
+  left: 229px;
+}
+
+.manage-container.registration .tabs li:nth-of-type(4) {
+  left: 382px;;
+}
+
 :root {
   font-size: 14px;
 }
@@ -2319,7 +2331,7 @@ footer .botfooter {
   cursor: pointer;
 }
 .manage-container.registration .tabs li + div {
-  display: none;
+  display: block;
 }
 .manage-container.registration .tabs li span {
   font-family: sans-serif;

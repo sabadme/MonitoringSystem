@@ -1,11 +1,10 @@
 
 <?php 
-if(isset($_REQUEST['broken'])){
+if(isset($_REQUEST['Uptodate'])){
  ?>
 <div class="form-container">
     <div class="inner-form-container">
-        <div class="table-container" id="wrapper">
-         
+
         <div class="table-container" id="wrapper">
             <div class="btndivstyle">
      <input id='myInput' onkeyup='searchTable()' type='text'>
@@ -30,7 +29,7 @@ $db="monitoringsystemdatabase";
 $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
 
-$get_image=mysql_query("SELECT * FROM equipment WHERE equipment_status='Broken'");
+$get_image=mysql_query("SELECT * FROM equipment WHERE equipment_status='Up To Date'");
 while($data_image=mysql_fetch_array($get_image)){
 $image_status=$data_image['equipment_status'];
 $image_filename=$data_image['equipment_filename'];
@@ -76,7 +75,6 @@ function searchTable() {
     }
 }
 </script>
-
 
 
 

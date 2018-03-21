@@ -1,17 +1,11 @@
-
-<?php 
-if(isset($_REQUEST['broken'])){
- ?>
 <div class="form-container">
     <div class="inner-form-container">
         <div class="table-container" id="wrapper">
-         
+          
         <div class="table-container" id="wrapper">
             <div class="btndivstyle">
      <input id='myInput' onkeyup='searchTable()' type='text'>
       </div>
-        
-
 <table id='myTable'>
                 <thead>
                 <th></th>
@@ -30,7 +24,7 @@ $db="monitoringsystemdatabase";
 $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
 
-$get_image=mysql_query("SELECT * FROM equipment WHERE equipment_status='Broken'");
+$get_image=mysql_query("SELECT * FROM equipment WHERE equipment_status='Unassigned'");
 while($data_image=mysql_fetch_array($get_image)){
 $image_status=$data_image['equipment_status'];
 $image_filename=$data_image['equipment_filename'];
@@ -50,9 +44,6 @@ $image_filename=$data_image['equipment_filename'];
         </div>
     </div>
 </div>
-<?php 
-}
- ?>
 <script>
 function searchTable() {
     var input, filter, found, table, tr, td, i, j;
@@ -76,7 +67,4 @@ function searchTable() {
     }
 }
 </script>
-
-
-
 

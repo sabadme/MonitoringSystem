@@ -30,8 +30,8 @@ if ($status == "Admin") {
                 </li>
                 <li>
                     <button class="booking" name="notif" type="submit">Booking</button>
-                    <?php /*include "admin/notifacation.php"; */?>
-                    <!--<span><?php /*echo $count; */?></span>-->
+                     <?php include "admin/notifacation.php"; ?>
+                  <span><?php echo $count; ?></span> 
                 </li>
                 <li>
                     <button class="equips" name="equipment_list" type="submit">Equipment List</button>

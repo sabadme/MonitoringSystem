@@ -12,6 +12,9 @@ include "admin/office_enable.php";
 include "admin/booking_function.php";
 include "admin/booking_approved.php";
 include "admin/notification_update.php";
+include "admin/finalset_equipment.php";
+
+
 
 if (isset($_REQUEST['dashboard'])) {
     include "dashboard.php";
@@ -73,7 +76,19 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/viewreports.php";
 }  else if (isset($_REQUEST['equipment_list'])) {
     include "admin/equipment_list.php";
-} else {
+}   else if(isset($_REQUEST['broken'])){
+  include "admin/equipment_list.php"; 
+}    else if(isset($_REQUEST['expired'])){
+  include "admin/equipment_list.php"; 
+}    else if(isset($_REQUEST['unassigned'])){
+  include "admin/equipment_list.php"; 
+}    else if(isset($_REQUEST['Uptodate'])){
+  include "admin/equipment_list.php"; 
+}    else if(isset($_REQUEST['Add_equipment_set'])){
+  include "admin/equipment_set_check.php"; 
+}    else if(isset($_REQUEST['Add_equipment_setFinal'])){
+  include "admin/equipment_set_check.php"; 
+}else {
     include "dashboard.php";
 }
 ?>  

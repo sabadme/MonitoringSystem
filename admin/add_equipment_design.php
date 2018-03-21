@@ -13,7 +13,7 @@ include"admin/generate_code.php";
             <li>
                 <span>Set</span>
             </li>
-                <?php include "admin/set_equipment.php"; ?>
+             <?php include "admin/set_equipment.php"; ?>  
         </ul>
     </div>
 </div>
