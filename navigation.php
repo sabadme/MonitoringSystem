@@ -1,117 +1,102 @@
+<?php
+if ($status == "Admin") {
 
-<?php 
-if($status=="Admin"){
+    ?>
 
- ?>
+    <nav class="main-nav">
+        <form action="" method="POST">
+            <ul class="menu">
 
-<nav class="main-nav">
-	<form action="" method="POST">
-		<ul class="menu">	
-
-			<li>
-                <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
-            </li>
-			<li class="manage-btn">
-				<span class="manage">MANAGE</span>
-				<ul>
-					<li>
-						<button class="adduser" name="accounts" type="submit">Accounts</button>
-					</li>
-					<li>
-						<button class="addequipment" name="add_equipment" type="submit">Equipments</button>
-					</li>
-                 <!--<li>
-                        <button class="addroom" name="add_room" type="submit">Add Room</button>
-                    </li>-->
-                    <li>
-                        <button class="rooms" name="rooms" type="submit">Rooms</button>
-                    </li>
-                    <!--<li>
-                        <button class="rooms" name="addoffice" type="submit">Add Office</button>
-                    </li>
-                      <li>
-                        <button class="rooms" name="addteacher" type="submit">Add Teacher</button>
-                    </li>-->
-				</ul>
-			</li>
-			<!-- <li>
-                <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
-            </li> -->
-        <!--     <li>
-                <button class="booking" name="booking" type="submit">Booking</button>
-            </li> -->
-             <li>
-                <button class="booking" name="viewreports" type="submit">Reports</button>
-            </li>
                 <li>
-                <button class="booking" name="notif" type="submit">Booking</button>
-                <?php include"admin/notifacation.php"; ?>
-                <span><?php echo $count; ?></span>
-            </li>
-              <li>
-                        <button class="rooms" name="equipment_list" type="submit">Equipment List</button>
-                    </li>
-		</ul>
-	</form>
-</nav>
-<?php 
-}else if($status=="Office"){
-	?>
-	<nav class="main-nav">
-	<form action="" method="POST">
-		<ul class="menu">	
+                    <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
+                </li>
+                <li class="manage-btn">
+                    <span class="manage">MANAGE</span>
+                    <ul>
+                        <li>
+                            <button class="adduser" name="accounts" type="submit">Accounts</button>
+                        </li>
+                        <li>
+                            <button class="addequipment" name="add_equipment" type="submit">Equipments</button>
+                        </li>
+                        <li>
+                            <button class="rooms" name="rooms" type="submit">Rooms</button>
+                        </li>
+                    </ul>
+                </li>
 
-			<li>
-                <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
-            </li>
-            	<li class="manage-btn">
-				<span class="manage">MANAGE</span>
-				<ul>
-					<li>
-						<button class="adduser" name="addSA" type="submit">Add User</button>
-					</li>
-					
-				</ul>
-			</li>
-	
-			<!-- <li>
-                <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
-            </li> -->
-            <li>
-                <button class="booking" name="booking" type="submit">Booking</button>
-            </li>
-			<li>
-                <button type="submit" name="report" class="dashboard">Report</button>
-            </li>
-		</ul>
-	</form>
-</nav>
-<?php
-}else{
+                <li>
+                    <button class="reports" name="viewreports" type="submit">Reports</button>
+                </li>
+                <li>
+                    <button class="booking" name="notif" type="submit">Booking</button>
+                    <?php /*include "admin/notifacation.php"; */?>
+                    <!--<span><?php /*echo $count; */?></span>-->
+                </li>
+                <li>
+                    <button class="equips" name="equipment_list" type="submit">Equipment List</button>
+                </li>
+            </ul>
+        </form>
+    </nav>
+    <?php
+} else if ($status == "Office") {
+    ?>
+    <nav class="main-nav">
+        <form action="" method="POST">
+            <ul class="menu">
 
-?>
-	<nav class="main-nav">
-	<form action="" method="POST">
-		<ul class="menu">	
+                <li>
+                    <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
+                </li>
+                <li class="manage-btn">
+                    <span class="manage">MANAGE</span>
+                    <ul>
+                        <li>
+                            <button class="adduser" name="addSA" type="submit">Add User</button>
+                        </li>
 
-			<li>
-                <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
-            </li>
+                    </ul>
+                </li>
 
-			
-			<!-- <li>
-                <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
-            </li> -->
-            <li>
-                <button class="booking" name="booking" type="submit">Booking</button>
-            </li>
-            <li>
-                <button class="reports" name="reports" type="submit">Reports</button>
-            </li>
-		</ul>
-	</form>
-</nav>
-<?php
+                <!-- <li>
+                    <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
+                </li> -->
+                <li>
+                    <button class="booking" name="booking" type="submit">Booking</button>
+                </li>
+                <li>
+                    <button type="submit" name="report" class="dashboard">Report</button>
+                </li>
+            </ul>
+        </form>
+    </nav>
+    <?php
+} else {
+
+    ?>
+    <nav class="main-nav">
+        <form action="" method="POST">
+            <ul class="menu">
+
+                <li>
+                    <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
+                </li>
+
+
+                <!-- <li>
+                    <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
+                </li> -->
+                <li>
+                    <button class="booking" name="booking" type="submit">Booking</button>
+                </li>
+                <li>
+                    <button class="reports" name="reports" type="submit">Reports</button>
+                </li>
+            </ul>
+        </form>
+    </nav>
+    <?php
 }
- ?>
+?>
 

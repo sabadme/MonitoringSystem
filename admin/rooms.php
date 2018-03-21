@@ -12,7 +12,7 @@ mysql_select_db($db);
 
 
     <div class="inner-form-container">
-        <input class="search" type="text" placeholder="search room..." />
+        <input class="search" type="text" placeholder="Search rooms..." />
         <div class="table-container" id="wrapper">
             <table>
                 <thead>
@@ -30,13 +30,10 @@ mysql_select_db($db);
                 <tr>
                  
                     <td><?php echo $data_room['room']; ?></td>
-                    
-                    <td>
-                    </td>
                 
                     <td>
                         <form action="" method="POST">
-                        <button name="view_roomE" type="submit" value="<?php echo $rooms; ?>">View</button>
+                        <button class="action secondary" name="view_roomE" type="submit" value="<?php echo $rooms; ?>">View</button>
                         </form>
                     </td>
                   

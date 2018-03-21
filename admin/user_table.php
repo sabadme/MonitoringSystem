@@ -27,11 +27,11 @@ while($data_table=mysql_fetch_array($user_table)){
 <?php 
 if($status=="Enabled"){
  ?>
-  <td><form action="" method="POST"><button name="disable" type="submit" value="<?php echo $id; ?>">Disable</button></form></td>
+  <td><form action="" method="POST"><button class="action disable" name="disable" type="submit" value="<?php echo $id; ?>">Disable</button></form></td>
 <?php 
 }else{
 	?>
-	<td><form action="" method="POST"><button name="enable" type="submit" value="<?php echo $id; ?>">Enable</button></form></td>
+	<td><form action="" method="POST"><button class="action enable" name="enable" type="submit" value="<?php echo $id; ?>">Enable</button></form></td>
 
 	<?php
 }

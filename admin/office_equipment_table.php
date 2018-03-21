@@ -17,16 +17,16 @@ $room=mysql_query("SELECT * FROM room WHERE room='$office_equipment_table'");
 $data_room=mysql_fetch_array($room);
 $officename=$data_room['room'];
  ?>
-<div class="manage-container room-management">
-    <strong class="title">ROOM     <?php echo $officename; ?></strong>
+<div class="manage-container room-update">
+    <strong class="title">Update <?php echo $officename; ?> Equipments</strong>
 
-    <input class="search" type="text" placeholder="search room..." />
-    <div class="manage-inner-container">
+    <input class="search" type="text" placeholder="Search equipments..." />
+    <div class="inner-form-container">
  
         <div class="table-container" id="wrapper">
             <table>
                 <thead>
-                <th>Room</th>
+                <th>Equipments</th>
                 <th>Status</th>
                 <th>Action</th>
                 <th></th>
@@ -49,7 +49,7 @@ $officename=$data_room['room'];
                     <td>
                            <form action="" method="POST">
                         <select name="equipment_action">
-                             
+                            <option value="" disabled selected>Please Select..</option>
                             <option>Up to date</option>
                             <option>Broken</option>
                             <option>Expired</option>
@@ -58,7 +58,7 @@ $officename=$data_room['room'];
                 </td>
                 <td>
                     
-                        <button name="Update_roomStatus" type="submit" value="<?php echo $room_id; ?>">Update</button>
+                        <button class="action secondary" name="Update_roomStatus" type="submit" value="<?php echo $room_id; ?>">Update</button>
                          
                           </form>
                     </td>

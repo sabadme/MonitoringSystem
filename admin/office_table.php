@@ -17,17 +17,17 @@ $office_name=$data_office['account'];
 		<?php 
 		if($ed_status=="Enabled"){
 		 ?>
-		<td><form action="" method="POST"><button name="officedisable" type="submit" value="<?php echo $data_office['id']; ?>">Disabled</button></form></td>
+		<td><form action="" method="POST"><button class="action disable" name="officedisable" type="submit" value="<?php echo $data_office['id']; ?>">Disable</button></form></td>
 		<?php 
 		}else{
 			?>
-			<td><form action="" method="POST"><button type="submit" name="officeenable" value="<?php echo $data_office['id']; ?>">Enable</button></form></td>
+			<td><form action="" method="POST"><button class="action enable" type="submit" name="officeenable" value="<?php echo $data_office['id']; ?>">Enable</button></form></td>
 			<?php
 		}
 		 ?>
 		
-		<td><form action="" method="POST"><button type="submit" name="officeequipmentassign" value="<?php echo $office_id; ?>">Assigned</button></form></td>
-		<td><form action="" method="POST"><button name="office_equipment_table" type="submit" value="<?php echo $office_name; ?>">View Equipment</button></form></td>
+		<td><form action="" method="POST"><button class="action secondary" type="submit" name="officeequipmentassign" value="<?php echo $office_id; ?>">Equipments</button></form></td>
+		<td><form action="" method="POST"><button class="action tertiary" name="office_equipment_table" type="submit" value="<?php echo $office_name; ?>">Manage</button></form></td>
 	</tr>
 	<?php
 }

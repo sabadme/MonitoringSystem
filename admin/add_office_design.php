@@ -1,21 +1,22 @@
 <div class="form-container">
 	<div class="inner-form-container">
 		<form class="manage-form" action="" method="POST">
-			<input type="text" name="account" placeholder="Account Name">
-			<input type="text" name="username" placeholder="username">
-			<input type="password" name="password" placeholder="password">
+			<input type="text" name="account" placeholder="Office Name">
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password">
 			<button type="submit" name="addoffices">Add</button>
 		</form>
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
-			<input type="text" class="searchbtn" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search offices..">
 			</div>
 				<table id="myTable">
 				<thead>
-					<th>Office</th>
+					<th>Offices</th>
 					<th>Status</th>
-					<th>Enable</th>
-					<th>Equipment Assign</th>
+					<th>E / D</th>
+					<th>Add</th>
+					<th>Equipments</th>
 				</thead>	
 
 				<tbody>

@@ -12,13 +12,31 @@
 		text-transform: uppercase;
 		max-width: @page-max_width;
 		width: 100%;
-		margin: 0 auto 30px;
+		margin: 0 0 30px;
 	}
 
 	.inner-form-container {
 		.flex-layout;
 		width: 100%;
 		margin: 0 auto;
+	}
+
+	&.select-equipments {
+		#wrapper {
+			padding-left: 0;
+		}
+
+		button {
+			margin-top: 20px;
+			max-width: 200px;
+		}
+	}
+
+	&.room-update, 
+	&.view-reports {
+		#wrapper {
+			padding-left: 0;
+		}
 	}
 
 	&.registration {
@@ -83,23 +101,11 @@
 
 				input {
 					padding: 10px;
-					margin-left: 10px;
 				}
 
 				#wrapper {
-					max-width: 700px;
-					padding-left: 0;
-					margin-top: 20px;
-				}
-
-				button {
-					max-width: 150px;
-					margin-top: 20px;
 					width: 100%;
-				}
-
-				table {
-					margin-top: 10px;
+					padding-left: 0;
 				}
 
 				.inner-form-container {

@@ -1,4 +1,4 @@
-<style type="text/css">
+<!-- <style type="text/css">
     body{
         font-family: Arail, sans-serif;
     }
@@ -7,7 +7,7 @@
         width: 300px;
         position: relative;
         display: inline-block;
-        font-size: 14px;
+        font-size: 14px;    
     }
     .search-box input[type="text"]{
         height: 32px;
@@ -36,7 +36,7 @@
     .result p:hover{
         background: #f2f2f2;
     }
-</style>
+</style> -->
 
 <div class="booking-container">
     <strong class="title">Booking Lounge</strong>
@@ -109,8 +109,10 @@
 
                         ?>
                         <div>
+                            <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
+                            
                             <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['equipment_name']; ?>"/>
-                            <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label>
+                            
                         </div>
 
                         <?php

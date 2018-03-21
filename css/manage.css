@@ -10,7 +10,7 @@
   text-transform: uppercase;
   max-width: 1230px;
   width: 100%;
-  margin: 0 auto 30px;
+  margin: 0 0 30px;
 }
 .manage-container .inner-form-container {
   display: -webkit-box;
@@ -20,6 +20,17 @@
   display: flex;
   width: 100%;
   margin: 0 auto;
+}
+.manage-container.select-equipments #wrapper {
+  padding-left: 0;
+}
+.manage-container.select-equipments button {
+  margin-top: 20px;
+  max-width: 200px;
+}
+.manage-container.room-update #wrapper,
+.manage-container.view-reports #wrapper {
+  padding-left: 0;
 }
 .manage-container.registration .inner-form-container {
   padding: 30px;
@@ -67,20 +78,10 @@
 }
 .manage-container.registration .tabs-container.room-management input {
   padding: 10px;
-  margin-left: 10px;
 }
 .manage-container.registration .tabs-container.room-management #wrapper {
-  max-width: 700px;
-  padding-left: 0;
-  margin-top: 20px;
-}
-.manage-container.registration .tabs-container.room-management button {
-  max-width: 150px;
-  margin-top: 20px;
   width: 100%;
-}
-.manage-container.registration .tabs-container.room-management table {
-  margin-top: 10px;
+  padding-left: 0;
 }
 .manage-container.registration .tabs-container.room-management .inner-form-container {
   display: block;

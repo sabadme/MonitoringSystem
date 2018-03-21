@@ -101,7 +101,6 @@ button {
     background: @cobalt;
     padding: 10px 15px;
     border: 0;
-    margin-top: 10px;
     color: @white;
     .font-size(15);
     text-transform: uppercase;
@@ -109,8 +108,45 @@ button {
     cursor: pointer;
     width: 100%;
 
+    &:focus {
+        outline: none;
+    }
+
     &:hover {
         background: lighten(@cobalt, 5%);
+    }
+
+    &.action {
+        .font-size(12);
+        .round-borders(8px);
+        max-width: 110px;
+
+        &.disable {
+            background: darkred;
+
+            &:hover {
+             background: lighten(darkred, 5%);
+            }
+        }
+
+        &.enable {
+            background: darkgreen;
+
+            &:hover {
+                background: lighten(darkgreen, 5%);
+            }
+        }
+
+         &.tertiary {
+           background: none;
+           color: red;
+           border: 1px solid;
+
+           &:hover {
+             background: red;
+             color: @white;
+           }
+        }
     }
 }
 
@@ -122,6 +158,11 @@ form {
         padding: 10px;
         margin-bottom: 10px;
         width: 100%;
+
+        &:focus {
+            outline: none;
+            border-color: @cobalt;
+        }
     }
 }
 
@@ -151,6 +192,10 @@ th, td {
     /*width: 1%;*/
     padding: 8px;
     text-align: center;
+    .font-size(15);
+    text-transform: capitalize;
+    font-family: @font-family-base;
+    vertical-align: middle;
 }
 
 td:first-child {
@@ -162,21 +207,39 @@ tr:nth-child(even) {
 }
 
 th {
-    background-color: @cobalt;
+    background-color: slategrey;
     color: @white;
+    padding: 20px;
+    text-transform: uppercase;
 }
 
 .search {
     margin: 0 0 10px !important;
+    padding: 10px;
+    .font-size(12);
+    font-family: @font-family-base;
+    width: 100%;
+    max-width: 250px;
+
+    &:focus {
+        outline: none;
+        border-color: @cobalt;
+    }
 }
 
 select {
     padding: 10px;
     width: 100%;
+    margin-bottom: 10px;
+
+    &:focus {
+        outline: none;
+        border-color: @cobalt;
+    }
 }
 
 #wrapper {
-    width: 65%;
+    width: 70%;
     padding-left: 40px;
 /*
     th,

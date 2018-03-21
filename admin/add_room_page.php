@@ -9,8 +9,8 @@
                 <label>Equipments</label>
                 <table>
                     <thead>
+                    <th>Image</th>
                     <th>Name</th>
-                    <th></th>
                     <th>Code</th>
                     <th></th>
                     </thead>

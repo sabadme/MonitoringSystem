@@ -117,15 +117,19 @@
 				}
 
 				&.reports:before {
-				    background: url(../images/svg/report-symbol.svg) no-repeat;
-				    background-size: contain;
-				    background-position: 100%;
+				   	content: @report-icon;
 				}
 
-				&.generatemenu:before {
-				    background: url(../images/svg/qr-code.svg) no-repeat;
-				    background-size: contain;
-				    background-position: 100%;
+				&.booking:before {
+				    content: @booking-icon;
+				}
+
+				&.equips:before {
+				    content: @equips-icon;
+				}
+
+				&.rooms:before {
+				    content: @rooms-icon;
 				}
 
 				span {

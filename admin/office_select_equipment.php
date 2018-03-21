@@ -4,23 +4,17 @@ if(isset($_REQUEST['officeequipmentassign'])){
     $officeequipmentassign=$_REQUEST['officeequipmentassign'];
 
  ?>
-<div class="manage-container add-room">
-    <strong class="title">Room Select Equipment</strong>
+<div class="manage-container select-equipments">
+    <strong class="title">Select Room Equipments</strong>
   <form action="" method="POST">
-    <div class="field">
-  
-     
-    </div>
-
-    <div class="manage-inner-container">
+    <div class="inner-form-container">
         <div class="table-container" id="wrapper">
-            <label>Equipments</label>
             <table>
                 <thead>
-                    <th>Name</th>
-                    <th></th> 
+                    <th>Image</th>
+                    <th>Name</th> 
                     <th>Code</th>
-                    <th></th>
+                    <th>Select</th>
                 </thead>
 
                 <tbody> 

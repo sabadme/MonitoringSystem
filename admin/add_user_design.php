@@ -2,19 +2,20 @@
 	<div class="inner-form-container">
 		<form class="manage-form" action="" method="POST">
 			<select name="status">
+				<option value="" disabled selected>Please Select..</option>
 				<option>Teacher</option>
 				<option>Student Assistant</option>
 			</select>
 			<input type="text" name="firstname" placeholder="Firstname">
 			<input type="text" name="middlename" placeholder="Middlename">
 			<input type="text" name="lastname" placeholder="Lastname">
-			<input type="text" name="username" placeholder="username">
-			<input type="password" name="password" placeholder="password">
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password">
 			<button type="submit" name="add_user">Add</button>
 		</form>
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
-			<input type="text" class="searchbtn" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search names..">
 			</div>
 				<table id="myTable">
 				<thead>
@@ -23,7 +24,7 @@
 					<th>MIDDLENAME</th>
 					<th>Position</th>
 					<th>Status</th>
-					<th>Action</th>
+					<th></th>
 				</thead>
 
 				<tbody>

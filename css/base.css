@@ -177,7 +177,6 @@ button {
   background: #0250b9;
   padding: 10px 15px;
   border: 0;
-  margin-top: 10px;
   color: #fff;
   font-size: 1.0714285714285714rem;
   text-transform: uppercase;
@@ -185,8 +184,39 @@ button {
   cursor: pointer;
   width: 100%;
 }
+button:focus {
+  outline: none;
+}
 button:hover {
   background: #025bd2;
+}
+button.action {
+  font-size: 0.8571428571428571rem;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  max-width: 110px;
+}
+button.action.disable {
+  background: darkred;
+}
+button.action.disable:hover {
+  background: #a40000;
+}
+button.action.enable {
+  background: darkgreen;
+}
+button.action.enable:hover {
+  background: #007e00;
+}
+button.action.tertiary {
+  background: none;
+  color: red;
+  border: 1px solid;
+}
+button.action.tertiary:hover {
+  background: red;
+  color: #fff;
 }
 form {
   -webkit-flex-basis: 30%;
@@ -198,6 +228,10 @@ form input {
   padding: 10px;
   margin-bottom: 10px;
   width: 100%;
+}
+form input:focus {
+  outline: none;
+  border-color: #0250b9;
 }
 table {
   width: 100%;
@@ -223,6 +257,10 @@ td {
   /*width: 1%;*/
   padding: 8px;
   text-align: center;
+  font-size: 1.0714285714285714rem;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  vertical-align: middle;
 }
 td:first-child {
   text-transform: capitalize;
@@ -231,18 +269,34 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 th {
-  background-color: #0250b9;
+  background-color: slategrey;
   color: #fff;
+  padding: 20px;
+  text-transform: uppercase;
 }
 .search {
   margin: 0 0 10px !important;
+  padding: 10px;
+  font-size: 0.8571428571428571rem;
+  font-family: sans-serif;
+  width: 100%;
+  max-width: 250px;
+}
+.search:focus {
+  outline: none;
+  border-color: #0250b9;
 }
 select {
   padding: 10px;
   width: 100%;
+  margin-bottom: 10px;
+}
+select:focus {
+  outline: none;
+  border-color: #0250b9;
 }
 #wrapper {
-  width: 65%;
+  width: 70%;
   padding-left: 40px;
   /*
     th,

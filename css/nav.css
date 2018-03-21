@@ -138,16 +138,22 @@
 .main-nav .menu li button.reports:before,
 .main-nav .menu li .button.reports:before,
 .main-nav .menu li .manage.reports:before {
-  background: url(../images/svg/report-symbol.svg) no-repeat;
-  background-size: contain;
-  background-position: 100%;
+  content: '\e911';
 }
-.main-nav .menu li button.generatemenu:before,
-.main-nav .menu li .button.generatemenu:before,
-.main-nav .menu li .manage.generatemenu:before {
-  background: url(../images/svg/qr-code.svg) no-repeat;
-  background-size: contain;
-  background-position: 100%;
+.main-nav .menu li button.booking:before,
+.main-nav .menu li .button.booking:before,
+.main-nav .menu li .manage.booking:before {
+  content: '\e90f';
+}
+.main-nav .menu li button.equips:before,
+.main-nav .menu li .button.equips:before,
+.main-nav .menu li .manage.equips:before {
+  content: '\e910';
+}
+.main-nav .menu li button.rooms:before,
+.main-nav .menu li .button.rooms:before,
+.main-nav .menu li .manage.rooms:before {
+  content: '\e90e';
 }
 .main-nav .menu li button span,
 .main-nav .menu li .button span,
