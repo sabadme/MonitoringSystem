@@ -20,8 +20,8 @@
 				<table id="myTable1">
 				<thead>
 					<th>FIRSTNAME</th>
-					<th>LASTNAME</th>
 					<th>MIDDLENAME</th>
+					<th>LASTNAME</th>
 					<th>Position</th>
 					<th>Status</th>
 					<th></th>

@@ -1,24 +1,47 @@
 <?php 
-include"admin/generate_code.php";
+if(isset($_REQUEST['user_update'])){
+$user_update=$_REQUEST['user_update'];
+
+include"admin/connection.php";
+
+$users=mysql_query("SELECT * FROM tbl_login WHERE id='$user_update'");
+$data_users=mysql_fetch_array($users);
+
  ?>
 <div class="manage-container registration">
-	<strong class="title">Equipments Registration</strong>
+    <strong class="title">ACCOUNTS</strong>
 
     <div class="tabs-container">
-        <ul class="tabs">
+        <ul class="tabs accounts">
             <li class="active">
-                <span>Single</span> 
+                <span>USERS</span>
             </li>
-        <?php include "admin/single_equipment.php"; ?>
+            <?php include "admin/SA_update.php"; ?>
             <li>
-                <span>Set</span>
+                <span>OFFICES</span>
             </li>
-           <?php include"admin/view_equipment_set.php"; ?> 
+            <?php include "admin/add_office_design.php"; ?>
         </ul>
     </div>
 </div>
+<?php 
+}
+ ?>
 
-<!--<script>
+<script>
+    $(document).ready(function(){
+        $('.tabs li').click(function(){
+
+            $(this).each(function(){
+                $(this).addClass('active');
+
+                if($(this).siblings().hasClass('active')) {
+                    $(this).siblings().removeClass('active');
+                }
+            });
+        });
+    });
+
     function myFunction() {
         // Declare variables
         var input, filter, table, tr, td, i;
@@ -39,4 +62,4 @@ include"admin/generate_code.php";
             }
         }
     }
-</script>-->
+</script>

@@ -1,12 +1,14 @@
 <?php
 session_start();
-error_reporting(0);
-$accountname = $_SESSION['account'];
-$status = $_SESSION['status'];
-?>
-<?php
-if (isset($status)) {
-    ?>
+
+$accountname=$_SESSION['account'];
+$status=$_SESSION['status'];
+ ?>
+ <?php
+if(isset($status)){
+ ?>
+
+
 
     <!DOCTYPE html>
     <html>
@@ -93,6 +95,7 @@ if (isset($status)) {
 } else {
     header("location:home.php");
 }
+
 ?>
 <script>
     function addActive() {
@@ -132,7 +135,7 @@ if (isset($status)) {
         });
     }
 
-    function generate() {
+    /*function generate() {
         $('.generate').click(function(){
             $.post('generate_code.php',
                 {name: $chars},
@@ -142,7 +145,7 @@ if (isset($status)) {
                 }
             );
         });
-    }
+    }*/
 
     jQuery(document).ready(function () {
         $('.block-loader').fadeOut("slow");

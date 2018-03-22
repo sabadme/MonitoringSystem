@@ -20,7 +20,7 @@ while($data_table=mysql_fetch_array($user_table)){
 ?>
 <tr>
 <td><?php echo $data_table['firstname']; ?></td>
-<td>php <?php echo $data_table['middlename'] ?></td>
+<td><?php echo $data_table['middlename'] ?></td>
 <td><?php echo $data_table['lastname']; ?></td>
 <td><?php echo $data_table['Status']; ?></td>
 <td><?php echo $data_table['ED_status']; ?></td>
@@ -37,6 +37,7 @@ if($status=="Enabled"){
 }
 
  ?>
+ <td><form action="" method="POST"><button name="user_update" value="<?php echo $data_table['id']; ?>">Update</button></form></td>
 </tr>
 <?php
 

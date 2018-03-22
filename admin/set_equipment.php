@@ -1,11 +1,5 @@
-<div class="equipment-form-container">
-    <div class="manage-inner-container">
-        <div class="generate-container">
-        
-        </div>
-
-
-        <div class="table-container" id="wrapper">
+<div class="manage-container">
+    <div class="table-container" id="wrapper">
             <form action="" method="POST">
             <table>
                 <thead>
@@ -23,5 +17,4 @@
             <button name="Add_equipment_set" type="submit">Add</button>
             </form>
         </div>
-    </div>
 </div>

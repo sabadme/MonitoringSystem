@@ -19,7 +19,7 @@ while($data_equipmentSet=mysql_fetch_array($sql_equipmentSet)){
 	<td><?php echo $data_equipmentSet['equipment_name']; ?></td>
 	<td><?php echo $data_equipmentSet['equipment_start']; ?></td>
 	<td><?php echo $data_equipmentSet['equipment_end']; ?></td>
-	<td><input type="checkbox" name="equipment_check[]" value="<?php echo $data_equipmentSet['equipment_name'] ?>"></td>
+	<td><input type="checkbox" name="equipment_check[]" value="<?php echo $data_equipmentSet['id'] ?>"></td>
 
 	</tr>
 

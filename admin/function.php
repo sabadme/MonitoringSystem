@@ -13,6 +13,9 @@ include "admin/booking_function.php";
 include "admin/booking_approved.php";
 include "admin/notification_update.php";
 include "admin/finalset_equipment.php";
+include "admin/upda_single_equipment_function.php";
+include "admin/sa_update_function.php";
+include "admin/office_update_function.php";
 
 
 
@@ -83,13 +86,27 @@ if (isset($_REQUEST['dashboard'])) {
 }    else if(isset($_REQUEST['unassigned'])){
   include "admin/equipment_list.php"; 
 }    else if(isset($_REQUEST['Uptodate'])){
-  include "admin/equipment_list.php"; 
+  include "admin/equipment_list.php";   
 }    else if(isset($_REQUEST['Add_equipment_set'])){
-  include "admin/equipment_set_check.php"; 
+  include "admin/equipment_set_check.php";
 }    else if(isset($_REQUEST['Add_equipment_setFinal'])){
   include "admin/equipment_set_check.php"; 
+}    else if(isset($_REQUEST['update_equipment'])){
+  include "admin/update_sigle_equipment.php"; 
+}    else if(isset($_REQUEST['user_update'])){
+  include "admin/user_update.php"; 
+}    else if(isset($_REQUEST['sa_update_function'])){
+  include "admin/users.php"; 
+}    else if(isset($_REQUEST['office_update'])){
+  include "admin/office_update.php"; 
+}    else if(isset($_REQUEST['office_update_function'])){
+  include "admin/office_update.php"; 
+}    else if(isset($_REQUEST['addnewset'])){
+  include "admin/set_equipment.php"; 
+}    else if(isset($_REQUEST['generate_codeSet'])){
+  include "admin/equipment_set_check.php"; 
 }else {
-    include "dashboard.php";
+    include "dashboard.php"; 
 }
 ?>  
 

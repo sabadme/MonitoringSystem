@@ -1,24 +1,47 @@
 <?php 
+if(isset($_REQUEST['update_equipment'])){
+    $update_equipment=$_REQUEST['update_equipment'];
+
+include"admin/connection.php";
+
+$select=mysql_query("SELECT * FROM equipment WHERE id='$update_equipment'");
+$data_select=mysql_fetch_array($select);
+
+ ?>
+<?php 
 include"admin/generate_code.php";
  ?>
 <div class="manage-container registration">
-	<strong class="title">Equipments Registration</strong>
+    <strong class="title">Equipments Registration</strong>
 
     <div class="tabs-container">
         <ul class="tabs">
             <li class="active">
                 <span>Single</span> 
             </li>
-        <?php include "admin/single_equipment.php"; ?>
+        <?php include "admin/sigle_equipment_update.php"; ?>
             <li>
                 <span>Set</span>
             </li>
-           <?php include"admin/view_equipment_set.php"; ?> 
+             <?php include "admin/set_equipment.php"; ?>  
         </ul>
     </div>
 </div>
 
-<!--<script>
+<script>
+    $(document).ready(function(){
+        $('.tabs li').click(function(){
+
+            $(this).each(function(){
+                $(this).addClass('active');
+
+                if($(this).siblings().hasClass('active')) {
+                    $(this).siblings().removeClass('active');
+                }
+            });
+        });
+    });
+
     function myFunction() {
         // Declare variables
         var input, filter, table, tr, td, i;
@@ -39,4 +62,7 @@ include"admin/generate_code.php";
             }
         }
     }
-</script>-->
+</script>
+<?php 
+}
+ ?>
