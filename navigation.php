@@ -49,7 +49,7 @@ if ($status == "Admin") {
                 <li>
                     <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
                 </li>
-                <li class="manage-btn">
+                <!--<li class="manage-btn">
                     <span class="manage">MANAGE</span>
                     <ul>
                         <li>
@@ -57,7 +57,7 @@ if ($status == "Admin") {
                         </li>
 
                     </ul>
-                </li>
+                </li>-->
 
                 <!-- <li>
                     <a class="button catalog" href="catalog-index.php?page=0">Equipments</a>
@@ -66,7 +66,7 @@ if ($status == "Admin") {
                     <button class="booking" name="booking" type="submit">Booking</button>
                 </li>
                 <li>
-                    <button type="submit" name="report" class="dashboard">Report</button>
+                    <button type="submit" name="report" class="reports">Report</button>
                 </li>
             </ul>
         </form>

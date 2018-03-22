@@ -1,63 +1,37 @@
+<div class="manage-container list with-banner">
 
-<div class="manage-container registration">
-	<strong class="title">Equipments Registration</strong>
+    <strong class="title">Equipments List</strong>
+    <div class="manage-inner-container">
+        <div class="tabs-container">
 
-    <div class="tabs-container">
-   
-        <ul class="tabs list">
-            <li>
-                <form action="" method="POST">
-               <button type="submit" name="broken">Broken</button>
-               </form>
-            </li>
-            
-              <?php 
-              if(isset($_REQUEST['broken'])){
-              include "admin/brooken_equipment.php"; 
-              }
-              ?>
+            <ul class="tabs list">
+                <li class="active">
+                    <span>Broken</span>
+                </li>
+                <?php include "admin/brooken_equipment.php"; ?>
 
+                <li>
+                    <span>Expired</span>
+                </li>
+                <?php include "admin/expired.php"; ?>
 
-            <li>
-            <form action="" method="POST">
-               <button type="submit" name="expired">Expired</button>
-               </form>
-            </li>
-               <?php 
-                if(isset($_REQUEST['expired'])){
-               include "admin/expired.php"; 
-                 }
-               ?>
+                <li>
+                    <span>Unassigned</span>
+                </li>
+                <?php include "admin/unassigned.php"; ?>
 
+                <li>
+                    <span>Up to date</span>
+                </li>
+                <?php include "admin/Uptodate.php"; ?>
+            </ul>
 
+        </div>
 
-             <li>
-                <form action="" method="POST">
-               <button type="submit" name="unassigned">Unassigned</button>
-               </form>
-            </li>
-                <?php 
-                if(isset($_REQUEST['unassigned'])){
-                include "admin/unassigned.php"; 
-            }
-                ?>
-
-
-
-            <li>
-                <form action="" method="POST">
-               <button type="submit" name="Uptodate">Up to date</button>
-               </form>
-            </li>
-                 <?php 
-                 if(isset($_REQUEST['Uptodate'])){
-                 include "admin/Uptodate.php"; 
-                 }
-                 ?>
-        </ul>
-        
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner" />
+        </div>
     </div>
 
 </div>
-	</div>
 

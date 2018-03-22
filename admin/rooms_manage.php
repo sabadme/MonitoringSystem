@@ -1,21 +1,27 @@
-<div class="manage-container registration">
+<div class="manage-container room-management with-banner">
     <strong class="title">ROOMS</strong>
 
-    <div class="tabs-container room-management">
-        <ul class="tabs accounts">
-            <li class="active">
-                <span>MANAGE</span>
-            </li>
-            <?php include "admin/rooms.php"; ?>
-            <li>
-                <span>ADD</span>
-            </li>
-            <?php include "admin/add_room_page.php"; ?>
-        </ul>
+    <div class="manage-inner-container">
+        <div class="tabs-container">
+            <ul class="tabs accounts">
+                <li class="active">
+                    <span>MANAGE</span>
+                </li>
+                <?php include "admin/rooms.php"; ?>
+                <li>
+                    <span>ADD</span>
+                </li>
+                <?php include "admin/add_room_page.php"; ?>
+            </ul>
+        </div>
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner"/>
+        </div
     </div>
+
 </div>
 
-<script>
+<!-- <script>
     $(document).ready(function(){
         $('.tabs li').click(function(){
 
@@ -49,4 +55,4 @@
             }
         }
     }
-</script>
+</script> -->

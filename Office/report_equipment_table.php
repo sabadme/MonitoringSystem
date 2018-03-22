@@ -27,7 +27,7 @@ while($data_equipment=mysql_fetch_array($equipment)){
 		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipment_image."'>" ?></td>
 		<td><?php echo $dataget_equipment['equipment_name']; ?></td>
 		<td><?php echo $dataget_equipment['equipment_code']; ?></td>
-		<td><form action="" method="POST"><button class="reportBtn" name="equipment_report" type="submit" value="<?php echo $data_equipment['id']; ?>">Report</button></form></td>
+		<td><form action="" method="POST"><button class="action disable" name="equipment_report" type="submit" value="<?php echo $data_equipment['id']; ?>">Report</button></form></td>
 	</tr>
 	<?php
 }

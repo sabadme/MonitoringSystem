@@ -1,43 +1,57 @@
-<?php 
-if(isset($_REQUEST['equipment_report'])){  
-    $equipment_report=$_REQUEST['equipment_report'];
+<?php
+if (isset($_REQUEST['equipment_report'])) {
+    $equipment_report = $_REQUEST['equipment_report'];
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
-
-    $equipment_reportNAME=mysql_query("SELECT * FROM room WHERE id='$equipment_report'");
-    $data_reportNAME=mysql_fetch_array($equipment_reportNAME);
-    $name=$data_reportNAME['equipment'];
-
-    $get_equipment=mysql_query("SELECT * FROM equipment WHERE equipment_name='$name'");
-    $data_equipment=mysql_fetch_array($get_equipment);
-    $equipment_filename=$data_equipment['equipment_filename'];
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "monitoringsystemdatabase";
 
 
- ?>
- <div class="manage-container">
-    <strong class="title">Create Report</strong>
+    $conn = mysql_connect($servername, $username, $password);
+    mysql_select_db($db);
 
-    <div class="manage-inner-container">
-    
-        <div class="table-container" id="wrapper">
-            <div class="btndivstyle">
-                <h1><?php echo $name; ?></h1>
-                <h1><?php echo $data_reportNAME['room']; ?></h1>
-                <?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipment_filename."'>" ?>
-        <form action="" method="POST">
-            <textarea placeholder="Status/Problem" name="messagereport"></textarea>
-            <button type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
-        </form>
+    $equipment_reportNAME = mysql_query("SELECT * FROM room WHERE id='$equipment_report'");
+    $data_reportNAME = mysql_fetch_array($equipment_reportNAME);
+    $name = $data_reportNAME['equipment'];
+
+
+    $get_equipment = mysql_query("SELECT * FROM equipment WHERE equipment_name='$name'");
+    $data_equipment = mysql_fetch_array($get_equipment);
+    $equipment_filename = $data_equipment['equipment_filename'];
+    $equipment_code = $data_equipment['equipment_code'];
+
+
+    ?>
+    <div class="product-page-container report-form">
+        <strong class="title">Create Report</strong>
+        <div class="product-inner-container">
+
+            <div class="image-container">
+                <img src="images/placeholder-product.png"
+                     style="background: url(<?php echo "EquipmentPicture/$equipment_filename" ?>) no-repeat;">
+            </div>
+
+            <div class="product-info-container">
+                <span class="equipment-code"><b>Equipment QR/Code:</b> <?php echo $equipment_code; ?></span>
+                <h1 class="equipment-name"><?php echo $name; ?></h1>
+
+                <form action="" method="POST">
+                    <textarea placeholder="Status/Problem" name="messagereport"></textarea>
+                    <button class="action" type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
+                </form>
+            </div>
+
         </div>
     </div>
-</div>
-<?php 
+
+
+    <?php
 }
- ?>
+?>
+
+
+
+
+
+

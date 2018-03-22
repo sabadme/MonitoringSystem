@@ -18,20 +18,7 @@ include"admin/generate_code.php";
     </div>
 </div>
 
-<script>
-    $(document).ready(function(){
-        $('.tabs li').click(function(){
-
-            $(this).each(function(){
-                $(this).addClass('active');
-
-                if($(this).siblings().hasClass('active')) {
-                    $(this).siblings().removeClass('active');
-                }
-            });
-        });
-    });
-
+<!--<script>
     function myFunction() {
         // Declare variables
         var input, filter, table, tr, td, i;
@@ -52,4 +39,4 @@ include"admin/generate_code.php";
             }
         }
     }
-</script>
+</script>-->

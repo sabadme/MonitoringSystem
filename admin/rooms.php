@@ -9,11 +9,11 @@ $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
  ?>
 <div class="form-container">
-
-
     <div class="inner-form-container">
-        <input class="search" type="text" placeholder="Search rooms..." />
+
         <div class="table-container" id="wrapper">
+            <input class="search" type="text" placeholder="Search rooms..." />
+
             <table>
                 <thead>
                 <th>Room</th>

@@ -1,15 +1,3 @@
-.manage-container.registration .tabs li:nth-of-type(2) {
-  left: 113px !important;
-}
-
-.manage-container.registration .tabs li:nth-of-type(3) {
-  left: 229px;
-}
-
-.manage-container.registration .tabs li:nth-of-type(4) {
-  left: 382px;;
-}
-
 :root {
   font-size: 14px;
 }
@@ -307,25 +295,15 @@ select:focus {
   outline: none;
   border-color: #0250b9;
 }
-#wrapper {
-  width: 70%;
-  padding-left: 40px;
-  /*
-    th,
-    td {
-        width: 1%;
-    }
-
-    thead > tr {
-        position: relative;
-        display: block;
-    }
-
-    tbody {
-        display: block;
-        max-height: 250px;
-        overflow-y: auto;
-    }*/
+.title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 2.142857142857143rem;
+  color: #000;
+  text-transform: uppercase;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 0 30px;
 }
 .block-loader {
   width: 100%;
@@ -2282,16 +2260,6 @@ footer .botfooter {
   margin: 100px 0 50px;
   padding: 0 20px;
 }
-.manage-container .title {
-  display: block;
-  font-family: sans-serif;
-  font-size: 2.142857142857143rem;
-  color: #000;
-  text-transform: uppercase;
-  max-width: 1230px;
-  width: 100%;
-  margin: 0 0 30px;
-}
 .manage-container .inner-form-container {
   display: -webkit-box;
   display: -moz-box;
@@ -2312,17 +2280,13 @@ footer .botfooter {
 .manage-container.view-reports #wrapper {
   padding-left: 0;
 }
-.manage-container.registration .inner-form-container {
-  padding: 30px;
-  border: 1px solid #b4b4b4;
-}
-.manage-container.registration .tabs {
+.manage-container .tabs {
   position: relative;
 }
-.manage-container.registration .tabs.accounts li:nth-of-type(2) {
+.manage-container .tabs.accounts li:nth-of-type(2) {
   left: 100px;
 }
-.manage-container.registration .tabs li {
+.manage-container .tabs li {
   position: absolute;
   top: 0;
   padding: 15px 20px;
@@ -2330,47 +2294,69 @@ footer .botfooter {
   border-bottom: 0;
   cursor: pointer;
 }
-.manage-container.registration .tabs li + div {
-  display: block;
+.manage-container .tabs li + div {
+  display: none;
 }
-.manage-container.registration .tabs li span {
+.manage-container .tabs li span {
   font-family: sans-serif;
   font-size: 1.2142857142857142rem;
   text-transform: uppercase;
 }
-.manage-container.registration .tabs li:nth-of-type(2) {
+.manage-container .tabs li:nth-of-type(2) {
   left: 103px;
 }
-.manage-container.registration .tabs li.active {
+.manage-container .tabs li.active {
   background: #0250b9;
 }
-.manage-container.registration .tabs li.active span {
+.manage-container .tabs li.active span {
   color: #fff;
 }
-.manage-container.registration .tabs li.active + div {
+.manage-container .tabs li.active + div {
   display: block;
   padding-top: 47px;
 }
-.manage-container.registration .tabs-container.room-management label {
+.manage-container.room-management label {
   font-size: 1.0714285714285714rem;
   text-transform: uppercase;
   font-family: sans-serif;
 }
-.manage-container.registration .tabs-container.room-management input {
+.manage-container.room-management input {
   padding: 10px;
 }
-.manage-container.registration .tabs-container.room-management #wrapper {
-  width: 100%;
-  padding-left: 0;
-}
-.manage-container.registration .tabs-container.room-management .inner-form-container {
+.manage-container.room-management .inner-form-container {
   display: block;
 }
-.manage-container.registration .tabs-container.room-management .tabs {
-  width: 50%;
-}
-.manage-container.registration .tabs-container.room-management .tabs li:nth-of-type(2) {
+.manage-container.room-management .tabs li:nth-of-type(2) {
   left: 115px;
+}
+.manage-container.registration .table-container {
+  width: 70%;
+  margin-left: 40px;
+}
+.manage-container.registration .inner-form-container,
+.manage-container.list .inner-form-container,
+.manage-container.room-management .inner-form-container {
+  padding: 20px;
+  border: 1px solid #b4b4b4;
+}
+.manage-container.with-banner .manage-inner-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.manage-container.with-banner .banner-container {
+  margin-left: 50px;
+}
+.manage-container.list .tabs li:nth-of-type(2) {
+  left: 113px;
+}
+.manage-container.list .tabs li:nth-of-type(3) {
+  left: 229px;
+}
+.manage-container.list .tabs li:nth-of-type(4) {
+  left: 382px;
 }
 .catalog-container {
   margin-top: 80px;
@@ -2643,6 +2629,28 @@ footer .botfooter {
 }
 .product-page-container .product-banner-container img {
   width: 100%;
+}
+.product-page-container.report-form .product-inner-container .product-info-container h1 {
+  padding: 0 20px;
+}
+.product-page-container.report-form form {
+  margin: 0 20px;
+}
+.product-page-container.report-form textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px 20px;
+  border-color: #ccc;
+  resize: none;
+  font-family: sans-serif;
+  font-size: 1.0714285714285714rem;
+}
+.product-page-container.report-form textarea:focus {
+  outline: none;
+  border-color: #0250b9;
+}
+.product-page-container.report-form button {
+  margin-top: 10px;
 }
 .booking-container {
   margin: 90px 0 50px;

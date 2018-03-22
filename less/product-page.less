@@ -88,4 +88,38 @@
       width: 100%;
     }
   }
+
+  &.report-form {
+    .product-inner-container {
+      .product-info-container {
+        h1 {
+          padding: 0 20px;
+        }
+      }
+    }
+
+    form {
+      margin: 0 20px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 12px 20px;
+      border-color: #ccc;
+      resize: none;
+      font-family: @font-family-base;
+      .font-size(15);
+
+      &:focus {
+        outline: none;
+        border-color: @cobalt;
+      }
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
 }
+

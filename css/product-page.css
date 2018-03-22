@@ -84,3 +84,25 @@
 .product-page-container .product-banner-container img {
   width: 100%;
 }
+.product-page-container.report-form .product-inner-container .product-info-container h1 {
+  padding: 0 20px;
+}
+.product-page-container.report-form form {
+  margin: 0 20px;
+}
+.product-page-container.report-form textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px 20px;
+  border-color: #ccc;
+  resize: none;
+  font-family: sans-serif;
+  font-size: 1.0714285714285714rem;
+}
+.product-page-container.report-form textarea:focus {
+  outline: none;
+  border-color: #0250b9;
+}
+.product-page-container.report-form button {
+  margin-top: 10px;
+}

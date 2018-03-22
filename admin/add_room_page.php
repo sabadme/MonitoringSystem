@@ -52,7 +52,7 @@
                 </table>
             </div>
 
-            <button name="save_room" type="submit">Save</button>
+            <button class="action" name="save_room" type="submit">Save</button>
     </form>
 </div>
 </div>

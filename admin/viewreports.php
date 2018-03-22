@@ -22,7 +22,7 @@
 	</div>
 </div>
 
-<script>
+<!-- <script>
 function myFunction() {
   // Declare variables 
   var input, filter, table, tr, td, i;
@@ -43,4 +43,4 @@ function myFunction() {
     } 
   }
 }
-</script>
+</script> -->

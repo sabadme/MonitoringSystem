@@ -1,124 +1,143 @@
 @import "variable.less";
 
 .manage-container {
-	margin: 100px 0 50px;
-	padding: 0 20px;
+  margin: 100px 0 50px;
+  padding: 0 20px;
 
-	.title {
-		display: block;
-		font-family: @font-family-base;
-		.font-size(30);
-		color: @color-black;
-		text-transform: uppercase;
-		max-width: @page-max_width;
-		width: 100%;
-		margin: 0 0 30px;
-	}
+  .inner-form-container {
+    .flex-layout;
+    width: 100%;
+    margin: 0 auto;
+  }
 
-	.inner-form-container {
-		.flex-layout;
-		width: 100%;
-		margin: 0 auto;
-	}
+  &.select-equipments {
+    #wrapper {
+      padding-left: 0;
+    }
 
-	&.select-equipments {
-		#wrapper {
-			padding-left: 0;
-		}
+    button {
+      margin-top: 20px;
+      max-width: 200px;
+    }
+  }
 
-		button {
-			margin-top: 20px;
-			max-width: 200px;
-		}
-	}
+  &.room-update,
+  &.view-reports {
+    #wrapper {
+      padding-left: 0;
+    }
+  }
 
-	&.room-update, 
-	&.view-reports {
-		#wrapper {
-			padding-left: 0;
-		}
-	}
+  .tabs {
+    position: relative;
 
-	&.registration {
-		.inner-form-container {
-			padding: 30px;
-			border: 1px solid @border-color;
-		}
+    &.accounts {
+      li:nth-of-type(2) {
+        left: 100px;
+      }
+    }
 
-		.tabs {
-			position: relative;
+    li {
+      position: absolute;
+      top: 0;
+      padding: 15px 20px;
+      border: 1px solid @border-color;
+      border-bottom: 0;
+      cursor: pointer;
 
-			&.accounts {
-				li:nth-of-type(2) {
-					left: 100px;
-				}
-			}
+      & + div {
+        display: none;
+      }
 
-			li {
-				position: absolute;
-				top: 0;
-				padding: 15px 20px;
-				border: 1px solid @border-color;
-				border-bottom: 0;
-				cursor: pointer;
+      span {
+        font-family: sans-serif;
+        .font-size(17);
+        text-transform: uppercase;
+      }
 
-				& + div {
-					display: none;
-				}
+      &:nth-of-type(2) {
+        left: 103px;
+      }
 
-				span {
-					font-family: sans-serif;
-					.font-size(17);
-					text-transform: uppercase;
-				}
+      &.active {
+        background: @cobalt;
 
-				&:nth-of-type(2) {
-					left: 103px;
-				}
+        span {
+          color: @white;
+        }
 
-				&.active {
-					background: @cobalt;
+        & + div {
+          display: block;
+          padding-top: 47px;
+        }
+      }
+    }
+  }
 
-					span {
-						color: @white;
-					}
+  &.room-management {
+    label {
+      .font-size(15);
+      text-transform: uppercase;
+      font-family: @font-family-base;
+    }
 
-					& + div {
-						display: block;
-						padding-top: 47px;
-					}
-				}
-			}
-		}
+    input {
+      padding: 10px;
+    }
 
-		.tabs-container {
-			&.room-management {
-				label {
-					.font-size(15);
-					text-transform: uppercase;
-					font-family: @font-family-base;
-				}
+    .inner-form-container {
+      display: block;
+    }
 
-				input {
-					padding: 10px;
-				}
+    .tabs {
+      li:nth-of-type(2) {
+        left: 115px;
+      }
+    }
+  }
 
-				#wrapper {
-					width: 100%;
-					padding-left: 0;
-				}
+  &.registration {
+    .table-container {
+      width: 70%;
+      margin-left: 40px;
+    }
+  }
 
-				.inner-form-container {
-					display: block;
-				}
+  &.registration,
+  &.list,
+  &.room-management {
+    .inner-form-container {
+      padding: 20px;
+      border: 1px solid @border-color;
+    }
+  }
 
-				.tabs {
-					width: 50%;
-					li:nth-of-type(2) {
-						left: 115px;
-					}
-				}
-			}
-		}
-	}
+  &.with-banner {
+    .manage-inner-container {
+      .flex-layout;
+    }
+
+    .banner-container {
+      margin-left: 50px;
+    }
+  }
+
+  &.list {
+    .tabs {
+      li {
+        &:nth-of-type(2) {
+          left: 113px;
+        }
+
+        &:nth-of-type(3) {
+          left: 229px;
+        }
+
+        &:nth-of-type(4) {
+          left: 382px;
+        }
+      }
+
+    }
+  }
 }

@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     $(document).ready(function(){
         $('.tabs li').click(function(){
 
@@ -49,4 +49,4 @@
             }
         }
     }
-</script>
+</script> -->

@@ -1,3 +1,4 @@
+
 <div class="form-container">
 	<div class="inner-form-container">
 		<form class="manage-form" action="" method="POST">
@@ -8,9 +9,9 @@
 		</form>
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
-			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search offices..">
+			<input type="text" class="search" id="myInput2" placeholder="Search offices..">
 			</div>
-				<table id="myTable">
+				<table id="myTable2">
 				<thead>
 					<th>Offices</th>
 					<th>Status</th>
@@ -25,27 +26,33 @@
 			</table>
 		</div>
 	</div>
+
+	<script>
+	function searchTable() {
+        $(".search").on("keyup", function() {
+            var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput2");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable2");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    });
+}
+
+$(document).ready(function(){
+	searchTable();
+});
+</script>
 </div>
 
-<script>
-function myFunction() {
-  // Declare variables 
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-</script>

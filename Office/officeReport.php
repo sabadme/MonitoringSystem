@@ -1,13 +1,13 @@
 <!-- <?php //include "admin/modal.php"; ?> -->
 
-<div class="manage-container">
+<div class="manage-container with-banner">
 	<strong class="title">REPORT FORM</strong>
 
 	<div class="manage-inner-container">
 	
-		<div class="table-container" id="wrapper">
+		<div class="table-container" id="wrapper" style="padding-left: 0;">
 			<div class="btndivstyle">
-			<input type="text" class="searchbtn" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 			</div>
 				<table id="myTable">
 				<thead>
@@ -22,10 +22,14 @@
 				</tbody>
 			</table>
 		</div>
+
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner" />
+        </div>
 	</div>
 </div>
 
-<script>
+<!-- <script>
 function myFunction() {
   // Declare variables 
   var input, filter, table, tr, td, i;
@@ -46,4 +50,4 @@ function myFunction() {
     } 
   }
 }
-</script>
+</script> -->
