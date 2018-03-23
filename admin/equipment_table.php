@@ -9,7 +9,7 @@ while($data_equipment=mysql_fetch_array($equipment_sql)){
 	<td><?php echo $data_equipment['equipment_name']; ?></td>
 	<td><?php echo $data_equipment['equipment_start']; ?></td>
 	<td><?php echo $data_equipment['equipment_end']; ?></td>
-	<td><form action="" method="POST"><button type="submit" name="update_equipment" value="<?php echo $data_equipment['id']; ?>">Update</button></form></td>
+	<td><form action="" method="POST"><button class="action" type="submit" name="update_equipment" value="<?php echo $data_equipment['id']; ?>">Update</button></form></td>
 	</tr>
 	<?php
 }

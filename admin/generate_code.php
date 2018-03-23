@@ -1,8 +1,7 @@
-<?php 
+<?php
 
-if(isset($_REQUEST['generate_code'])){
 
-   	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
+   	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	$size = strlen( $chars );
 	for( $i = 0; $i < 10; $i++ ) {
@@ -13,6 +12,6 @@ if(isset($_REQUEST['generate_code'])){
  
 
 
-}
+
  ?>
  

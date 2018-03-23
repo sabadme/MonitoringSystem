@@ -16,6 +16,7 @@ include "admin/finalset_equipment.php";
 include "admin/upda_single_equipment_function.php";
 include "admin/sa_update_function.php";
 include "admin/office_update_function.php";
+include"admin/notifacation.php";
 
 
 
@@ -75,7 +76,7 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/booking_page.php";
 } else if (isset($_REQUEST['approve_booking'])) {
     include "admin/booking_page.php";
-} else if (isset($_REQUEST['viewreports'])) {
+} else if (isset($_REQUEST['notifs'])) {
     include "admin/viewreports.php";
 }  else if (isset($_REQUEST['equipment_list'])) {
     include "admin/equipment_list.php";

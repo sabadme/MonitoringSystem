@@ -1,4 +1,7 @@
-<div class="manage-container">
+<div class="manage-container with-banner">
+    <strong class="title">ADD EQUIPMENTS FOR SET</strong>
+
+    <div class="inner-form-container">
     <div class="table-container" id="wrapper">
             <form action="" method="POST">
             <table>
@@ -14,7 +17,11 @@
             <?php include"admin/set_equipment_table.php"; ?>
                 </tbody>
             </table>
-            <button name="Add_equipment_set" type="submit">Add</button>
+            <button style="margin-top: 20px;" class="action" name="Add_equipment_set" type="submit">Add</button>
             </form>
         </div>
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
+        </div>
+    </div>
 </div>

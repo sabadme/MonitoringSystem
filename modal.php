@@ -33,7 +33,7 @@ if (isset($_REQUEST['equipment_report'])) {
             </div>
 
             <div class="product-info-container">
-                <span class="equipment-code"><b>Equipment QR/Code:</b> <?php echo $equipment_code; ?></span>
+                <span class="equipment-code"><b>Equipment QR/Code: <?php echo $data_equipment['equipment_code']; ?></b> <?php echo $equipment_code; ?></span>
                 <h1 class="equipment-name"><?php echo $name; ?></h1>
 
                 <form action="" method="POST">

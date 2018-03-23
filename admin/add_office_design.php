@@ -18,6 +18,7 @@
 					<th>E / D</th>
 					<th>Add</th>
 					<th>Equipments</th>
+                    <th>Edit</th>
 				</thead>	
 
 				<tbody>

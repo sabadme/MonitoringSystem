@@ -52,7 +52,7 @@
                 </table>
             </div>
 
-            <button class="action" name="save_room" type="submit">Save</button>
+            <button style="margin-top: 20px;" class="action" name="save_room" type="submit">Save</button>
     </form>
 </div>
 </div>

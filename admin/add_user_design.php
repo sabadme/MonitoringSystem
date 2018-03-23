@@ -25,6 +25,7 @@
 					<th>Position</th>
 					<th>Status</th>
 					<th></th>
+                    <th></th>
 				</thead>
 
 				<tbody>

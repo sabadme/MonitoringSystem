@@ -28,7 +28,7 @@ $office_name=$data_office['account'];
 		
 		<td><form action="" method="POST"><button class="action secondary" type="submit" name="officeequipmentassign" value="<?php echo $office_id; ?>">Equipments</button></form></td>
 		<td><form action="" method="POST"><button class="action tertiary" name="office_equipment_table" type="submit" value="<?php echo $office_name; ?>">Manage</button></form></td>
-		<td><form action="" method="POST"><button type="submit" name="office_update" value="<?php echo $data_office['id']; ?>">Update</button></form></td>
+		<td><form action="" method="POST"><button class="action" type="submit" name="office_update" value="<?php echo $data_office['id']; ?>">Update</button></form></td>
 	</tr>
 	<?php
 }

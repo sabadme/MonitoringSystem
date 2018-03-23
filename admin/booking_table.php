@@ -46,7 +46,7 @@ while($data_booking=mysql_fetch_array($booking)){
         <?php 
         if($statuss=="Pending" And $status=="Admin"){
             ?>
-            <td><form action="" method="POST"><button type="submit" name="approve_booking" value="<?php echo $data_status['id']; ?>">Approved</button></form></td>
+            <td><form action="" method="POST"><button class="action" type="submit" name="approve_booking" value="<?php echo $data_status['id']; ?>">Approve</button></form></td>
             <?php
         }else{
             ?>

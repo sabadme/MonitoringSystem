@@ -1,9 +1,9 @@
 <?php 
 include"admin/generate_code.php";
  ?>
-<div class="manage-container registration">
+<div class="manage-container registration with-banner">
 	<strong class="title">Equipments Registration</strong>
-
+    <div class="manage-inner-container">
     <div class="tabs-container">
         <ul class="tabs">
             <li class="active">
@@ -15,6 +15,7 @@ include"admin/generate_code.php";
             </li>
            <?php include"admin/view_equipment_set.php"; ?> 
         </ul>
+    </div>
     </div>
 </div>
 

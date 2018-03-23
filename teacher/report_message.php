@@ -22,23 +22,30 @@ mysql_select_db($db);
 
  ?>
 
-<div class="manage-container">
-    <strong class="title">Create Report</strong>
+<div class="product-page-container report-form">
+        <strong class="title">Create Report</strong>
+        <div class="product-inner-container">
 
-    <div class="manage-inner-container">
-    
-        <div class="table-container" id="wrapper">
-            <div class="btndivstyle">
-                <h1><?php echo $name; ?></h1>
-                <h1><?php echo $room; ?></h1>
-                <?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$image_filename."'>" ?>
-        <form action="" method="POST">
-            <textarea placeholder="Status/Problem" name="messagereport"></textarea>
-            <button type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
-        </form>
+            <div class="image-container">
+                <?php echo "<img src='EquipmentPicture/".$image_filename."'>" ?>
+            </div>
+
+            <div class="product-info-container">
+                <span class="equipment-code"><b>Equipment QR/Code:</b> <?php echo $data_EquipmentImage['equipment_code']; ?></span>
+                <h1 class="equipment-name"><?php echo $name; ?></h1>
+                 <h1><?php echo $room; ?></h1>
+
+                <form action="" method="POST">
+                    <textarea placeholder="Status/Problem" name="messagereport"></textarea>
+                    <button style="margin-bottom: 10px;" class="action" type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
+                </form>
+            </div>
+
         </div>
     </div>
-</div>
+
 <?php 
 }
  ?>
+
+ 

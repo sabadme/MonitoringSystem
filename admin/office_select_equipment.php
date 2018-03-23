@@ -4,7 +4,7 @@ if(isset($_REQUEST['officeequipmentassign'])){
     $officeequipmentassign=$_REQUEST['officeequipmentassign'];
 
  ?>
-<div class="manage-container select-equipments">
+<div class="manage-container select-equipments with-banner">
     <strong class="title">Select Room Equipments</strong>
   <form action="" method="POST">
     <div class="inner-form-container">
@@ -51,10 +51,16 @@ mysql_select_db($db);
                 ?>
                 </tbody>
             </table>
+            <button class="action" name="save_selected_equipment" type="submit" value="<?php echo $officeequipmentassign; ?>">Save</button>
         </div>
+
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
+        </div>
+
     </div>
   
-        <button name="save_selected_equipment" type="submit" value="<?php echo $officeequipmentassign; ?>">Save</button>
+        
     </form>
 </div>
 <?php 

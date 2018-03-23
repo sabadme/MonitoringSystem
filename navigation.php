@@ -26,12 +26,18 @@ if ($status == "Admin") {
                 </li>
 
                 <li>
-                    <button class="reports" name="viewreports" type="submit">Reports</button>
+                    <button class="notifs" name="notifs" type="submit">Notifications</button>
                 </li>
-                <li>
-                    <button class="booking" name="notif" type="submit">Booking</button>
+                <li class="booking-btn">
+                    <button class="booking" name="booking" type="submit">Booking</button>
                      <?php include "admin/notifacation.php"; ?>
-                  <span><?php echo $count; ?></span> 
+                     <?php if ($count == 0) {
+                        ?>
+                        
+                        <?php
+                    } else { ?><span class="counter"><?php echo $count; ?></span> <?php } ?>
+
+                   
                 </li>
                 <li>
                     <button class="equips" name="equipment_list" type="submit">Equipment List</button>

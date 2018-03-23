@@ -75,6 +75,13 @@
   width: 70%;
   margin-left: 40px;
 }
+.manage-container.registration .set-container .table-container {
+  width: 100%;
+  margin-left: 0;
+}
+.manage-container.registration .set-container .add {
+  margin-bottom: 20px;
+}
 .manage-container.registration .inner-form-container,
 .manage-container.list .inner-form-container,
 .manage-container.room-management .inner-form-container {

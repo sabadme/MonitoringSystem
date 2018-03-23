@@ -1,12 +1,8 @@
 <?php include"admin/generate_codeSet.php"; ?>
-<div class="equipment-form-container" style="margin-top: 99px;">
+<div class="manage-container with-banner" style="margin-top: 99px;">
+    <strong class="title">Register Set</strong>
     <div class="manage-inner-container">
-        <div class="generate-container">
-        
-        </div>
-
-        <div class="table-container" id="wrapper">
-          
+        <div class="table-container" id="wrapper">          
              <form action="" method="POST"  enctype="multipart/form-data">
             <input type="file" name="imgset"/>
      
@@ -15,7 +11,7 @@
             <table>
                 <thead>
                 <th></th>
-                <th>Name</th>
+                <th>SET Name</th>
                 <th></th>
                 </thead>
 
@@ -23,8 +19,11 @@
             <?php include"admin/set_equipment_table_check.php"; ?>
                 </tbody>
             </table>
-            <button name="Add_equipment_setFinal" type="submit">Submit</button>
+            <button style="margin-top: 20px;" class="action" name="Add_equipment_setFinal" type="submit">Submit</button>
             </form>
+        </div>
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
         </div>
     </div>
 </div>

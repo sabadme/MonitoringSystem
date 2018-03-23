@@ -1,7 +1,8 @@
-<div class="manage-container view-reports">
-	<strong class="title">Office Registration</strong>
 
-	<div class="inner-form-container">
+<div class="manage-container view-reports with-banner">
+	<strong class="title">Notifications</strong>
+
+	<div class="manage-inner-container">
 
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
@@ -19,6 +20,10 @@
 				</tbody>
 			</table>
 		</div>
+
+		<div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
+        </div>
 	</div>
 </div>
 

@@ -1,14 +1,12 @@
 <?php
 session_start();
-
-$accountname=$_SESSION['account'];
-$status=$_SESSION['status'];
- ?>
- <?php
-if(isset($status)){
- ?>
-
-
+error_reporting(0);
+$accountname = $_SESSION['account'];
+$status = $_SESSION['status'];
+?>
+<?php
+if (isset($status)) {
+    ?>
 
     <!DOCTYPE html>
     <html>
@@ -95,7 +93,6 @@ if(isset($status)){
 } else {
     header("location:home.php");
 }
-
 ?>
 <script>
     function addActive() {

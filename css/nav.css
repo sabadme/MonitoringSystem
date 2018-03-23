@@ -47,6 +47,24 @@
   margin-right: 0;
   border-top: 1px solid #fff;
 }
+.main-nav .menu li.booking-btn {
+  position: relative;
+}
+.main-nav .menu li.booking-btn .counter {
+  top: 13px;
+  right: 8px;
+}
+.main-nav .menu li .counter {
+  font-size: 0.7142857142857143rem;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  font-family: sans-serif;
+  background: red;
+  padding: 5px 6px;
+  color: #fff;
+}
 .main-nav .menu li:hover {
   cursor: pointer;
   background: #0250b9;
@@ -139,6 +157,11 @@
 .main-nav .menu li .button.reports:before,
 .main-nav .menu li .manage.reports:before {
   content: '\e911';
+}
+.main-nav .menu li button.notifs:before,
+.main-nav .menu li .button.notifs:before,
+.main-nav .menu li .manage.notifs:before {
+  content: '\e912';
 }
 .main-nav .menu li button.booking:before,
 .main-nav .menu li .button.booking:before,

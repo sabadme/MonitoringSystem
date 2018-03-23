@@ -21,7 +21,7 @@
 		li {
 			margin-right: 30px;
 			.flex-value(0 1 25%);
-
+			
 			&.manage-btn {
 				position: relative;
 
@@ -42,6 +42,25 @@
 						border-top: 1px solid @white;
 					}
 				}
+			}
+
+			&.booking-btn {
+				position: relative;	
+
+				.counter {
+					top: 13px;
+			    	right: 8px;
+				}
+			}
+
+			.counter {
+				.font-size(10);
+				.round-borders(50%);
+				position: absolute;
+			    font-family: @font-family-base	;
+			    background: red;
+			    padding: 5px 6px;
+			    color: @white;
 			}
 
 			&:hover {
@@ -116,8 +135,12 @@
 				    content: @equipment-icon;
 				}
 
-				&.reports:before {
-				   	content: @report-icon;
+				&.reports:before {				   
+				    content: @report-icon;
+				}
+
+				&.notifs:before {
+				   	content: @notifs-icon;
 				}
 
 				&.booking:before {

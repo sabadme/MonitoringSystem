@@ -17,7 +17,7 @@ $room=mysql_query("SELECT * FROM room WHERE room='$office_equipment_table'");
 $data_room=mysql_fetch_array($room);
 $officename=$data_room['room'];
  ?>
-<div class="manage-container room-update">
+<div class="manage-container room-update with-banner">
     <strong class="title">Update <?php echo $officename; ?> Equipments</strong>
 
     <input class="search" type="text" placeholder="Search equipments..." />
@@ -71,6 +71,10 @@ $officename=$data_room['room'];
             
                 </tbody>
             </table>
+        </div>
+
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
         </div>
        
     </div>

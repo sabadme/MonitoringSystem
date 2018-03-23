@@ -239,7 +239,7 @@ table {
   border-top: 0;
 }
 thead {
-  width: calc(100% - 1em);
+  width: calc(99%);
 }
 tbody {
   display: block;
@@ -1957,6 +1957,13 @@ footer .botfooter {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'monitoring';
+  src: url('fonts/monitoring.eot?ds89wm');
+  src: url('fonts/monitoring.eot?ds89wm#iefix') format('embedded-opentype'), url('fonts/monitoring.ttf?ds89wm') format('truetype'), url('fonts/monitoring.woff?ds89wm') format('woff'), url('fonts/monitoring.svg?ds89wm#monitoring') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -1970,6 +1977,9 @@ footer .botfooter {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-icons8-google-alerts-filled:before {
+  content: "\e912";
 }
 .icon-gardening-in-home:before {
   content: "\e90e";
@@ -2129,6 +2139,24 @@ footer .botfooter {
   margin-right: 0;
   border-top: 1px solid #fff;
 }
+.main-nav .menu li.booking-btn {
+  position: relative;
+}
+.main-nav .menu li.booking-btn .counter {
+  top: 13px;
+  right: 8px;
+}
+.main-nav .menu li .counter {
+  font-size: 0.7142857142857143rem;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  font-family: sans-serif;
+  background: red;
+  padding: 5px 6px;
+  color: #fff;
+}
 .main-nav .menu li:hover {
   cursor: pointer;
   background: #0250b9;
@@ -2221,6 +2249,11 @@ footer .botfooter {
 .main-nav .menu li .button.reports:before,
 .main-nav .menu li .manage.reports:before {
   content: '\e911';
+}
+.main-nav .menu li button.notifs:before,
+.main-nav .menu li .button.notifs:before,
+.main-nav .menu li .manage.notifs:before {
+  content: '\e912';
 }
 .main-nav .menu li button.booking:before,
 .main-nav .menu li .button.booking:before,
@@ -2332,6 +2365,13 @@ footer .botfooter {
 .manage-container.registration .table-container {
   width: 70%;
   margin-left: 40px;
+}
+.manage-container.registration .set-container .table-container {
+  width: 100%;
+  margin-left: 0;
+}
+.manage-container.registration .set-container .add {
+  margin-bottom: 20px;
 }
 .manage-container.registration .inner-form-container,
 .manage-container.list .inner-form-container,
@@ -2697,59 +2737,6 @@ footer .botfooter {
   -webkit-flex-basis: 70%;
   -moz-flex-basis: 70%;
   flex-basis: 70%;
-  /*table {
-      border-collapse: collapse;
-      width: 100%;
-      border: 1px solid @color-gray;
-      border-top: 0;
-    }
-
-    th, td {
-      padding: 8px;
-      text-align: center;
-    }
-
-    td:first-child {
-      text-transform: capitalize;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    th {
-      background-color: @cobalt;
-      color: @white;
-    }
-
-    .search {
-      margin: 0 0 10px !important;
-    }
-
-    select {
-      padding: 10px;
-      width: 100%;
-    }
-
-    #wrapper {
-      width: 100%;
-
-      th,
-      td {
-        width: 1%;
-      }
-
-      thead > tr {
-        position: relative;
-        display: block;
-      }
-
-      tbody {
-        display: block;
-        max-height: 250px;
-        overflow-y: auto;
-      }
-    }*/
 }
 .booking-container .booking-table #wrapper {
   width: 100%;
@@ -2759,18 +2746,23 @@ footer .botfooter {
 .booking-container .booking-table td {
   font-size: 0.7857142857142857rem;
 }
+.booking-container .search-box {
+  position: relative;
+}
 .booking-container .result {
   position: absolute;
   z-index: 999;
-  top: 100%;
+  top: 38px;
   left: 0;
+  width: 100%;
 }
 .booking-container .result p {
   margin: 0;
   padding: 7px 10px;
-  border: 1px solid #CCCCCC;
   border-top: none;
   cursor: pointer;
+  background: lightgray;
+  border: 1px solid gray;
 }
 .booking-container .result p:hover {
   background: #f2f2f2;

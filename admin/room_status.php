@@ -17,7 +17,7 @@ $room=mysql_query("SELECT * FROM room WHERE room='$view_roomE'");
 $data_room=mysql_fetch_array($room);
 $room_name=$data_room['room'];
  ?>
-<div class="manage-container room-management">
+<div class="manage-container room-management with-banner">
     <strong class="title">ROOM     <?php echo $room_name; ?></strong>
 
     <input class="search" type="text" placeholder="search room..." />
@@ -58,7 +58,7 @@ $room_name=$data_room['room'];
                 </td>
                 <td>
                     
-                        <button name="Update_roomStatus" type="submit" value="<?php echo $room_id; ?>">Update</button>
+                        <button class="action" name="Update_roomStatus" type="submit" value="<?php echo $room_id; ?>">Update</button>
                          
                           </form>
                     </td>
@@ -71,6 +71,10 @@ $room_name=$data_room['room'];
             
                 </tbody>
             </table>
+        </div>
+
+        <div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
         </div>
        
     </div>

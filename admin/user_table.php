@@ -37,7 +37,7 @@ if($status=="Enabled"){
 }
 
  ?>
- <td><form action="" method="POST"><button name="user_update" value="<?php echo $data_table['id']; ?>">Update</button></form></td>
+ <td><form action="" method="POST"><button class="action" name="user_update" value="<?php echo $data_table['id']; ?>">Update</button></form></td>
 </tr>
 <?php
 

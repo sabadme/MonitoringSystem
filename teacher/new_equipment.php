@@ -25,12 +25,9 @@ $equipments_name=$data_check['equipment_name'];
 $equipment_code=$data_check['equipment_code'];
 $equipment_start=$data_check['equipment_start'];
 $equipment_end=$data_check['equipment_end'];
-    if($equipment_status=="Broken"  || $equipment_status=="Expired" || $equipment_status=="Unassigned"){
+    if($equipment_status=="Up To Date"){
 
-    }else{
-
-
-?>
+        ?>
     <div class="equipments">
     <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "EquipmentPicture/$equipment" ?>);">
     <span class="equipment-code"><b>QR Code:  </b><?php echo $equipment_code; ?></span>
@@ -42,6 +39,11 @@ $equipment_end=$data_check['equipment_end'];
     </form>
 </div>
 <?php
+
+    }else{
+
+
+
 
 }
 }

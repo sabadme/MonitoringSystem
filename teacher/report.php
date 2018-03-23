@@ -1,20 +1,20 @@
 <!-- <?php //include "admin/modal.php"; ?> -->
 
-<div class="manage-container">
+<div class="manage-container with-banner">
 	<strong class="title">REPORT FORM</strong>
 
 	<div class="manage-inner-container">
 	
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
-			<input type="text" class="searchbtn" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 			</div>
 				<table id="myTable">
 				<thead>
 					<th>Equipment</th>
-					<th>Equipment Name</th>
-					<th>Equipment Code</th>
-					<th>Report</th>
+					<th>Name</th>
+					<th>Code</th>
+					<th></th>
 				</thead>
 
 				<tbody>
@@ -22,6 +22,9 @@
 				</tbody>
 			</table>
 		</div>
+		<div class="banner-container">
+            <img src="images/message-banner.jpg" alt="Banner">
+        </div>
 	</div>
 </div>
 
