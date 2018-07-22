@@ -2749,6 +2749,10 @@ footer .botfooter {
 .booking-container .search-box {
   position: relative;
 }
+.booking-container .search-venue {
+  position: relative;
+}
+
 .booking-container .result {
   position: absolute;
   z-index: 999;

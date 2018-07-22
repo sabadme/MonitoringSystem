@@ -1,42 +1,3 @@
-<!-- <style type="text/css">
-    body{
-        font-family: Arail, sans-serif;
-    }
-    /* Formatting search box */
-    .search-box{
-        width: 300px;
-        position: relative;
-        display: inline-block;
-        font-size: 14px;    
-    }
-    .search-box input[type="text"]{
-        height: 32px;
-        padding: 5px 10px;
-        border: 1px solid #CCCCCC;
-        font-size: 14px;
-    }
-    .result{
-        position: absolute;        
-        z-index: 999;
-        top: 100%;
-        left: 0;
-    }
-    .search-box input[type="text"], .result{
-        width: 100%;
-        box-sizing: border-box;
-    }
-    /* Formatting result items */
-    .result p{
-        margin: 0;
-        padding: 7px 10px;
-        border: 1px solid #CCCCCC;
-        border-top: none;
-        cursor: pointer;
-    }
-    .result p:hover{
-        background: #f2f2f2;
-    }
-</style> -->
 
 <div class="booking-container">
     <strong class="title">Booking Lounge</strong>
@@ -48,6 +9,7 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
         <div class="booking-wrapper">
             <strong class="subtitle">Bookings</strong>
  <form action="" method="POST">
+    
             <div class="field"> 
                 <label>Booker: </label>
              <div class="search-box">
@@ -58,7 +20,11 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
 
             <div class="field">
                 <label>Venue: </label>
-                <input type="text" name="venue"/>
+            <div class="search-venue">
+                <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
+                 <div class="Vresult"></div>
+             </div>
+           
             </div>
 
             <div class="field">
@@ -180,6 +146,32 @@ $(document).ready(function(){
     $(document).on("click", ".result p", function(){
         $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
         $(this).parent(".result").empty();
+    });
+});
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search-venue input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".Vresult");
+        if(inputVal.length){
+            $.get("admin/backend-search-venue.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".Vresult p", function(){
+        $(this).parents(".search-venue").find('input[type="text"]').val($(this).text());
+        $(this).parent(".Vresult").empty();
     });
 });
 </script>

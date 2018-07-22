@@ -17,14 +17,7 @@
 
                 <tbody>
                 <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $db = "monitoringsystemdatabase";
-
-
-                $conn = mysql_connect($servername, $username, $password);
-                mysql_select_db($db);
+              include"admin/connection.php";
 
                 $get_image = mysql_query("SELECT * FROM equipment WHERE equipment_status='Up To Date'");
                 while ($data_image = mysql_fetch_array($get_image)) {

@@ -23,12 +23,11 @@ if(isset($_REQUEST['add_new_set_function'])){
 
 	 
 
-	 	 $insert=mysql_query("INSERT INTO equipmentset VALUES(0,'$add_new_set_function','$check','$date','$time','$qr','$equipment_filename','1')");
+	 	 $insert=mysql_query("INSERT INTO equipmentset VALUES(0,'$add_new_set_function','$check','$date','$time','$qr','$equipment_filename','1','Unassigned')");
 	 	 echo mysql_error();  
 if($insert){
 	
-	?> <script> 
- alert("Record Successfully Added in UserSubmit table"); </script>
+	?> 
  <?php 
 }else {
   echo "Error adding record"; 
@@ -38,12 +37,10 @@ if (!$conn) {
     die("Connection failed: " . mysql_connect_error());
 }
 
-$update_status="UPDATE equipment SET `status`='Assigned' WHERE id='$check'";
+$update_status="UPDATE equipment SET `status`='Set' WHERE id='$check'";
 
 if (mysql_query($update_status)) {?>
-<script>
-	alert("UPDATE STATUS");
-</script>
+
 
      <?php
 } else {?>

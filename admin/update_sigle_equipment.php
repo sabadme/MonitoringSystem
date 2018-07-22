@@ -24,6 +24,10 @@ include"admin/generate_code.php";
                 <span>Set</span>
             </li>
              <?php include "admin/set_equipment.php"; ?>  
+             <li style='margin-left: 176px;'>
+                <span>Group Set</span>
+            </li>
+             <?php include "admin/groupSet.php"; ?>  
         </ul>
     </div>
 </div>

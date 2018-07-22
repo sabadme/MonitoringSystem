@@ -1,6 +1,8 @@
 <?php 
 if(isset($_REQUEST['login'])){
 
+	include"admin/connection.php";
+
 	$get_date=mysql_query("SELECT * FROM equipment");
 	while($data_date=mysql_fetch_array($get_date)){
 		$date=$data_date['date_end'];

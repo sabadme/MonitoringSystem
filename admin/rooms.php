@@ -1,12 +1,5 @@
 <?php 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
+include"admin/connection.php";
  ?>
 <div class="form-container">
     <div class="inner-form-container">
@@ -26,6 +19,14 @@ mysql_select_db($db);
                         while($data_room=mysql_fetch_array($get_room)){
                             $rooms=$data_room['room'];
 
+                            $office=mysql_query("SELECT * FROM tbl_login WHERE account='$rooms'");
+                            $data_office=mysql_fetch_array($office);
+                            $office_name=$data_office['account'];
+
+                            if($rooms == $office_name){
+                             
+                            }else{
+
                     ?>
                 <tr>
                  
@@ -39,6 +40,8 @@ mysql_select_db($db);
                   
                 </tr>
                   <?php 
+                  }
+
                     }
                     ?>
                 </tbody>

@@ -1,13 +1,13 @@
 <?php 
 if(isset($_REQUEST['save_equipment'])){
-	$file=$_FILES['imgs'];
 
+	$file=$_FILES['imgs'];
 	$name=$_FILES['imgs'] ['name'];
 	$size=$_FILES['imgs'] ['size'];	
 	$type=$_FILES['imgs'] ['type'];
 	$error=$_FILES['imgs'] ['error'];
 	$tmp=$_FILES['imgs'] ['tmp_name'];
-
+	
 	if ($error > 0) {
 		die("Error uploading File! Code $error.");
 	}
@@ -24,7 +24,8 @@ if(isset($_REQUEST['save_equipment'])){
 	$equipment_start=$_REQUEST['equipment_start'];
 	$equipment_end=$_REQUEST['equipment_end'];
 
-    $qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$equipment_code'>";
+
+	 	$qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$equipment_code'>";
     ?><div style="display:none"><?php echo $qrimg;?></div> <?php
     echo "<canvas id='myCanvas' style='visibility:hidden' />";
 
@@ -59,20 +60,20 @@ if(isset($_REQUEST['save_equipment'])){
     	</script>
 
     ";
-include"admin/connection.php";
 
+
+include"admin/­connection.php";
 $status="Unassigned";
+$insert=mysql_query("INSERT INTO equipment VALUES(0,'$equipment_code','$equipment_name','$equipment_start','$equipment_end','$name','$status','Up to date','None')");
+		if($insert){
+			
+			?> <script> 
+		 alert("Record Successfully Added in UserSubmit table"); </script>
+		 <?php 
+		}else {
+		  echo "Error adding record"; 
+		}		
 
-$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$equipment_code','$equipment_name','$equipment_start','$equipment_end','$name','$status','Up To Date')");
-echo mysql_error();  
-if($upload_image){
-	
-	?> <script> 
- alert("Record Successfully Added in UserSubmit table"); </script>
- <?php 
-}else {
-  echo "Error adding record"; 
-}
 
 
 }

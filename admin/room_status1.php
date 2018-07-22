@@ -3,14 +3,7 @@ if(isset($_REQUEST['Update_roomStatus'])){
 
 $Update_roomStatus=$_REQUEST['Update_roomStatus'];
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
+include"admin/connection.php";
 
 
 $room=mysql_query("SELECT * FROM room WHERE id='$Update_roomStatus'");
@@ -40,11 +33,15 @@ $room_name=$data_room['room'];
                             $equipment=$data_roomE['equipment'];
                             $room_id=$data_roomE['id'];
 
+                            $equipment_name=mysql_query("SELECT * FROM equipment WHERE id='$equipment'");
+                            $data_name=mysql_fetch_array($equipment_name);
+
+
                     ?>
                        
                 <tr>
                 
-                    <td><?php echo $data_roomE['equipment']; ?></td>
+                    <td><?php echo $data_name['equipment_name']; ?></td>
                     <td><?php echo $data_roomE['status']; ?></td>
                     <td>
                          <form action="" method="POST">

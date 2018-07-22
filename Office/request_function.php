@@ -3,14 +3,7 @@ if(isset($_REQUEST['send_request'])){
 $accountname=$_SESSION['account'];
 $messagetype=$_REQUEST['messagetype'];
 
-$servername ="localhost";
-$username="root";
-$password1="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password1);
-mysql_select_db($db);
+include"admin/connection.php";
 
 
 $get_requestID=mysql_query("SELECT * FROM tbl_login WHERE account ='$accountname'");

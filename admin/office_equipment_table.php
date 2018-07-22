@@ -3,14 +3,7 @@ if(isset($_REQUEST['office_equipment_table'])){
 
 $office_equipment_table=$_REQUEST['office_equipment_table'];
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
+include"admin/connection.php";
 
 
 $room=mysql_query("SELECT * FROM room WHERE room='$office_equipment_table'");
@@ -26,6 +19,7 @@ $officename=$data_room['room'];
         <div class="table-container" id="wrapper">
             <table>
                 <thead>
+                <th></th>
                 <th>Equipments</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -39,12 +33,29 @@ $officename=$data_room['room'];
                         while($data_roomE=mysql_fetch_array($room_equipment)){
                             $equipment=$data_roomE['equipment'];
                             $room_id=$data_roomE['id'];
+                            $set_status=$data_roomE['set_status'];
+
+                            if($set_status=="Set"){
+
+                                // get set equipment id
+
+                                $equipmentSet_id=mysql_query("SELECT * FROM equipmentset WHERE id='$equipment'");
+                                $data_equipmentSet_id=mysql_fetch_array($equipmentSet_id);
+                                $EquipmentName=$data_equipmentSet_id['set_name'];
+                                $img_filenames=$data_equipmentSet_id['img_filename'];
+                            }else{
+
+                            $get_equipmentName=mysql_query("SELECT * FROM equipment WHERE id='$equipment'");
+                            $data_equipmentName=mysql_fetch_array($get_equipmentName);
+                            $EquipmentName=$data_equipmentName['equipment_name'];
+                            $img_filenames=$data_equipmentName['equipment_filename'];
+                            }
 
                     ?>
                        
                 <tr>
-             
-                    <td><?php echo $data_roomE['equipment']; ?></td>
+                      <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $img_filenames . "'>" ?></td>
+                    <td><?php echo $EquipmentName; ?></td>
                     <td><?php echo $data_roomE['status']; ?></td>
                     <td>
                            <form action="" method="POST">

@@ -3,14 +3,7 @@ if(isset($_REQUEST['approve_booking'])){
 
 	$approve_booking=$_REQUEST['approve_booking'];
 
-$servername ="localhost";
-$username="root";
-$password1="";  
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password1);
-mysql_select_db($db);
+include"admin/connection.php";
 
 	$get_info=mysql_query("SELECT * FROM booking WHERE id='$approve_booking'");
 	$data_info=mysql_fetch_array($get_info);
