@@ -21,7 +21,7 @@ $get_name=mysql_query("SELECT * FROM tbl_login WHERE account='$report_name'");
 $data_getNAME=mysql_fetch_array($get_name);
 $report_id=$data_getNAME['id'];
 
-$equipment_id=mysql_query("SELECT * FROM equipment WHERE equipment_name='$equipment_name'");
+$equipment_id=mysql_query("SELECT * FROM equipment WHERE id='$equipment_name'");
 $data_equipmentID=mysql_fetch_array($equipment_id);
 $id=$data_equipmentID['id'];
 

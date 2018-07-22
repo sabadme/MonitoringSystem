@@ -1,4 +1,4 @@
-<?php
+	<?php
 include"admin/connection.php";
 
 $equipment_sql=mysql_query("SELECT * FROM equipment ORDER BY id desc");

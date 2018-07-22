@@ -16,14 +16,7 @@ if(isset($_REQUEST['login'])){
 $user=$_REQUEST['username'];
 $pass=$_REQUEST['password'];
 
-$servername ="localhost";
-$username="root";
-$password1="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password1);
-mysql_select_db($db);
+include"admin/connection.php";
 
 $sql=mysql_query("SELECT * FROM tbl_login WHERE username='$user' And password='$pass'");
 $sql_row=mysql_fetch_array($sql);
@@ -39,6 +32,7 @@ if($user==$sql_row['username'] && $pass==$sql_row['password']){
 	if($ed_status=="Enabled"){
 	$_SESSION['account']=$account;
 	$_SESSION['status']=$status;
+	$_SESSION['id']=$id;
 	header("location:main.php?id=$id");
 	}else{
 		?>

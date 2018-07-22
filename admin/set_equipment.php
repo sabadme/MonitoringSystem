@@ -11,7 +11,7 @@
                 <th>Name</th>
                 <th>Registered</th>
                 <th>Expiration</th>
-                </thead>
+                </thead>    
 
                 <tbody>
             <?php include"admin/set_equipment_table.php"; ?>

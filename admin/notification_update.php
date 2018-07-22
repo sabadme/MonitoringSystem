@@ -1,16 +1,8 @@
 <?php 
-if(isset($_REQUEST['notif'])){
+if(isset($_REQUEST['booking'])){
 
-$servername ="localhost";
-$username="root";
-$password1="";  
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password1);
-mysql_select_db($db);
-
-$check=mysql_query("SELECT * FROM booking WHERE notif='0'");
+include"admin/connection.php";
+$check=mysql_query("SELECT * FROM booking WHERE notif='1'");
 while($data_check=mysql_fetch_array($check)){
 $notif=$data_check['notif'];
 
@@ -18,7 +10,7 @@ if (!$conn) {
     die("Connection failed: " . mysql_connect_error());
 }
 
-$notification="1";	
+$notification="0";	
 
 $update_status="UPDATE booking SET `notif`='$notification'";
 

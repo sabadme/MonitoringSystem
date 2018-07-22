@@ -239,7 +239,7 @@ table {
   border-top: 0;
 }
 thead {
-  width: calc(99%);
+  width: calc(100% - 1em);
 }
 tbody {
   display: block;

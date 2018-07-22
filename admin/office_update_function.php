@@ -3,14 +3,10 @@ if(isset($_REQUEST['office_update_function'])){
 $office_update_function=$_REQUEST['office_update_function'];
 $account=$_REQUEST['account'];
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
+include"admin/connection.php";
+$select=mysql_query("SELECT * FROM tbl_login WHERE id='$office_update_function'");
+$data_select=mysql_fetch_array($select);
+$edit_booker=$data_select['account'];
 
 if (!$conn) {
     die("Connection failed: " . mysql_connect_error());
@@ -19,6 +15,21 @@ if (!$conn) {
 $update_status="UPDATE tbl_login SET `account`='$account' WHERE id='$office_update_function'";
 
 if (mysql_query($update_status)) {?>
+<script>
+	alert("UPDATE STATUS");
+</script>
+
+     <?php
+} else {?>
+    <script>alert("Error"); </script>
+    <?php
+}
+
+
+
+$update_statuss="UPDATE booking SET `booker`='$account' WHERE booker='$edit_booker'";
+
+if (mysql_query($update_statuss)) {?>
 <script>
 	alert("UPDATE STATUS");
 </script>

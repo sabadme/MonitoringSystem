@@ -1,5 +1,5 @@
 <div class="dashboard-container">
-   
+  
 	<div class="new-equipments-container">
 		<strong> New Equipments </strong>
 

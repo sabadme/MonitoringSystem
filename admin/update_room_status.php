@@ -4,15 +4,7 @@ if(isset($_REQUEST['Update_roomStatus'])){
 $Update_roomStatus=$_REQUEST['Update_roomStatus'];
 $equipment_action=$_REQUEST['equipment_action'];
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
-
+include"admin/connection.php";
 if (!$conn) {
     die("Connection failed: " . mysql_connect_error());
 }
@@ -34,7 +26,7 @@ $get_equipmentName=mysql_query("SELECT * FROM room WHERE id='$Update_roomStatus'
 $data_equipmentName=mysql_fetch_array($get_equipmentName);
 $equipment_name=$data_equipmentName['equipment'];
 
-$get_equipmentId=mysql_query("SELECT * FROM equipment WHERE equipment_name='$equipment_name'");
+$get_equipmentId=mysql_query("SELECT * FROM equipment WHERE id='$equipment_name'");
 $data_equipmentId=mysql_fetch_array($get_equipmentId);
 $equipment_id=$data_equipmentId['id'];
 

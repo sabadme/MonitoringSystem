@@ -9,14 +9,7 @@ if(isset($_REQUEST['save_booking'])){
 	$tameend=$_REQUEST['tameend'];
 
 
-$servername ="localhost";
-$username="root";
-$password1="";	
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password1);
-mysql_select_db($db);
+include"admin/connection.php";
 
 
 $check=mysql_query("SELECT * FROM booking");
@@ -28,7 +21,7 @@ $t_e=$data_check['time_end'];
 $sem_db=$data_check['sem'];
 $venue_db=$data_check['venue'];
 
-if($timestart==$tameend){
+if($timestart==$tameend And $d_e==$d_s){
 	?>
 	<script>
 		alert("Time start  and time end are the same");

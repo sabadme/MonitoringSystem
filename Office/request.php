@@ -15,7 +15,6 @@
 					<th>Time</th>
 					<th>Status</th>
 				</thead>
-
 				<tbody>
 					<?php include"Office/office_SA_table.php"; ?>
 				</tbody>
