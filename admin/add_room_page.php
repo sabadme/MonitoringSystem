@@ -71,8 +71,8 @@
             </div>
 
             <button style="margin-top: 20px;" class="action" name="save_room" type="submit">Save</button>
+        </div>
     </form>
-</div>
 </div>
 <!-- 
 <script>

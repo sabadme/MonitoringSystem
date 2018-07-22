@@ -3,14 +3,16 @@
 	<div class="new-equipments-container">
 		<strong> New Equipments </strong>
 
-		<div class="new-equipments-block owl-carousel">
+        <div class="overflow-container">
+    		<div class="new-equipments-block">
 
-			<?php include"admin/new_equipment.php"; ?>
-		</div>
+    			<?php include"admin/new_equipment.php"; ?>
+    		</div>
+        </div>
 	</div>
 </div>
 
-<script>
+<!-- <script>
 	function loadCarousel() {
         var itemListContainer = $('.new-equipments-block');
             itemListContainer.show();   
@@ -48,4 +50,4 @@
 	 	loadCarousel();
         owlCarousel();
 	});
-</script>
+</script> -->

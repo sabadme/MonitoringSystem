@@ -1,10 +1,10 @@
 
 <?php
 if ($status == "Admin") {
- 
+
 
  ?>
-   
+
   <script>
     $(document).ready(function(){
         setInterval(function(){
@@ -18,72 +18,39 @@ if ($status == "Admin") {
             <ul class="menu">
 
                 <li>
-                    <button type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
+                    <button title="Dashboard" type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
                 </li>
-                <li class="manage-btn">
-                    
+                <!-- <li class="manage-btn">
                     <span class="manage">MANAGE</span>
-                    <ul>
-                        <li>
-                            <button class="adduser" name="accounts" type="submit">Accounts</button>
-                        </li>
-                        <li>
-                            <button class="addequipment" name="add_equipment" type="submit">Equipments</button>
-                        </li>
-                        <li>
-                            <button class="rooms" name="rooms" type="submit">Rooms</button>
-                        </li>
-               
-                    </ul>
-
-                    <!--Assigned -->
-
-                </li>
-                      <li class="manage-btn">
-                    <span class="manage">Assigned Room</span>
-                    <ul>
-                         <li>
-                            <button class="rooms" name="setTeachersRoom" type="submit">Set Teachers Room</button>
-                        </li>
-                        <li>
-                            <button class="rooms" name="ViewTeachers" type="submit">View Teachers Room</button>
-                        </li>
-                         <li>
-                            <button class="rooms" name="unassgnedView" type="submit">View Unassigned</button>
-                        </li>
-                    </ul>
-                </li>
+                </li> -->
 
                 <li>
-                    <button class="notifs" name="notifs" type="submit">Notifications</button>
-                    <span id="count" class="counter"></span>
-
-
+                    <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
                 </li>
                 <li class="booking-btn">
-                    <button class="booking" name="booking" type="submit">Booking</button>
+                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
                      <?php include "admin/notifacation.php"; ?>
-                        
-                        <?php 
-                        if($count == 0){
-                        }else{
-                            ?>
-                              <span class="counter"><?php echo $count; ?></span>
-                            <?php
-                        }
-                         ?>
-                        
-                        
-                        
-                      
-               
+                     <?php if ($count == 0) {
+                        ?>
 
-                   
+                        <?php
+                    } else { ?><span class="counter"><?php echo $count; ?></span> <?php } ?>
+
+
                 </li>
                 <li>
-                    <button class="equips" name="equipment_list" type="submit">Equipment List</button>
+                    <button title="Equipments" class="equips" name="equipment_list" type="submit">Equipment List</button>
                 </li>
-            
+                <li>
+                    <button title="Accounts" class="adduser" name="accounts" type="submit">Accounts</button>
+                </li>
+                <li>
+                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit">Equipments</button>
+                </li>
+                <li>
+                    <button title="Rooms" class="rooms" name="rooms" type="submit">Rooms</button>
+                </li>
+
             </ul>
         </form>
     </nav>
@@ -97,7 +64,7 @@ if ($status == "Admin") {
                 <li>
                     <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>">DASHBOARD</button>
                 </li>
-       
+
                 <li>
                     <button class="booking" name="booking" type="submit">Booking</button>
                 </li>
@@ -134,7 +101,7 @@ if ($status == "Admin") {
     <?php
 }
 ?>
-  
+
 
 
 

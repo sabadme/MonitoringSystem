@@ -1,5 +1,5 @@
 .dashboard-container {
-  margin-top: 90px;
+  margin-top: 20px;
 }
 .dashboard-container .booker {
   margin: 0 25px;
@@ -36,17 +36,26 @@
 .dashboard-container .booker #wrapper {
   padding-left: 0;
 }
+.dashboard-container .overflow-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
 .dashboard-container .new-equipments-container {
-  margin: 40px 25px 0;
+  margin: 0 25px;
   position: relative;
 }
 .dashboard-container .new-equipments-container .new-equipments-block {
-  padding: 0 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
 }
 .dashboard-container .new-equipments-container strong {
   display: block;
   padding: 15px 20px;
-  background: #0250b9;
+  background: #292929;
   color: #fff;
   font-size: 1.2142857142857142rem;
   text-transform: uppercase;

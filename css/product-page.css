@@ -72,7 +72,7 @@
   font-family: sans-serif;
   text-transform: uppercase;
   color: #fff;
-  background: #0250b9;
+  background: #292929;
   padding: 10px;
   max-width: 250px;
   font-weight: 600;
@@ -101,7 +101,7 @@
 }
 .product-page-container.report-form textarea:focus {
   outline: none;
-  border-color: #0250b9;
+  border-color: #292929;
 }
 .product-page-container.report-form button {
   margin-top: 10px;

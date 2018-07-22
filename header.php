@@ -10,7 +10,7 @@ echo $accountname;
 <div class="logo-container">
 	<img src="images/lccb.png" />
 
-	<span>Online Equipment Monitoring System</span>
+	<span>Facility Equipment Monitoring System</span>
 </div>	
 <div class="login-container">
 	<?php if ($accountname =="Admin"): ?>

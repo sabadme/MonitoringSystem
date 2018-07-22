@@ -48,6 +48,7 @@ select:focus:not([disabled]) {
 body {
 	line-height: 1;
 	height: inherit;
+    background: @artboard;
 }
 ol, ul {
 	list-style: none;
@@ -85,16 +86,21 @@ a:link {
     }
 }
 
+.main-index {
+    .page-main {
+        .flex-layout;
+    }
+}
 .page-wrapper {
 	height: inherit;
 
     .page-main {
         min-height: 100%;
-    }
-}
 
-.page-main {
-	padding-top: 90px;
+        .slider img {
+            width: 100%;
+        }
+    }
 }
 
 button {
@@ -102,11 +108,13 @@ button {
     padding: 10px 15px;
     border: 0;
     color: @white;
-    .font-size(15);
+    .font-size(14);
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
+    margin-top: 10px;
+    max-width: 150px;
 
     &:focus {
         outline: none;
@@ -151,7 +159,6 @@ button {
 }
 
 form {
-    .flex-basis(30%);
 
     input {
         display: block;
@@ -203,13 +210,13 @@ td:first-child {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
 }
 
 th {
-    background-color: slategrey;
+    background-color: @cobalt;
     color: @white;
-    padding: 20px;
+    padding: 10px;
     text-transform: uppercase;
 }
 

@@ -121,6 +121,7 @@ select:focus:not([disabled]) {
 body {
   line-height: 1;
   height: inherit;
+  background: #dbdbdb;
 }
 ol,
 ul {
@@ -156,13 +157,20 @@ a:link {
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  color: #0250b9;
+  color: #292929;
   text-decoration: none;
 }
 a:hover,
 a:link:hover {
-  color: #0366eb;
+  color: #434343;
   text-decoration: none;
+}
+.main-index .page-main {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 .page-wrapper {
   height: inherit;
@@ -170,25 +178,27 @@ a:link:hover {
 .page-wrapper .page-main {
   min-height: 100%;
 }
-.page-main {
-  padding-top: 90px;
+.page-wrapper .page-main .slider img {
+  width: 100%;
 }
 button {
-  background: #0250b9;
+  background: #292929;
   padding: 10px 15px;
   border: 0;
   color: #fff;
-  font-size: 1.0714285714285714rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
   width: 100%;
+  margin-top: 10px;
+  max-width: 150px;
 }
 button:focus {
   outline: none;
 }
 button:hover {
-  background: #025bd2;
+  background: #363636;
 }
 button.action {
   font-size: 0.8571428571428571rem;
@@ -218,11 +228,6 @@ button.action.tertiary:hover {
   background: red;
   color: #fff;
 }
-form {
-  -webkit-flex-basis: 30%;
-  -moz-flex-basis: 30%;
-  flex-basis: 30%;
-}
 form input {
   display: block;
   padding: 10px;
@@ -231,7 +236,7 @@ form input {
 }
 form input:focus {
   outline: none;
-  border-color: #0250b9;
+  border-color: #292929;
 }
 table {
   width: 100%;
@@ -266,12 +271,12 @@ td:first-child {
   text-transform: capitalize;
 }
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
 }
 th {
-  background-color: slategrey;
+  background-color: #292929;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-transform: uppercase;
 }
 .search {
@@ -284,7 +289,7 @@ th {
 }
 .search:focus {
   outline: none;
-  border-color: #0250b9;
+  border-color: #292929;
 }
 select {
   padding: 10px;
@@ -293,7 +298,7 @@ select {
 }
 select:focus {
   outline: none;
-  border-color: #0250b9;
+  border-color: #292929;
 }
 .title {
   display: block;
@@ -328,11 +333,11 @@ select:focus {
   height: 100px;
   border-radius: 100%;
   display: block;
-  border: 5px dashed #0250b9;
+  border: 5px dashed #292929;
   position: absolute;
   top: -24px;
   left: -24px;
-  box-shadow: inset 0px 0 0 20px #0250b9;
+  box-shadow: inset 0px 0 0 20px #292929;
   transform: scale(0.5) rotate(0deg);
   animation: gear 6s linear infinite;
 }
@@ -342,11 +347,11 @@ select:focus {
   height: 58px;
   border-radius: 100%;
   display: block;
-  border: 5px dashed #0250b9;
+  border: 5px dashed #292929;
   position: absolute;
   top: 26px;
   right: -14px;
-  box-shadow: inset 0px 0 0 10px #0250b9;
+  box-shadow: inset 0px 0 0 10px #292929;
   transform: scale(0.5) rotate(0deg);
   animation: gear2 4s linear infinite;
 }

@@ -1,5 +1,5 @@
 header {
-  background: #0250b9;
+  background: #292929;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -14,7 +14,6 @@ header {
   padding: 20px;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   width: 100%;
   z-index: 6;
 }
@@ -30,7 +29,7 @@ header .logo-container {
   width: 50%;
 }
 header .logo-container span {
-  font-family: 'Open Sans';
+  font-family: sans-serif;
   font-size: 1.7857142857142858rem;
   padding-left: 10px;
   color: white;
@@ -51,7 +50,7 @@ header .login-container .mainUser-container {
 }
 header .login-container .mainUser-container .username {
   font-size: 1.0714285714285714rem;
-  font-family: 'Open Sans';
+  font-family: sans-serif;
   color: #fff;
   margin-right: 10px;
 }
@@ -99,19 +98,19 @@ header .login-container .login-form-container form input {
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 0.9285714285714286rem;
-  font-family: "Open Sans";
-  padding: 5px;
+  font-family: sans-serif;
+  padding: 10px;
   outline: none;
-  border: 1px solid #0250b9;
+  border: 1px solid #292929;
 }
 header .login-container .login-form-container form button {
   width: 100%;
   max-width: 150px;
   margin: 0 auto;
-  background: #0250b9;
-  padding: 5px 10px;
+  background: #292929;
+  padding: 10px 15px;
   color: #fff;
-  font-family: "Open Sans";
+  font-family: sans-serif;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -119,43 +118,56 @@ header .login-container .login-form-container form button {
   cursor: pointer;
 }
 header .login-container .login-form-container form button:hover {
-  background: #025bd2;
+  background: #363636;
 }
-header .login-container .login {
-  font-size: 1.4285714285714286rem;
-  font-family: 'Open Sans';
-  color: #fff;
+header .login-container .login,
+header .login-container a {
+  font-size: 1.0714285714285714rem;
+  font-family: sans-serif;
+  color: #292929;
   cursor: pointer;
-  padding: 10px 20px;
+  text-transform: uppercase;
+  padding-right: 10px;
+  margin-right: 10px;
   position: relative;
+  border-right: 1px solid #292929;
+  /*
+			&.active {
+				
+
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 25px;
+					background: @white;
+					left: 0;
+				}
+
+				&:before {
+					top: -21px;
+					
+				}
+
+				&:after {
+					bottom: -22px;
+				}
+			}*/
 }
-header .login-container .login.active {
-  background: #fff;
-  color: #212121;
+header .login-container .login:hover,
+header .login-container a:hover {
+  color: #0040b1;
 }
-header .login-container .login.active:before,
-header .login-container .login.active:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 25px;
-  background: #fff;
-  left: 0;
-}
-header .login-container .login.active:before {
-  top: -21px;
-}
-header .login-container .login.active:after {
-  bottom: -22px;
-}
-header .login-container .login.active + .login-form-container {
+header .login-container .login.active + .login-form-container,
+header .login-container a.active + .login-form-container {
   display: block;
   position: absolute;
   width: 300px;
   min-height: 150px;
   background: #fff;
   right: 0;
-  top: 90px;
+  top: 91px;
   padding: 15px;
   z-index: 5;
 }

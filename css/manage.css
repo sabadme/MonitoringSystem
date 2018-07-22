@@ -1,5 +1,5 @@
 .manage-container {
-  margin: 100px 0 50px;
+  margin: 40px 20px;
   padding: 0 20px;
 }
 .manage-container .inner-form-container {
@@ -10,6 +10,7 @@
   display: flex;
   width: 100%;
   margin: 0 auto;
+  background: #fff;
 }
 .manage-container.select-equipments #wrapper {
   padding-left: 0;
@@ -48,7 +49,7 @@
   left: 103px;
 }
 .manage-container .tabs li.active {
-  background: #0250b9;
+  background: #292929;
 }
 .manage-container .tabs li.active span {
   color: #fff;

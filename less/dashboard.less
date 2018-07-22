@@ -2,7 +2,7 @@
 
 
 .dashboard-container {
-	margin-top: 90px;
+	margin-top: 20px;
 
 	.booker {
 		margin: 0 25px;
@@ -35,12 +35,18 @@
 		}
 	}
 
+	.overflow-container{
+		max-height: 500px;
+		overflow-y: auto;
+	}
+
 	.new-equipments-container {
-		margin: 40px 25px 0;
+		margin: 0 25px;
 		position: relative;
 
 		.new-equipments-block {
-			padding: 0 20px;
+			.flex-layout;
+    		flex-wrap: wrap;
 		}
 
 		strong {

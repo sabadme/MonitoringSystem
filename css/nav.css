@@ -2,11 +2,8 @@
   padding: 70px 20px 0;
 }
 .main-nav {
-  background: #bdd5fc;
-  position: fixed;
-  width: 100%;
-  border-bottom: 1px solid #0250b9;
-  z-index: 2;
+  background: #898989;
+  height: 100%;
 }
 .main-nav .menu {
   display: -webkit-box;
@@ -14,20 +11,11 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  max-width: 1230px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.main-nav .menu li {
-  margin-right: 30px;
-  -webkit-flex: 0 1 25%;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
 }
 .main-nav .menu li.manage-btn {
   position: relative;
@@ -39,7 +27,7 @@
   display: block;
   width: 100%;
   position: absolute;
-  background: #bdd5fc;
+  background: #898989;
   left: 0;
   top: 100%;
 }
@@ -67,7 +55,8 @@
 }
 .main-nav .menu li:hover {
   cursor: pointer;
-  background: #0250b9;
+  background: #292929;
+  font-size: 0.07142857142857142rem;
 }
 .main-nav .menu li:hover a {
   color: #fff;
@@ -75,28 +64,23 @@
 .main-nav .menu li button {
   margin: 0;
 }
+.main-nav .menu li .dashboard:hover {
+  font-size: 0.9285714285714286rem;
+}
 .main-nav .menu li button,
 .main-nav .menu li .button,
 .main-nav .menu li .manage {
   font-family: sans-serif;
-  font-size: 1rem;
+  font-size: 0rem;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
   color: #212121;
   background: none;
   border: 0;
-  padding: 15px 10px;
+  padding: 20px;
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -118,7 +102,6 @@
 .main-nav .menu li .manage:before {
   content: '';
   display: inline-block;
-  margin-right: 10px;
   font-family: 'monitoring';
   font-size: 1.4285714285714286rem;
   color: #212121;

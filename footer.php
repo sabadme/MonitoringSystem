@@ -3,17 +3,15 @@
 <div class="topfooter">
 
 	<div class="left-container">
-		<a href="#" title="About Us">ABOUT</a>
+		<!-- <a href="#" title="About Us">ABOUT</a>
 		<a href="#" title="Guide">GUIDE</a>
 		<a href="#" title="Contact Us">CONTACT</a>
-
+ -->
+ 		<img src="images/lccb.png">
 	</div>
 
 	<div class="right-container">
-
-		<div class="logo">
-			<img src="images/logo-new-2.png">
-		</div>
+		<p>"Community of Friends"</p>
 
 		<div class="dept-logo">
 			<img src="images/sbit.png">	
@@ -22,12 +20,11 @@
 			<img src="images/SHTM.png">
 			<img src="images/lccb.png">
 		</div>
+		<p class="copyright">Copyright Ⓒ 2017 Runikaperdihan Inc. All Rights Reserved</p>
 	</div>
 
-</div>
+	
 
-<div class="botfooter"> 
-	<p>Copyright Ⓒ 2017 Runikaperdihan Inc. All Rights Reserved</p>
 </div>
 
 </footer>

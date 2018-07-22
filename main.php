@@ -73,7 +73,7 @@ if(isset($status)){
                 <img src="images/lccb.png"/>
 
 
-                <span>FACILITY MANAGEMENT SYSTEM</span>
+                <span>Facility Equipment Monitoring System</span>
             </div>
             <div class="login-container">
                 <?php if ($accountname): ?>
@@ -103,7 +103,7 @@ if(isset($status)){
         <script>
             //notifacation pop up
         $(document).ready(function(){
-         
+
             setInterval(function(){
             load_last_notification();
             }, 1000);
@@ -111,7 +111,7 @@ if(isset($status)){
                $.ajax({
                 url: "admin/fetch_report.php",
                 method:"POST",
-               
+
                 success: function(data){
                     /*console.log(data)*/
                 $(".content").html(data);
@@ -119,8 +119,8 @@ if(isset($status)){
                 }
             })
             }
-         
-            
+
+
         });
         </script>
 
@@ -129,8 +129,8 @@ if(isset($status)){
 
 
 
-      
-    
+
+
 
 
                 ?>
@@ -159,10 +159,10 @@ if(isset($status)){
                     <div id="alert_popover">
                          <div class="wrapper">
                             <div class="content">
-                  
+
                                  </div>
                          </div>
-                   </div> 
+                   </div>
 
         <?php include "footer.php"; ?>
     </div>
@@ -232,7 +232,7 @@ if(isset($status)){
     // THIS CODE IS AUTO UPDATE THE VALUE OF NOTIFICATION
     setInterval(function() {
     $.get('admin/notif_autoupdate.php', function(data) {
-    
+
     });
 }, 7000);
 </script>
