@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_REQUEST['generate_code'])){
+
    	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	$size = strlen( $chars );
@@ -8,7 +8,7 @@ if(isset($_REQUEST['generate_code'])){
 		$str.= $chars[ rand( 0, $size - 1 ) ];
 	}
 
-	}
+	
  
 
 

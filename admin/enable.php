@@ -2,7 +2,14 @@
 if(isset($_REQUEST['enable'])){
 
 $enable=$_REQUEST['enable'];
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
 
 if (!$conn) {
     die("Connection failed: " . mysql_connect_error());

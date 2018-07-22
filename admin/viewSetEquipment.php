@@ -2,7 +2,7 @@
 if(isset($_REQUEST['viewSetEquipment'])){
 	$viewSetEquipment=$_REQUEST['viewSetEquipment'];
 
-  include"admin/connection.php";	
+	
 	?>
 <div class="manage-container with-banner">
 	<strong class="title"><?php echo $viewSetEquipment; ?></strong>

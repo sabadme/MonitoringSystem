@@ -3,7 +3,15 @@ if(isset($_REQUEST['office_update_function'])){
 $office_update_function=$_REQUEST['office_update_function'];
 $account=$_REQUEST['account'];
 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
+
 $select=mysql_query("SELECT * FROM tbl_login WHERE id='$office_update_function'");
 $data_select=mysql_fetch_array($select);
 $edit_booker=$data_select['account'];

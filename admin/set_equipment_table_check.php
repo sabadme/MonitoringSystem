@@ -1,6 +1,5 @@
 <?php 
 if(isset($_REQUEST['Add_equipment_set'])){
-	include"admin/connection.php";
 
 if(isset($_REQUEST['equipment_check'])){
 	 $equipment_check=$_REQUEST['equipment_check'];

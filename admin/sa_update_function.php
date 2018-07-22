@@ -8,7 +8,14 @@ $status=$_REQUEST['status'];
 $middlename=$_REQUEST['middlename'];
 $FL=$firstname.' '.$lastname;
 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password1="";	
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password1);
+mysql_select_db($db);
 
 $select=mysql_query("SELECT * FROM tbl_login WHERE id='$sa_update_function'");
 $data_select=mysql_fetch_array($select);

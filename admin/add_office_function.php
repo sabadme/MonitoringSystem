@@ -5,7 +5,14 @@ $account=$_REQUEST['account'];
 $usernames=$_REQUEST['username'];
 $passwords=$_REQUEST['password'];
 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password1="";	
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password1);
+mysql_select_db($db);
 
 $null="null";
 $status="Office";

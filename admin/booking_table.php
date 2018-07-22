@@ -1,7 +1,14 @@
 <?php 
 
 $status=$_SESSION['status'];
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password1="";  
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password1);
+mysql_select_db($db);
 
 $booking=mysql_query("SELECT DISTINCT `booker`,`date_start`,`date_end`,`time_start`,`time_end`,`venue`,`sem` FROM booking ORDER BY id desc");
 while($data_booking=mysql_fetch_array($booking)){
@@ -15,14 +22,10 @@ while($data_booking=mysql_fetch_array($booking)){
     $booking_status=mysql_query("SELECT * FROM booking WHERE booker='$booker' And date_start='$date' And date_end='$date_e' And time_start='$time' And time_end='$time_e'");
     $data_status=mysql_fetch_array($booking_status);
     $statuss=$data_status['status'];
-    $booker_name=$data_status['booker'];
-
-    $sql_bookerName=mysql_query("SELECT * FROM tbl_login WHERE id='$booker_name'");
-    $data_bookerName=mysql_fetch_array($sql_bookerName);
 
     ?>
     <tr>
-        <td><?php echo $data_bookerName['account']; ?></td>
+        <td><?php echo $data_booking['booker']; ?></td>
         <td><?php echo $data_booking['venue']; ?></td>
         <td><?php echo $data_booking['sem']; ?></td>
         <td><?php echo $data_booking['date_start']; ?></td>

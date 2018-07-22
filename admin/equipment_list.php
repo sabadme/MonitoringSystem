@@ -21,11 +21,6 @@
                 <?php include "admin/unassigned.php"; ?>
 
                 <li>
-                    <span>Assigned</span>
-                </li>
-                <?php include "admin/assigned_equipment.php"; ?>
-
-                <li style="margin-left: 500px;">
                     <span>Up to date</span>
                 </li>
                 <?php include "admin/Uptodate.php"; ?>

@@ -1,10 +1,8 @@
 <?php
 session_start();
-error_reporting(0);
+
 $accountname=$_SESSION['account'];
 $status=$_SESSION['status'];
-$id=$_SESSION['id'];
-
  ?>
  <?php
 if(isset($status)){
@@ -22,38 +20,7 @@ if(isset($status)){
         <script type="text/javascript" src="js/jQuery.print.js"></script>
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="js/jquery.simplePagination.js"></script>
-
     </head>
-    <style>
-
-  #alert_popover
-  {
-
-   display:block;
-   position:absolute;
-   bottom:50px;
-   right: 50px;
-  }
-  .wrapper {
-    display: table-cell;
-    vertical-align: bottom;
-    height: auto;
-    width:200px;
-  }
-  .alert_default
-  {
-    display: block;
-    margin: 20px 20px;
-   color: #333333;
-   background-color: #f2f2f2;
-   border-color: #cccccc;
-  }
-
-
-
-  </style>
-
-
 
     <body class="main-index">
     <div class="block-loader">
@@ -73,7 +40,7 @@ if(isset($status)){
                 <img src="images/lccb.png"/>
 
 
-                <span>FACILITY MANAGEMENT SYSTEM</span>
+                <span>Online Equipment Monitoring System</span>
             </div>
             <div class="login-container">
                 <?php if ($accountname): ?>
@@ -98,71 +65,23 @@ if(isset($status)){
             <?php
             if ($status == "Admin") {
 
-   ?>
-
-        <script>
-            //notifacation pop up
-        $(document).ready(function(){
-         
-            setInterval(function(){
-            load_last_notification();
-            }, 1000);
-            function load_last_notification(){
-               $.ajax({
-                url: "admin/fetch_report.php",
-                method:"POST",
-               
-                success: function(data){
-                    /*console.log(data)*/
-                $(".content").html(data);
-                // alert(data)
-                }
-            })
-            }
-         
-            
-        });
-        </script>
-
-
-        <?php
-
-
-
-      
-    
-
-
                 ?>
                 <?php include "admin/function.php"; ?>
                 <?php
             } else if ($status == "Office") {
                 $accountname;
-
                 ?>
                 <?php include "Office/function.php"; ?>
                 <?php
             } else if ($status == "Teacher") {
                 $accountname;
                 include "teacher/function.php";
-            }else if ($status == "Student Assistant") {
-                $accountname;
-                include "student/function.php";
             }
 
             ?>
 
 
         </div>
-        <!-- NOTIFACATION POP UP -->
-
-                    <div id="alert_popover">
-                         <div class="wrapper">
-                            <div class="content">
-                  
-                                 </div>
-                         </div>
-                   </div> 
 
         <?php include "footer.php"; ?>
     </div>
@@ -214,6 +133,17 @@ if(isset($status)){
         });
     }
 
+    /*function generate() {
+        $('.generate').click(function(){
+            $.post('generate_code.php',
+                {name: $chars},
+
+                function(data){
+                    $(str).html(data);
+                }
+            );
+        });
+    }*/
 
     jQuery(document).ready(function () {
         $('.block-loader').fadeOut("slow");
@@ -228,17 +158,3 @@ if(isset($status)){
         $('.block-loader').fadeIn("slow");
     });
 </script>
-<script>
-    // THIS CODE IS AUTO UPDATE THE VALUE OF NOTIFICATION
-    setInterval(function() {
-    $.get('admin/notif_autoupdate.php', function(data) {
-    
-    });
-}, 7000);
-</script>
-
-
-
-
-
-

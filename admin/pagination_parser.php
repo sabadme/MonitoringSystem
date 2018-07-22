@@ -11,7 +11,14 @@ if(isset($_POST['pn'])){
     	$pn = $last; 
 	}
 	// Connect to our database here
-include"admin/connection.php";
+	$servername ="localhost";
+	$username="root";
+	$password="";
+	$db="monitoringsystemdatabase";
+
+
+	$conn =mysql_connect($servername,$username,$password);
+	mysql_select_db($db); 
 	// This sets the range of rows to query for the chosen $pn
 	$limit = 'LIMIT ' .($pn - 1) * $rpp .',' .$rpp;
 	// This is your query again, it is for grabbing just one page worth of rows by applying $limit

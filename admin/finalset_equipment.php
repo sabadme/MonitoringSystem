@@ -68,7 +68,14 @@ if(isset($_REQUEST['Add_equipment_setFinal'])){
 
     ";
 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
 
 		if(isset($_REQUEST['finalset_equipment'])){
 	 $finalset_equipment=$_REQUEST['finalset_equipment'];
@@ -76,7 +83,7 @@ include"admin/connection.php";
 	 for ($i=0; $i < count($finalset_equipment) ; $i++) { 
 	 	 $check=$finalset_equipment[$i];
 
-	 	 $insert=mysql_query("INSERT INTO equipmentSet VALUES(0,'$setName','$check','$date','$time','$str','$name','1','Unassigned')");
+	 	 $insert=mysql_query("INSERT INTO equipmentSet VALUES(0,'$setName','$check','$date','$time','$str','$name','1')");
 	 	 echo mysql_error();  
 if($insert){
 	
@@ -93,7 +100,7 @@ if (!$conn) {
     die("Connection failed: " . mysql_connect_error());
 }
 
-$update_status="UPDATE equipment SET `status`='Set',`set_name`='$setName' WHERE id='$check'";
+$update_status="UPDATE equipment SET `status`='Assigned' WHERE id='$check'";
 
 if (mysql_query($update_status)) {?>
 <script>

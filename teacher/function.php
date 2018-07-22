@@ -1,6 +1,6 @@
 <?php 
 include"teacher/send_report.php";
-include "teacher/teacherBooking_function.php";
+include "admin/booking_function.php";
 
 if(isset($_REQUEST['dashboard'])){
 	include"teacher/dashboard.php";
@@ -11,15 +11,12 @@ if(isset($_REQUEST['dashboard'])){
 }else if(isset($_REQUEST['send_report'])){
 	include"teacher/report.php";	
 }else if(isset($_REQUEST['booking'])){
-	include"teacher/booking_page.php";
+	include"admin/booking_page.php";
 }else if (isset($_REQUEST['save_booking'])){
-	include"teacher/booking_page.php";		
-}else if (isset($_REQUEST['equipment_page'])) {
+	include"admin/booking_page.php";		
+} else if (isset($_REQUEST['equipment_page'])) {
+
     include "admin/product_page.php";
-}else if (isset($_REQUEST['viewrooms'])) {
-    include "teacher/viewrooms.php";
-}else if (isset($_REQUEST['viewequipment_rooms'])) {
-    include "teacher/viewequipment_rooms.php";
 }else{
 	include"teacher/dashboard.php";
 }

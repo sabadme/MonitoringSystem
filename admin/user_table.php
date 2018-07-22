@@ -1,6 +1,13 @@
 <?php 
 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password1="";	
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password1);
+mysql_select_db($db);
 
 
 $user_table=mysql_query("SELECT * FROM tbl_login ORDER BY id desc");

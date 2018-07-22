@@ -1,4 +1,3 @@
-
 <div class="form-container">
 	<div class="inner-form-container">
 		<form class="manage-form" action="" method="POST">

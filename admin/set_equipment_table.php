@@ -1,10 +1,17 @@
 <?php 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
 
 
 $sql_equipmentSet=mysql_query("SELECT * FROM equipment WHERE status='Unassigned' And equipment_status='Up To Date'");
 while($data_equipmentSet=mysql_fetch_array($sql_equipmentSet)){
-	 $equipment_filename=$data_equipmentSet['equipment_filename'];
+	$equipment_filename=$data_equipmentSet['equipment_filename'];
 
 
 	?>
@@ -21,4 +28,5 @@ while($data_equipmentSet=mysql_fetch_array($sql_equipmentSet)){
 }
 ?>
 
-
+<?php
+ ?>

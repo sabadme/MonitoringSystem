@@ -2,7 +2,14 @@
 if(isset($_REQUEST['officedisable'])){
 
 $officedisable=$_REQUEST['officedisable'];
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
 
 if (!$conn) {	
     die("Connection failed: " . mysql_connect_error());

@@ -1,6 +1,6 @@
 <?php
 if (isset($_REQUEST['equipment_report'])) {
-    $equipment_report= $_REQUEST['equipment_report'];
+    $equipment_report = $_REQUEST['equipment_report'];
 
     $servername = "localhost";
     $username = "root";
@@ -11,27 +11,15 @@ if (isset($_REQUEST['equipment_report'])) {
     $conn = mysql_connect($servername, $username, $password);
     mysql_select_db($db);
 
-    $equipment_reportNAME = mysql_query("SELECT * FROM room WHERE equipment='$equipment_report'");
-    $data_reportNAME= mysql_fetch_array($equipment_reportNAME);
-  echo  $name = $data_reportNAME['equipment'];
-    $set_status=$data_reportNAME['set_status'];
-
-    if($set_status=="Set"){
-        $sql_equipmentSet=mysql_query("SELECT * FROM equipmentset WHERE id='$name'");
-        $data_equipmentSet=mysql_fetch_array($sql_equipmentSet);
-      echo  $equipment_filename=$data_equipmentSet['img_filename'];
-      echo  $equipment_code=$data_equipmentSet['setQr_code'];
-      echo  $equipment_name=$data_equipmentSet['set_name'];
-    
-}else{
+    $equipment_reportNAME = mysql_query("SELECT * FROM room WHERE id='$equipment_report'");
+    $data_reportNAME = mysql_fetch_array($equipment_reportNAME);
+    $name = $data_reportNAME['equipment'];
 
 
-    $get_equipment = mysql_query("SELECT * FROM equipment WHERE id='$name'");
+    $get_equipment = mysql_query("SELECT * FROM equipment WHERE equipment_name='$name'");
     $data_equipment = mysql_fetch_array($get_equipment);
-    echo $equipment_filename = $data_equipment['equipment_filename'];
+    $equipment_filename = $data_equipment['equipment_filename'];
     $equipment_code = $data_equipment['equipment_code'];
-    $equipment_name=$data_equipment['equipment_name'];
-    }
 
 
     ?>
@@ -45,8 +33,8 @@ if (isset($_REQUEST['equipment_report'])) {
             </div>
 
             <div class="product-info-container">
-                <span class="equipment-code"><b>Equipment QR/Code: <?php echo $equipment_code; ?></b> </span>
-                <h1 class="equipment-name"><?php echo $equipment_name; ?></h1>
+                <span class="equipment-code"><b>Equipment QR/Code: <?php echo $data_equipment['equipment_code']; ?></b> <?php echo $equipment_code; ?></span>
+                <h1 class="equipment-name"><?php echo $name; ?></h1>
 
                 <form action="" method="POST">
                     <textarea placeholder="Status/Problem" name="messagereport"></textarea>
