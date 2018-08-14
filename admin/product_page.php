@@ -30,9 +30,9 @@ if($image==$file_name){
     
 ?>
 <div class="product-page-container">
-    <div class="product-banner-container">
+    <!-- <div class="product-banner-container">
         <img src="images/product-page-banner.jpg" />
-    </div>
+    </div> -->
 
     <div class="product-inner-container">
         <div class="image-container">

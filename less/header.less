@@ -149,3 +149,36 @@ header {
 		}
 	}
 }
+
+@media only screen and (max-device-width : 640px) {
+	
+	header {
+		display: block;
+		padding: 0;
+
+		.logo-container {
+			width: 100%;
+    		.flex-justify-content(center);
+    		padding: 30px 10px;
+		} 
+
+		.login-container {
+			.login-form-container {
+				form {
+					width: 100%;
+					.flex-wrap(nowrap);
+   					.flex-direction(row);
+
+   					input, button {
+   						width: 33.33%;
+   						margin: 0 10px 0 0;
+   						max-width: 100%;
+   						padding: 15px 10px;
+   					}
+				}
+			}
+		}
+	}
+}
+
+		

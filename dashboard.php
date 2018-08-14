@@ -1,7 +1,12 @@
 <div class="dashboard-container">
+    <div class="searchbar">
+        <img src="images/search.png">
+        <input type="text" placeholder="Search">
+        <a href="logout.php" class="logout"></a>
+    </div>
  
 	<div class="new-equipments-container">
-		<strong> New Equipments </strong>
+		<strong> FACILITIES AND ROOMS </strong>
 
         <div class="overflow-container">
     		<div class="new-equipments-block">

@@ -157,12 +157,12 @@ a:link {
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  color: #292929;
+  color: #283142;
   text-decoration: none;
 }
 a:hover,
 a:link:hover {
-  color: #434343;
+  color: #3b4962;
   text-decoration: none;
 }
 .main-index .page-main {
@@ -182,13 +182,12 @@ a:link:hover {
   width: 100%;
 }
 button {
-  background: #292929;
+  background: #283142;
   padding: 10px 15px;
   border: 0;
   color: #fff;
   font-size: 1rem;
   text-transform: uppercase;
-  font-weight: 600;
   cursor: pointer;
   width: 100%;
   margin-top: 10px;
@@ -198,7 +197,7 @@ button:focus {
   outline: none;
 }
 button:hover {
-  background: #363636;
+  background: #323d52;
 }
 button.action {
   font-size: 0.8571428571428571rem;
@@ -236,7 +235,7 @@ form input {
 }
 form input:focus {
   outline: none;
-  border-color: #292929;
+  border-color: #283142;
 }
 table {
   width: 100%;
@@ -274,7 +273,7 @@ tr:nth-child(even) {
   /*background-color: #f2f2f2;*/
 }
 th {
-  background-color: #292929;
+  background-color: #283142;
   color: #fff;
   padding: 10px;
   text-transform: uppercase;
@@ -289,7 +288,7 @@ th {
 }
 .search:focus {
   outline: none;
-  border-color: #292929;
+  border-color: #283142;
 }
 select {
   padding: 10px;
@@ -298,7 +297,7 @@ select {
 }
 select:focus {
   outline: none;
-  border-color: #292929;
+  border-color: #283142;
 }
 .title {
   display: block;
@@ -333,11 +332,11 @@ select:focus {
   height: 100px;
   border-radius: 100%;
   display: block;
-  border: 5px dashed #292929;
+  border: 5px dashed #283142;
   position: absolute;
   top: -24px;
   left: -24px;
-  box-shadow: inset 0px 0 0 20px #292929;
+  box-shadow: inset 0px 0 0 20px #283142;
   transform: scale(0.5) rotate(0deg);
   animation: gear 6s linear infinite;
 }
@@ -347,11 +346,11 @@ select:focus {
   height: 58px;
   border-radius: 100%;
   display: block;
-  border: 5px dashed #292929;
+  border: 5px dashed #283142;
   position: absolute;
   top: 26px;
   right: -14px;
-  box-shadow: inset 0px 0 0 10px #292929;
+  box-shadow: inset 0px 0 0 10px #283142;
   transform: scale(0.5) rotate(0deg);
   animation: gear2 4s linear infinite;
 }
@@ -376,18 +375,13 @@ select:focus {
     font-size: 13px;
   }
 }
-@media only screen and (max-device-width: 768px) {
-  :root {
-    font-size: 12px;
-  }
-}
 @media only screen and (max-device-width: 640px) {
   :root {
-    font-size: 11px;
+    font-size: 15px;
   }
 }
 @media only screen and (max-device-width: 480px) {
   :root {
-    font-size: 10px;
+    font-size: 16px;
   }
 }

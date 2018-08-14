@@ -1,6 +1,6 @@
 
 <?php
-if ($status == "Admin") {
+if ($status == "Admin") {       
 
 
  ?>
@@ -14,21 +14,23 @@ if ($status == "Admin") {
     </script>
 
     <nav class="main-nav">
+
+        <img src="images/monitor.png">
         <form action="" method="POST">
             <ul class="menu">
 
                 <li>
-                    <button title="Dashboard" type="submit" name="dashboard" class="dashboard">DASHBOARD</button>
+                    <button title="Dashboard" type="submit" name="dashboard" class="dashboard">
+                    <span>Dashboard</span>
+                    </button>
                 </li>
                 <!-- <li class="manage-btn">
                     <span class="manage">MANAGE</span>
                 </li> -->
 
-                <li>
-                    <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
-                </li>
+                
                 <li class="booking-btn">
-                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
+                    <button title="Booking" class="booking" name="booking" type="submit"><span>Booking</span></button>
                      <?php include "admin/notifacation.php"; ?>
                      <?php if ($count == 0) {
                         ?>
@@ -38,17 +40,50 @@ if ($status == "Admin") {
 
 
                 </li>
-                <li>
-                    <button title="Equipments" class="equips" name="equipment_list" type="submit">Equipment List</button>
+               
+                <li class="parent">
+                    <!-- <button title="Accounts" class="adduser" name="accounts" type="submit"><span>Accounts</span></button> -->
+                    <span title="Accounts" class="adduser" name="accounts">
+                        <span>Accounts</span>
+                    </span>
+
+                    <ul>
+                            <li><button title="Users" class="users" name="add_user" type="submit"><span>Users</span></button></li>
+
+                             <li><button title="Users" class="users" name="add_user" type="submit"><span>Offices    </span></button></li>
+                        </ul>
                 </li>
-                <li>
-                    <button title="Accounts" class="adduser" name="accounts" type="submit">Accounts</button>
+
+                <li class="parent">
+                    <!-- <button title="Accounts" class="adduser" name="accounts" type="submit"><span>Accounts</span></button> -->
+                    <span title="Add Equipments" class="equips" name="add_equipment">
+                        <span>Equipments</span>
+                    </span>
+
+                    <ul>
+                            <li><button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Add Equipment</span></button></li>
+
+                             <li><button type="submit"><span>Equipment Set</span></button></li>
+
+                             <li><button title="Equipments" class="equips" name="equipment_list" type="submit"><span>Equipment List</span></button></li>
+                        </ul>
                 </li>
-                <li>
-                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit">Equipments</button>
+
+                 <li>
+                    <button><span>Charts</span></button>
                 </li>
+
+                <!-- <li>
+                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Equipments</span></button>
+                </li> -->
                 <li>
-                    <button title="Rooms" class="rooms" name="rooms" type="submit">Rooms</button>
+                    <button title="Rooms" class="rooms" name="rooms" type="submit"><span>Facilities</span></button>
+                </li>
+
+                 
+
+                <li>
+                    <button title="Notifications" class="notifs" name="notifs" type="submit"><span>Notifications</span></button>
                 </li>
 
             </ul>
@@ -62,14 +97,14 @@ if ($status == "Admin") {
             <ul class="menu">
 
                 <li>
-                    <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>">DASHBOARD</button>
+                    <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>"><span>DASHBOARD</span></button>
                 </li>
 
                 <li>
-                    <button class="booking" name="booking" type="submit">Booking</button>
+                    <button class="booking" name="booking" type="submit"><span>Booking</span></button>
                 </li>
                 <li>
-                    <button type="submit" name="report" class="reports">Report</button>
+                    <button type="submit" name="report" class="reports"><span>Report</span></button>
                 </li>
             </ul>
         </form>
@@ -83,16 +118,16 @@ if ($status == "Admin") {
             <ul class="menu">
 
                 <li>
-                    <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>">DASHBOARD</button>
+                    <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>"><span>DASHBOARD</span></button>
                 </li>
                 <li>
-                    <button class="booking" name="booking" type="submit">Booking</button>
+                    <button class="booking" name="booking" type="submit"><span>Booking</span></button>
                 </li>
                 <li>
-                    <button class="reports" name="reports" type="submit">Reports</button>
+                    <button class="reports" name="reports" type="submit"><span>Reports</span></button>
                 </li>
                 <li>
-                    <button class="reports" name="viewrooms" type="submit" value="<?php echo $id; ?>">Rooms</button>
+                    <button class="reports" name="viewrooms" type="submit" value="<?php echo $id; ?>"><span>Rooms</span></button>
                 </li>
 
             </ul>
@@ -105,3 +140,21 @@ if ($status == "Admin") {
 
 
 
+<script>
+    function parentActive(){
+        $('.menu li.parent').click(function(){
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            }
+
+            else {
+                $(this).addClass('active');
+            }
+
+        });
+    }
+
+    $(document).ready(function () {
+        parentActive()
+    });
+</script>

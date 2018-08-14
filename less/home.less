@@ -19,13 +19,23 @@
 		}	
 	}
 
-	.aboutus p {
-		text-align: justify;
+	.aboutus {
 		padding: 20px;
+		h1 {
+			text-transform: uppercase;
+			font-family: @font-family-base;
+			line-height: 1;
+			font-weight: 600;
+			padding: 20px 0;
+		}
+
+		p {
+		text-align: justify;
+		padding: 20px 0;
     	line-height: 1.4;
     	.font-size(18);
     	font-family: @font-family-base;
-
+		}
 	}
 
 	.whats-container {
@@ -35,6 +45,7 @@
 			text-transform: uppercase;
 			font-family: @font-family-base;
 			line-height: 1;
+			font-weight: 600;
 		}
 	}
 
@@ -67,10 +78,10 @@
 				span {
 					font-family: @font-family-base;
 					text-transform: capitalize;
-					font-weight: bold;
 					.font-size(22);
 					display: block;
 					margin-bottom: 15px;
+					font-weight: 600;
 				}
 
 				p {
@@ -82,5 +93,38 @@
 
 			}
 		}	
+	}
+}
+
+
+@media only screen and (max-device-width : 640px) {
+
+	.home-index {
+		header {
+			.login-container {
+				position: relative;
+				padding: 30px 10px;
+    			.flex-justify-content(center);
+    			border-top: 1px solid @mine-shaft;
+
+    			.login, a {
+    				&.active + .login-form-container {
+					    width: 100%;
+					    min-height: auto;
+					    padding: 30px 20px;
+					    top: 77px;
+					    border-top: 1px solid @mine-shaft;
+    				}
+    			}
+			}
+		}
+
+		.page-text-container {
+			.flex-direction(column);
+
+			.page-text {
+				max-width: 100%;
+			}
+		}
 	}
 }

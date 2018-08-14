@@ -44,37 +44,39 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
     ?><div style="display:none"><?php echo $qrimg;?></div> <?php
     echo "<canvas id='myCanvas' style='visibility:hidden' />";
 
+    
+
+	sleep(2);
+
     echo "
 
     	<script>
-			window.onload = function() {
 			    
-			    var c=document.getElementById('myCanvas');
-			    var ctx=c.getContext('2d');
-			    c.width = 130;
-			    c.height = 130;
-			    var img=document.getElementById('generated_img');
-			    ctx.drawImage(img,10,10);
+		    var c=document.getElementById('myCanvas');
+		    var ctx=c.getContext('2d');
+		    c.width = 130;
+		    c.height = 130;
+		    var img=document.getElementById('generated_img');
+		    ctx.drawImage(img,10,10);
 
-			    var canvas_icon = c.toDataURL('image/png');
+		    var canvas_icon = c.toDataURL('image/png');
 
-			    function success(response){
+		    function success(response){
 
-			    	// alert(response);
+		    }
 
-			    }
+		    $.ajax({
+		    	type: 'POST',
+		    	url: 'GSFsave_generated.php',
+		    	data: { image: canvas_icon, img_name: '$str'},
+		    	async: false,
+		    	success: success
+		    });
 
-			    $.ajax({
-			    	type: 'POST',
-			    	url: 'GSFsave_generated.php',
-			    	data: { image: canvas_icon, img_name: '$str'},
-			    	success: success
-			    });
-
-			};	
     	</script>
 
     ";
+
 		include"admin/connection.php";
 
 		$status="Unassigned";
@@ -90,8 +92,9 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 		  echo "Error adding record"; 
 		}		
 
+		$qrimg = "";
 		$str = "";
-		//end of QR code
+		//end of QR code     	
 
 
 	}

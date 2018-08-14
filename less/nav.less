@@ -1,18 +1,89 @@
 @import "variable.less";
 
-.main-index .page-main-inner {
-	    padding: 70px 20px 0;
-}
+
 
 .main-nav {
 	background: @sail;
-	height: 100%;
-	
+	z-index: 1;
+
+	img {
+		max-width: 250px;
+	    padding: 30px;
+	    
+	}
+
 	.menu {
 		.flex-layout;
 		.flex-direction(column);
-		
+	
+
 		li {
+
+			&.parent {
+
+				& > span {
+					margin: 0;
+					font-family: @font-family-base;
+					.flex-layout;
+					color: @white;
+					background: none;
+					border: 0;
+					padding: 15px;	
+					cursor: pointer;
+					width: 100%;
+					max-width: none;
+					text-transform: uppercase;
+					cursor: pointer;
+
+					& > span:first-letter {
+						font-size: 18px;
+					}
+
+					&:hover {
+						background: @cobalt;
+						color: @white;
+
+						&:before {
+							color: @white;
+						}
+					}
+
+					&:before {
+						content: '';
+					    display: inline-block;
+					    font-family: @font-monitoring-icon;
+					    .font-size(20);
+					    color: @white;
+					    margin-right: 15px;
+					}
+
+					&.adduser:before {				   
+				   		content: @adduser-icon;
+					}
+				}
+				
+				ul {
+					display: none;
+				}
+
+				&.active ul {
+					display: block;
+					background: #48556e;
+
+					button {
+						padding: 15px 49px;
+						.font-size(12);
+
+						&:hover {
+							background: lighten(#48556e, 5%);
+						}
+
+						&:before {
+							display: none;
+						}
+					}
+				}
+			}
 			
 			&.manage-btn {
 				position: relative;
@@ -24,10 +95,6 @@
 				&:hover > ul {
 					display: block;
 					width: 100%;
-					position: absolute;
-					background: @sail;
-					left: 0;
-					top: 100%;
 
 					li {
 						margin-right: 0;
@@ -55,46 +122,36 @@
 			    color: @white;
 			}
 
-			&:hover {
-				cursor: pointer;
-				background: @cobalt;
-				.font-size(1);
-
-				a {
-					color: @white;
-				}
-			}
-
 			button {
 				margin: 0;
-			}
-
-			.dashboard:hover {
-				.font-size(13);
-			}
-
-			button,
-			.button, 
-			.manage {
 				font-family: @font-family-base;
-				.font-size(0);
 				.flex-layout;
-				color: @mine-shaft;
+				color: @white;
 				background: none;
 				border: 0;
-				padding: 20px;
+				padding: 15px;	
 				cursor: pointer;
 				width: 100%;
-				height: 100%;
-				font-weight: 600;
+				max-width: none;
 				text-transform: uppercase;
 
+				& > span:first-letter {
+					font-size: 18px;
+				}
+
 				&:hover {
+					background: @cobalt;
 					color: @white;
 
 					&:before {
 						color: @white;
 					}
+
+					/*& > span {
+						background: @cobalt;
+				    	left: 60px;
+				  		opacity: 1;
+					}*/
 				}
 
 				&:before {
@@ -102,7 +159,8 @@
 				    display: inline-block;
 				    font-family: @font-monitoring-icon;
 				    .font-size(20);
-				    color: @mine-shaft;
+				    color: @white;
+				    margin-right: 15px;
 				}
 
 				&:focus {
@@ -119,10 +177,6 @@
 
 				&.manage:before {				   
 				    content: @manage-icon;
-				}
-
-				&.adduser:before {				   
-				    content: @adduser-icon;
 				}
 
 				&.catalog:before {				   

@@ -1,34 +1,32 @@
 
 <div class="booking-container">
-    <strong class="title">Booking Lounge</strong>
+  <!--   <strong class="title">Booking Lounge</strong>
     <strong class="title"><?php date_default_timezone_set('Asia/Manila');
-echo $date = date('m/d/Y h:i:s a', time()); ?>
+echo $date = date('m/d/Y h:i:s a', time()); ?> -->
     
 </strong>
     <div class="booking-wrapper-container">
+          <strong class="subtitle">Bookings</strong>
         <div class="booking-wrapper">
-            <strong class="subtitle">Bookings</strong>
+          
  <form action="" method="POST">
-    
-            <div class="field"> 
-                <label>Booker: </label>
-             <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Search Name..." name="booker" />
-        <div class="result"></div>
-    </div>
+        <div class="grid-container" style="display: grid; grid-template-columns: auto auto auto auto;">
+
+            <div class="field">
+                <label>Who: </label>
+            </div>
+            <div class="field">                
+                <div class="search-box">
+                  <input type="text" autocomplete="off" placeholder="Search Name..." name="booker" />
+                 <div class="result"></div>
+                </div>
             </div>
 
             <div class="field">
-                <label>Venue: </label>
-            <div class="search-venue">
-                <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
-                 <div class="Vresult"></div>
-             </div>
-           
+               <label>Semester: </label>
             </div>
 
-            <div class="field">
-                <label>Semester: </label>
+            <div class="field">                
                <select name="sem">
                    <option value="" disabled selected>Select..</option>
                    <option>1st sem</option>
@@ -38,24 +36,58 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
             </div>
 
             <div class="field">
-                <label>When: </label>
-                <input type="date" name="datestart"/>
+               <label>What: </label>
+            </div>
+            <div class="field">                
+                <input type="text"/>
+            </div>
+
+            <div class="field">
+               <label>Date End: </label>
             </div>
              <div class="field">
-                <label>Date End: </label>
                 <input type="date" name="dateend"/>
             </div>
 
             <div class="field">
-                <label>Start Time: </label>
-                <input type="time" name="timestart"/>
+               <label>When: </label>
+            </div>
+            <div class="field">                
+                <input type="date" name="datestart"/>
             </div>
 
             <div class="field">
-                <label>End Time: </label>
+                <label>Start Time: </label>
+            </div>
+
+            <div class="field">
+                <input type="time" name="timestart"/>
+            </div>
+
+
+
+
+            <div class="field">
+               <label>Where: </label>
+            </div>
+            <div class="field">                
+            <div class="search-venue">
+                <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
+                 <div class="Vresult"></div>
+             </div>
+           
+            </div>
+            
+            <div class="field">
+               <label>End Time: </label>
+            </div>
+            <div class="field">                
                 <input type="time" name="tameend"/>
             </div>
 
+
+
+<!-- UBRAHON TANI TABLE -->
             <div class="field equipments-field">
                 <span>Equipments</span>
                 <input class="search" type="text" placeholder="search equipments..."/>
@@ -95,13 +127,14 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
                     
 
                     ?>
+                    </div>
                 </div>
             </div>
 
            
                 <button type="submit" name="save_booking">Book</button>
             </form>
-        </div>
+        </d iv>
         <div class="booking-table">
             <strong class="subtitle">Booking Information</strong>
             <div class="table-container" id="wrapper">

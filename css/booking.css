@@ -72,9 +72,10 @@
   margin-top: 5px;
   margin-right: 10px;
   display: inline-block;
+  align-content: left;
   /*input, select {
-      padding: 5px;
-    }*/
+            padding: 5px;
+          }*/
 }
 .booking-container .field input {
   width: auto;

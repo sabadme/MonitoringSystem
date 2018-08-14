@@ -1,0 +1,43 @@
+.main-index header,
+.main-index footer {
+  display: none;
+}
+.main-index .page-main-inner {
+  padding: 70px 20px 0;
+}
+.main-index .searchbar {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 0 20px;
+}
+.main-index .searchbar img {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  padding: 10px;
+}
+.main-index .searchbar input {
+  width: 100%;
+  padding: 10px;
+  border-color: transparent;
+}
+.main-index .searchbar input:focus {
+  outline: none;
+}
+.main-index .searchbar .logout:after {
+  content: '\e904';
+  display: inline-block;
+  font-family: 'monitoring';
+  font-size: 1.4285714285714286rem;
+  color: #212121;
+  vertical-align: middle;
+  background: #fff;
+  padding: 15px;
+}
+.main-index .searchbar .logout:hover:after {
+  opacity: 0.8;
+}

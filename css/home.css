@@ -1,9 +1,9 @@
 .home-index header {
   background: #fff;
-  border-bottom: 1px solid #898989;
+  border-bottom: 1px solid #313a4b;
 }
 .home-index header .logo-container span {
-  color: #292929;
+  color: #283142;
 }
 .home-index header .login-container {
   display: -webkit-box;
@@ -18,9 +18,19 @@
 .home-index header .login-container .login {
   border-right: 0;
 }
+.home-index .aboutus {
+  padding: 20px;
+}
+.home-index .aboutus h1 {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 600;
+  padding: 20px 0;
+}
 .home-index .aboutus p {
   text-align: justify;
-  padding: 20px;
+  padding: 20px 0;
   line-height: 1.4;
   font-size: 1.2857142857142858rem;
   font-family: sans-serif;
@@ -32,6 +42,7 @@
   text-transform: uppercase;
   font-family: sans-serif;
   line-height: 1;
+  font-weight: 600;
 }
 .home-index .banner-home img {
   width: 100%;
@@ -64,14 +75,44 @@
 .home-index .page-text-container .page-text div span {
   font-family: sans-serif;
   text-transform: capitalize;
-  font-weight: bold;
   font-size: 1.5714285714285714rem;
   display: block;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 .home-index .page-text-container .page-text div p {
   font-family: sans-serif;
   text-transform: capitalize;
   font-size: 1.0714285714285714rem;
   padding: 14px;
+}
+@media only screen and (max-device-width: 640px) {
+  .home-index header .login-container {
+    position: relative;
+    padding: 30px 10px;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    border-top: 1px solid #212121;
+  }
+  .home-index header .login-container .login.active + .login-form-container,
+  .home-index header .login-container a.active + .login-form-container {
+    width: 100%;
+    min-height: auto;
+    padding: 30px 20px;
+    top: 77px;
+    border-top: 1px solid #212121;
+  }
+  .home-index .page-text-container {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+  }
+  .home-index .page-text-container .page-text {
+    max-width: 100%;
+  }
 }

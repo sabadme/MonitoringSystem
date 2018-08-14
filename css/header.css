@@ -1,5 +1,5 @@
 header {
-  background: #292929;
+  background: #283142;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -101,13 +101,13 @@ header .login-container .login-form-container form input {
   font-family: sans-serif;
   padding: 10px;
   outline: none;
-  border: 1px solid #292929;
+  border: 1px solid #283142;
 }
 header .login-container .login-form-container form button {
   width: 100%;
   max-width: 150px;
   margin: 0 auto;
-  background: #292929;
+  background: #283142;
   padding: 10px 15px;
   color: #fff;
   font-family: sans-serif;
@@ -118,19 +118,19 @@ header .login-container .login-form-container form button {
   cursor: pointer;
 }
 header .login-container .login-form-container form button:hover {
-  background: #363636;
+  background: #323d52;
 }
 header .login-container .login,
 header .login-container a {
   font-size: 1.0714285714285714rem;
   font-family: sans-serif;
-  color: #292929;
+  color: #283142;
   cursor: pointer;
   text-transform: uppercase;
   padding-right: 10px;
   margin-right: 10px;
   position: relative;
-  border-right: 1px solid #292929;
+  border-right: 1px solid #283142;
   /*
 			&.active {
 				
@@ -170,4 +170,39 @@ header .login-container a.active + .login-form-container {
   top: 91px;
   padding: 15px;
   z-index: 5;
+}
+@media only screen and (max-device-width: 640px) {
+  header {
+    display: block;
+    padding: 0;
+  }
+  header .logo-container {
+    width: 100%;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+  header .login-container .login-form-container form {
+    width: 100%;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -o-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+  }
+  header .login-container .login-form-container form input,
+  header .login-container .login-form-container form button {
+    width: 33.33%;
+    margin: 0 10px 0 0;
+    max-width: 100%;
+    padding: 15px 10px;
+  }
 }

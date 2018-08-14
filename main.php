@@ -94,6 +94,7 @@ if(isset($status)){
 
 
         <div class="page-main">
+
             <?php include "navigation.php"; ?>
             <?php
             if ($status == "Admin") {
