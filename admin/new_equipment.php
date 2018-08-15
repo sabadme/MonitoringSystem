@@ -3,7 +3,7 @@
 include"admin/connection.php";
 
 
-$dir_path="EquipmentPicture/";
+$dir_path="RoomPicture/";
 $option="";
 
 if(is_dir($dir_path)){
@@ -14,27 +14,26 @@ if(is_dir($dir_path)){
             
              } 
 
-$profile_display=mysql_query("SELECT * FROM equipment ORDER BY id DESC");
+$profile_display=mysql_query("SELECT * FROM rooms ORDER BY id DESC");
 while($data_profile_display=mysql_fetch_array($profile_display)){
-     $image=$data_profile_display['equipment_filename'];
-     $equipment_code=$data_profile_display['equipment_code'];
-     $equipment_name=$data_profile_display['equipment_name'];
-     $equipment_start=$data_profile_display['equipment_start'];
-     $equipment_end=$data_profile_display['equipment_end'];
-     $equipment_id=$data_profile_display['id'];
+     $image=$data_profile_display['img'];
+     $building=$data_profile_display['building'];
+     $floor=$data_profile_display['floor'];
+     $roomName=$data_profile_display['room'];
+   
+     $roomID=$data_profile_display['id'];
 
  
 if($image==$file_name){
         
 ?>
-<div class="equipments">
-    <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "EquipmentPicture/$image" ?>);">
-	<span class="equipment-code"><b>QR Code:  </b><?php echo $equipment_code; ?></span>
-	<span class="equipment-name"><?php echo $equipment_name; ?></span>
-	<span class="equipment-start">Registered: <?php echo $equipment_start; ?></span>
-	<span class="equipment-end">Expiration Date: <?php echo $equipment_end; ?></span>
+<div class="target" id="equipments">
+    <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "RoomPicture/$image" ?>);">
+    <span class="equipment-code"><b>Building:  </b><?php echo $building; ?></span>
+    <span class="equipment-code"><b>Floor:  </b><?php echo $floor; ?></span>
+    <span class="equipment-name"><?php echo $roomName; ?></span>
     <form action="" method="POST">
-	<button name="equipment_page" type="submit" value="<?php echo $equipment_id; ?>">View Equipment</button>
+    <button name="room_page" type="submit" value="<?php echo $roomID; ?>">View Equipment</button>
     </form>
 </div>
 <?php

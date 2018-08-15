@@ -9,7 +9,7 @@ while($data_report=mysql_fetch_array($report)){
 	$user_report=mysql_query("SELECT * FROM tbl_login WHERE id='$report_id'");
 	$data_user=mysql_fetch_array($user_report);
 
-	$sql_rooms=mysql_query("SELECT * FROM room WHERE equipment='$equipment_id'");
+	$sql_rooms=mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$equipment_id'");
 	$data_sql_rooms=mysql_fetch_array($sql_rooms);
 	$set_status=$data_sql_rooms['set_status'];
 

@@ -1,5 +1,5 @@
 <div class="manage-container room-management with-banner">
-    <strong class="title">ROOMS</strong>
+    <strong class="title">SETUP ROOM</strong>
 
     <div class="manage-inner-container">
         <div class="tabs-container">
@@ -7,11 +7,15 @@
                 <li class="active">
                     <span>MANAGE</span>
                 </li>
-                <?php include "admin/rooms.php"; ?>
+                <?php include "admin/rooms.php"; ?> 
                 <li>
-                    <span>ADD</span>
+                    <span>ADD ROOM</span>
+                </li>   
+                <?php include "admin/add_roomAccount.php"; ?>
+                <li style="margin-left: 250px;">
+                    <span>ROOM EQUIPMENT</span>
                 </li>
-                <?php include "admin/add_room_page.php"; ?>
+                <?php include "admin/add_room_equipment.php"; ?>
             </ul>
         </div>
         <div class="banner-container">

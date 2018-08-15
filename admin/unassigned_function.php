@@ -11,7 +11,7 @@ if (!$conn) {
 }
 $stat="Enabled";
 
-$update_status="UPDATE teachers_roomsset SET `set_unset`='Unassigned',`unassigned_date`='$date',`unassigned_date`='None' WHERE id='$unassigned_function'";
+$update_status="UPDATE teachers_roomsset SET `set_unset`='Unassigned',`unassigned_date`='$date' WHERE id='$unassigned_function'";
 
 if (mysql_query($update_status)) {?>
 <script>

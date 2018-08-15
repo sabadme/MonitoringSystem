@@ -1,5 +1,6 @@
 <?php 
 if(isset($_REQUEST['disable'])){
+	$disable=$_REQUEST['disable'];
 
 include"admin/connection.php";
 

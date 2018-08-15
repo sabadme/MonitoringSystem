@@ -1,11 +1,11 @@
 <?php 
-if(isset($_REQUEST['equipment_page'])){
+if(isset($_REQUEST['room_page'])){
 
 include"admin/connection.php";
-	$equipment_id=$_REQUEST['equipment_page'];
+	$room_pageID=$_REQUEST['room_page'];
 
 
-$dir_path="EquipmentPicture/";
+$dir_path="RoomPicture/";
 $option="";
 
 if(is_dir($dir_path)){
@@ -16,14 +16,13 @@ if(is_dir($dir_path)){
             
              } 
 
-$view=mysql_query("SELECT * FROM equipment WHERE `id`='$equipment_id'");
+$view=mysql_query("SELECT * FROM rooms WHERE `id`='$room_pageID'");
 $data_view=mysql_fetch_array($view);
-     $image=$data_view['equipment_filename'];
-     $equipment_code=$data_view['equipment_code'];
-     $equipment_name=$data_view['equipment_name'];
-     $equipment_start=$data_view['equipment_start'];
-     $equipment_end=$data_view['equipment_end'];
-     
+     $image=$data_view['img'];
+     $roomName =$data_view['room'];
+     $roomBuilding =$data_view['building'];
+     $roomFloor =$data_view['floor'];
+
 
  
 if($image==$file_name){
@@ -36,26 +35,45 @@ if($image==$file_name){
 
     <div class="product-inner-container">
         <div class="image-container">
-            <img src="images/placeholder-product.png" style="background: url(<?php echo "EquipmentPicture/$image" ?>) no-repeat;">
+            <img src="images/placeholder-product.png" style="background: url(<?php echo "RoomPicture/$image" ?>) no-repeat;">
 
         </div>
         <div class="product-info-container">
-            <span class="equipment-code"><b>Equipment QR/Code:</b> <?php echo $equipment_code; ?></span>
-            <h1 class="equipment-name"><?php echo $equipment_name; ?></h1>
-            <span class="equipment-start"><b>Registered:</b> <?php echo $equipment_start; ?></span>
-            <span class="equipment-end"><b>Expiration Date:</b> <?php echo $equipment_end; ?></span>
-            <div class="qr-img-container">
+            <span class="equipment-code"><b>Room:</b> <?php echo $roomName.' '.$roomBuilding.' '.$roomFloor; ?></span>
+           
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 <?php 
 
-<?php
-$views=mysql_query("SELECT * FROM equipment WHERE `id`='$equipment_id'");
-$data_views=mysql_fetch_array($views);
-$get_equipmentcode=$data_views['equipment_code'];
+                    $sql_roomEquipment = mysql_query("SELECT * FROM rooms_equipment WHERE room='$roomName'");
+                    while($data_roomEquipment =mysql_fetch_array($sql_roomEquipment)){
+                      $roomEquipment = $data_roomEquipment['equipment'];
 
-echo "<img src='QRimg/".$get_equipmentcode.".png'>";
-?>  
-                <a class="button">Print QR</a>
-            </div>
+                      $sql_equipment = mysql_query("SELECT * FROM equipment WHERE id='$roomEquipment'");
+                      $data_Equipment = mysql_fetch_array($sql_equipment);
+                      $imageEquipment=$data_Equipment['equipment_filename'];
 
+                      ?>
+                      <tr>
+                        <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $imageEquipment . "'>" ?></td>
+                          <td><?php echo $data_Equipment['equipment_name']; ?></td>
+                          <td><?php echo $data_Equipment['equipment_start']; ?></td>
+                          <td><?php echo $data_Equipment['equipment_end']; ?></td>
+                      </tr>
+                      <?php
+                    }
+
+                  ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

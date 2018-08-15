@@ -34,7 +34,7 @@ if(isset($_REQUEST['save_equipment'])){
     	<script>
 			window.onload = function() {
 			    
-			    var c=document.getElementById('myCanvas');
+				    var c=document.getElementById('myCanvas');
 			    var ctx=c.getContext('2d');
 			    c.width = 130;
 			    c.height = 130;
@@ -43,11 +43,11 @@ if(isset($_REQUEST['save_equipment'])){
 
 			    var canvas_icon = c.toDataURL('image/png');
 
-			    function success(response){
+				    function success(response){
 
-			    	// alert(response);
+				    	// alert(response);
 
-			    }
+				    }
 
 			    $.ajax({
 			    	type: 'POST',

@@ -1,10 +1,10 @@
 <?php 
-if(isset($_REQUEST['UnassignedRooms'])){
-        $UnassignedRooms=$_REQUEST['UnassignedRooms'];
+
+        $teacherroom=$_REQUEST['teacherroom'];
 
         include"admin/connection.php";
 
-        $select_teacherName=mysql_query("SELECT * FROM tbl_login WHERE id='$UnassignedRooms'");
+        $select_teacherName=mysql_query("SELECT * FROM tbl_login WHERE id='$teacherroom'");
         $data_teachername=mysql_fetch_array($select_teacherName);
  ?> 
 <div class="manage-container room-management with-banner">
@@ -28,7 +28,7 @@ if(isset($_REQUEST['UnassignedRooms'])){
                 <tbody>
                     <?php 
 
-                        $select_room=mysql_query("SELECT * FROM teachers_roomsset WHERE techears_id='$UnassignedRooms' And set_unset='Assigned'");
+                        $select_room=mysql_query("SELECT * FROM teachers_roomsset WHERE techears_id='$teacherroom' And set_unset='Assigned'");
                         while($data_room=mysql_fetch_array($select_room)){
                             ?>
                             <tr>
@@ -60,5 +60,5 @@ if(isset($_REQUEST['UnassignedRooms'])){
 
 </div>
 <?php 
-    }
+    
  ?>

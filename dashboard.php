@@ -4,18 +4,22 @@
         <input type="text" placeholder="Search">
         <a href="logout.php" class="logout"></a>
     </div>
- 
+
 	<div class="new-equipments-container">
 		<strong> FACILITIES AND ROOMS </strong>
 
+		<strong> ROOM </strong>
+   <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
         <div class="overflow-container">
     		<div class="new-equipments-block">
+
 
     			<?php include"admin/new_equipment.php"; ?>
     		</div>
         </div>
 	</div>
 </div>
+
 
 <!-- <script>
 	function loadCarousel() {

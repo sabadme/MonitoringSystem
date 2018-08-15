@@ -10,10 +10,7 @@ if($link === false){
  
 if(isset($_REQUEST['term'])){
     // Prepare a select statement
-
-
-
-    $sql = "SELECT *  FROM rooms WHERE room LIKE ?";
+    $sql = "SELECT * FROM rooms WHERE room LIKE ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -30,7 +27,7 @@ if(isset($_REQUEST['term'])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQL_ASSOC)){
-                    echo "<p>" . $row["room"] . "</p>";               
+                    echo "<p>" . $row["room"] . "</p>";
                 }
             } else{
                 echo "<p>No matches found</p>";

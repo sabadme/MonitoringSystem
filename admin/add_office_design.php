@@ -5,6 +5,14 @@
 			<input type="text" name="account" placeholder="Office Name">
 			<input type="text" name="username" placeholder="Username">
 			<input type="password" name="password" placeholder="Password">
+			<input type="text" name="building" placeholder="Building">
+			<select name="floor">
+				<option>1st Floor</option>
+				<option>2nd Floor</option>
+				<option>3rd Floor</option>
+				<option>4th Floor</option>
+				<option>5th Floor</option>
+			</select>
 			<button type="submit" name="addoffices">Add</button>
 		</form>
 		<div class="table-container" id="wrapper">
@@ -13,6 +21,7 @@
 			</div>
 				<table id="myTable2">
 				<thead>
+
 					<th>Offices</th>
 					<th>Status</th>
 					<th>E / D</th>

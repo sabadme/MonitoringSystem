@@ -1,9 +1,16 @@
 <div class="form-container">
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="inner-form-container">
             <div class="field">
-                <label>Room Name: </label>
-                <input type="text" name="roomName" required/>
+                
+               
+                   <div class="field"> 
+                <label>Room Name: </label>  
+             <div class="search-rooms">
+        <input type="text" autocomplete="off" placeholder="Search Rooms..." name="Rooms" />
+        <div class="result"></div>
+    </div>
+            </div>          
             </div>
             <div class="table-container" id="wrapper">
                 <label>Equipments</label>
@@ -18,6 +25,8 @@
                     <tbody>
                     <?php
                   include"admin/connection.php";
+
+                  //get equipment status
                     $equipment_sql = mysql_query("SELECT * FROM equipment ORDER BY id desc");
                     while ($data_equipment = mysql_fetch_array($equipment_sql)) {
                         $status = $data_equipment['status'];
@@ -36,7 +45,9 @@
                             <?php
                         } 
 
-                    }
+                    }   
+
+                    //get set equipment status  
 
                     $select_set=mysql_query("SELECT DISTINCT set_name FROM equipment WHERE status='Set'");
                     while($data_set=mysql_fetch_array($select_set)){
@@ -74,17 +85,29 @@
         </div>
     </form>
 </div>
-<!-- 
-<script>
-$(document).ready(function(){
-    $('#s').click(function(){
-        $.post('equipment_status.php',
-            {name: $('.test').attr('id')},
+<script type="text/javascript">
 
-            function(data){
-                $('#msg').html(data);
-            }
-        );
+//ROOMS SEARCH  
+
+$(document).ready(function(){
+    $('.search-rooms input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("admin/room_search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-rooms").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
     });
 });
-</script> -->
+</script>

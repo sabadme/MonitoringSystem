@@ -25,7 +25,7 @@ include"admin/connection.php";
 
                 <tbody>
                        <?php 
-                        $get_room=mysql_query("SELECT DISTINCT (room) FROM room ORDER BY id");
+                        $get_room=mysql_query("SELECT * FROM rooms ORDER BY id");
                         while($data_room=mysql_fetch_array($get_room)){
                             $rooms=$data_room['room'];
 

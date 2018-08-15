@@ -2561,7 +2561,7 @@ footer .right-container .copyright {
   -moz-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.equipments {
+#equipments {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2588,28 +2588,28 @@ footer .right-container .copyright {
   text-transform: uppercase;
   background: #fff;
 }
-.equipments:nth-child(4n + 1) {
+#equipments:nth-child(4n + 1) {
   margin-left: 0;
 }
-.equipments .equipment-code {
+#equipments .equipment-code {
   margin: 10px 0;
   text-transform: none;
 }
-.equipments .equipment-name {
+#equipments .equipment-name {
   font-size: 1.4285714285714286rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
-.equipments .equipment-start,
-.equipments .equipment-end {
+#equipments .equipment-start,
+#equipments .equipment-end {
   font-size: 0.9285714285714286rem;
   color: #808080;
   margin-bottom: 5px;
 }
-.equipments a {
+#equipments a {
   margin: 20px;
 }
-.equipments img {
+#equipments img {
   width: 100%;
   height: auto;
   background-repeat: no-repeat;

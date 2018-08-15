@@ -17,12 +17,11 @@ while($data_booking=mysql_fetch_array($booking)){
     $statuss=$data_status['status'];
     $booker_name=$data_status['booker'];
 
-    $sql_bookerName=mysql_query("SELECT * FROM tbl_login WHERE id='$booker_name'");
-    $data_bookerName=mysql_fetch_array($sql_bookerName);
+
 
     ?>
     <tr>
-        <td><?php echo $data_bookerName['account']; ?></td>
+        <td><?php echo $data_status['booker']; ?></td>
         <td><?php echo $data_booking['venue']; ?></td>
         <td><?php echo $data_booking['sem']; ?></td>
         <td><?php echo $data_booking['date_start']; ?></td>

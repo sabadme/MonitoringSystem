@@ -22,6 +22,7 @@ if(isset($status)){
         <script type="text/javascript" src="js/jQuery.print.js"></script>
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+          <script type="text/javascript" src="js/instascan.min.js"></script>
 
     </head>
     <style>
@@ -237,9 +238,96 @@ if(isset($status)){
     });
 }, 7000);
 </script>
+  <script>
+    $(document).ready(function(){
+       $("#count").load('admin/notif_count.php');
+    });
+    </script>
+      <script>
+    $(document).ready(function(){
+       $("#bok_count").load('admin/booking_count.php');
+    });
+    </script>
 
 
+    <script>
+        // Update rooms MODAL STYLE
+        $(function(){
+                $(document).on("click" ,".action" , function(){
+                    var roomID = ($(this).attr("value"));
+                    document.getElementById("RoomsID").value = roomID;
+                });
 
+
+        });
+    </script>
+
+<script>
+    function UpdateRooms(){
+        var RoomName =$("input#RoomName").val();
+        var RoomBuilding =$("input#RoomBuilding").val();
+        var RoomFloor =$("input#RoomFloor").val();
+          var RoomsID =$("input#RoomsID").val();
+
+
+        $.ajax({
+           url : "admin/UpdeteRooms.php",
+           type :"POST",
+           data :'RoomName=' + RoomName + '&RoomBuilding=' + RoomBuilding + '&RoomFloor=' + RoomFloor + '&RoomsID=' + RoomsID,
+        });
+        modal.style.display = "none";
+    }   
+</script>
+<script>
+    function myFunction() {
+  var input = document.getElementById("Search");
+  var filter = input.value.toLowerCase();
+  var divTarget = document.getElementsByClassName('target');
+
+  for (i = 0; i < divTarget.length; i++) {
+    if (divTarget[i].innerText.toLowerCase().includes(filter)) {
+      divTarget[i].style.display = "block";
+    } else {
+      divTarget[i].style.display = "none";
+    }
+  }
+}
+</script>
+ <script type="text/javascript">
+      function openScan(){
+        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+        scanner.addListener('scan', function (content) {
+          alert(content); 
+        });
+        Instascan.Camera.getCameras().then(function (cameras) {
+          if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+          } else {
+            console.error('No cameras found.');
+          }
+        }).catch(function (e) {
+          console.error(e);
+        });      }
+    </script>
+<script>
+   //scanner js
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+        scanner.addListener('scan', function (content) {
+          alert(content); 
+        });
+        Instascan.Camera.getCameras().then(function (cameras) {
+          if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+          } else {
+            console.error('No cameras found.');
+          }
+        }).catch(function (e) {
+          console.error(e);
+        });      
+</script>
+
+
+<script></script>
 
 
 

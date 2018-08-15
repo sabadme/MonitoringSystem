@@ -1,8 +1,12 @@
 <?php 	
 if(isset($_REQUEST['save_room'])){
+
+$roomName=$_REQUEST['Rooms'];
+
 include"admin/connection.php";
 
-$roomName=$_REQUEST['roomName'];
+
+
 $uptodate="Up To Date";
 
 if(isset($_REQUEST['check_list'])){
@@ -19,24 +23,59 @@ if(isset($_REQUEST['check_list'])){
 
 
 
+	 	 	$sql_RoomsEquipment = mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$check'");
+	 	 	$data_RoomsEquipment = mysql_fetch_array($sql_RoomsEquipment);
+	 	 	$RoomEquipment = $data_RoomsEquipment['equipment'];
+	 	 	$Room=$data_RoomsEquipment['room'];
+
 	 	 	 if($check==$id){
-	 	 	$equipment_status="Set";
-	 	 }else{
-	 	 	$equipment_status="None";
-	 	 }
-	 
+	 	 	       $equipment_status="Set";
+	 	     }else{
+	 	 	       $equipment_status="None";
+	 	     }
 
 
+			if (!$conn) {
+			    die("Connection failed: " . mysql_connect_error());
+			}
 
-				 $insert_room=mysql_query("INSERT INTO room VALUES(0,'$roomName','$check','$uptodate','$equipment_status')");
+	 	 	if($check == $RoomEquipment && $roomName == $Room){
+
+	 	 		 $update_status2="UPDATE rooms_equipment SET `status`='Up to date' WHERE equipment='$check' And room='$roomName'";
+
+					if (mysql_query($update_status2)) {?>
+
+
+					     <?php
+					} else {?>
+					    <script>alert("Error"); </script>
+					    <?php
+					}
+
+	 	 	}else{
+	 	 		$insert_room=mysql_query("INSERT INTO rooms_equipment VALUES(0,'$roomName','$check','$uptodate','$equipment_status')");
 				 echo mysql_error();  
 			  if($insert_room){
-				
+					
 				?>
 			 <?php 
 			}else {
 			  echo "Error adding record"; 
 			}
+
+
+
+
+	 	 	}
+
+
+
+	 	
+	 
+
+
+
+			
 
 	 	 
 
@@ -46,9 +85,7 @@ if(isset($_REQUEST['check_list'])){
 	 	
 $assign_status="Assigned";
 
-if (!$conn) {
-    die("Connection failed: " . mysql_connect_error());
-}
+
 
 	 	
 

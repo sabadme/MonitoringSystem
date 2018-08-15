@@ -7,6 +7,8 @@ $save_selected_equipment=$_REQUEST['save_selected_equipment'];
 $get_officename=mysql_query("SELECT * FROM tbl_login WHERE id='$save_selected_equipment'");
 $data_officename=mysql_fetch_array($get_officename);
 $officename=$data_officename['account'];
+$building=$data_officename['building'];
+$floor=$data_officename['floor'];
 
 $uptodate="Up To Date";
 
@@ -33,7 +35,7 @@ if(isset($_REQUEST['check_list'])){
 
 
 
-				 $insert_room=mysql_query("INSERT INTO room VALUES(0,'$officename','$check','$uptodate','$equipment_status')");
+				 $insert_room=mysql_query("INSERT INTO room VALUES(0,'$officename','$check','$uptodate','$equipment_status','$building','$floor','Office')");
 				 echo mysql_error();  
 			  if($insert_room){
 				
