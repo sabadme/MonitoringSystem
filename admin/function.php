@@ -174,8 +174,12 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/groupSet.php";
  }else if (isset($_REQUEST['openScanner'])) {
     include "admin/scanner.php";
+ }else if (isset($_REQUEST['openCam'])) {
+    include "admin/openScanner.php";
+ }else if (isset($_REQUEST['closeCam'])) {
+    include "admin/scanner.php";
  }else {
     include "dashboard.php"; 
 }
-?>  
+?> 
 
