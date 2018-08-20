@@ -121,7 +121,6 @@ select:focus:not([disabled]) {
 body {
   line-height: 1;
   height: inherit;
-  background: #dbdbdb;
 }
 ol,
 ul {

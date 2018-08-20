@@ -2,11 +2,23 @@
     <div class="inner-form-container">
         <div class="table-container" id="wrapper">
 
-            <div class="table-container" id="wrapper">
+
+                <div class="equipmenu-box">
+                    <div class="menubox">Broken</div>
+                    <div class="menubox">Expired</div>
+                    <div class="menubox">Unassigned</div>
+                    <div class="menubox">Assigned</div>
+                    <div class="menubox">Masterlist</div>
+                </div>
+
+
+
                 <div class="btndivstyle">
                     <input class="search" id='myInput' onkeyup='searchTable()' type='text' placeholder="Search equipments..">
                 </div>
 
+
+                
 
                 <table id='myTable'>
                     <thead>

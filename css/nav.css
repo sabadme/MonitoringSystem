@@ -35,9 +35,6 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-.main-nav .menu li.parent > span > span:first-letter {
-  font-size: 18px;
-}
 .main-nav .menu li.parent > span:hover {
   background: #283142;
   color: #fff;
@@ -56,21 +53,24 @@
 .main-nav .menu li.parent > span.adduser:before {
   content: '\e900';
 }
+.main-nav .menu li.parent > span.equips:before {
+  content: '\e90b';
+}
 .main-nav .menu li.parent ul {
   display: none;
 }
-.main-nav .menu li.parent.active ul {
+.main-nav .menu li.parent.active > ul {
   display: block;
   background: #48556e;
 }
-.main-nav .menu li.parent.active ul button {
+.main-nav .menu li.parent.active > ul button {
   padding: 15px 49px;
   font-size: 0.8571428571428571rem;
 }
-.main-nav .menu li.parent.active ul button:hover {
+.main-nav .menu li.parent.active > ul button:hover {
   background: #52617d;
 }
-.main-nav .menu li.parent.active ul button:before {
+.main-nav .menu li.parent.active > ul button:before {
   display: none;
 }
 .main-nav .menu li.manage-btn {
@@ -99,7 +99,6 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  position: absolute;
   font-family: sans-serif;
   background: red;
   padding: 5px 6px;
@@ -121,9 +120,12 @@
   width: 100%;
   max-width: none;
   text-transform: uppercase;
-}
-.main-nav .menu li button > span:first-letter {
-  font-size: 18px;
+  /*& > span:first-letter {
+					font-size: 18px;
+				}*/
+  /*&.catalog:before {				   
+				    content: @equipment-icon;
+				}*/
 }
 .main-nav .menu li button:hover {
   background: #283142;
@@ -156,9 +158,6 @@
 }
 .main-nav .menu li button.manage:before {
   content: '\e905';
-}
-.main-nav .menu li button.catalog:before {
-  content: '\e90b';
 }
 .main-nav .menu li button.reports:before {
   content: '\e911';

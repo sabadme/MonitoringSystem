@@ -21,34 +21,16 @@ if ($status == "Admin") {
                 <li>
                      <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>
                 </li>
-                <!-- <li class="manage-btn">
-                    <span class="manage">MANAGE</span>
-                </li> -->
-
-                <li>
-                    <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
-                    <span id="count" class="counter"></span>
-
-                </li>
-                <li class="booking-btn">
-                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
-                    <span id="bok_count"  class="counter"></span>
-
-                </li>
-
                 <li class="parent">
                     <!-- <button title="Accounts" class="adduser" name="accounts" type="submit"><span>Accounts</span></button> -->
-                    <span title="Accounts" class="adduser" name="accounts">
-                        <span>Accounts</span>
-                    </span>
+                    <span title="Accounts" class="adduser" name="accounts">Accounts</span>
 
-                    <ul>
+                        <ul>
                             <li><button title="Users" class="users" name="adduser" type="submit"><span>Users</span></button></li>
 
                              <li><button title="Offices" class="office" name="addoffice" type="submit"><span>Offices    </span></button></li>
                         </ul>
                 </li>
-
                 <li class="parent">
                     <!-- <button title="Accounts" class="adduser" name="accounts" type="submit"><span>Accounts</span></button> -->
                     <span title="Add Equipments" class="equips" name="add_equipment">
@@ -80,26 +62,49 @@ if ($status == "Admin") {
                             </li>   
                         </ul>
                 </li>
+                <li class="booking-btn">
+                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
+                    <span id="bok_count"  class="counter"></span>
 
-                 <li>
-                    <button><span>Charts</span></button>
                 </li>
-
-                <!-- <li>
-                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Equipments</span></button>
-                </li> -->
                 <li>
                     <button title="Rooms" class="rooms" name="rooms" type="submit"><span>Facilities</span></button>
-                </li>
-
-
-
-                <li>    
-                    <button title="Notifications" class="notifs" name="notifs" type="submit"><span>Notifications</span></button>
                 </li>
                 <li>
                     <button title="Set Room" class="rooms" name="setRoomTeacher" type="submit">Room Assignment</button>
                 </li>
+                <li>
+                    <button><span>Charts</span></button>
+                </li>
+                
+                <!-- <li class="manage-btn">
+                    <span class="manage">MANAGE</span>
+                </li> -->
+
+                <li>
+                    <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
+                    <span id="count" class="counter"></span>
+
+                </li>
+                
+
+                
+
+                
+
+                 
+
+                <!-- <li>
+                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Equipments</span></button>
+                </li> -->
+                
+
+
+
+                <!-- <li>    
+                    <button title="Notifications" class="notifs" name="notifs" type="submit"><span>Notifications</span></button>
+                </li> -->
+                
 
 
             </ul>
@@ -159,7 +164,8 @@ if ($status == "Admin") {
 
 <script>
     function parentActive(){
-        $('.menu li.parent').click(function(){
+        $('.menu li.parent').click(function(e){
+            e.stopPropagation();
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
             }

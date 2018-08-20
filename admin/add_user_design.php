@@ -1,28 +1,47 @@
 
 <div class="form-container">
 	<div class="inner-form-container">
-		<form class="manage-form" action="" method="POST">
-			<select name="status">
-				<option value="" disabled selected>Please Select..</option>
-				<option>Teacher</option>
-				<option>Student Assistant</option>
-			</select>
-			<input type="text" name="firstname" placeholder="Firstname">
-			<input type="text" name="middlename" placeholder="Middlename">
-			<input type="text" name="lastname" placeholder="Lastname">
-			<input type="text" name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<button type="submit" name="add_user">Add</button>
-		</form>
-		<div class="table-container" id="wrapper">
-			<div class="btndivstyle">
+		<div class="searchbar">
 			<input type="text" class="search" id="myInput1"  placeholder="Search names..">
+		</div>
+		<span>Add Users</span>
+		<div class="box-container">
+		
+		<form class="manage-form" action="" method="POST">
+			<div class="user-box">
+				<div class="user-box-input">
+					<span>First Name</span>
+					<input type="text" name="firstname">
+					<span>Middle Name</span>
+					<input type="text" name="middlename">
+					<span>Last Name</span>
+					<input type="text" name="lastname">
+				</div>
+				<div class="user-box-input">
+					<span>Employment</span>
+					<select name="status">
+					<option value="" disabled selected>Please Select..</option>
+					<option>Teacher</option>
+					<option>Student Assistant</option>
+				</select>
+				<span>Userame</span>
+				<input type="text" name="username">
+				<span>Password</span>
+				<input type="password" name="password">
+				</div>
 			</div>
+			<button class="addbtn" type="submit" name="add_user">Add</button>
+		</div>
+			
+		</form>
+
+		<div class="table-container" id="wrapper">
+			
 				<table id="myTable1">
 				<thead>
-					<th>FIRSTNAME</th>
-					<th>MIDDLENAME</th>
-					<th>LASTNAME</th>
+					<th>First Name</th>
+					<th>Middle Name</th>
+					<th>Last Name</th>
 					<th>Position</th>
 					<th>Status</th>
 					<th></th>

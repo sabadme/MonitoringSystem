@@ -35,10 +35,6 @@
 					text-transform: uppercase;
 					cursor: pointer;
 
-					& > span:first-letter {
-						font-size: 18px;
-					}
-
 					&:hover {
 						background: @cobalt;
 						color: @white;
@@ -60,13 +56,18 @@
 					&.adduser:before {				   
 				   		content: @adduser-icon;
 					}
+
+					&.equips:before {				   
+				    	content: @equipment-icon;
+					}
+
 				}
 				
 				ul {
 					display: none;
 				}
 
-				&.active ul {
+				&.active > ul {
 					display: block;
 					background: #48556e;
 
@@ -115,7 +116,6 @@
 			.counter {
 				.font-size(10);
 				.round-borders(50%);
-				position: absolute;
 			    font-family: @font-family-base	;
 			    background: red;
 			    padding: 5px 6px;
@@ -135,9 +135,9 @@
 				max-width: none;
 				text-transform: uppercase;
 
-				& > span:first-letter {
+				/*& > span:first-letter {
 					font-size: 18px;
-				}
+				}*/
 
 				&:hover {
 					background: @cobalt;
@@ -179,9 +179,9 @@
 				    content: @manage-icon;
 				}
 
-				&.catalog:before {				   
+				/*&.catalog:before {				   
 				    content: @equipment-icon;
-				}
+				}*/
 
 				&.reports:before {				   
 				    content: @report-icon;

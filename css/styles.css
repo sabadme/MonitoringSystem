@@ -121,7 +121,6 @@ select:focus:not([disabled]) {
 body {
   line-height: 1;
   height: inherit;
-  background: #dbdbdb;
 }
 ol,
 ul {
@@ -2278,9 +2277,6 @@ footer .right-container .copyright {
   text-transform: uppercase;
   cursor: pointer;
 }
-.main-nav .menu li.parent > span > span:first-letter {
-  font-size: 18px;
-}
 .main-nav .menu li.parent > span:hover {
   background: #283142;
   color: #fff;
@@ -2299,21 +2295,24 @@ footer .right-container .copyright {
 .main-nav .menu li.parent > span.adduser:before {
   content: '\e900';
 }
+.main-nav .menu li.parent > span.equips:before {
+  content: '\e90b';
+}
 .main-nav .menu li.parent ul {
   display: none;
 }
-.main-nav .menu li.parent.active ul {
+.main-nav .menu li.parent.active > ul {
   display: block;
   background: #48556e;
 }
-.main-nav .menu li.parent.active ul button {
+.main-nav .menu li.parent.active > ul button {
   padding: 15px 49px;
   font-size: 0.8571428571428571rem;
 }
-.main-nav .menu li.parent.active ul button:hover {
+.main-nav .menu li.parent.active > ul button:hover {
   background: #52617d;
 }
-.main-nav .menu li.parent.active ul button:before {
+.main-nav .menu li.parent.active > ul button:before {
   display: none;
 }
 .main-nav .menu li.manage-btn {
@@ -2342,7 +2341,6 @@ footer .right-container .copyright {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  position: absolute;
   font-family: sans-serif;
   background: red;
   padding: 5px 6px;
@@ -2364,9 +2362,12 @@ footer .right-container .copyright {
   width: 100%;
   max-width: none;
   text-transform: uppercase;
-}
-.main-nav .menu li button > span:first-letter {
-  font-size: 18px;
+  /*& > span:first-letter {
+					font-size: 18px;
+				}*/
+  /*&.catalog:before {				   
+				    content: @equipment-icon;
+				}*/
 }
 .main-nav .menu li button:hover {
   background: #283142;
@@ -2400,9 +2401,6 @@ footer .right-container .copyright {
 .main-nav .menu li button.manage:before {
   content: '\e905';
 }
-.main-nav .menu li button.catalog:before {
-  content: '\e90b';
-}
 .main-nav .menu li button.reports:before {
   content: '\e911';
 }
@@ -2435,37 +2433,89 @@ footer .right-container .copyright {
     flex: 0 1 19%;
   }
 }
+.form-container,
 .manage-container {
-  margin: 40px 20px;
-  padding: 0 20px;
+  margin: 30px 0 0;
+  padding: 0 40px;
 }
+.form-container .inner-form-container,
 .manage-container .inner-form-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.form-container .inner-form-container .equipmenu-box,
+.manage-container .inner-form-container .equipmenu-box {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   width: 100%;
-  margin: 0 auto;
-  background: #fff;
+  text-align: center;
 }
+.form-container .inner-form-container .equipmenu-box .menubox,
+.manage-container .inner-form-container .equipmenu-box .menubox {
+  width: 20%;
+  padding: 40px 20px;
+  border: 1px solid #283142;
+  margin: 20px;
+  background: powderblue;
+}
+.form-container .inner-form-container .equipmenu-box .menubox:hover,
+.manage-container .inner-form-container .equipmenu-box .menubox:hover {
+  cursor: pointer;
+}
+.form-container .inner-form-container span,
+.manage-container .inner-form-container span {
+  font-size: 1.7857142857142858rem;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+.form-container .inner-form-container .box-container,
+.manage-container .inner-form-container .box-container {
+  padding: 20px;
+  border: 1px solid #283142;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.form-container .inner-form-container .user-box,
+.manage-container .inner-form-container .user-box {
+  display: flex;
+}
+.form-container .inner-form-container .user-box span,
+.manage-container .inner-form-container .user-box span {
+  font-size: 1.1428571428571428rem;
+  font-family: sans-serif;
+}
+.form-container .inner-form-container .user-box div,
+.manage-container .inner-form-container .user-box div {
+  width: 50%;
+  padding: 20px;
+}
+.form-container.select-equipments #wrapper,
 .manage-container.select-equipments #wrapper {
   padding-left: 0;
 }
+.form-container.select-equipments button,
 .manage-container.select-equipments button {
   margin-top: 20px;
   max-width: 200px;
 }
+.form-container.room-update #wrapper,
 .manage-container.room-update #wrapper,
+.form-container.view-reports #wrapper,
 .manage-container.view-reports #wrapper {
   padding-left: 0;
 }
+.form-container .tabs,
 .manage-container .tabs {
   position: relative;
 }
+.form-container .tabs.accounts li:nth-of-type(2),
 .manage-container .tabs.accounts li:nth-of-type(2) {
   left: 100px;
 }
+.form-container .tabs li,
 .manage-container .tabs li {
   position: absolute;
   top: 0;
@@ -2474,58 +2524,75 @@ footer .right-container .copyright {
   border-bottom: 0;
   cursor: pointer;
 }
+.form-container .tabs li + div,
 .manage-container .tabs li + div {
   display: none;
 }
+.form-container .tabs li span,
 .manage-container .tabs li span {
   font-family: sans-serif;
   font-size: 1.2142857142857142rem;
   text-transform: uppercase;
 }
+.form-container .tabs li:nth-of-type(2),
 .manage-container .tabs li:nth-of-type(2) {
   left: 103px;
 }
+.form-container .tabs li.active,
 .manage-container .tabs li.active {
   background: #283142;
 }
+.form-container .tabs li.active span,
 .manage-container .tabs li.active span {
   color: #fff;
 }
+.form-container .tabs li.active + div,
 .manage-container .tabs li.active + div {
   display: block;
   padding-top: 47px;
 }
+.form-container.room-management label,
 .manage-container.room-management label {
   font-size: 1.0714285714285714rem;
   text-transform: uppercase;
   font-family: sans-serif;
 }
+.form-container.room-management input,
 .manage-container.room-management input {
   padding: 10px;
 }
+.form-container.room-management .inner-form-container,
 .manage-container.room-management .inner-form-container {
   display: block;
 }
+.form-container.room-management .tabs li:nth-of-type(2),
 .manage-container.room-management .tabs li:nth-of-type(2) {
   left: 115px;
 }
+.form-container.registration .table-container,
 .manage-container.registration .table-container {
   width: 70%;
   margin-left: 40px;
 }
+.form-container.registration .set-container .table-container,
 .manage-container.registration .set-container .table-container {
   width: 100%;
   margin-left: 0;
 }
+.form-container.registration .set-container .add,
 .manage-container.registration .set-container .add {
   margin-bottom: 20px;
 }
+.form-container.registration .inner-form-container,
 .manage-container.registration .inner-form-container,
+.form-container.list .inner-form-container,
 .manage-container.list .inner-form-container,
+.form-container.room-management .inner-form-container,
 .manage-container.room-management .inner-form-container {
   padding: 20px;
   border: 1px solid #b4b4b4;
 }
+.form-container.with-banner .manage-inner-container,
 .manage-container.with-banner .manage-inner-container {
   display: -webkit-box;
   display: -moz-box;
@@ -2533,15 +2600,19 @@ footer .right-container .copyright {
   display: -webkit-flex;
   display: flex;
 }
+.form-container.with-banner .banner-container,
 .manage-container.with-banner .banner-container {
   margin-left: 50px;
 }
+.form-container.list .tabs li:nth-of-type(2),
 .manage-container.list .tabs li:nth-of-type(2) {
   left: 113px;
 }
+.form-container.list .tabs li:nth-of-type(3),
 .manage-container.list .tabs li:nth-of-type(3) {
   left: 229px;
 }
+.form-container.list .tabs li:nth-of-type(4),
 .manage-container.list .tabs li:nth-of-type(4) {
   left: 382px;
 }
@@ -2561,7 +2632,7 @@ footer .right-container .copyright {
   -moz-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-#equipments {
+.equipments {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2588,28 +2659,28 @@ footer .right-container .copyright {
   text-transform: uppercase;
   background: #fff;
 }
-#equipments:nth-child(4n + 1) {
+.equipments:nth-child(4n + 1) {
   margin-left: 0;
 }
-#equipments .equipment-code {
+.equipments .equipment-code {
   margin: 10px 0;
   text-transform: none;
 }
-#equipments .equipment-name {
+.equipments .equipment-name {
   font-size: 1.4285714285714286rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
-#equipments .equipment-start,
-#equipments .equipment-end {
+.equipments .equipment-start,
+.equipments .equipment-end {
   font-size: 0.9285714285714286rem;
   color: #808080;
   margin-bottom: 5px;
 }
-#equipments a {
+.equipments a {
   margin: 20px;
 }
-#equipments img {
+.equipments img {
   width: 100%;
   height: auto;
   background-repeat: no-repeat;

@@ -1,24 +1,42 @@
 
 <div class="form-container">
 	<div class="inner-form-container">
-		<form class="manage-form" action="" method="POST">
-			<input type="text" name="account" placeholder="Office Name">
-			<input type="text" name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<input type="text" name="building" placeholder="Building">
-			<select name="floor">
-				<option>1st Floor</option>
-				<option>2nd Floor</option>
-				<option>3rd Floor</option>
-				<option>4th Floor</option>
-				<option>5th Floor</option>
-			</select>
-			<button type="submit" name="addoffices">Add</button>
-		</form>
-		<div class="table-container" id="wrapper">
-			<div class="btndivstyle">
+		<div class="searchbar">
 			<input type="text" class="search" id="myInput2" placeholder="Search offices..">
 			</div>
+
+		<span>Add Offices</span>
+		<div class="box-container">		
+		<form class="manage-form" action="" method="POST">
+
+			<div class="user-box">
+				<div class="user-box-input">
+					<span>Office Name</span>
+					<input type="text" name="account">
+					<span>Userame</span>
+					<input type="text" name="username">
+					<span>Password</span>
+					<input type="password" name="password">
+				</div>
+				<div class="user-box-input">
+					<span>Building</span>
+					<input type="text" name="building">
+					<span>Floor</span>
+					<select name="floor">
+						<option>1st Floor</option>
+						<option>2nd Floor</option>
+						<option>3rd Floor</option>
+						<option>4th Floor</option>
+						<option>5th Floor</option>
+					</select>
+				</div>
+			</div>
+			<button class="addbtn" type="submit" name="addoffices">Add</button>
+		</div>
+			
+		</form>
+		<div class="table-container" id="wrapper">
+			
 				<table id="myTable2">
 				<thead>
 
