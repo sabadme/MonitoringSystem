@@ -1,18 +1,19 @@
 <div class="dashboard-container">
-    <div class="searchbar">
-        <img src="images/search.png">
-        <input type="text" placeholder="Search">
+    <div class="top-container">
+        <strong>Dashboard</strong>
         <a href="logout.php" class="logout"></a>
     </div>
 
-	<div class="new-equipments-container">
+    <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
+
+	<div class="new-rooms-container">
 		<strong> FACILITIES AND ROOMS </strong>
-   <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
+  
         <div class="overflow-container">
-    		<div class="new-equipments-block">
+    		<div class="new-rooms-block">
 
 
-    			<?php include"admin/new_equipment.php"; ?>
+    			<?php include"admin/new_rooms.php"; ?>
     		</div>
         </div>
 	</div>

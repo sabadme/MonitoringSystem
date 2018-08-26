@@ -1,3 +1,9 @@
+<div class="dashboard-container">
+    <div class="top-container">
+        <strong>Booking</strong>
+        <a href="logout.php" class="logout"></a>
+    </div>
+
 
 <div class="booking-container">
   <!--   <strong class="title">Booking Lounge</strong>
@@ -6,7 +12,6 @@ echo $date = date('m/d/Y h:i:s a', time()); ?> -->
     
 </strong>
     <div class="booking-wrapper-container">
-          <strong class="subtitle">Bookings</strong>
         <div class="booking-wrapper">
           
  <form action="" method="POST">

@@ -28,7 +28,14 @@ $data_view=mysql_fetch_array($view);
 if($image==$file_name){
     
 ?>
-<div class="product-page-container">
+
+<div class="accounts-container">
+    <div class="top-container">
+            <strong>Room: <?php echo $roomName; ?></strong>
+            <a href="logout.php" class="logout"></a>
+    </div>
+
+    <div class="product-page-container">
     <!-- <div class="product-banner-container">
         <img src="images/product-page-banner.jpg" />
     </div> -->
@@ -39,12 +46,12 @@ if($image==$file_name){
 
         </div>
         <div class="product-info-container">
-            <span class="equipment-code"><b>Room:</b> <?php echo $roomName.' '.$roomBuilding.' '.$roomFloor; ?></span>
+            <span class="equipment-code"><?php echo 
+            $roomBuilding.' | '.$roomFloor; ?></span>
            
             <table>
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Name</th>
                         <th>Date Start</th>
                         <th>Date End</th>
@@ -63,7 +70,6 @@ if($image==$file_name){
 
                       ?>
                       <tr>
-                        <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $imageEquipment . "'>" ?></td>
                           <td><?php echo $data_Equipment['equipment_name']; ?></td>
                           <td><?php echo $data_Equipment['equipment_start']; ?></td>
                           <td><?php echo $data_Equipment['equipment_end']; ?></td>
@@ -75,6 +81,7 @@ if($image==$file_name){
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 </div>
 <?php

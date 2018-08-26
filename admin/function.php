@@ -43,7 +43,7 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/add_equipment_design.php";
 }*/ else if (isset($_REQUEST['room_page'])) {
 
-    include "admin/product_page.php";
+    include "admin/room_page.php";
 } else if (isset($_REQUEST['add_room'])) {
 
     include "admin/add_room_page.php";
@@ -84,7 +84,7 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/booking_page.php";
 } else if (isset($_REQUEST['notif'])) {
     include "admin/booking_page.php";
-} else if (isset($_REQUEST['approve_booking'])) {
+} else if (isset($_REQUEST['approve_  booking'])) {
     include "admin/booking_page.php";
 } else if (isset($_REQUEST['notifs'])) {
     include "admin/viewreports.php";

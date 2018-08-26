@@ -4,10 +4,16 @@ include"admin/generate_code.php";
 
 ?>
 
+<div class="equipments-container">
+<div class="top-container">
+        <strong>Single Equipments</strong>
+        <a href="logout.php" class="logout"></a>
+</div>
+
+
 <div class="form-container">
-    <div class="inner-form-container">
-        <span>Add Single Equipments</span>   
-        <div class="box-container"> 
+    <div class="inner-form-container"> 
+    <div class="box-container"> 
         <form action="" method="POST" enctype="multipart/form-data">
 
             <div class="user-box">
@@ -24,12 +30,12 @@ include"admin/generate_code.php";
                     <input type="date" name="equipment_start" required>
                     <span>Expiree Date</span>
                     <input type="date" name="equipment_end">
-                    <span>Uoload Image</span>
-                    <input type="file" name="imgs"/>
+                    <span>Upload Image</span>
+                    <input type="file" name="imgs" class="file"/>
                 </div>
             </div>
             <button class="addbtn" type="submit" name="save_equipment">SAVE</button>
-        </div>
+    </div>
 
         </form>
                <!--  <div class="generate-container">
@@ -39,6 +45,7 @@ include"admin/generate_code.php";
                 </div> -->
         
 
+        <input type="text" class="search" id="myInput1"  placeholder="Search names..">
 
         <div class="table-container" id="wrapper">
             <table id='myTable'>
@@ -56,4 +63,5 @@ include"admin/generate_code.php";
             </table>
         </div>
     </div>
+</div>
 </div>

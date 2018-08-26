@@ -1,10 +1,12 @@
+<div class="accounts-container">
+<div class="top-container">
+        <strong>Users</strong>
+        <a href="logout.php" class="logout"></a>
+    </div>
 
 <div class="form-container">
 	<div class="inner-form-container">
-		<div class="searchbar">
-			<input type="text" class="search" id="myInput1"  placeholder="Search names..">
-		</div>
-		<span>Add Users</span>
+		
 		<div class="box-container">
 		
 		<form class="manage-form" action="" method="POST">
@@ -35,6 +37,7 @@
 			
 		</form>
 
+		<input type="text" class="search" id="myInput1"  placeholder="Search names..">	
 		<div class="table-container" id="wrapper">
 			
 				<table id="myTable1">
@@ -55,8 +58,8 @@
 			</table>
 		</div>
 	</div>
-
-	<script>
+</div>
+<script>
 	function searchTable() {
         $(".search").on("keyup", function() {
             var input, filter, table, tr, td, i;
@@ -84,4 +87,3 @@ $(document).ready(function(){
 });
 </script>
 </div>
-

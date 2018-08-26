@@ -111,7 +111,7 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
     max-width: 150px;
 
     &:focus {
@@ -124,7 +124,6 @@ button {
 
     &.action {
         .font-size(12);
-        .round-borders(8px);
         max-width: 110px;
 
         &.disable {
@@ -161,8 +160,13 @@ form {
     input {
         display: block;
         padding: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         width: 100%;
+        border: 1px solid @border-color;
+
+        &[type="date"] {
+            height: 37px;
+        }
 
         &:focus {
             outline: none;
@@ -219,12 +223,13 @@ th {
 }
 
 .search {
-    margin: 0 0 10px !important;
+    margin: 0 0 20px;
     padding: 10px;
     .font-size(12);
     font-family: @font-family-base;
     width: 100%;
     max-width: 250px;
+    border: 1px solid @border-color;
 
     &:focus {
         outline: none;
@@ -235,7 +240,7 @@ th {
 select {
     padding: 10px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     &:focus {
         outline: none;

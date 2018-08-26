@@ -1,11 +1,14 @@
 
+<div class="accounts-container">
+<div class="top-container">
+        <strong>Offices</strong>
+        <a href="logout.php" class="logout"></a>
+    </div>
+
+
 <div class="form-container">
 	<div class="inner-form-container">
-		<div class="searchbar">
-			<input type="text" class="search" id="myInput2" placeholder="Search offices..">
-			</div>
-
-		<span>Add Offices</span>
+		
 		<div class="box-container">		
 		<form class="manage-form" action="" method="POST">
 
@@ -35,6 +38,8 @@
 		</div>
 			
 		</form>
+
+		<input type="text" class="search" id="myInput2" placeholder="Search offices..">
 		<div class="table-container" id="wrapper">
 			
 				<table id="myTable2">
@@ -84,3 +89,4 @@ $(document).ready(function(){
 </script>
 </div>
 
+</div>

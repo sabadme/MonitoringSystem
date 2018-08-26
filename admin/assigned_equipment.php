@@ -1,4 +1,10 @@
-<div class="form-container">
+<div class="accounts-container">
+    <div class="top-container">
+            <strong>Assigned</strong>
+            <a href="logout.php" class="logout"></a>
+    </div>
+
+    <div class="form-container">
     <div class="inner-form-container">
         <div class="table-container" id="wrapper">
 
@@ -45,6 +51,7 @@
                 </table>
             </div>
         </div>
+    </div>
     </div>
 </div>
 

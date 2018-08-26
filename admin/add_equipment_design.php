@@ -21,6 +21,6 @@ include"admin/generate_code.php";
          
         </ul>
     </div>
-    </div>
+    </div>  
 </div>
 

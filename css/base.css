@@ -189,7 +189,7 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
   max-width: 150px;
 }
 button:focus {
@@ -200,9 +200,6 @@ button:hover {
 }
 button.action {
   font-size: 0.8571428571428571rem;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
   max-width: 110px;
 }
 button.action.disable {
@@ -229,8 +226,12 @@ button.action.tertiary:hover {
 form input {
   display: block;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 100%;
+  border: 1px solid #b4b4b4;
+}
+form input[type="date"] {
+  height: 37px;
 }
 form input:focus {
   outline: none;
@@ -278,12 +279,13 @@ th {
   text-transform: uppercase;
 }
 .search {
-  margin: 0 0 10px !important;
+  margin: 0 0 20px;
   padding: 10px;
   font-size: 0.8571428571428571rem;
   font-family: sans-serif;
   width: 100%;
   max-width: 250px;
+  border: 1px solid #b4b4b4;
 }
 .search:focus {
   outline: none;
@@ -292,7 +294,7 @@ th {
 select {
   padding: 10px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 select:focus {
   outline: none;

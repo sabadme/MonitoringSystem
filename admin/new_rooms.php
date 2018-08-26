@@ -27,13 +27,16 @@ while($data_profile_display=mysql_fetch_array($profile_display)){
 if($image==$file_name){
         
 ?>
+
+
 <div class="target" id="equipments">
+    <span ><b>Name:  </b><?php echo $roomName; ?></span>
     <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "RoomPicture/$image" ?>);">
-    <span class="equipment-code"><b>Building:  </b><?php echo $building; ?></span>
-    <span class="equipment-code"><b>Floor:  </b><?php echo $floor; ?></span>
-    <span class="equipment-name"><?php echo $roomName; ?></span>
+    <span ><b>Building:  </b><?php echo $building; ?></span>
+    <span ><b>Floor:  </b><?php echo $floor; ?></span>
+    
     <form action="" method="POST">
-    <button name="room_page" type="submit" value="<?php echo $roomID; ?>">View Equipment</button>
+    <button name="room_page" type="submit" value="<?php echo $roomID; ?>">View </button>
     </form>
 </div>
 <?php

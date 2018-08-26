@@ -1,4 +1,10 @@
-<div class="form-container">
+<div class="accounts-container">
+    <div class="top-container">
+            <strong>Up to Date</strong>
+            <a href="logout.php" class="logout"></a>
+    </div>
+
+    <div class="form-container">
     <div class="inner-form-container">
 
         <div class="table-container" id="wrapper">
@@ -38,8 +44,8 @@
             </table>
         </div>
     </div>
+    </div>
 </div>
-
 <script>
     function searchTable() {
         var input, filter, found, table, tr, td, i, j;

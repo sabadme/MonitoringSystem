@@ -1,0 +1,42 @@
+@import "variable.less";
+
+.equipments-container {
+	padding: 20px;
+
+	.search {
+		float: right;
+		margin-bottom: 20px;
+	}
+
+  .file {
+    padding: 0;
+    border: 0;
+  }
+
+	.box-container {
+		clear: right;
+        padding: 20px;
+        border: 1px solid @border-color;
+        margin-bottom: 30px;
+    }
+
+    .user-box {
+       .flex-layout;
+
+        span {
+	       .font-size(13);
+	       display: inline-block;
+	       font-family: sans-serif;
+	       margin-bottom: 5px;
+        }
+
+        div {
+           width: 50%;
+           margin-right: 20px;
+
+           &:last-child {
+           		margin-right: 0;
+           }
+        }
+    }
+}

@@ -1,100 +1,62 @@
-.dashboard-container .booker {
-  margin: 0 25px;
-}
-.dashboard-container .booker .flex-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.dashboard-container .booker .booking-table {
+.dashboard-container {
   padding: 20px;
-  border: 1px solid #b4b4b4;
+  width: 100%;
 }
-.dashboard-container .booker .booking-table span {
-  font-size: 1.2142857142857142rem;
-  font-family: sans-serif;
+.dashboard-container .search {
+  float: right;
 }
-.dashboard-container .booker .booking-table strong {
-  font-size: 1.7857142857142858rem;
+.dashboard-container .new-rooms-container {
+  clear: right;
+}
+.dashboard-container .new-rooms-container > strong {
   font-family: sans-serif;
   text-transform: uppercase;
-}
-.dashboard-container .booker #wrapper {
-  padding-left: 0;
-}
-.dashboard-container .overflow-container {
-  max-height: 500px;
-  overflow-y: auto;
-}
-.dashboard-container .new-equipments-container {
-  margin: 0 25px;
-  position: relative;
-}
-.dashboard-container .new-equipments-container .new-equipments-block {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: wrap;
-}
-.dashboard-container .new-equipments-container strong {
   display: block;
-  padding: 15px 20px;
+  padding: 15px;
   background: #283142;
   color: #fff;
-  font-size: 1.2142857142857142rem;
-  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.dashboard-container .new-rooms-container .new-rooms-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.dashboard-container .new-rooms-container .new-rooms-block img {
+  background-size: cover;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.dashboard-container .new-rooms-container .new-rooms-block span {
   font-family: sans-serif;
+  display: block;
   margin-bottom: 10px;
 }
-.dashboard-container .new-equipments-container .owl-carousel {
-  position: static;
+.dashboard-container .new-rooms-container .new-rooms-block span b {
+  text-transform: uppercase;
 }
-.dashboard-container .new-equipments-container .owl-nav {
-  right: 17px;
-  top: 11px;
-  position: absolute;
+.dashboard-container .new-rooms-container .new-rooms-block span:first-of-type {
+  display: block;
+  font-size: 1.4285714285714286rem;
 }
-.dashboard-container .new-equipments-container .owl-prev,
-.dashboard-container .new-equipments-container .owl-next {
-  display: inline-block;
-  vertical-align: top;
-  width: 28px;
-  height: 24px;
-  line-height: 25px;
-  background: #f4f3f4;
-  font-family: sans-serif;
-  font-size: 1.0714285714285714rem;
-  text-align: center;
-  color: #212121;
+.dashboard-container .new-rooms-container .new-rooms-block button {
+  max-width: 100%;
 }
-.dashboard-container .new-equipments-container .owl-prev {
-  border-right: solid 1px #dbdbdb;
-  -webkit-border-top-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  border-top-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-left-radius: 5px;
+.dashboard-container .new-rooms-container .new-rooms-block .target {
+  width: 32%;
+  border: 1px solid #b4b4b4;
+  padding: 20px;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
-.dashboard-container .new-equipments-container .owl-next {
-  border-left: solid 1px #dbdbdb;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-bottom-right-radius: 5px;
+.dashboard-container .new-rooms-container .new-rooms-block .target:nth-child(3n + 1) {
+  margin-left: 0;
 }

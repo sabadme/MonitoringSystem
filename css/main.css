@@ -5,30 +5,31 @@
 .main-index .page-main-inner {
   padding: 70px 20px 0;
 }
-.main-index .searchbar {
-  width: 100%;
+.main-index .top-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  margin: 0 0 20px;
-}
-.main-index .searchbar img {
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  padding: 10px;
-}
-.main-index .searchbar input {
+  -webkit-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
-  padding: 10px;
-  border-color: transparent;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b4b4b4;
 }
-.main-index .searchbar input:focus {
-  outline: none;
+.main-index .top-container > strong {
+  font-size: 2.142857142857143rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
-.main-index .searchbar .logout:after {
+.main-index .top-container .logout:after {
   content: '\e904';
   display: inline-block;
   font-family: 'monitoring';
@@ -36,8 +37,7 @@
   color: #212121;
   vertical-align: middle;
   background: #fff;
-  padding: 15px;
 }
-.main-index .searchbar .logout:hover:after {
+.main-index .top-container .logout:hover:after {
   opacity: 0.8;
 }
