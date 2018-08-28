@@ -22,8 +22,5 @@
             <button style="margin-top: 20px;" class="action" name="Add_equipment_setFinal" type="submit">Submit</button>
             </form>
         </div>
-        <div class="banner-container">
-            <img src="images/message-banner.jpg" alt="Banner">
-        </div>
     </div>
 </div>

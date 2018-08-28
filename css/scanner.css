@@ -1,0 +1,19 @@
+.scan-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.scan-container form {
+  text-align: center;
+  padding: 50px;
+  border: 1px solid #b4b4b4;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.scan-container form .CameraBtn {
+  height: 150px;
+  margin-bottom: 30px;
+}

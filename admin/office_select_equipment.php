@@ -79,11 +79,6 @@ include"admin/connection.php";
             </table>
             <button class="action" name="save_selected_equipment" type="submit" value="<?php echo $officeequipmentassign; ?>">Save</button>
         </div>
-
-        <div class="banner-container">
-            <img src="images/message-banner.jpg" alt="Banner">
-        </div>
-
     </div>
   
         
