@@ -248,6 +248,13 @@ if(isset($status)){
        $("#bok_count").load('admin/booking_count.php');
     });
     </script>
+         <script>
+ setInterval(function() {
+    $(document).ready(function(){
+       $("#bookingdate").load('teacher/dateandtime.php');
+    });
+  });
+    </script>
 
 
     <script>
@@ -276,6 +283,34 @@ if(isset($status)){
            data :'RoomName=' + RoomName + '&RoomBuilding=' + RoomBuilding + '&RoomFloor=' + RoomFloor + '&RoomsID=' + RoomsID,
         });
         modal.style.display = "none";
+    }   
+</script>
+    <script>
+        // Update venue MODAL STYLE
+        $(function(){   
+                $(document).on("click" ,".actions" , function(){
+                    var VenuesID = ($(this).attr("value"));
+                    document.getElementById("VenueID").value = VenuesID;
+                });
+
+
+        });
+    </script>
+<script>
+    function UpdateVenue(){
+        var VenueName =$("input#VenueName").val();
+        var VenueBuilding =$("input#VenueBuilding").val();
+        var VenueFloor =$("input#VenueFloor").val();
+          var VenueID =$("input#VenueID").val();
+
+
+        $.ajax({
+           url : "admin/UpdateVenues.php",
+           type :"POST",
+           data :'VenueName=' + VenueName + '&VenueBuilding=' + VenueBuilding + '&VenueFloor=' + VenueFloor + '&VenueID=' + VenueID,
+        });
+        modal.style.display = "none";
+    
     }   
 </script>
 <script>

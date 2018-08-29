@@ -8,16 +8,16 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  
-if(isset($_REQUEST['terms'])){
+if(isset($_REQUEST['term'])){
     // Prepare a select statement
-    $sql = "SELECT * FROM rooms WHERE room LIKE ?";
+    $sql = "SELECT * FROM rooms WHERE roomORvenue='Venue' And room LIKE ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "s", $param_term);
         
         // Set parameters
-        $param_term = $_REQUEST['terms'] . '%';
+        $param_term = $_REQUEST['term'] . '%';
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){

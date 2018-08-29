@@ -67,44 +67,31 @@ if ($status == "Admin") {
                     <span id="bok_count"  class="counter"></span>
 
                 </li>
-                <li>
-                    <button title="Rooms" class="rooms" name="rooms" type="submit"><span>Facilities</span></button>
-                </li>
-                <li>
-                    <button title="Set Room" class="rooms" name="setRoomTeacher" type="submit">Room Assignment</button>
-                </li>
-                <li>
-                    <button><span>Charts</span></button>
-                </li>
-                
-                <!-- <li class="manage-btn">
-                    <span class="manage">MANAGE</span>
-                </li> -->
+             
 
+                <!-- <li>
+                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Equipments</span></button>
+                </li> -->
+                <li class="parent">
+
+                        <span title="Facilities" class="equips" name="facilities">
+                       <span>Facilities</span>
+                    </span>
+
+                       <ul>
+                            <li class="parent"><button title="Room" class="rooms" name="rooms" type="submit"><span>Room</span></button>
+                            </li>
+
+                             <li><button title="Venue" class="venue" name="venue" type="submit"><span>Venue </span></button></li>
+                        </ul>
+                </li>
+
+              
                 <li>
                     <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
                     <span id="count" class="counter"></span>
 
                 </li>
-                
-
-                
-
-                
-
-                 
-
-                <!-- <li>
-                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Equipments</span></button>
-                </li> -->
-                
-
-
-
-                <!-- <li>    
-                    <button title="Notifications" class="notifs" name="notifs" type="submit"><span>Notifications</span></button>
-                </li> -->
-                
 
 
             </ul>

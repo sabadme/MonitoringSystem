@@ -1,5 +1,5 @@
 <?php 
-if(isset($_REQUEST['add_roomAccount_function'])){
+if(isset($_REQUEST['add_venue_function'])){
 
 	$file=$_FILES['imgs'];
 	$name=$_FILES['imgs'] ['name'];
@@ -21,11 +21,11 @@ if(isset($_REQUEST['add_roomAccount_function'])){
 
 	include"admin/connection.php";
 
-	$room=$_REQUEST['room'];
+	$venue=$_REQUEST['venue'];
 	$Building=$_REQUEST['Building'];	
 	$floor=$_REQUEST['floor'];
 
-	$insert=mysql_query("INSERT INTO rooms VALUES(0,'$room','$Building','$floor','$name','Room')");
+	$insert=mysql_query("INSERT INTO rooms VALUES(0,'$venue','$Building','$floor','$name','Venue')");
 		if($insert){
 			
 			?> <script> 

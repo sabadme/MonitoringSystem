@@ -6,7 +6,7 @@ if(isset($_REQUEST['send_report'])){
 
 include"admin/connection.php";
 
-	$get_equipment=mysql_query("SELECT * FROM room WHERE equipment='$send_report'");
+	$get_equipment=mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$send_report'");
 	$data_equipment=mysql_fetch_array($get_equipment);
 	$equipment=$data_equipment['equipment'];
 

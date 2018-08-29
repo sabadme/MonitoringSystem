@@ -14,7 +14,7 @@ mysql_select_db($db);
 
 
 
-$query=mysql_query("SELECT * FROM `report` WHERE report_notif='1' ORDER BY id desc");
+$query=mysql_query("SELECT * FROM report WHERE report_notif='1' ORDER BY id desc");
 $output = '';
 while($row=mysql_fetch_array($query)){
 $report_id=$row['report_id'];

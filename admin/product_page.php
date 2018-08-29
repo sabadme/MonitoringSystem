@@ -28,14 +28,7 @@ $data_view=mysql_fetch_array($view);
 if($image==$file_name){
     
 ?>
-
-<div class="accounts-container">
-    <div class="top-container">
-            <strong>Room: <?php echo $roomName; ?></strong>
-            <a href="logout.php" class="logout"></a>
-    </div>
-
-    <div class="product-page-container">
+<div class="product-page-container">
     <!-- <div class="product-banner-container">
         <img src="images/product-page-banner.jpg" />
     </div> -->
@@ -46,12 +39,12 @@ if($image==$file_name){
 
         </div>
         <div class="product-info-container">
-            <span class="equipment-code"><?php echo
-            $roomBuilding.' | '.$roomFloor; ?></span>
+            <span class="equipment-code"><b>Room:</b> <?php echo $roomName.' '.$roomBuilding.' '.$roomFloor; ?></span>
            
             <table>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Name</th>
                         <th>Date Start</th>
                         <th>Date End</th>
@@ -67,7 +60,7 @@ if($image==$file_name){
                       $sql_equipment = mysql_query("SELECT * FROM equipment WHERE id='$roomEquipment'");
                       $data_Equipment = mysql_fetch_array($sql_equipment);
                       $equipmentSet_name = $data_Equipment['set_name'];
-
+                    
 
                       if($equipmentSet_name == "None"){
                           $imageEquipment=$data_Equipment['equipment_filename'];
@@ -100,7 +93,6 @@ if($image==$file_name){
                 </tbody>
             </table>
         </div>
-    </div>
     </div>
 </div>
 <?php

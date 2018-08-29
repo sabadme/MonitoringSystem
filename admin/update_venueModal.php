@@ -82,12 +82,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <h2>Modal Header</h2>
     </div>		
     <div class="modal-body">
-          <input type="hidden" id="RoomsID" value="<?php echo $roomID; ?>">
-          <input type="text" id="RoomName" placeholder="Room name">
-          <input type="text" id="RoomBuilding" placeholder="Room Building">
-          <input type="text" id="RoomFloor" placeholder="Room Floor">
+          <input type="text" id="VenueID" value="<?php echo $VenuesID; ?>">
+          <input type="text" id="VenueName" placeholder="Venue name">
+          <input type="text" id="VenueBuilding" placeholder="Venue Building">
+          <input type="text" id="VenueFloor" placeholder="Venue Floor">
         
-           <button onClick='UpdateRooms()' class="action">Update</button>
+           <button onClick='UpdateVenue()' class="action">Update</button>
     </div>
     <span id="haho"></span>
     <div class="modal-footer">

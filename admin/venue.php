@@ -7,7 +7,7 @@ include"admin/connection.php";
     <div class="inner-form-container">
 
         <div class="table-container" id="wrapper">
-            <input class="search" type="text" placeholder="Search rooms..." />
+            <input class="search" type="text" placeholder="Search venue..." />
             
 
             <table>
@@ -17,11 +17,11 @@ include"admin/connection.php";
                 <th>Set Equipment</th>
             
                 </thead>
-
+                
                 <tbody> 
                        <?php 
                       
-                        $get_room=mysql_query("SELECT * FROM rooms WHERE roomORvenue='Room' ORDER BY id desc");
+                        $get_room=mysql_query("SELECT * FROM rooms WHERE roomORvenue='Venue' ORDER BY id desc");
                         while($data_room=mysql_fetch_array($get_room)){
                             $rooms=$data_room['room'];
                         

@@ -30,7 +30,7 @@ $sql_rooms=mysql_query("SELECT * FROM teachers_roomsset WHERE techears_id='$view
 while($data_rooms=mysql_fetch_array($sql_rooms)){
 $teacher_rooms=$data_rooms['teachers_room'];
 
-$roomEquipment=mysql_query("SELECT * FROM room WHERE room='$teacher_rooms'");
+$roomEquipment=mysql_query("SELECT * FROM rooms WHERE room='$teacher_rooms'");
 $dataEquipment=mysql_fetch_array($roomEquipment);
 
 

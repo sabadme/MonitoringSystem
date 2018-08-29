@@ -35,24 +35,42 @@ if(isset($_REQUEST['viewequipment_rooms'])){
 				<tbody>
 					<?php 
 
-						$sql_room=mysql_query("SELECT * FROM room WHERE room='$viewequipment_rooms'");
-						while($data_room=mysql_fetch_array($sql_room)){
-							$equipment_room=$data_room['equipment'];
+						$sql_roomEquip = mysql_query("SELECT * FROM rooms_equipment WHERE room='$viewequipment_rooms'");
+						while($data_roomEquip = mysql_fetch_array($sql_roomEquip)){
+						$equipment = $data_roomEquip['equipment'];
+						$equipmentStatus = $data_roomEquip['set_status'];
 
-							$sql_equipment=mysql_query("SELECT * FROM equipment WHERE id='$equipment_room'");
-							$data_equipment=mysql_fetch_array($sql_equipment);
-							$equipment_pic=$data_equipment['equipment_filename'];
 
-							?>
-							<tr>
-								 <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_pic . "'>" ?></td>
-								 <td><?php echo $data_equipment['equipment_name']; ?></td>
-								  <td><?php echo $data_equipment['equipment_start']; ?></td>
-								   <td><?php echo $data_equipment['equipment_end']; ?></td>
-							</tr>
-							<?php
+						if($equipmentStatus=="None"){
+
+							$sql_single = mysql_query("SELECT * FROM equipment WHERE id='$equipment'");
+							$data_single = mysql_fetch_array($sql_single);
+							 $equipmentPicture = $data_single['equipment_filename'];
+							 $equipmentName = $data_single['equipment_name'];
+							 $equipmentStart = $data_single['equipment_start'];
+							 $equipmentEnd = $data_single['equipment_end'];
+
+						}else{
+							$sql_set = mysql_query("SELECT * FROM equipmentset WHERE quipment_id='$equipment'");
+							$data_set = mysql_fetch_array($sql_set);
+
+							 $equipmentPicture = $data_set['img_filename'];
+							 $equipmentName = $data_set['set_name'];
+							 $equipmentStart = $data_set['date'];
+							  $equipmentEnd = "None";
+
+
 						}
 
+						?>
+						<tr>
+							 <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipmentPicture . "'>" ?></td>
+							 <td><?php echo $equipmentName; ?></td>
+							 <td><?php echo $equipmentStart; ?></td>
+							 <td><?php echo $equipmentEnd; ?></td>
+						</tr>
+						<?php
+					}
 					 ?>
 
 				</tbody>

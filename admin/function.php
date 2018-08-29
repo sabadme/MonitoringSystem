@@ -28,6 +28,8 @@ include"admin/update_broken_status.php";
 include"admin/add_roomAccount_function.php";
 /*include"admin/scanner.php";*/
 include"admin/updateEquipmentset.php";
+include"admin/add_venue_function.php";
+include"admin/save_venue.php";
 
 
 if (isset($_REQUEST['dashboard'])) {
@@ -178,6 +180,12 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/openScanner.php";
  }else if (isset($_REQUEST['closeCam'])) {
     include "admin/scanner.php";
+ }else if (isset($_REQUEST['equipmentLocation'])) {
+    include "admin/equipmentLocation.php";
+ }else if (isset($_REQUEST['venue'])) {
+    include "admin/venue_manage.php";
+ }else if (isset($_REQUEST['save_venue'])) {
+    include "admin/venue_manage.php";
  }else {
     include "dashboard.php"; 
 }

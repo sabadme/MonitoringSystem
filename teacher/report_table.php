@@ -7,7 +7,7 @@ $get_booking=mysql_query("SELECT * FROM booking WHERE booker='$accountname'");
 while($data_booking=mysql_fetch_array($get_booking)){
 	$venue=$data_booking['venue'];
 
-	$get_room=mysql_query("SELECT * FROM room WHERE room='$venue'");
+	$get_room=mysql_query("SELECT * FROM rooms_equipment WHERE room='$venue'");
 	while($data_room=mysql_fetch_array($get_room)){
 	$equipment=$data_room['equipment'];
 	$status=$data_room['status'];
@@ -35,7 +35,7 @@ $sql_roomSet=mysql_query("SELECT * FROM teachers_roomsset WHERE techears_id='$id
 while($data_roomSet=mysql_fetch_array($sql_roomSet)){
 	$teachers_room=$data_roomSet['teachers_room'];
 
-	$sql_roomEquipment=mysql_query("SELECT * FROM room WHERE room='$teachers_room'");
+	$sql_roomEquipment=mysql_query("SELECT * FROM rooms_equipment WHERE room='$teachers_room'");
 	while($data_roomEquipment=mysql_fetch_array($sql_roomEquipment)){
 	$equipment_ID=$data_roomEquipment['equipment'];
 	$set_status=$data_roomEquipment['set_status'];

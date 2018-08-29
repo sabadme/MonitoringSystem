@@ -4,7 +4,7 @@ if(isset($_REQUEST['equipment_report'])){
 
 include"admin/connection.php";
 
-    $get_equipmentName=mysql_query("SELECT * FROM room WHERE equipment='$equipment_report'");
+    $get_equipmentName=mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$equipment_report'");
     $data_equipmentName=mysql_fetch_array($get_equipmentName);
     $name=$data_equipmentName['equipment'];
     $room=$data_equipmentName['room'];

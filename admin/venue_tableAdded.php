@@ -2,7 +2,7 @@
 <?php 
 include"admin/connection.php";
  $uniqueID="0";
-$sql_rooms=mysql_query("SELECT * FROM rooms WHERE roomORvenue='Room' ORDER BY id desc");
+$sql_rooms=mysql_query("SELECT * FROM rooms WHERE roomORvenue='Venue' ORDER BY id desc");
 while($data_rooms=mysql_fetch_array($sql_rooms)){
 	$img_filenames=$data_rooms['img'];
 	$uniqueID++;
@@ -12,7 +12,7 @@ while($data_rooms=mysql_fetch_array($sql_rooms)){
 		<td><?php echo $data_rooms['room']; ?></td>
 		<td><?php echo $data_rooms['building']; ?></td>
 		<td><?php echo $data_rooms['floor']; ?></td>
-		<td><button class="action" value="<?php echo $data_rooms['id']; ?>" id="<?php echo $uniqueID; ?>">Update</button></td>
+		<td><button class="actions" value="<?php echo $data_rooms['id']; ?>" id="<?php echo $uniqueID; ?>">Update</button></td>
 		
 	</tr>
 	<?php

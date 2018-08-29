@@ -20,6 +20,8 @@ if(isset($_REQUEST['dashboard'])){
     include "teacher/viewrooms.php";
 }else if (isset($_REQUEST['viewequipment_rooms'])) {
     include "teacher/viewequipment_rooms.php";
+}else if (isset($_REQUEST['room_page'])) {
+    include "teacher/room_pageEquipment.php";
 }else{
 	include"teacher/dashboard.php";
 }

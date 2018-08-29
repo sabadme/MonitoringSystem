@@ -16,6 +16,8 @@
                     <span>ROOM EQUIPMENT</span>
                 </li>
                 <?php include "admin/add_room_equipment.php"; ?>
+
+            
             </ul>
         </div>
     </div>

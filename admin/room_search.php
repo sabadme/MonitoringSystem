@@ -10,7 +10,7 @@ if($link === false){
  
 if(isset($_REQUEST['term'])){
     // Prepare a select statement
-    $sql = "SELECT * FROM rooms WHERE room LIKE ?";
+    $sql = "SELECT * FROM rooms WHERE roomORvenue='Room' And room LIKE ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
