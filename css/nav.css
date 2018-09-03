@@ -56,6 +56,9 @@
 .main-nav .menu li.parent > span.equips:before {
   content: '\e90b';
 }
+.main-nav .menu li.parent > span.facilities:before {
+  content: '\e90b';
+}
 .main-nav .menu li.parent ul {
   display: none;
 }
@@ -91,18 +94,16 @@
   position: relative;
 }
 .main-nav .menu li.booking-btn .counter {
-  top: 13px;
-  right: 8px;
-}
-.main-nav .menu li .counter {
+  position: absolute;
+  top: 17px;
+  right: 15px;
   font-size: 0.7142857142857143rem;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  font-family: sans-serif;
-  background: red;
-  padding: 5px 6px;
   color: #fff;
+  padding: 3px 5px;
+  line-height: 1;
+  display: inline-block;
+  background: #ff191b;
+  border-radius: 25px;
 }
 .main-nav .menu li button {
   margin: 0;
@@ -120,21 +121,10 @@
   width: 100%;
   max-width: none;
   text-transform: uppercase;
-  /*& > span:first-letter {
-					font-size: 18px;
-				}*/
-  /*&.catalog:before {				   
-				    content: @equipment-icon;
-				}*/
 }
 .main-nav .menu li button:hover {
   background: #283142;
   color: #fff;
-  /*& > span {
-						background: @cobalt;
-				    	left: 60px;
-				  		opacity: 1;
-					}*/
 }
 .main-nav .menu li button:hover:before {
   color: #fff;
@@ -153,6 +143,9 @@
 .main-nav .menu li button.dashboard:before {
   content: '\e902';
 }
+.main-nav .menu li button.scanner:before {
+  content: '\e907';
+}
 .main-nav .menu li button.addequipment:before {
   content: '\e90c';
 }
@@ -163,10 +156,10 @@
   content: '\e911';
 }
 .main-nav .menu li button.notifs:before {
-  content: '\e912';
+  content: '\e90a';
 }
 .main-nav .menu li button.booking:before {
-  content: '\e90f';
+  content: '\e901';
 }
 .main-nav .menu li button.equips:before {
   content: '\e910';

@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 
 $status=$_SESSION['status'];
 include"admin/connection.php";

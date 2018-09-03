@@ -50,9 +50,6 @@
 
       	
         </div>
-        <div class="banner-container">
-            <img src="images/message-banner.jpg" alt="Banner"/>
-        </div>
     </div>
 
 </div>

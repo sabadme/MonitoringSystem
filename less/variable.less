@@ -60,9 +60,16 @@
 @addequipment-icon: '\e90c';
 @report-icon: '\e911';
 @equips-icon: '\e910';
-@booking-icon: '\e90f';
+@booking-icon: '\e901';
 @rooms-icon: '\e90e';
-@notifs-icon: '\e912';
+@notifs-icon: '\e90a';
+@qr-icon: '\e907';
+@plus-icon: '\e90d';
+@minus-icon: '\e90c';
+@facilities-icon: '\e90b';
+
+
+
 
 .flex-layout () {
     display: -webkit-box;
@@ -250,4 +257,23 @@
 .font-size (@sizeValue) {
     @remValue: (@sizeValue / @root-font_size);
     font-size: ~"@{remValue}rem";
+}
+
+//Custom Scrollbar
+.custom-scrollbar() {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border-left: 1px solid @white;
+        border-right: 1px solid @white;
+        background-color: darken(lighten(saturate(spin(@color-gray, 0), 0), 24.7059), 5%);
+    }
+
+    &::-webkit-scrollbar-track {
+        border: 2px solid @white;
+        background: lighten(saturate(spin(@color-gray, 0), 0), 24.7059);
+    }
 }

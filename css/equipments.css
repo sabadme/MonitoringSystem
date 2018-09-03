@@ -1,5 +1,6 @@
 .equipments-container {
   padding: 20px;
+  width: 100%;
 }
 .equipments-container .search {
   float: right;
@@ -15,6 +16,12 @@
   border: 1px solid #b4b4b4;
   margin-bottom: 30px;
 }
+.equipments-container span {
+  font-size: 0.9285714285714286rem;
+  display: inline-block;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
 .equipments-container .user-box {
   display: -webkit-box;
   display: -moz-box;
@@ -22,16 +29,72 @@
   display: -webkit-flex;
   display: flex;
 }
-.equipments-container .user-box span {
-  font-size: 0.9285714285714286rem;
-  display: inline-block;
-  font-family: sans-serif;
-  margin-bottom: 5px;
-}
 .equipments-container .user-box div {
   width: 50%;
   margin-right: 20px;
 }
 .equipments-container .user-box div:last-child {
   margin-right: 0;
+}
+.EQ-Page {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.EQ-Page .EQ-Container {
+  border: 1px solid #b4b4b4;
+  width: 60%;
+}
+.EQ-Page .EQ-Container .EQ-Img {
+  padding: 20px;
+}
+.EQ-Page .EQ-Container .EQ-Img img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.EQ-Page .EQ-Date {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 10px;
+}
+.EQ-Page .EQ-Date span {
+  padding: 20px;
+  background: skyblue;
+  display: block;
+  font-size: 1.4285714285714286rem;
+  text-align: center;
+}
+.EQ-Page .EQ-Date > div {
+  width: 50%;
+}
+.EQ-Page .EQ-Date i {
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.EQ-Page .EQ-Info {
+  text-align: center;
+  background: #283142;
+  color: #fff;
+  padding: 20px;
+  width: 40%;
+}
+.EQ-Page .EQ-Info span {
+  margin-top: 20px;
+  font-size: 1.2857142857142858rem;
+  font-family: sans-serif;
+  display: block;
+}
+.EQ-Page .EQ-Info span.status {
+  padding: 10px;
+  background: #313a4b;
+  text-transform: uppercase;
 }

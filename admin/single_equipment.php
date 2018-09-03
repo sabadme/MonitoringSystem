@@ -7,6 +7,32 @@ include"admin/generate_code.php";
 <div class="equipments-container">
 <div class="top-container">
         <strong>Single Equipments</strong>
+        
+        <div class="notifs-container">
+            <strong class="notifs"></strong>
+            <span id="count" class="counter"></span>
+
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
+
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+
+        </div>
         <a href="logout.php" class="logout"></a>
 </div>
 
@@ -20,8 +46,8 @@ include"admin/generate_code.php";
                 <div class="user-box-input">
                     <span>Name</span>
                     <input type="text" name="equipment_name">
-                    <span>Type</span>
-                    <input type="text" name="">
+                    <!-- <span>Type</span>
+                    <input type="text" name=""> -->
                     <span>Code</span>
                     <input type="text" id="equipment_code" name="equipment_code" value="<?php echo $str; ?>">
                 </div>
@@ -38,7 +64,7 @@ include"admin/generate_code.php";
     </div>
 
         </form>
-               <!--  <div class="generate-container">
+                <!-- <div class="generate-container">
                     <form action="" method="POST">
                     <button class="generate" name="generate_code" type="submit">Generate</button>
                     </form>

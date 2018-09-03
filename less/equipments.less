@@ -2,6 +2,7 @@
 
 .equipments-container {
 	padding: 20px;
+  width: 100%;
 
 	.search {
 		float: right;
@@ -20,15 +21,15 @@
         margin-bottom: 30px;
     }
 
+    span {
+         .font-size(13);
+         display: inline-block;
+         font-family: sans-serif;
+         margin-bottom: 5px;
+        }
+
     .user-box {
        .flex-layout;
-
-        span {
-	       .font-size(13);
-	       display: inline-block;
-	       font-family: sans-serif;
-	       margin-bottom: 5px;
-        }
 
         div {
            width: 50%;
@@ -39,4 +40,69 @@
            }
         }
     }
+}
+
+.EQ-Page {
+  .flex-layout;
+
+  .EQ-Container{
+    border: 1px solid @border-color;
+    width: 60%;
+
+    .EQ-Img {
+      padding: 20px;
+       
+      img {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .EQ-Date {
+    .flex-layout;
+    margin-top: 10px;
+
+    span {
+      padding: 20px;
+      background: skyblue;
+      display: block;
+      .font-size(20);
+      text-align:  center;
+    }
+
+    & > div {
+      width: 50%;
+    }
+
+    i {
+      display: block;
+      font-family: @font-family-base;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+  }
+
+  .EQ-Info {
+    text-align: center;
+    background: @cobalt;
+    color: @white;
+    padding: 20px;
+    width: 40%;
+
+    span{
+      margin-top: 20px;
+      .font-size(18);
+      font-family: @font-family-base;
+      display: block;
+
+      &.status {
+        padding: 10px;
+        background: @sail;
+        text-transform: uppercase;
+      }
+    }
+  }
 }

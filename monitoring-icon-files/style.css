@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'monitoring';
-  src:  url('fonts/monitoring.eot?hlf9pz');
-  src:  url('fonts/monitoring.eot?hlf9pz#iefix') format('embedded-opentype'),
-    url('fonts/monitoring.ttf?hlf9pz') format('truetype'),
-    url('fonts/monitoring.woff?hlf9pz') format('woff'),
-    url('fonts/monitoring.svg?hlf9pz#monitoring') format('svg');
+  src:  url('fonts/monitoring.eot?byxlcb');
+  src:  url('fonts/monitoring.eot?byxlcb#iefix') format('embedded-opentype'),
+    url('fonts/monitoring.ttf?byxlcb') format('truetype'),
+    url('fonts/monitoring.woff?byxlcb') format('woff'),
+    url('fonts/monitoring.svg?byxlcb#monitoring') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,11 +24,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-alarm-bell:before {
+  content: "\e90a";
+}
+.icon-calendar-with-a-clock-time-tools:before {
+  content: "\e901";
+}
+.icon-home:before {
+  content: "\e90b";
+}
+.icon-minus:before {
+  content: "\e90c";
+}
+.icon-add:before {
+  content: "\e90d";
+}
 .icon-addAccount:before {
   content: "\e900";
-}
-.icon-chat-comment-oval-speech-bubble-with-text-lines:before {
-  content: "\e901";
 }
 .icon-dashboard:before {
   content: "\e902";
@@ -53,7 +65,4 @@
 }
 .icon-round-account-button-with-user-inside:before {
   content: "\e909";
-}
-.icon-inbox2:before {
-  content: "\e90a";
 }

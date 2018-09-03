@@ -1,5 +1,34 @@
 <div class="manage-container room-management with-banner">
-    <strong class="title">SETUP ROOM</strong>
+    <div class="top-container">
+        <strong>ROOM</strong>
+        
+        <div class="notifs-container">
+            <strong class="notifs"></strong>
+            <span id="count" class="counter"></span>
+
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
+
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+
+        </div>
+        <a href="logout.php" class="logout"></a>
+</div>
 
     <div class="manage-inner-container">
         <div class="tabs-container">

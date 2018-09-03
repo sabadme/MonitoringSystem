@@ -194,6 +194,17 @@ if(isset($status)){
         $('.login-form-container').mouseleave(function () {
             $('.login').removeClass('active');
         });
+
+        $('.notifs').click(function () {
+            if ($('.notifs').hasClass('active')) {
+                $(this).removeClass('active');
+            }
+
+            else {
+                $(this).addClass('active');
+            }
+
+        });
     }
 
     function empty() {
@@ -216,65 +227,12 @@ if(isset($status)){
         });
     }
 
-
-    jQuery(document).ready(function () {
-        $('.block-loader').fadeOut("slow");
-        $('body').addClass('loaded');
-        addActive();
-        empty();
-        tabActive();
-        /*searchTable();*/
-    });
-
-    jQuery(window).on('unload', function () {
-        $('.block-loader').fadeIn("slow");
-    });
-</script>
-<script>
-    // THIS CODE IS AUTO UPDATE THE VALUE OF NOTIFICATION
-    setInterval(function() {
-    $.get('admin/notif_autoupdate.php', function(data) {
-
-    });
-}, 7000);
-</script>
-  <script>
-    $(document).ready(function(){
-       $("#count").load('admin/notif_count.php');
-    });
-    </script>
-      <script>
-    $(document).ready(function(){
-       $("#bok_count").load('admin/booking_count.php');
-    });
-    </script>
-         <script>
- setInterval(function() {
-    $(document).ready(function(){
-       $("#bookingdate").load('teacher/dateandtime.php');
-    });
-  });
-    </script>
-
-
-    <script>
-        // Update rooms MODAL STYLE
-        $(function(){
-                $(document).on("click" ,".action" , function(){
-                    var roomID = ($(this).attr("value"));
-                    document.getElementById("RoomsID").value = roomID;
-                });
-
-
-        });
-    </script>
-
-<script>
     function UpdateRooms(){
-        var RoomName =$("input#RoomName").val();
-        var RoomBuilding =$("input#RoomBuilding").val();
-        var RoomFloor =$("input#RoomFloor").val();
-          var RoomsID =$("input#RoomsID").val();
+        var modal = $('.modal');
+        var RoomName = $("input#RoomName").val();
+        var RoomBuilding = $("input#RoomBuilding").val();
+        var RoomFloor = $("input#RoomFloor").val();
+        var RoomsID = $("input#RoomsID").val();
 
 
         $.ajax({
@@ -282,51 +240,75 @@ if(isset($status)){
            type :"POST",
            data :'RoomName=' + RoomName + '&RoomBuilding=' + RoomBuilding + '&RoomFloor=' + RoomFloor + '&RoomsID=' + RoomsID,
         });
-        modal.style.display = "none";
-    }   
-</script>
-    <script>
-        // Update venue MODAL STYLE
-        $(function(){   
-                $(document).on("click" ,".actions" , function(){
-                    var VenuesID = ($(this).attr("value"));
-                    document.getElementById("VenueID").value = VenuesID;
-                });
+        
+        $(modal).css('display', 'none');
+    }
 
-
-        });
-    </script>
-<script>
     function UpdateVenue(){
-        var VenueName =$("input#VenueName").val();
-        var VenueBuilding =$("input#VenueBuilding").val();
-        var VenueFloor =$("input#VenueFloor").val();
-          var VenueID =$("input#VenueID").val();
-
+        var modal = $('.modal');
+        var VenueName = $("input#VenueName").val();
+        var VenueBuilding = $("input#VenueBuilding").val();
+        var VenueFloor = $("input#VenueFloor").val();
+        var VenueID = $("input#VenueID").val();
 
         $.ajax({
            url : "admin/UpdateVenues.php",
            type :"POST",
            data :'VenueName=' + VenueName + '&VenueBuilding=' + VenueBuilding + '&VenueFloor=' + VenueFloor + '&VenueID=' + VenueID,
         });
-        modal.style.display = "none";
-    
-    }   
-</script>
-<script>
-    function myFunction() {
-  var input = document.getElementById("Search");
-  var filter = input.value.toLowerCase();
-  var divTarget = document.getElementsByClassName('target');
+        
 
-  for (i = 0; i < divTarget.length; i++) {
-    if (divTarget[i].innerText.toLowerCase().includes(filter)) {
-      divTarget[i].style.display = "block";
-    } else {
-      divTarget[i].style.display = "none";
+        $(modal).css('display', 'none');
     }
-  }
-}
+
+    function myFunction() {
+      var input = document.getElementById("Search");
+      var filter = input.value.toLowerCase();
+      var divTarget = document.getElementsByClassName('target');
+
+      for (i = 0; i < divTarget.length; i++) {
+        if (divTarget[i].innerText.toLowerCase().includes(filter)) {
+          divTarget[i].style.display = "block";
+        } else {
+          divTarget[i].style.display = "none";
+        }
+      }
+    }
+
+    $(function(){   
+        $(document).on("click" ,".actions" , function(){
+            var VenuesID = ($(this).attr("value"));
+            document.getElementById("VenueID").value = VenuesID;
+        });
+    });
+
+     $(function(){
+        $(document).on("click" ,".action" , function(){
+            var roomID = ($(this).attr("value"));
+            document.getElementById("RoomsID").value = roomID;
+        });
+    });
+
+    jQuery(document).ready(function () {
+        $('.block-loader').fadeOut("slow");
+        $('body').addClass('loaded');
+        $("#count").load('admin/notif_count.php');
+        $("#bok_count").load('admin/booking_count.php');
+        addActive();
+        empty();
+        tabActive();
+        UpdateRooms();
+        UpdateVenue();
+        myFunction();
+
+        setInterval(function() {
+            $("#bookingdate").load('teacher/dateandtime.php');
+        }, 7000);
+    });
+
+    jQuery(window).on('unload', function () {
+        $('.block-loader').fadeIn("slow");
+    });
 </script>
  
 

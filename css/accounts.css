@@ -1,5 +1,6 @@
 .accounts-container {
   padding: 20px;
+  width: 100%;
 }
 .accounts-container .search {
   float: right;

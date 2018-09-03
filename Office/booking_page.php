@@ -1,34 +1,64 @@
 
 <div class="booking-container">
-    <strong class="title">Booking Lounge</strong>
-    <strong class="title"><?php date_default_timezone_set('Asia/Manila');
-echo $date = date('m/d/Y h:i:s a', time()); ?>
+    <div class="top-container">
+        <strong>Booking</strong>
+        <div class="notifs-container">
+            <strong class="notifs"></strong>
+            <span id="count" class="counter"></span>
+
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
+
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+
+        </div>
+        <a href="logout.php" class="logout"></a>
+    </div>
     
-</strong>
     <div class="booking-wrapper-container">
         <div class="booking-wrapper">
-            <strong class="subtitle">Bookings</strong>
+            
  <form action="" method="POST">
-    
-     <!--        <div class="field"> 
-                <label>Booker: </label>
-             <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Search Name..." name="booker" />
-        <div class="result"></div>
-    </div>
-            </div> -->
+        <div class="grid-container">
 
             <div class="field">
-                <label>Venue: </label>
-            <div class="search-venue">
-                <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
-                 <div class="Vresult"></div>
-             </div>
-           
+                <label>Who: </label>
+                <div class="search-box">
+                  <input type="text" autocomplete="off" placeholder="Search Name..." name="booker" />
+                 <div class="result"></div>
+                </div>
             </div>
 
             <div class="field">
-                <label>Semester: </label>
+                <label>Where: </label>
+                <div class="search-venue">
+                    <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
+                    <div class="Vresult"></div>
+                </div>
+            </div>        
+
+            <div class="field">
+               <label>Purpose: </label>
+                <input type="text"/>
+            </div>
+
+            <div class="field">
+               <label>Semester: </label>
                <select name="sem">
                    <option value="" disabled selected>Select..</option>
                    <option>1st sem</option>
@@ -38,12 +68,13 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
             </div>
 
             <div class="field">
-                <label>When: </label>
-                <input type="date" name="datestart"/>
+               <label>Date Start: </label>
+               <input type="date" name="datestart"/>
             </div>
-             <div class="field">
-                <label>Date End: </label>
-                <input type="date" name="dateend"/>
+
+            <div class="field">
+               <label>Date End: </label>
+               <input type="date" name="dateend"/>
             </div>
 
             <div class="field">
@@ -52,7 +83,7 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
             </div>
 
             <div class="field">
-                <label>End Time: </label>
+               <label>End Time: </label>
                 <input type="time" name="tameend"/>
             </div>
 
@@ -97,6 +128,7 @@ echo $date = date('m/d/Y h:i:s a', time()); ?>
                     ?>
                 </div>
             </div>
+        </div>
 
            
                 <button type="submit" name="save_booking">Book</button>

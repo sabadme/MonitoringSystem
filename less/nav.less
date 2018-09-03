@@ -61,6 +61,10 @@
 				    	content: @equipment-icon;
 					}
 
+					&.facilities:before {				   
+				   		content: @facilities-icon;
+					}
+
 				}
 				
 				ul {
@@ -107,19 +111,18 @@
 			&.booking-btn {
 				position: relative;	
 
-				.counter {	
-					top: 13px;
-			    	right: 8px;
+				.counter {
+					position: absolute;
+					top: 17px;
+			    	right: 15px;
+			    	.font-size(10);
+					color: @white;
+				    padding: 3px 5px;
+				    line-height: 1;
+				    display: inline-block;
+				    background: @torch-red;
+				    border-radius: 25px;
 				}
-			}
-
-			.counter {
-				.font-size(10);
-				.round-borders(50%);
-			    font-family: @font-family-base	;
-			    background: red;
-			    padding: 5px 6px;
-			    color: @white;
 			}
 
 			button {
@@ -135,10 +138,6 @@
 				max-width: none;
 				text-transform: uppercase;
 
-				/*& > span:first-letter {
-					font-size: 18px;
-				}*/
-
 				&:hover {
 					background: @cobalt;
 					color: @white;
@@ -146,12 +145,6 @@
 					&:before {
 						color: @white;
 					}
-
-					/*& > span {
-						background: @cobalt;
-				    	left: 60px;
-				  		opacity: 1;
-					}*/
 				}
 
 				&:before {
@@ -171,6 +164,10 @@
 				    content: @dashboard-icon;
 				}
 
+				&.scanner:before {
+				    content: @qr-icon;
+				}
+
 				&.addequipment:before {
 					content: @addequipment-icon;
 				}
@@ -178,10 +175,6 @@
 				&.manage:before {				   
 				    content: @manage-icon;
 				}
-
-				/*&.catalog:before {				   
-				    content: @equipment-icon;
-				}*/
 
 				&.reports:before {				   
 				    content: @report-icon;

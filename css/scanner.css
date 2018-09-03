@@ -1,19 +1,31 @@
-.scan-container {
+.scanner-container {
+  width: 100%;
+  padding: 20px;
+}
+.scanner-container .scan-wrapper form {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-.scan-container form {
-  text-align: center;
-  padding: 50px;
-  border: 1px solid #b4b4b4;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 80px;
+.scanner-container .scan-wrapper button {
+  margin-top: 0;
 }
-.scan-container form .CameraBtn {
-  height: 150px;
-  margin-bottom: 30px;
+.scanner-container .scan-wrapper input {
+  width: 100%;
+  margin: 20px 0;
+}
+.scanner-container .scan-wrapper video {
+  height: 200px;
 }

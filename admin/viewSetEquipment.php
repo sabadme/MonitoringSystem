@@ -62,10 +62,6 @@ if(isset($_REQUEST['viewSetEquipment'])){
            	<button class="action" type="submit" name="edit_set_equipment" value="<?php echo $viewSetEquipment; ?>">Edit Set</button>
            </form>
         </div>
-
-        <div class="banner-container">
-            <img src="images/message-banner.jpg" alt="Banner"/>
-        </div>
     </div>
 </div>
 <?php

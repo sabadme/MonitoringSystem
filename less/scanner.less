@@ -1,19 +1,27 @@
 @import "variable.less";
 
-.scan-container {
-	.flex-layout;
+.scanner-container {
+	width: 100%;
+	padding: 20px;
 
-	form {	
-	text-align: center;
-	padding: 50px;
-	border: 1px solid @border-color;
-	width: 50%;
-	margin: 0 auto;
-	margin-top: 80px;
+	.scan-wrapper {
+		form {
+			.flex-layout;
+			.flex-justify-content(center);
+			.flex-wrap(wrap);
+		}
 
-		.CameraBtn {
-			height: 150px;
-			margin-bottom: 30px;
+		button {
+			margin-top: 0;
+		}
+
+		input {
+			width: 100%;
+			margin: 20px 0;
+		}
+
+		video {
+			height: 200px;
 		}
 	}
 }

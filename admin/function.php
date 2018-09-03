@@ -86,7 +86,7 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/booking_page.php";
 } else if (isset($_REQUEST['notif'])) {
     include "admin/booking_page.php";
-} else if (isset($_REQUEST['approve_  booking'])) {
+} else if (isset($_REQUEST['approve_booking'])) {
     include "admin/booking_page.php";
 } else if (isset($_REQUEST['notifs'])) {
     include "admin/viewreports.php";

@@ -6,6 +6,17 @@
 
 html {
 	height: 100%;
+
+    //  Font Varient
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+
+    //  Font Smoothing
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
 
 html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -164,7 +175,8 @@ form {
         width: 100%;
         border: 1px solid @border-color;
 
-        &[type="date"] {
+        &[type="date"],
+        &[type="time"] {
             height: 37px;
         }
 
@@ -186,6 +198,7 @@ thead {
 }
 
 tbody {
+    .custom-scrollbar();
     display: block;
     max-height: 250px;
     overflow-y: auto;

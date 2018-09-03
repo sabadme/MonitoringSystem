@@ -68,13 +68,9 @@ if ($status == "Admin") {
 
                 </li>
              
-
-                <!-- <li>
-                    <button title="Add Equipments" class="addequipment" name="add_equipment" type="submit"><span>Equipments</span></button>
-                </li> -->
                 <li class="parent">
 
-                        <span title="Facilities" class="equips" name="facilities">
+                        <span title="Facilities" class="facilities" name="facilities">
                        <span>Facilities</span>
                     </span>
 
@@ -87,11 +83,11 @@ if ($status == "Admin") {
                 </li>
 
               
-                <li>
+               <!--  <li>
                     <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
                     <span id="count" class="counter"></span>
 
-                </li>
+                </li> -->
 
 
             </ul>
@@ -102,6 +98,7 @@ if ($status == "Admin") {
 } else if ($status == "Office") {
     ?>
     <nav class="main-nav">
+        <img src="images/monitor.png">
         <form action="" method="POST">
             <ul class="menu">
 

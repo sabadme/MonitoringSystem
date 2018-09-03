@@ -14,20 +14,33 @@
   -webkit-align-items: center;
   -o-align-items: center;
   align-items: center;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
+  postion: relative;
   width: 100%;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #b4b4b4;
+  border-bottom: 1px solid #ccc;
+  /* Force table to not be like tables anymore */
+  /* Hide table headers (but not display: none;, for accessibility) */
 }
 .main-index .top-container > strong {
   font-size: 2.142857142857143rem;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
   font-family: sans-serif;
   text-transform: uppercase;
+}
+.main-index .top-container .counter {
+  font-size: 0.7142857142857143rem;
+  color: #fff;
+  padding: 3px 5px;
+  line-height: 1;
+  display: inline-block;
+  background: #ff191b;
+  border-radius: 25px;
+  position: absolute;
+  top: 15px;
+  right: 60px;
 }
 .main-index .top-container .logout:after {
   content: '\e904';
@@ -37,7 +50,92 @@
   color: #212121;
   vertical-align: middle;
   background: #fff;
+  margin-left: 10px;
 }
 .main-index .top-container .logout:hover:after {
   opacity: 0.8;
+}
+.main-index .top-container table,
+.main-index .top-container thead,
+.main-index .top-container tbody,
+.main-index .top-container th,
+.main-index .top-container td,
+.main-index .top-container tr {
+  display: block;
+}
+.main-index .top-container thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.main-index .top-container table {
+  border: 0;
+}
+.main-index .top-container tr {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.main-index .top-container tr:last-child {
+  border-bottom: 0;
+}
+.main-index .top-container td {
+  border: none;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.main-index .top-container td:last-child {
+  margin-bottom: 0;
+}
+.main-index .top-container td:before {
+  font-size: 0.7142857142857143rem;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.main-index .top-container td:nth-of-type(1):before {
+  content: "Name";
+}
+.main-index .top-container td:nth-of-type(2):before {
+  content: "Equipment";
+}
+.main-index .top-container td:nth-of-type(3):before {
+  content: "Message";
+}
+.main-index .top-container .notifs:hover {
+  opacity: 0.9;
+}
+.main-index .top-container .notifs:before {
+  content: '\e912';
+  display: inline-block;
+  font-family: 'monitoring';
+  font-size: 1.4285714285714286rem;
+  color: #212121;
+  vertical-align: middle;
+  background: #fff;
+  cursor: pointer;
+}
+.main-index .top-container .notifs.active ~ .notifs-wrapper {
+  display: block;
+  position: absolute;
+  right: 52px;
+  top: 50px;
+  width: 100%;
+  max-width: 322px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+.main-index .top-container .notifs-container > .notifs-wrapper {
+  display: none;
+}
+.main-index .top-container .notifs-container > .notifs-wrapper > strong {
+  font-size: 1.1428571428571428rem;
+  display: block;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+.main-index .top-container .notifs-container > .notifs-wrapper button {
+  max-width: 100%;
 }
