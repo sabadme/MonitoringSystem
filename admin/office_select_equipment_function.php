@@ -35,7 +35,7 @@ if(isset($_REQUEST['check_list'])){
 
 
 
-				 $insert_room=mysql_query("INSERT INTO room VALUES(0,'$officename','$check','$uptodate','$equipment_status','$building','$floor','Office')");
+				 $insert_room=mysql_query("INSERT INTO rooms_equipment VALUES(0,'$officename','$check','$uptodate','$equipment_status')");
 				 echo mysql_error();  
 			  if($insert_room){
 				

@@ -62,7 +62,7 @@
 		</div>
 			
 		</form>
-
+		<?php include"admin/userUpdate_modal.php"; ?>
 		<input type="text" class="search" id="myInput1"  placeholder="Search names..">	
 		<div class="table-container" id="wrapper">
 			

@@ -6,10 +6,13 @@ $office_equipment_table=$_REQUEST['office_equipment_table'];
 include"admin/connection.php";
 
 
-$room=mysql_query("SELECT * FROM room WHERE room='$office_equipment_table'");
+$room=mysql_query("SELECT * FROM rooms_equipment WHERE room='$office_equipment_table'");
 $data_room=mysql_fetch_array($room);
 $officename=$data_room['room'];
+
+if($office_equipment_table == $officename){
  ?>
+
 <div class="manage-container room-update with-banner">
     <strong class="title">Update <?php echo $officename; ?> Equipments</strong>
 
@@ -29,7 +32,7 @@ $officename=$data_room['room'];
                 <tbody>
                     
                        <?php 
-                        $room_equipment=mysql_query("SELECT * FROM room WHERE room='$office_equipment_table' ORDER BY id desc");
+                        $room_equipment=mysql_query("SELECT * FROM rooms_equipment WHERE room='$office_equipment_table' ORDER BY id desc");
                         while($data_roomE=mysql_fetch_array($room_equipment)){
                             $equipment=$data_roomE['equipment'];
                             $room_id=$data_roomE['id'];
@@ -86,5 +89,13 @@ $officename=$data_room['room'];
     </div>
 </div>
 <?php 
+}else{
+    ?>
+    <script>
+        alert("No equipment available.");
+    </script>
+    <?php
+    include"admin/add_office_design.php";
+}
 }
  ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(0);
+
 $accountname=$_SESSION['account'];
 $status=$_SESSION['status'];
 $id=$_SESSION['id'];
@@ -284,7 +284,7 @@ if(isset($status)){
 
      $(function(){
         $(document).on("click" ,".action" , function(){
-            var roomID = ($(this).attr("value"));
+            var roomID = ($(this).attr("value"));   
             document.getElementById("RoomsID").value = roomID;
         });
     });
@@ -310,7 +310,55 @@ if(isset($status)){
         $('.block-loader').fadeIn("slow");
     });
 </script>
- 
+
+<script>
+    //teacher update modal
+
+      $(function(){   
+                $(document).on("click" ,".teacherUpdates" , function(){
+                    var teacherID = ($(this).attr("value"));
+                 
+                   document.getElementById("UserID").value = teacherID;
+                 
+
+                  
+                });
+
+
+        });
+</script>
+
+<script>
+    function updatteacher() {
+        var teacherORstudent =$("select#teacherORstudent").val();
+        var fname =$("input#fname").val();
+        var mname =$("input#mname").val();
+        var lname =$("input#lname").val();
+        var UserID = $("input#UserID").val();
+
+        $.ajax({
+            url : "admin/teacher_updateFunctionModal.php",
+            type :"POST",
+            data :'teacherORstudent=' + teacherORstudent + '&fname=' + fname + '&mname=' + mname + '&lname=' + lname + '&UserID=' + UserID,
+        });
+        modal.style.display = "none";
+     
+
+
+    }
+</script>
+<script>
+
+    //office modal
+
+    $(function(){
+        $(document).on("click" , ".openOfficeUpdateModal" , function(){
+            var OfficeIDs = ($(this).attr("value"));
+            document.getElementById("OfficeId").value = OfficeIDs;
+
+        });
+    });
+</script>
 
 
 

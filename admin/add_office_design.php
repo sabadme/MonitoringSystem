@@ -67,7 +67,7 @@
 
 		<input type="text" class="search" id="myInput2" placeholder="Search offices..">
 		<div class="table-container" id="wrapper">
-			
+			<?php include"admin/office_updateModal.php"; ?>
 				<table id="myTable2">
 				<thead>
 

@@ -1,13 +1,9 @@
-<?php 
 
-include"admin/generate_code.php"; 
-
-?>
 
 <div class="equipments-container">
 <div class="top-container">
         <strong>Single Equipments</strong>
-        
+
         <div class="notifs-container">
             <strong class="notifs"></strong>
             <span id="count" class="counter"></span>
@@ -20,7 +16,7 @@ include"admin/generate_code.php";
                         <th>Name</th>
                         <th>Equipment</th>
                         <th>Message</th>
-                    </thead>    
+                    </thead>
 
                     <tbody>
                         <?php include"admin/viewreport_table.php"; ?>
@@ -46,6 +42,10 @@ include"admin/generate_code.php";
                 <div class="user-box-input">
                     <span>Name</span>
                     <input type="text" name="equipment_name">
+                    <span>Type</span>
+                    <input type="text" name="equipmentType" required>
+
+
                     <!-- <span>Type</span>
                     <input type="text" name=""> -->
                     <span>Code</span>
@@ -64,11 +64,6 @@ include"admin/generate_code.php";
     </div>
 
         </form>
-                <!-- <div class="generate-container">
-                    <form action="" method="POST">
-                    <button class="generate" name="generate_code" type="submit">Generate</button>
-                    </form>
-                </div> -->
         
 
         <input type="text" class="search" id="myInput1"  placeholder="Search names..">

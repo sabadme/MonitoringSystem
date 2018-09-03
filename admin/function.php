@@ -15,7 +15,7 @@ include "admin/notification_update.php";
 include "admin/finalset_equipment.php";
 include "admin/upda_single_equipment_function.php";
 include "admin/sa_update_function.php";
-include "admin/office_update_function.php";
+/*include "admin/office_update_function.php";*/
 include "admin/drop_equipmentSet.php";
 include"admin/add_new_set_function.php";
 include"admin/edit_set_equipment_fucntion.php";
@@ -30,6 +30,7 @@ include"admin/add_roomAccount_function.php";
 include"admin/updateEquipmentset.php";
 include"admin/add_venue_function.php";
 include"admin/save_venue.php";
+include"admin/officeModal_function.php";
 
 
 if (isset($_REQUEST['dashboard'])) {
@@ -73,7 +74,7 @@ if (isset($_REQUEST['dashboard'])) {
 } else if (isset($_REQUEST['office_equipment_table'])) {
     include "admin/office_equipment_table.php";
 } else if (isset($_REQUEST['save_selected_equipment'])) {
-    include "dashboard.php";
+    include "admin/add_office_design.php";
 } else if (isset($_REQUEST['enable'])) {
     include "admin/users.php";
 } else if (isset($_REQUEST['disable'])) {
@@ -108,14 +109,8 @@ if (isset($_REQUEST['dashboard'])) {
   include "admin/equipment_set_check.php"; 
 }    else if(isset($_REQUEST['update_equipment'])){
   include "admin/update_sigle_equipment.php"; 
-}    else if(isset($_REQUEST['user_update'])){
-  include "admin/user_update.php"; 
-}    else if(isset($_REQUEST['sa_update_function'])){
+}   else if(isset($_REQUEST['sa_update_function'])){
   include "admin/users.php"; 
-}    else if(isset($_REQUEST['office_update'])){
-  include "admin/office_update.php"; 
-}    else if(isset($_REQUEST['office_update_function'])){
-  include "admin/office_update.php"; 
 }    else if(isset($_REQUEST['addnewset'])){
   include "admin/set_equipment.php"; 
 }    else if(isset($_REQUEST['generate_codeSet'])){
@@ -147,7 +142,7 @@ if (isset($_REQUEST['dashboard'])) {
 }    else if(isset($_REQUEST['unassgnedView'])){
   include "admin/unassigned_dateView.php";  
 } else if (isset($_REQUEST['save_equipment'])) {
-    include "admin/dashboard.php";
+   include "admin/single_equipment.php";
 } else if (isset($_REQUEST['unassigedTeachersRoom'])) {
     include "admin/unassigedTeachersRoom.php";
  }else if (isset($_REQUEST['update_broken_status'])) {
@@ -186,6 +181,10 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/venue_manage.php";
  }else if (isset($_REQUEST['save_venue'])) {
     include "admin/venue_manage.php";
+ }else if (isset($_REQUEST['teacherUpdate'])) {
+    include "admin/add_user_design.php";
+ }else if (isset($_REQUEST['officeupdate'])) {
+    include "admin/add_office_design.php";
  }else {
     include "dashboard.php"; 
 }

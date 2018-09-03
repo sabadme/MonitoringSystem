@@ -2,9 +2,10 @@
 
 include"admin/connection.php";
 
-
+$count = "0";
 $user_table=mysql_query("SELECT * FROM tbl_login ORDER BY id desc");
 while($data_table=mysql_fetch_array($user_table)){
+	$count++;
 	$firstname=$data_table['firstname'];
 	 $status=$data_table['ED_status'];
 	 $id=$data_table['id'];
@@ -30,7 +31,7 @@ if($status=="Enabled"){
 }
 
  ?>
- <td><form action="" method="POST"><button class="action" name="user_update" value="<?php echo $data_table['id']; ?>">Update</button></form></td>
+ <td><button  id="<?php echo $count; ?>" class="teacherUpdates" value="<?php echo $data_table['id']; ?>">Update</button></td>
  <td><form action="" method="POST"><button name="teacherroom" class="action" value="<?php echo $data_table['id']; ?>">Room</button></form></td>
 </tr>
 <?php
@@ -38,5 +39,42 @@ if($status=="Enabled"){
 }
 }
  ?>
+
+  <?php 	
+  $count;
+$scriptcount="0";
+for (	$i=0; 	$i <$count ; 	$i++) { 
+	 $scriptcount++;
+
+	?>
+
+<script>
+
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById(<?php echo $scriptcount; ?>);
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<?php
+}
+
+
+  ?>
 
 
