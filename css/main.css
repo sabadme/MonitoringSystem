@@ -106,7 +106,7 @@
   opacity: 0.9;
 }
 .main-index .top-container .notifs:before {
-  content: '\e912';
+  content: '\e90a';
   display: inline-block;
   font-family: 'monitoring';
   font-size: 1.4285714285714286rem;

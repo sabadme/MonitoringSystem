@@ -28,7 +28,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
 		//generate QR code
 		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
+		$str = "";
 		$size = strlen( $chars );
 		for( $i = 0; $i < 10; $i++ ) {
 			$str.= $chars[ rand( 0, $size - 1 ) ];
@@ -38,6 +38,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 			$equipment_name=$_REQUEST['equipment_name'];
 			$equipment_start=$_REQUEST['equipment_start'];
 			$equipment_end=$_REQUEST['equipment_end'];
+			$equipmentType = $_REQUEST['equipmentType'];
 
 		echo mysql_error();  
 	 	$qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$str'>";
@@ -77,11 +78,18 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
     ";
 
-		include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
 
 		$status="Unassigned";
 
-		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipment_start','$equipment_end','$name','$status','Up To Date','None')");
+		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None')");
 		echo mysql_error();  
 		if($upload_image){
 			

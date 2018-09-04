@@ -46,6 +46,11 @@
                             <input type="text" name="numbersOfEquipemnt" placeholder="Quantity">
                             <span>Equipment Name</span>
                             <input type="text" name="equipment_name" placeholder="Equipment Name">
+                            <span>Equipment Type</span>
+                            <input type="text" name="equipmentType" placeholder="Equipment Type">
+
+
+
                         </div>
 
                         <div class="user-box-input">

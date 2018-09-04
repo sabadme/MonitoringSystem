@@ -48,8 +48,6 @@
 
                     <!-- <span>Type</span>
                     <input type="text" name=""> -->
-                    <span>Code</span>
-                    <input type="text" id="equipment_code" name="equipment_code" value="<?php echo $str; ?>">
                 </div>
                 <div class="user-box-input">
                     <span>Registration Date</span>

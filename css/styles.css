@@ -2359,8 +2359,8 @@ footer .right-container .copyright {
 }
 .main-nav .menu li.booking-btn .counter {
   position: absolute;
-  top: 13px;
-  right: 8px;
+  top: 17px;
+  right: 15px;
   font-size: 0.7142857142857143rem;
   color: #fff;
   padding: 3px 5px;
@@ -2449,8 +2449,7 @@ footer .right-container .copyright {
   }
 }
 .manage-container {
-  margin: 30px 0 0;
-  padding: 0 40px;
+  padding: 20px;
 }
 .manage-container .inner-form-container {
   width: 100%;

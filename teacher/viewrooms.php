@@ -3,11 +3,35 @@ if(isset($_REQUEST['viewrooms'])){
 	$viewrooms=$_REQUEST['viewrooms']
 
  ?>
+<div class="booking-container">
+ <div class="top-container">
+        <strong>ROOMS</strong>
+        <div class="notifs-container">
+            <strong class="notifs"></strong>
+            <span id="count" class="counter"></span>
 
-<div class="manage-container with-banner">
-	<strong class="title">ROOMS</strong>
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
 
-	<div class="manage-inner-container">
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+        </div>
+        <a href="logout.php" class="logout"></a>
+    </div>
 	
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
@@ -47,8 +71,8 @@ $dataEquipment=mysql_fetch_array($roomEquipment);
 				</tbody>
 			</table>
 		</div>
-	</div>
-</div> 
+
+
 <?php 
 }
  ?>

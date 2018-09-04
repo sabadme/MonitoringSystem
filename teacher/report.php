@@ -1,4 +1,33 @@
 <!-- <?php //include "admin/modal.php"; ?> -->
+<div class="booking-container">
+<div class="top-container">
+        <strong>Report</strong>
+        <div class="notifs-container">
+            <strong class="notifs"></strong>
+            <span id="count" class="counter"></span>
+
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
+
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+        </div>
+        <a href="logout.php" class="logout"></a>
+    </div>
 
 <div class="manage-container with-banner">
 	<strong class="title">REPORT FORM</strong>
@@ -23,6 +52,7 @@
 			</table>
 		</div>
 	</div>
+</div>
 </div>
 
 <!-- <script>

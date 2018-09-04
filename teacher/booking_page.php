@@ -1,14 +1,38 @@
 
 <div class="booking-container">
-    <strong class="title">Booking Lounge</strong>
-    <strong class="title" id="bookingdate">
-    
-</strong>
+    <div class="top-container">
+        <strong>Booking</strong>
+        <div class="notifs-container">
+            <strong class="notifs"></strong>
+            <span id="count" class="counter"></span>
+
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
+
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+        </div>
+        <a href="logout.php" class="logout"></a>
+    </div>
+
     <div class="booking-wrapper-container">
         <div class="booking-wrapper">
-            <strong class="subtitle">Bookings</strong>
  <form action="" method="POST">
-    
+        <div class="grid-container">
      <!--        <div class="field"> 
                 <label>Booker: </label>
              <div class="search-box">
@@ -54,6 +78,7 @@
                 <label>End Time: </label>
                 <input type="time" name="tameend"/>
             </div>
+        </div>
 
             <div class="field equipments-field">
                 <span>Equipments</span>
@@ -100,7 +125,8 @@
            
                 <button type="submit" name="save_booking">Book</button>
             </form>
-        </div>
+            </div>
+        
         <div class="booking-table">
             <strong class="subtitle">Booking Information</strong>
             <div class="table-container" id="wrapper">

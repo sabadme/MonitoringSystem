@@ -2,7 +2,7 @@
 if(isset($_REQUEST['Add_equipment_setFinal'])){
 
 	   	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
-
+	$str="";
 	$size = strlen( $chars );
 	for( $i = 0; $i < 10; $i++ ) {
 		$str.= $chars[ rand( 0, $size - 1 ) ];
@@ -68,7 +68,14 @@ if(isset($_REQUEST['Add_equipment_setFinal'])){
 
     ";
 
-include"admin/connection.php";
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
 
 		if(isset($_REQUEST['finalset_equipment'])){
 	 $finalset_equipment=$_REQUEST['finalset_equipment'];
@@ -84,7 +91,9 @@ if($insert){
  alert("Record Successfully Added "); </script>
  <?php 
 }else {
-  echo "Error adding record"; 
+ 	?> <script> 
+ alert("Error "); </script>
+ <?php 
 }
 
 

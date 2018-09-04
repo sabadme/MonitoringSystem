@@ -120,6 +120,7 @@ if ($status == "Admin") {
 
     ?>
     <nav class="main-nav">
+        <img src="images/monitor.png">
         <form action="" method="POST">
             <ul class="menu">
 
