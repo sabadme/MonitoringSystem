@@ -32,19 +32,17 @@ include"admin/add_venue_function.php";
 include"admin/save_venue.php";
 include"admin/officeModal_function.php";
 
+include"teacher/bookingEquipmentUpdate.php";
+
 
 if (isset($_REQUEST['dashboard'])) {
     include "dashboard.php";
 } else if (isset($_REQUEST['accounts'])) {
     include "admin/users.php";
-} /*else if (isset($_REQUEST['add_equipment'])) {
-    include "admin/add_equipment_design.php";
-} */else if (isset($_REQUEST['Catalog'])) {
+} else if (isset($_REQUEST['Catalog'])) {
 
     include "admin/catalog-function.php";
-}/* else if (isset($_REQUEST['generate_code'])) {
-    include "admin/add_equipment_design.php";
-}*/ else if (isset($_REQUEST['room_page'])) {
+}else if (isset($_REQUEST['room_page'])) {
 
     include "admin/room_page.php";
 } else if (isset($_REQUEST['add_room'])) {
@@ -76,9 +74,9 @@ if (isset($_REQUEST['dashboard'])) {
 } else if (isset($_REQUEST['save_selected_equipment'])) {
     include "admin/add_office_design.php";
 } else if (isset($_REQUEST['enable'])) {
-    include "admin/users.php";
+    include "admin/add_user_design.php";
 } else if (isset($_REQUEST['disable'])) {
-    include "admin/users.php";
+    include "admin/add_user_design.php";
 } else if (isset($_REQUEST['officedisable'])) {
     include "admin/add_office_design.php";
 } else if (isset($_REQUEST['officeenable'])) {
@@ -105,9 +103,7 @@ if (isset($_REQUEST['dashboard'])) {
   include "admin/Uptodate.php";   
 }    else if(isset($_REQUEST['Add_equipment_set'])){
   include "admin/equipment_set_check.php";
-}    else if(isset($_REQUEST['Add_equipment_setFinal'])){
-  include "admin/equipment_set_check.php"; 
-}    else if(isset($_REQUEST['update_equipment'])){
+}  else if(isset($_REQUEST['update_equipment'])){
   include "admin/update_sigle_equipment.php"; 
 }   else if(isset($_REQUEST['sa_update_function'])){
   include "admin/users.php"; 
@@ -185,8 +181,13 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/add_user_design.php";
  }else if (isset($_REQUEST['officeupdate'])) {
     include "admin/add_office_design.php";
+ }else if (isset($_REQUEST['saveGroupEquipementSet'])) {
+    include "admin/groupSet.php";
  }else {
     include "dashboard.php"; 
 }
 ?> 
+
+
+  
 

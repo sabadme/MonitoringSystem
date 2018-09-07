@@ -8,7 +8,7 @@ include"admin/connection.php";
 $dir_path="RoomPicture/";
 $option="";
 
-if(is_dir($dir_path)){
+if(is_dir($dir_path)){  
     $files=opendir($dir_path);
     if($files){
         while(($file_name=readdir($files)) !== FALSE){
@@ -16,7 +16,7 @@ if(is_dir($dir_path)){
             
              } 
 
-$view=mysql_query("SELECT * FROM rooms WHERE `id`='$room_pageID'");
+$view=mysql_query("SELECT * FROM rooms WHERE room='$room_pageID'");
 $data_view=mysql_fetch_array($view);
      $image=$data_view['img'];
      $roomName =$data_view['room'];

@@ -1,34 +1,40 @@
 
 <div class="booking-container">
     <div class="top-container">
-        <strong>Booking</strong>
-        <div class="notifs-container">
-            <strong class="notifs"></strong>
-            <span id="count" class="counter"></span>
+    <strong>Booking Lounge</strong>
 
-            <div class="notifs-wrapper">
-                <strong>Notifications</strong>
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="valueNotif"></strong>
+        <span id="teacherBookingApproved" class="counter""></span>
 
-                <table id="myTable">
-                    <thead>
-                        <th>Name</th>
-                        <th>Equipment</th>
-                        <th>Message</th>
-                    </thead>    
 
-                    <tbody>
-                        <?php include"admin/viewreport_table.php"; ?>
-                    </tbody>
-                </table>
+        <div class="notifs-wrapper">
+            <strong >Notifications</strong>
 
-                <form action="" method="POST">
-                    <button title="Notifications" name="notifs" type="submit">View All</button>
-                </form>
-            </div>
+            <table id="myTable">
+                <thead>
+                        <th>Venue</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                </thead>
+
+                <tbody>
+                    <?php include"teacher/sbookingApproved.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
         </div>
-        <a href="logout.php" class="logout"></a>
-    </div>
 
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
+
+    <strong class="title" id="bookingdate">
+    
+</strong>
     <div class="booking-wrapper-container">
         <div class="booking-wrapper">
  <form action="" method="POST">
@@ -104,7 +110,7 @@
                         <div>
                             <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
                             
-                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['equipment_name']; ?>"/>
+                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
                             
                         </div>
 
@@ -126,7 +132,7 @@
                 <button type="submit" name="save_booking">Book</button>
             </form>
             </div>
-        
+
         <div class="booking-table">
             <strong class="subtitle">Booking Information</strong>
             <div class="table-container" id="wrapper">

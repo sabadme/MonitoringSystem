@@ -32,7 +32,7 @@ if ($status == "Admin") {
                         </ul>
                 </li>
                 <li class="parent">
-                    <!-- <button title="Accounts" class="adduser" name="accounts" type="submit"><span>Accounts</span></button> -->
+                
                     <span title="Add Equipments" class="equips" name="add_equipment">
                         <span>Equipments</span>
                     </span>
@@ -105,6 +105,9 @@ if ($status == "Admin") {
                 <li>
                     <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>"><span>DASHBOARD</span></button>
                 </li>
+                 <li>
+                     <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>
+                </li>
 
                 <li>
                     <button class="booking" name="booking" type="submit"><span>Booking</span></button>
@@ -116,7 +119,7 @@ if ($status == "Admin") {
         </form>
     </nav>
     <?php
-} else {
+} else if($status == "Teacher") {
 
     ?>
     <nav class="main-nav">
@@ -126,6 +129,9 @@ if ($status == "Admin") {
 
                 <li>
                     <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>"><span>DASHBOARD</span></button>
+                </li>
+                 <li>
+                     <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>
                 </li>
                 <li>
                     <button class="booking" name="booking" type="submit"><span>Booking</span></button>

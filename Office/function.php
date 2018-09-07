@@ -16,7 +16,7 @@ if (isset($_REQUEST['addSA'])) {
 }else if (isset($_REQUEST['report'])){
 	include"Office/officeReport.php";		
 }else if (isset($_REQUEST['equipment_report'])){
-	include"modal.php";		
+	include"Office/report_page.php";			
 }else if (isset($_REQUEST['send_report'])){
 	include"Office/dashboard.php";		
 }else if (isset($_REQUEST['save_booking'])){
@@ -27,6 +27,12 @@ if (isset($_REQUEST['addSA'])) {
 	include "Office/request.php";
 }else if (isset($_REQUEST['send_request'])) {
     include "Office/request.php";
+}else if (isset($_REQUEST['openScanner'])) {
+    include "Office/scanner.php";
+}else if (isset($_REQUEST['openCam'])) {
+    include "Office/openScanner.php";
+}else if (isset($_REQUEST['closeCam'])) {
+    include "Office/scanner.php";
 }else {
 	include"office/dashboard.php";	
 }

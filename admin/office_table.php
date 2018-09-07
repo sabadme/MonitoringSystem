@@ -46,25 +46,25 @@ for (	$i=0; 	$i <$count ; 	$i++) {
 
 <script>
 
-var modal = document.getElementById('myModal');
+	var modal = document.getElementById('myModal');
 
-var btn = document.getElementById(<?php echo $scriptcount; ?>);
+	var btn = document.getElementById(<?php echo $scriptcount; ?>);
 
-var span = document.getElementsByClassName("close")[0];
+	var close = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+	$(btn).click(function(){
+		$(modal).css('display', 'block');
+	});
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+	$(close).click(function(){
+		$(modal).css('display', 'none');
+	});
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+	$(window).click(function(){
+		if (event.target == modal) {
+	        $(modal).css('display', 'none');
+	    }
+	});
 </script>
 
 <?php

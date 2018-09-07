@@ -2,7 +2,7 @@
     <div class="top-container">
         <strong>Group Equipments</strong>
         <div class="notifs-container">
-            <strong class="notifs"></strong>
+            <strong id="adminNotifHide" class="notifs"></strong>
             <span id="count" class="counter"></span>
 
             <div class="notifs-wrapper">
@@ -46,11 +46,8 @@
                             <input type="text" name="numbersOfEquipemnt" placeholder="Quantity">
                             <span>Equipment Name</span>
                             <input type="text" name="equipment_name" placeholder="Equipment Name">
-                            <span>Equipment Type</span>
+                            <span>Equipment Name</span>
                             <input type="text" name="equipmentType" placeholder="Equipment Type">
-
-
-
                         </div>
 
                         <div class="user-box-input">

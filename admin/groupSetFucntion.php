@@ -78,14 +78,14 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
     ";
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
+		$servername ="localhost";
+		$username="root";
+		$password="";
+		$db="monitoringsystemdatabase";
 
 
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
+		$conn =mysql_connect($servername,$username,$password);
+		mysql_select_db($db);
 
 		$status="Unassigned";
 

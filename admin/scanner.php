@@ -42,10 +42,14 @@
 </div>
 
 <script>
-	  scanner.addListener('scan', function (content) {
-         /* alert(content); */
-          document.getElementById("scannerValue").value = content;
-        });
+    let scanner = new Instascan.Scanner({
+
+    });
+    
+    scanner.addListener('scan', function (content) {
+        document.getElementById("scannerValue").value = content;
+    });
+	  
 </script>
      
 

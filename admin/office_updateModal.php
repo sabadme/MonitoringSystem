@@ -3,6 +3,7 @@
 
     <!-- Modal content -->
     <div class="modal-content">
+    	<span class="close">Close</span>
         <h1>Update</h1>
 
 

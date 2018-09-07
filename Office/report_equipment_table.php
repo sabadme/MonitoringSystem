@@ -2,7 +2,35 @@
 
 include"admin/connection.php";
 
-$equipment=mysql_query("SELECT * FROM room WHERE room='$accountname'");
+
+
+$sql_booking = mysql_query("SELECT * FROM booking WHERE booker='$accountname' And status='Approved'");
+while($data_booking = mysql_fetch_array($sql_booking)){
+
+	$equipmentBooking_ID = $data_booking['equipment'];
+
+$sql_equipment = mysql_query("SELECT * FROM equipment WHERE id='$equipmentBooking_ID'");
+$data_equipmentcheck = mysql_fetch_array($sql_equipment);
+$equipmentID = $data_equipmentcheck['id'];
+$equipmentBooking_image = $data_equipmentcheck['equipment_filename'];
+$equipmentNameBooking = $data_equipmentcheck['equipment_name'];
+$equipmentCodeBooking = $data_equipmentcheck['equipment_code'];
+if($equipmentBooking_ID == $equipmentID){
+	?>
+		<tr>
+		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipmentBooking_image."'>" ?></td>
+		<td><?php echo $equipmentNameBooking; ?></td>
+		<td><?php echo $equipmentCodeBooking; ?></td>
+		<td><form action="" method="POST"><button class="action disable" name="equipment_report" type="submit" value="<?php echo $equipmentID; ?>">Report</button></form></td>
+	</tr>
+	<?php
+}
+}
+
+
+
+
+$equipment=mysql_query("SELECT * FROM rooms_equipment WHERE room='$accountname'");
 while($data_equipment=mysql_fetch_array($equipment)){
 	$equipment_name=$data_equipment['equipment'];
 	$equipment_status=$data_equipment['status'];

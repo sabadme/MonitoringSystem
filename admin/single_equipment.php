@@ -1,11 +1,9 @@
-
-
 <div class="equipments-container">
 <div class="top-container">
         <strong>Single Equipments</strong>
 
         <div class="notifs-container">
-            <strong class="notifs"></strong>
+            <strong id="adminNotifHide" class="notifs"></strong>
             <span id="count" class="counter"></span>
 
             <div class="notifs-wrapper">
@@ -46,8 +44,6 @@
                     <input type="text" name="equipmentType" required>
 
 
-                    <!-- <span>Type</span>
-                    <input type="text" name=""> -->
                 </div>
                 <div class="user-box-input">
                     <span>Registration Date</span>

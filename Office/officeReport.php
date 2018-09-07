@@ -1,36 +1,35 @@
-<!-- <?php //include "admin/modal.php"; ?> -->
-<div class="booking-container">
-<div class="top-container">
-        <strong class="title">REPORT FORM</strong>
-        <div class="notifs-container">
-            <strong class="notifs"></strong>
-            <span id="count" class="counter"></span>
+<div class="manage-container with-banner">
+	    <div class="top-container">
+    <strong>REPORT FORM</strong>
 
-            <div class="notifs-wrapper">
-                <strong>Notifications</strong>
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="OfficeBookingApproved"></strong>
+        <span id="teacherBookingApproved" class="counter""></span>
 
-                <table id="myTable">
-                    <thead>
-                        <th>Name</th>
-                        <th>Equipment</th>
-                        <th>Message</th>
-                    </thead>    
 
-                    <tbody>
-                        <?php include"admin/viewreport_table.php"; ?>
-                    </tbody>
-                </table>
+        <div class="notifs-wrapper">
+            <strong >Notifications</strong>
 
-                <form action="" method="POST">
-                    <button title="Notifications" name="notifs" type="submit">View All</button>
-                </form>
-            </div>
+            <table id="myTable">
+                <thead>
+                        <th>Venue</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                </thead>
 
+                <tbody>
+                    <?php include"Office/bookingApproved.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
         </div>
-        <a href="logout.php" class="logout"></a>
-    </div>
 
-	
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
 
 	<div class="manage-inner-container">
 	

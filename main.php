@@ -70,6 +70,7 @@ if(isset($status)){
         ?>
         <header>
 
+
             <div class="logo-container">
                 <img src="images/lccb.png"/>
 
@@ -146,6 +147,7 @@ if(isset($status)){
                 <?php
             } else if ($status == "Teacher") {
                 $accountname;
+                $id;
                 include "teacher/function.php";
             }else if ($status == "Student Assistant") {
                 $accountname;
@@ -202,10 +204,23 @@ if(isset($status)){
 
             else {
                 $(this).addClass('active');
+
             }
 
         });
     }
+//Hide notif count 
+   $(function(){
+        $(document).on("click" ,"#valueNotif" , function(){
+            var notifValue = ($(this).attr("value"));   
+           $.ajax({
+                url : "teacher/hideNotifUpdate.php",
+                method : "POST",
+                data : 'notifValue=' + notifValue,
+           });
+
+        });
+    });
 
     function empty() {
         if ($('table tbody').children().length == 0) {
@@ -275,6 +290,21 @@ if(isset($status)){
       }
     }
 
+    function updatteacher() {
+        var teacherORstudent = $("select#teacherORstudent").val();
+        var fname =$("input#fname").val();
+        var mname =$("input#mname").val();
+        var lname =$("input#lname").val();
+        var UserID = $("input#UserID").val();
+
+        $.ajax({
+            url : "admin/teacher_updateFunctionModal.php",
+            type :"POST",
+            data :'teacherORstudent=' + teacherORstudent + '&fname=' + fname + '&mname=' + mname + '&lname=' + lname + '&UserID=' + UserID,
+        });
+        modal.style.display = "none";
+    }
+
     $(function(){   
         $(document).on("click" ,".actions" , function(){
             var VenuesID = ($(this).attr("value"));
@@ -289,10 +319,26 @@ if(isset($status)){
         });
     });
 
+     $(function(){   
+        $(document).on("click" ,".teacherUpdates" , function(){
+            var teacherID = ($(this).attr("value"));
+             document.getElementById("UserID").value = teacherID;           
+        });
+    });
+
+    $(function(){
+        $(document).on("click" , ".openOfficeUpdateModal" , function(){
+            var OfficeIDs = ($(this).attr("value"));
+            document.getElementById("OfficeId").value = OfficeIDs;
+
+        });
+    });
+
     jQuery(document).ready(function () {
         $('.block-loader').fadeOut("slow");
         $('body').addClass('loaded');
         $("#count").load('admin/notif_count.php');
+        $("#teacherBookingApproved").load('teacher/approvedCount.php');
         $("#bok_count").load('admin/booking_count.php');
         addActive();
         empty();
@@ -300,6 +346,7 @@ if(isset($status)){
         UpdateRooms();
         UpdateVenue();
         myFunction();
+        updatteacher();
 
         setInterval(function() {
             $("#bookingdate").load('teacher/dateandtime.php');
@@ -309,58 +356,71 @@ if(isset($status)){
     jQuery(window).on('unload', function () {
         $('.block-loader').fadeIn("slow");
     });
+
 </script>
-
 <script>
-    //teacher update modal
-
-      $(function(){   
-                $(document).on("click" ,".teacherUpdates" , function(){
-                    var teacherID = ($(this).attr("value"));
-                 
-                   document.getElementById("UserID").value = teacherID;
-                 
-
-                  
-                });
-
-
-        });
+    // THIS CODE IS AUTO UPDATE THE VALUE OF NOTIFICATION
+    setInterval(function() {
+    $.get('admin/notif_autoupdate.php', function(data) {
+    
+    });
+}, 7000);
 </script>
-
 <script>
-    function updatteacher() {
-        var teacherORstudent =$("select#teacherORstudent").val();
-        var fname =$("input#fname").val();
-        var mname =$("input#mname").val();
-        var lname =$("input#lname").val();
-        var UserID = $("input#UserID").val();
-
+     $(function(){
+        $(document).on("click" ,"#adminNotifHide" , function(){
+      
         $.ajax({
-            url : "admin/teacher_updateFunctionModal.php",
-            type :"POST",
-            data :'teacherORstudent=' + teacherORstudent + '&fname=' + fname + '&mname=' + mname + '&lname=' + lname + '&UserID=' + UserID,
+                url : "admin/adminNotifHide.php",
+                method : "POST",
+           });
         });
-        modal.style.display = "none";
-     
-
-
-    }
+    });
 </script>
 <script>
-
-    //office modal
-
-    $(function(){
-        $(document).on("click" , ".openOfficeUpdateModal" , function(){
-            var OfficeIDs = ($(this).attr("value"));
-            document.getElementById("OfficeId").value = OfficeIDs;
+      $(function(){
+        $(document).on("click" ,"#OfficeBookingApproved" , function(){
+            var notifValue = ($(this).attr("value"));   
+  
+           $.ajax({
+                url : "Office/officeBookingApproved.php",
+                method : "POST",
+                data : 'notifValue=' + notifValue,
+           });
 
         });
     });
 </script>
+<!-- <script>
+    $(function(){
+        $(document).on("click" ,".equipmentModal" , function(){
 
+            var equipment  = $(this).attr("value");
 
+            $.ajax({
+                url : "teacher/modal_teacher.php",
+                method : "POST",
+                data : 'equipment=' + equipment,
+            });
+            
+        });
+    });
+</script> -->
+<!--  <script>
+ 
+setInterval(function() {
+    
+$(document).ready(function(){
+    <?php 
+
+     ?>
+     $("#count").load('admin/notif_count.php');
+
+ });
+
+    
+});
+</script> -->
 
 
 

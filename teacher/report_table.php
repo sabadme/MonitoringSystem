@@ -3,7 +3,38 @@ $accountname=$_SESSION['account'];
 
 include"admin/connection.php";
 
-$get_booking=mysql_query("SELECT * FROM booking WHERE booker='$accountname'");
+$bookingEquipment = mysql_query("SELECT * FROM booking WHERE booker='$accountname' And status='Approved'");
+while($data_bookingEquipment = mysql_fetch_array($bookingEquipment)){
+	$equipmentID = $data_bookingEquipment['equipment'];
+	$equipmentVenue = $data_bookingEquipment['venue'];
+
+$sql_equipmentBooking = mysql_query("SELECT * FROM equipment WHERE id='$equipmentID'");
+$data_equipmentBooking = mysql_fetch_array($sql_equipmentBooking);
+$equipPic = $data_equipmentBooking['equipment_filename'];
+
+if($equipmentID == ""){
+
+}else{
+
+
+
+		?>
+	
+	<tr>
+		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipPic."'>" ?></td>
+		<td><?php echo $equipmentVenue; ?></td>
+		<td><?php echo $data_equipmentBooking['equipment_name']; ?></td>
+		<td><?php echo $data_equipmentBooking['equipment_code']; ?></td>
+		<td><form action="" method="POST"><button class="reportBtn" name="equipment_report" type="submit" value="<?php echo $data_equipmentBooking['id']; ?>">Report</button></form></td>
+	</tr>
+	<?php
+}
+
+}
+
+
+
+$get_booking=mysql_query("SELECT * FROM booking WHERE booker='$accountname' And status='Approved'");
 while($data_booking=mysql_fetch_array($get_booking)){
 	$venue=$data_booking['venue'];
 
@@ -11,6 +42,7 @@ while($data_booking=mysql_fetch_array($get_booking)){
 	while($data_room=mysql_fetch_array($get_room)){
 	$equipment=$data_room['equipment'];
 	$status=$data_room['status'];
+	$facility = $data_room['room'];
 
 	$get_equipment=mysql_query("SELECT * FROM equipment WHERE id='$equipment'");
 	$data_equipment=mysql_fetch_array($get_equipment);
@@ -21,6 +53,7 @@ while($data_booking=mysql_fetch_array($get_booking)){
 	
 	<tr>
 		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipment_filename."'>" ?></td>
+		<td><?php echo $facility; ?></td>
 		<td><?php echo $data_equipment['equipment_name']; ?></td>
 		<td><?php echo $data_equipment['equipment_code']; ?></td>
 		<td><form action="" method="POST"><button class="reportBtn" name="equipment_report" type="submit" value="<?php echo $data_equipment['id']; ?>">Report</button></form></td>
@@ -39,6 +72,7 @@ while($data_roomSet=mysql_fetch_array($sql_roomSet)){
 	while($data_roomEquipment=mysql_fetch_array($sql_roomEquipment)){
 	$equipment_ID=$data_roomEquipment['equipment'];
 	$set_status=$data_roomEquipment['set_status'];
+	$facilities = $data_roomEquipment['room'];
 
 	if($set_status=="Set"){
 
@@ -63,8 +97,9 @@ while($data_roomSet=mysql_fetch_array($sql_roomSet)){
 
 	?>
 		<tr>
-		
+	
 		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipment_filenameTR."'>" ?></td>
+		<td><?php echo $facilities; ?></td>
 		<td><?php echo $equipment_nameTR; ?></td>
 		<td><?php echo $equipment_codeTR; ?></td>
 		<td><form action="" method="POST"><button class="reportBtn" name="equipment_report" type="submit" value="<?php echo $equipment_IDs; ?>">Report</button></form></td>

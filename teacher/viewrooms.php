@@ -3,35 +3,41 @@ if(isset($_REQUEST['viewrooms'])){
 	$viewrooms=$_REQUEST['viewrooms']
 
  ?>
-<div class="booking-container">
- <div class="top-container">
-        <strong>ROOMS</strong>
-        <div class="notifs-container">
-            <strong class="notifs"></strong>
-            <span id="count" class="counter"></span>
 
-            <div class="notifs-wrapper">
-                <strong>Notifications</strong>
+<div class="manage-container with-banner">
+	<div class="top-container">
+    <strong>ROOMS</strong>
 
-                <table id="myTable">
-                    <thead>
-                        <th>Name</th>
-                        <th>Equipment</th>
-                        <th>Message</th>
-                    </thead>    
+    <div class="notifs-container">
+       <strong class="notifs" value="<?php echo $accountname; ?>" id="valueNotif"></strong>
+        <span id="teacherBookingApproved" class="counter"></span>
 
-                    <tbody>
-                        <?php include"admin/viewreport_table.php"; ?>
-                    </tbody>
-                </table>
+        <div class="notifs-wrapper">
+            <strong>Notifications</strong>
 
-                <form action="" method="POST">
-                    <button title="Notifications" name="notifs" type="submit">View All</button>
-                </form>
-            </div>
+            <table id="myTable">
+                <thead>
+                     <th>Venue</th>
+                     <th>Date Start</th>
+                     <th>Date End</th>
+                </thead>
+
+                <tbody>
+                   <?php include"teacher/sbookingApproved.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
         </div>
-        <a href="logout.php" class="logout"></a>
+
     </div>
+    <a href="logout.php" class="logout"></a>
+</div>
+
+
+	<div class="manage-inner-container">
 	
 		<div class="table-container" id="wrapper">
 			<div class="btndivstyle">
@@ -71,8 +77,8 @@ $dataEquipment=mysql_fetch_array($roomEquipment);
 				</tbody>
 			</table>
 		</div>
-
-
+	</div>
+</div>
 <?php 
 }
  ?>

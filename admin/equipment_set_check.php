@@ -1,4 +1,7 @@
-<?php include"admin/generate_codeSet.php"; ?>
+<?php 
+
+    if(isset($_REQUEST['equipment_check'])){
+ ?>
 <div class="manage-container with-banner" style="margin-top: 99px;">
     <strong class="title">Register Set</strong>
     <div class="manage-inner-container">
@@ -24,3 +27,15 @@
         </div>
     </div>
 </div>
+<?php 
+}else{
+    ?>
+    <script>
+        alert("Please chech the equipment.");
+    </script>
+    <?php
+    include"admin/set_equipment.php";
+
+}
+
+ ?>

@@ -2,7 +2,7 @@
     <div class="top-container">
         <strong>Booking</strong>
         <div class="notifs-container">
-            <strong class="notifs"></strong>
+            <strong id="adminNotifHide" class="notifs"></strong>
             <span id="count" class="counter"></span>
 
             <div class="notifs-wrapper">
@@ -114,7 +114,7 @@
                         ?>
 
                         <div>
-                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['equipment_name']; ?>"/>
+                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
 
                             <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
                             

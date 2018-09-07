@@ -2,7 +2,7 @@
 if(isset($_REQUEST['Add_equipment_setFinal'])){
 
 	   	$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
-	$str="";
+    $str="";
 	$size = strlen( $chars );
 	for( $i = 0; $i < 10; $i++ ) {
 		$str.= $chars[ rand( 0, $size - 1 ) ];
@@ -68,14 +68,7 @@ if(isset($_REQUEST['Add_equipment_setFinal'])){
 
     ";
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
-
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
+include"admin/connection.php";
 
 		if(isset($_REQUEST['finalset_equipment'])){
 	 $finalset_equipment=$_REQUEST['finalset_equipment'];
@@ -91,9 +84,9 @@ if($insert){
  alert("Record Successfully Added "); </script>
  <?php 
 }else {
- 	?> <script> 
+ 	?> <script>
  alert("Error "); </script>
- <?php 
+ <?php
 }
 
 
@@ -105,9 +98,7 @@ if (!$conn) {
 $update_status="UPDATE equipment SET `status`='Set',`set_name`='$setName' WHERE id='$check'";
 
 if (mysql_query($update_status)) {?>
-<script>
-	alert("UPDATE STATUS");
-</script>
+
 
      <?php
 } else {?>
@@ -122,6 +113,7 @@ if (mysql_query($update_status)) {?>
 }
 }
 mysql_close($conn);
+  include "admin/view_equipment_set.php";
 }
 
  ?>

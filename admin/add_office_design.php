@@ -4,7 +4,7 @@
     <strong>Offices</strong>
 
     <div class="notifs-container">
-        <strong class="notifs"></strong>
+        <strong id="adminNotifHide" class="notifs"></strong>
         <span id="count" class="counter"></span>
 
         <div class="notifs-wrapper">

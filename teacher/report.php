@@ -1,36 +1,38 @@
-<!-- <?php //include "admin/modal.php"; ?> -->
-<div class="booking-container">
-<div class="top-container">
-        <strong>Report</strong>
-        <div class="notifs-container">
-            <strong class="notifs"></strong>
-            <span id="count" class="counter"></span>
 
-            <div class="notifs-wrapper">
-                <strong>Notifications</strong>
-
-                <table id="myTable">
-                    <thead>
-                        <th>Name</th>
-                        <th>Equipment</th>
-                        <th>Message</th>
-                    </thead>    
-
-                    <tbody>
-                        <?php include"admin/viewreport_table.php"; ?>
-                    </tbody>
-                </table>
-
-                <form action="" method="POST">
-                    <button title="Notifications" name="notifs" type="submit">View All</button>
-                </form>
-            </div>
-        </div>
-        <a href="logout.php" class="logout"></a>
-    </div>
 
 <div class="manage-container with-banner">
-	<strong class="title">REPORT FORM</strong>
+
+	<div class="top-container">
+    <strong>REPORT FORM</strong>
+
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="valueNotif"></strong>
+        <span id="teacherBookingApproved" class="counter"></span>
+
+        <div class="notifs-wrapper">
+            <strong>Notifications</strong>
+
+            <table id="myTable">
+                <thead>
+ 						<th>Venue</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                </thead>
+
+                <tbody>
+                    <?php include"teacher/sbookingApproved.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
+        </div>
+
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
+
 
 	<div class="manage-inner-container">
 	
@@ -41,6 +43,7 @@
 				<table id="myTable">
 				<thead>
 					<th>Equipment</th>
+					<th>Facilities</th>
 					<th>Name</th>
 					<th>Code</th>
 					<th></th>
@@ -52,7 +55,6 @@
 			</table>
 		</div>
 	</div>
-</div>
 </div>
 
 <!-- <script>

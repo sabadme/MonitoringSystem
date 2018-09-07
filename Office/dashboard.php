@@ -1,78 +1,55 @@
 <div class="dashboard-container">
-    <div class="top-container">
-        <strong>Dashboard</strong>
-        <div class="notifs-container">
-            <strong class="notifs"></strong>
-            <span id="count" class="counter"></span>
+        <div class="top-container">
+    <strong>Dashboard</strong>
 
-            <div class="notifs-wrapper">
-                <strong>Notifications</strong>
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="OfficeBookingApproved"></strong>
+        <span id="teacherBookingApproved" class="counter""></span>
 
-                <table id="myTable">
-                    <thead>
-                        <th>Name</th>
-                        <th>Equipment</th>
-                        <th>Message</th>
-                    </thead>    
+        <div class="notifs-wrapper">
+            <strong >Notifications</strong>
 
-                    <tbody>
-                        <?php include"admin/viewreport_table.php"; ?>
-                    </tbody>
-                </table>
+            <table id="myTable">
+                <thead>
+                        <th>Venue</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                </thead>
 
-                <form action="" method="POST">
-                    <button title="Notifications" name="notifs" type="submit">View All</button>
-                </form>
-            </div>
+                <tbody>
+                    <?php include"Office/bookingApproved.php"; ?>
+                </tbody>
+            </table>
 
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
         </div>
-        <a href="logout.php" class="logout"></a>
-    </div>
-	<div class="new-equipments-container">
-		<strong> New Equipments </strong>
-		<div class="new-equipments-block owl-carousel">
 
-			<?php include"office/office_equipment.php"; ?>
-		</div>
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
+	<div class="new-equipments-container">
+		<strong> My Equipments </strong>
+	   
+       <table id="myTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Qr Code</th>
+                <th>Registered Date</th>
+                <th>Expiry Date</th>
+                <th>Assigned</th>
+              
+            </tr>
+        </thead>
+           <?php include"office/office_equipment.php"; ?>
+       </table>
+
+			
+		
 	</div>
 </div>
 
-<script>
-	function loadCarousel() {
-        var itemListContainer = $('.new-equipments-block');
-            itemListContainer.show();
-    }
 
-    function owlCarousel() {
-    	$('.new-equipments-block').owlCarousel({
-            nav: true,
-            loop: false,
-            margin: 5,
-            responsiveClass: true,
-            dots: false,
-            navText: ["<", ">"],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                380: {
-                    items: 2
-                },
-                690: {
-                    items: 3
-                },
-                768: {
-                    items: 2
-                },
-                979: {
-                    items: 4
-                }
-            }
-        });
-    }
-
-	jQuery(document).ready(function(){
-	 	loadCarousel();
-        owlCarousel();
-	});
-</script>

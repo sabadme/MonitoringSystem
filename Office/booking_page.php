@@ -1,138 +1,138 @@
 
 <div class="booking-container">
     <div class="top-container">
-        <strong>Booking</strong>
-        <div class="notifs-container">
-            <strong class="notifs"></strong>
-            <span id="count" class="counter"></span>
+    <strong>Booking Lounge</strong>
 
-            <div class="notifs-wrapper">
-                <strong>Notifications</strong>
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="OfficeBookingApproved"></strong>
+        <span id="teacherBookingApproved" class="counter""></span>
+   
 
-                <table id="myTable">
-                    <thead>
-                        <th>Name</th>
-                        <th>Equipment</th>
-                        <th>Message</th>
-                    </thead>    
+        <div class="notifs-wrapper">
+            <strong >Notifications</strong>
 
-                    <tbody>
-                        <?php include"admin/viewreport_table.php"; ?>
-                    </tbody>
-                </table>
+            <table id="myTable">
+                <thead> 
+                        <th>Venue</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                </thead>    
 
-                <form action="" method="POST">
-                    <button title="Notifications" name="notifs" type="submit">View All</button>
-                </form>
-            </div>
+                <tbody>
+                    <?php include"Office/bookingApproved.php"; ?>
+                </tbody>
+            </table>
 
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
         </div>
-        <a href="logout.php" class="logout"></a>
+
     </div>
+    <a href="logout.php" class="logout"></a>
+</div>
+
+    <strong class="title" id="bookingdate">
     
+</strong>
     <div class="booking-wrapper-container">
         <div class="booking-wrapper">
-            
- <form action="" method="POST">
-        <div class="grid-container">
+            <strong class="subtitle">Bookings</strong>
 
-            <div class="field">
-                <label>Who: </label>
-                <div class="search-box">
-                  <input type="text" autocomplete="off" placeholder="Search Name..." name="booker" />
-                 <div class="result"></div>
-                </div>
-            </div>
+            <form action="" method="POST">
+                <div class="grid-container">
+                    <div class="field">
+                        <label>Where: </label>
+                        <div class="search-venue">
+                            <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
+                            <div class="Vresult"></div>
+                        </div>
+                    </div>        
 
-            <div class="field">
-                <label>Where: </label>
-                <div class="search-venue">
-                    <input type="text" autocomplete="off" placeholder="Search venue..." name="venue" />
-                    <div class="Vresult"></div>
-                </div>
-            </div>        
+                    <div class="field">
+                       <label>Purpose: </label>
+                        <input type="text"/>
+                    </div>
 
-            <div class="field">
-               <label>Purpose: </label>
-                <input type="text"/>
-            </div>
+                    <div class="field">
+                       <label>Semester: </label>
+                       <select name="sem">
+                           <option value="" disabled selected>Select..</option>
+                           <option>1st sem</option>
+                           <option>2st sem</option>
+                           <option>Summer</option>
+                       </select>
+                    </div>
 
-            <div class="field">
-               <label>Semester: </label>
-               <select name="sem">
-                   <option value="" disabled selected>Select..</option>
-                   <option>1st sem</option>
-                   <option>2st sem</option>
-                   <option>Summer</option>
-               </select>
-            </div>
+                    <div class="field">
+                       <label>Date Start: </label>
+                       <input type="date" name="datestart"/>
+                    </div>
 
-            <div class="field">
-               <label>Date Start: </label>
-               <input type="date" name="datestart"/>
-            </div>
+                    <div class="field">
+                       <label>Date End: </label>
+                       <input type="date" name="dateend"/>
+                    </div>
 
-            <div class="field">
-               <label>Date End: </label>
-               <input type="date" name="dateend"/>
-            </div>
+                    <div class="field">
+                        <label>Start Time: </label>
+                        <input type="time" name="timestart"/>
+                    </div>
 
-            <div class="field">
-                <label>Start Time: </label>
-                <input type="time" name="timestart"/>
-            </div>
+                    <div class="field">
+                       <label>End Time: </label>
+                        <input type="time" name="tameend"/>
+                    </div>
 
-            <div class="field">
-               <label>End Time: </label>
-                <input type="time" name="tameend"/>
-            </div>
+                    <div class="equipments-field">
+                    <label>Select Equipment(s)</label>
+                    <input class="search" type="text" placeholder="search equipments..."/>
+                    <div class="equipments-wrapper">
+                        <?php
+                        include "admin/connection.php";
+                        
+                        if (!empty('div')){
+                        $equipment_sql = mysql_query("SELECT * FROM equipment ORDER BY id desc");
+                        while ($data_equipment = mysql_fetch_array($equipment_sql)) {   
+                            $status=$data_equipment['status'];
+                            $equipment_name=$data_equipment['equipment_name'];
 
-            <div class="field equipments-field">
-                <span>Equipments</span>
-                <input class="search" type="text" placeholder="search equipments..."/>
-                <div class="wrapper">
-                    <?php
-                    include "admin/connection.php";
-                    
-                    if (!empty('div')){
-                    $equipment_sql = mysql_query("SELECT * FROM equipment ORDER BY id desc");
-                    while ($data_equipment = mysql_fetch_array($equipment_sql)) {   
-                        $status=$data_equipment['status'];
-                        $equipment_name=$data_equipment['equipment_name'];
+                            $get_equipment=mysql_query("SELECT * FROM booking WHERE equipment='$equipment_name'");
+                            $data_GETequipment=mysql_fetch_array($get_equipment);
+                            $get_equipmentNAME=$data_GETequipment['equipment'];
 
-                        $get_equipment=mysql_query("SELECT * FROM booking WHERE equipment='$equipment_name'");
-                        $data_GETequipment=mysql_fetch_array($get_equipment);
-                        $get_equipmentNAME=$data_GETequipment['equipment'];
+                            if($status=="Unassigned" && $get_equipmentNAME != $equipment_name){
 
-                        if($status=="Unassigned" && $get_equipmentNAME != $equipment_name){
 
+                            ?>
+                            <div>
+                                <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
+                                <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
+                                
+                                
+                                
+                            </div>
+
+                            <?php
+                        }
+
+                        }
+                        }else {
+                            echo "sdadsd";
+                        }
+
+                        
 
                         ?>
-                        <div>
-                            <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
-                            
-                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['equipment_name']; ?>"/>
-                            
-                        </div>
-
-                        <?php
-                    }
-
-                    }
-                    }else {
-                        echo "sdadsd";
-                    }
-
-                    
-
-                    ?>
+                    </div>
                 </div>
-            </div>
-        </div>
+                </div>
 
-           
+
+
                 <button type="submit" name="save_booking">Book</button>
             </form>
+ 
         </div>
         <div class="booking-table">
             <strong class="subtitle">Booking Information</strong>
@@ -151,7 +151,7 @@
                     </thead>
 
                     <tbody>
-                    <?php include"Office/booking_table.php"; ?>
+                    <?php include"teacher/booking_table.php"; ?>
                     </tbody>
                 </table>
             </div>
