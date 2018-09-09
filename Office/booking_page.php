@@ -37,8 +37,6 @@
 </strong>
     <div class="booking-wrapper-container">
         <div class="booking-wrapper">
-            <strong class="subtitle">Bookings</strong>
-
             <form action="" method="POST">
                 <div class="grid-container">
                     <div class="field">

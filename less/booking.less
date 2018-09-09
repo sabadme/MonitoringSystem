@@ -26,6 +26,32 @@
       &:nth-child(3n + 1) {
         margin-left: 0;
       }
+
+      .search-box, .search-venue {
+        position: relative;
+
+        .result, .Vresult {
+          .custom-scrollbar;
+          display: none;
+          position: absolute;
+          background: @sail;
+          width: 100%;
+          top: 37px;
+          max-height: 200px;
+          overflow-y: auto; 
+
+          & > p {
+            font-family: @font-family-base;
+            padding: 10px;
+            color: @white;
+            cursor: pointer;            
+
+            &:hover {
+              background: lighten(@sail, 5%);
+            }
+          }
+        }
+      }
     }
 
     .equipments-field {
@@ -36,13 +62,17 @@
       }
 
       .equipments-wrapper {
+        .custom-scrollbar;
+        max-height: 200px;
+        overflow-y: auto;
+        padding-right: 10px;
+
         & > label {
           margin-bottom: 10px;
         }
 
         & > div {
-        .flex-layout;
-        .flex-align(center);
+        display: block;
         border-bottom: 1px solid #ccc;
         padding-bottom: 10px;
         margin-bottom: 10px;
@@ -54,6 +84,7 @@
         }
 
         input {
+          display: inline-block;
           margin-bottom: 0;
           width: auto;
         }
@@ -66,6 +97,15 @@
     #wrapper {
       width: 100%;
       padding-left: 0;
+    }
+
+    & > strong {
+      .font-size(17);
+      font-family: @font-family-base;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+
     }
 
     th, td { 

@@ -73,7 +73,7 @@ if(isset($_REQUEST['equipmentLocation'])){
 		</div>
 
 	<div class="EQ-Info">
-		<span> Room:
+		
 
 			<?php
 
@@ -87,9 +87,8 @@ if(isset($_REQUEST['equipmentLocation'])){
 			echo $venue;	
 			$sqlBooking_rooms = mysql_query("SELECT * FROM rooms WHERE room='$venue'");
 			$data_sqlBooking_rooms = mysql_fetch_array($sqlBooking_rooms);
-			echo $data_sqlBooking_rooms['building'];
-			echo "&nbsp&nbsp";
-			echo $data_sqlBooking_rooms['floor'];
+			$building = $data_sqlBooking_rooms['building'];
+			$floor = $data_sqlBooking_rooms['floor'];
 
 			}else{
 
@@ -103,21 +102,19 @@ if(isset($_REQUEST['equipmentLocation'])){
 			} else if($equipmentStatus == "Assigned") {
 				$sql_Assiged = mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$equipmentID'");
 				$data_Assigned = mysql_fetch_array($sql_Assiged);
-				echo $roomNames = $data_Assigned['room'];
-				echo "&nbsp&nbsp";
+				$roomNames = $data_Assigned['room'];
 
 				$sql_rooms = mysql_query("SELECT * FROM rooms WHERE room='$roomNames'");
 				$data_rooms = mysql_fetch_array($sql_rooms);
-				echo $data_rooms['building'];  
-				echo "&nbsp&nbsp";
-				echo $data_rooms['floor'];
+				$building = $data_rooms['building'];  
+				$floor = $data_rooms['floor'];
 			}
 		}
 			?>
-		</span>
 
-		<span><?php echo $equipmentName; ?></span>
-
+		<span>Room: <?php echo $roomNames;?> </span>
+		<span>Building: <?php echo $building;?> </span>
+		<span>Floor: <?php echo $floor;?> </span>
 		<span><?php echo "<img src='QRimg/" . $qrImg . ".png'>" ?></span>
 
 		<span><i><?php echo $qrImg; ?></i></span>
@@ -125,7 +122,7 @@ if(isset($_REQUEST['equipmentLocation'])){
 
 		<span class="status"><?php echo $equipmentStatus; ?></span>
 
-	</div>
+	</div>	
 	</div>
 </div>
 <?php

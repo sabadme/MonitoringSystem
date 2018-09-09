@@ -93,14 +93,14 @@ $(document).ready(function(){
     $('.search-rooms input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".result");
+        var resultDropdown = $(this).siblings(".result").css('display', 'block');
         if(inputVal.length){
             $.get("admin/room_search.php", {term: inputVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdown.html(data);
             });
         } else{
-            resultDropdown.empty();
+            resultDropdown.empty().css('display', 'none');
         }
     });
     

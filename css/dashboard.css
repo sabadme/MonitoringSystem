@@ -5,6 +5,23 @@
 .dashboard-container .search {
   float: right;
 }
+.dashboard-container .overflow-container {
+  max-height: 410px;
+  overflow-y: auto;
+}
+.dashboard-container .overflow-container::-webkit-scrollbar {
+  width: 6px;
+}
+.dashboard-container .overflow-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  background-color: #b6b6b6;
+}
+.dashboard-container .overflow-container::-webkit-scrollbar-track {
+  border: 2px solid #fff;
+  background: #c3c3c3;
+}
 .dashboard-container .new-rooms-container {
   clear: right;
 }

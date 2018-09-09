@@ -7,6 +7,8 @@ include"admin/connection.php";
 
 $dir_path="RoomPicture/";
 $option="";
+$sql_teacherName = mysql_query("SELECT * FROM tbl_login WHERE id='$id'");
+$data_teacherName = mysql_fetch_array($sql_teacherName);
 
 if(is_dir($dir_path)){  
     $files=opendir($dir_path);
@@ -29,9 +31,37 @@ if($image==$file_name){
     
 ?>
 <div class="product-page-container">
-    <!-- <div class="product-banner-container">
-        <img src="images/product-page-banner.jpg" />
-    </div> -->
+    <div class="top-container">
+    <strong>Room</strong>
+    <span><?php echo $data_teacherName['account']; ?></span>
+
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="valueNotif"></strong>
+        <span id="teacherBookingApproved" class="counter"></span>
+
+        <div class="notifs-wrapper">
+            <strong>Notifications</strong>
+
+            <table id="myTable">
+                <thead>
+                     <th>Venue</th>
+                     <th>Date Start</th>
+                     <th>Date End</th>
+                </thead>
+
+                <tbody>
+                    <?php include"teacher/sbookingApproved.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
+        </div>
+
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
 
     <div class="product-inner-container">
         <div class="image-container">
@@ -39,9 +69,10 @@ if($image==$file_name){
 
         </div>
         <div class="product-info-container">
-            <span class="equipment-code"><b>Room:</b> <?php echo $roomName.' '.$roomBuilding.' '.$roomFloor; ?></span>
-           
-            <table>
+            <span class="equipment-code"><b>Room:</b> <?php echo $roomBuilding.'-'.$roomName.' '.$roomFloor; ?></span>
+           <div class="room-equipment-container">
+            <span>Equipments</span>
+             <table>
                 <thead>
                     <tr>
                         <th></th>
@@ -74,6 +105,8 @@ if($image==$file_name){
                   ?>
                 </tbody>
             </table>
+           </div>
+            
         </div>
     </div>
 </div>

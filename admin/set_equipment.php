@@ -1,4 +1,4 @@
-<div class="manage-container with-banner">
+<div class="manage-container">
     <strong class="title">ADD EQUIPMENTS FOR SET</strong>
 
     <div class="inner-form-container">

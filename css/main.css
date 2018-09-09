@@ -22,6 +22,12 @@
   /* Force table to not be like tables anymore */
   /* Hide table headers (but not display: none;, for accessibility) */
 }
+.main-index .top-container > span {
+  font-size: 1.0714285714285714rem;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  margin-right: 15px;
+}
 .main-index .top-container > strong {
   font-size: 2.142857142857143rem;
   -webkit-flex-grow: 1;

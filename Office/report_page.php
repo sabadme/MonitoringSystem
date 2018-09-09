@@ -50,22 +50,52 @@ include"admin/connection.php";
 
  ?>
 
-<div class="product-page-container report-form">
-        <strong class="title">Create Report</strong>
-        <div class="product-inner-container">
+<div class="report-container">
+        <div class="top-container">
+    <strong>CREATE REPORT</strong>
+
+    <div class="notifs-container">
+        <strong class="notifs" value="<?php echo $accountname; ?>" id="OfficeBookingApproved"></strong>
+        <span id="teacherBookingApproved" class="counter""></span>
+
+
+        <div class="notifs-wrapper">
+            <strong >Notifications</strong>
+
+            <table id="myTable">
+                <thead>
+                        <th>Venue</th>
+                        <th>Date Start</th>
+                        <th>Date End</th>
+                </thead>
+
+                <tbody>
+                    <?php include"Office/bookingApproved.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
+        </div>
+
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
+        <div class="report-inner-container">
 
             <div class="image-container">
                 <?php echo "<img src='EquipmentPicture/".$image_filename."'>" ?>
             </div>
 
-            <div class="product-info-container">
-                <span class="equipment-code"><b>Equipment QR/Code:</b> <?php echo $qr_value; ?></span>
+            <div class="report-info-container">
+                <span class="equipment-code"><b>Equipment QR/Code: </b><?php echo $qr_value; ?></span>
                 <h1 class="equipment-name"><?php echo $equipment_name; ?></h1>
-                 <h1><?php echo $room; ?></h1>
+                 <span><b>Room: </b><?php echo $room; ?></span>
 
                 <form action="" method="POST">
                     <textarea placeholder="Status/Problem" name="messagereport"></textarea>
-                    <button style="margin-bottom: 10px;" class="action" type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
+                    <button class="action" type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
                 </form>
             </div>
 

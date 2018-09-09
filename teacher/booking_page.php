@@ -31,22 +31,11 @@
     </div>
     <a href="logout.php" class="logout"></a>
 </div>
-
-    <strong class="title" id="bookingdate">
-    
-</strong>
     <div class="booking-wrapper-container">
         <div class="booking-wrapper">
  <form action="" method="POST">
         <div class="grid-container">
-     <!--        <div class="field"> 
-                <label>Booker: </label>
-             <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Search Name..." name="booker" />
-        <div class="result"></div>
-    </div>
-            </div> -->
-
+    
             <div class="field">
                 <label>Venue: </label>
             <div class="search-venue">
@@ -84,12 +73,11 @@
                 <label>End Time: </label>
                 <input type="time" name="tameend"/>
             </div>
-        </div>
 
-            <div class="field equipments-field">
-                <span>Equipments</span>
+            <div class="equipments-field">
+                <label>Select Equipment(s)</label>
                 <input class="search" type="text" placeholder="search equipments..."/>
-                <div class="wrapper">
+                <div class="equipments-wrapper">
                     <?php
                     include "admin/connection.php";
                     
@@ -108,9 +96,10 @@
 
                         ?>
                         <div>
+                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
                             <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
                             
-                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
+                            
                             
                         </div>
 
@@ -127,6 +116,9 @@
                     ?>
                 </div>
             </div>
+        </div>
+
+            
 
            
                 <button type="submit" name="save_booking">Book</button>

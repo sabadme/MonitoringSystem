@@ -13,8 +13,37 @@ $officename=$data_room['room'];
 if($office_equipment_table == $officename){
  ?>
 
-<div class="manage-container room-update with-banner">
-    <strong class="title">Update <?php echo $officename; ?> Equipments</strong>
+<div class="manage-container">
+    <div class="top-container">
+    <strong>Update <?php echo $officename; ?> Equipments</strong>
+
+        <div class="notifs-container">
+            <strong id="adminNotifHide" class="notifs"></strong>
+            <span id="count" class="counter"></span>
+
+            <div class="notifs-wrapper">
+                <strong>Notifications</strong>
+
+                <table id="myTable">
+                    <thead>
+                        <th>Name</th>
+                        <th>Equipment</th>
+                        <th>Message</th>
+                    </thead>    
+
+                    <tbody>
+                        <?php include"admin/viewreport_table.php"; ?>
+                    </tbody>
+                </table>
+
+                <form action="" method="POST">
+                    <button title="Notifications" name="notifs" type="submit">View All</button>
+                </form>
+            </div>
+
+        </div>
+        <a href="logout.php" class="logout"></a>
+    </div>
 
     <input class="search" type="text" placeholder="Search equipments..." />
     <div class="inner-form-container">

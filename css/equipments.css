@@ -98,3 +98,13 @@
   background: #313a4b;
   text-transform: uppercase;
 }
+.new-equipments-container {
+  margin-bottom: 30px;
+}
+.new-equipments-container > strong {
+  font-size: 1.0714285714285714rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}

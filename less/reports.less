@@ -1,17 +1,108 @@
 @import "variable.less";
 
-.reports-container {
-    margin-top: 70px;
-    padding: 20px;
+.report-container {
+width:  100%;
+padding: 20px;
 
-  .title {
-    display: block;
-    font-family: @font-family-base;
-    .font-size(30);
-    color: @color-black;
-    text-transform: uppercase;
-    max-width: @page-max_width;
-    width: 100%;
-    margin: 0 auto 30px;
+.report-inner-container {
+    .flex-layout;
+    border: 1px solid @product-border;
+
+    .image-container,
+    .report-info-container {
+      width: 50%;
+    }
+
+    .image-container {
+      border-right: 1px solid @product-border;
+      text-align: center;
+
+      img {
+        background-position: center !important;
+        background-size: contain !important;
+        width: 100%;
+        max-width: 75%;
+        margin: 20px 0;
+      }
+    }
+
+    .report-info-container {
+      .flex-layout;
+      .flex-direction(column);
+
+      h1 {
+        .font-size(40);
+        font-family: @font-family-base;
+        margin: 20px 0;
+        padding: 0 20px;
+        text-transform: uppercase;
+      }
+
+      span {
+        font-family: @font-family-base;
+        margin-bottom: 10px;
+        padding: 0 20px;
+
+        &.equipment-code {
+          padding: 20px;
+          border-bottom: 1px solid @product-border;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        b {
+          text-transform: uppercase;
+        }
+      }
+
+      .qr-img-container {
+        padding: 0 50px;
+
+        img {
+          width: 100%;
+          max-width: 250px;
+          border: 1px solid @product-border;
+          background: @white;
+        }
+
+        .button {
+          display: block;
+          font-family: @font-family-base;
+          text-transform: uppercase;
+          color: @white;
+          background: @cobalt;
+          padding: 10px;
+          max-width: 250px;
+          font-weight: 600;
+          text-align: center;
+          margin: 10px 0;
+        }
+      }
+
+      form {
+        margin: 0 20px;
+
+        & > button {
+          margin: 10px 0;
+        }
+      }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 12px 20px;
+      border-color: #ccc;
+      resize: none;
+      font-family: @font-family-base;
+      .font-size(15);
+
+      &:focus {
+        outline: none;
+        border-color: @cobalt;
+      }
+    }
+    }
   }
 }

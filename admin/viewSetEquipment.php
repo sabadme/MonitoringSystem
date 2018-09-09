@@ -18,6 +18,7 @@ if(isset($_REQUEST['viewSetEquipment'])){
                 <th>Code</th>
                 <th>Registered</th>
                 <th>Expiration</th>
+                <th>Action</th>
                 </thead>
 
                 <tbody>

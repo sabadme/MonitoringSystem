@@ -4,8 +4,37 @@ if(isset($_REQUEST['officeequipmentassign'])){
     $officeequipmentassign=$_REQUEST['officeequipmentassign'];
 
  ?>
-<div class="manage-container select-equipments with-banner">
-    <strong class="title">Select Room Equipments</strong>
+<div class="manage-container">
+    <div class="top-container">
+    <strong>Add Equipments</strong>
+
+    <div class="notifs-container">
+        <strong id="adminNotifHide" class="notifs"></strong>
+        <span id="count" class="counter"></span>
+
+        <div class="notifs-wrapper">
+            <strong>Notifications</strong>
+
+            <table id="myTable">
+                <thead>
+                    <th>Name</th>
+                    <th>Equipment</th>
+                    <th>Message</th>
+                </thead>    
+
+                <tbody>
+                    <?php include"admin/viewreport_table.php"; ?>
+                </tbody>
+            </table>
+
+            <form action="" method="POST">
+                <button title="Notifications" name="notifs" type="submit">View All</button>
+            </form>
+        </div>
+
+    </div>
+    <a href="logout.php" class="logout"></a>
+</div>
   <form action="" method="POST">
     <div class="inner-form-container">
         <div class="table-container" id="wrapper">

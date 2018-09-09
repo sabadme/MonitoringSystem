@@ -1,7 +1,22 @@
+<?php
+$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
+
+$sql_officeName = mysql_query("SELECT * FROM tbl_login WHERE id='$id'");
+$data_officeName = mysql_fetch_array($sql_officeName);
+
+ ?>
+
 <div class="dashboard-container">
         <div class="top-container">
     <strong>Dashboard</strong>
-
+    <span><?php echo $data_officeName['account']; ?></span>
     <div class="notifs-container">
         <strong class="notifs" value="<?php echo $accountname; ?>" id="OfficeBookingApproved"></strong>
         <span id="teacherBookingApproved" class="counter""></span>

@@ -20,9 +20,9 @@ while($data_booking = mysql_fetch_array($sql_booking)){
 		<td><?php echo $bookingVenue; ?></td>
 		<td><?php echo $building; ?></td>
 		<td><?php echo $floor; ?></td>
-
-		<td><button class="equipmentModal" id="<?php echo $count; ?>" value="<?php echo $bookingVenue; ?>">View</button></td>
 		<td><?php echo $data_booking['status']; ?></td>
+		<td><button class="equipmentModal" id="<?php echo $count; ?>" value="<?php echo $bookingVenue; ?>">View</button></td>
+		
 	</tr>
 	<?php
 }

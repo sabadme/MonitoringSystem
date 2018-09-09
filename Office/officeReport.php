@@ -1,4 +1,4 @@
-<div class="manage-container with-banner">
+<div class="report-container">
 	    <div class="top-container">
     <strong>REPORT FORM</strong>
 

@@ -73,8 +73,9 @@ $data_teacherName = mysql_fetch_array($sql_teacherName);
                 <th>Venue</th>
                 <th>Building</th>
                 <th>Floor</th>
-                <th>Equipment</th>
                 <th>Status</th>
+                <th>Equipment</th>
+                
             </tr>
         </thead>
        <?php include"teacher/bookingVenue.php"; ?> 

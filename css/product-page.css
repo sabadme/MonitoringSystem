@@ -1,6 +1,5 @@
 .product-page-container {
-  margin: 80px 0 250px;
-  padding: 0 20px;
+  padding: 20px;
   /*.product-banner-container {
     margin-bottom: 20px;
 
@@ -8,6 +7,15 @@
       width: 100%;
     }
   }*/
+}
+.product-page-container .room-equipment-container {
+  padding: 0 15px;
+  margin-top: 20px;
+}
+.product-page-container .room-equipment-container > span {
+  display: inline-block;
+  font-family: sans-serif;
+  margin-bottom: 10px;
 }
 .product-page-container .product-inner-container {
   display: -webkit-box;
@@ -51,19 +59,19 @@
   padding: 0 50px;
   text-transform: uppercase;
 }
-.product-page-container .product-inner-container .product-info-container span {
+.product-page-container .product-inner-container .product-info-container > span {
   font-family: sans-serif;
   margin-bottom: 10px;
   padding: 0 50px;
 }
-.product-page-container .product-inner-container .product-info-container span.equipment-code {
+.product-page-container .product-inner-container .product-info-container > span.equipment-code {
   padding: 20px;
   border-bottom: 1px solid #ccc;
 }
-.product-page-container .product-inner-container .product-info-container span:last-child {
+.product-page-container .product-inner-container .product-info-container > span:last-child {
   margin-bottom: 0;
 }
-.product-page-container .product-inner-container .product-info-container span b {
+.product-page-container .product-inner-container .product-info-container > span b {
   text-transform: uppercase;
 }
 .product-page-container .product-inner-container .product-info-container .qr-img-container {
