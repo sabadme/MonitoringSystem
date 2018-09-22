@@ -1,9 +1,11 @@
 <?php 
 include"Office/Add_user_function.php";
-include"report.php";
+
 include "Office/officeBooking_function.php";
 include "Office/request_function.php";
 include "Office/send_report.php";
+
+include"teacher/bookingEquipmentUpdate.php";
 
 if (isset($_REQUEST['addSA'])) {
 	include"Office/Add_user.php";
@@ -33,8 +35,15 @@ if (isset($_REQUEST['addSA'])) {
     include "Office/openScanner.php";
 }else if (isset($_REQUEST['closeCam'])) {
     include "Office/scanner.php";
+}else if(isset($_REQUEST['viewEquipmentBooking'])){
+	 include"Office/bookingVenue_page.php";
+}else if(isset($_REQUEST['equipmentLocation'])){
+	 include"admin/equipmentLocation.php";
+}else if(isset($_REQUEST['locationReport'])){
+	 include"Office/locationReport.php";
+}else if(isset($_REQUEST['equipmentBookingView'])){
+	 include"admin/booking_EquipmentView.php";
 }else {
 	include"office/dashboard.php";	
 }
-
  ?>

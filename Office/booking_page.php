@@ -88,9 +88,38 @@
                     <div class="equipments-wrapper">
                         <?php
                         include "admin/connection.php";
+                        $count="0";
+                 /*           if (!empty('div')){
+                        $equipment_sql = mysql_query("SELECT DISTINCT equipment_name,equipmentType FROM equipment WHERE carrier='Group' ORDER BY id desc");
+                        while ($data_equipment = mysql_fetch_array($equipment_sql)) {   
+                            
+                            $equipment_name=$data_equipment['equipment_name'];
+
+                            $get_equipment=mysql_query("SELECT * FROM booking WHERE equipment='$equipment_name' And status='Unassigned'");
+                            $data_GETequipment=mysql_fetch_array($get_equipment);
+                            $get_equipmentNAME=$data_GETequipment['equipment'];
+
+
+                            $sql_count = mysql_query("SELECT `equipment_name`,  COUNT(*) AS `count`  FROM equipment WHERE equipment_name='$equipment_name' And status != 'Broken'");
+                            $data_count = mysql_fetch_array($sql_count);
+                            $count = $data_count['count'];
+
+                            
+                            ?>
+                            <div>
+                                <input type="checkbox" name="equipment[]" value="<?php echo $data_equipment['equipment_name']; ?>"/>
+                                <label><?php echo $data_equipment['equipment_name']; ?><b>(<?php echo $count; ?>)</b></label> 
+                                <input type="number" name="groupQuantity[]" placeholder="Quantity">     
+                            </div>
+
+                            <?php
+                        
+
+                        }
+                        }*/
                         
                         if (!empty('div')){
-                        $equipment_sql = mysql_query("SELECT * FROM equipment ORDER BY id desc");
+                        $equipment_sql = mysql_query("SELECT * FROM equipment  ORDER BY id desc");
                         while ($data_equipment = mysql_fetch_array($equipment_sql)) {   
                             $status=$data_equipment['status'];
                             $equipment_name=$data_equipment['equipment_name'];
@@ -135,6 +164,7 @@
         <div class="booking-table">
             <strong class="subtitle">Booking Information</strong>
             <div class="table-container" id="wrapper">
+                
                 <table>
                     <thead>
                     <th>Booker</th>
@@ -149,7 +179,7 @@
                     </thead>
 
                     <tbody>
-                    <?php include"teacher/booking_table.php"; ?>
+                    <?php include"Office/booking_table.php"; ?>
                     </tbody>
                 </table>
             </div>
@@ -165,14 +195,14 @@ $(document).ready(function(){
     $('.search-venue input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".Vresult");
+        var resultDropdown = $(this).siblings(".Vresult").css('display', 'block');
         if(inputVal.length){
             $.get("admin/backend-search-venue.php", {term: inputVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdown.html(data);
             });
         } else{
-            resultDropdown.empty();
+            resultDropdown.empty().css('display', 'none');
         }
     });
     

@@ -2,7 +2,14 @@
 if(isset($_REQUEST['equipmentLocation'])){
 	$equipmentData = $_REQUEST['equipmentData'];
 
+	$id;
 	include"admin/connection.php";	
+
+	$sql_User = mysql_query("SELECT * FROM tbl_login WHERE id ='$id'");
+	$dataUser = mysql_fetch_array($sql_User);
+	$userStatus = $dataUser['Status'];
+
+	
 
 
 	$viewEquipment = mysql_query("SELECT * FROM equipment WHERE equipment_code = '$equipmentData'");
@@ -14,6 +21,7 @@ if(isset($_REQUEST['equipmentLocation'])){
 	 $dateEnd = $dataEquipment['equipment_end'];
 	 $equipmentStatus = $dataEquipment['status'];
 	 $equipmentID = $dataEquipment['id'];
+	 $carrier = $dataEquipment['carrier'];
 
 
 	if($equipmentData == $qrImg){
@@ -81,14 +89,21 @@ if(isset($_REQUEST['equipmentLocation'])){
 			$data_booking = mysql_fetch_array($sql_booking);
 			$equipmentBooking_ID = $data_booking['equipment'];
 			$venue = $data_booking['venue'];
-			echo "&nbsp&nbsp";
+			
 
 			if($equipmentID == $equipmentBooking_ID){
-			echo $venue;	
+			 	
 			$sqlBooking_rooms = mysql_query("SELECT * FROM rooms WHERE room='$venue'");
 			$data_sqlBooking_rooms = mysql_fetch_array($sqlBooking_rooms);
 			$building = $data_sqlBooking_rooms['building'];
 			$floor = $data_sqlBooking_rooms['floor'];
+
+			?>
+				<span>Room: <?php echo $venue;?> </span>
+				<span>Building: <?php echo $building;?> </span>
+				<span>Floor: <?php echo $floor;?> </span>
+				<span>Type: <?php echo $carrier; ?></span>
+			<?php
 
 			}else{
 
@@ -96,8 +111,14 @@ if(isset($_REQUEST['equipmentLocation'])){
 
 			$sqlRoom = mysql_query("SELECT * FROM rooms_equipment WHERE equipment = '$equipmentID'");
 			$dataRoom = mysql_fetch_array($sqlRoom);
-			$roomName = $dataRoom['room'];
-			echo "None";
+			
+			
+			?>
+			<span>Room: <?php echo"Unassigned";?> </span>
+			<span>Building: <?php echo"Unassigned";?> </span>
+			<span>Floor: <?php echo"Unassigned";?> </span>
+			<span>Type: <?php echo $carrier; ?></span>
+			<?php
 
 			} else if($equipmentStatus == "Assigned") {
 				$sql_Assiged = mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$equipmentID'");
@@ -108,16 +129,82 @@ if(isset($_REQUEST['equipmentLocation'])){
 				$data_rooms = mysql_fetch_array($sql_rooms);
 				$building = $data_rooms['building'];  
 				$floor = $data_rooms['floor'];
+				?>
+				<span>Room: <?php echo $roomNames;?> </span>
+				<span>Building: <?php echo $building;?> </span>
+				<span>Floor: <?php echo $floor;?> </span>
+				<span>Type: <?php echo $carrier; ?></span>
+				<?php
+			} else if($equipmentStatus == "Set"){
+				
+				$sql_equipmentStatusSet = mysql_query("SELECT * FROM equipment WHERE status='$equipmentStatus' And id='$equipmentID'");
+				$data_sql_equipmentStatusSet = mysql_fetch_array($sql_equipmentStatusSet);
+				$setName = $data_sql_equipmentStatusSet['set_name'];
+
+				$sqlSet = mysql_query("SELECT * FROM equipmentset WHERE set_name='$setName'");
+				$data_set = mysql_fetch_array($sqlSet);
+				$setStatus = $data_set['assigned_unassigned'];
+
+				if($setStatus == "Assigned"){
+
+					$sql_setRoom = mysql_query("SELECT * FROM rooms_equipment WHERE set_name='$setName'");
+					$data_setRoom = mysql_fetch_array($sql_setRoom);
+					$roomNames = $data_setRoom['room'];
+
+					$sqlRoom = mysql_query("SELECT * FROM rooms WHERE room='$roomNames'");
+					$dataRoom = mysql_fetch_array($sqlRoom);
+					$roomNamesCheck = $dataRoom['room'];
+
+					if($roomNames == $roomNamesCheck){	
+
+					$building = $dataRoom['building'];
+					$floor = $dataRoom['floor'];
+							?>
+							<span>Room: <?php echo $roomNames;?> </span>
+							<span>Building: <?php echo $building;?> </span>
+							<span>Floor: <?php echo $floor;?> </span>
+							<span>Type: <?php echo $carrier; ?></span>
+							<?php
+
+					}else{
+					 $sql_Office = mysql_query("SELECT * FROM tbl_login WHERE account='$roomNames'");
+					 $data_Office = mysql_fetch_array($sql_Office);
+					 $building = $data_Office['building'];
+					 $floor = $data_Office['floor'];
+							?>
+							<span>Room: <?php echo $roomNames;?> </span>
+							<span>Building: <?php echo $building;?> </span>
+							<span>Floor: <?php echo $floor;?> </span>
+							<span>Type: <?php echo $carrier; ?></span>
+							<?php
+					}
+
+
+					
+				}
+				
+			
+
 			}
 		}
 			?>
 
-		<span>Room: <?php echo $roomNames;?> </span>
-		<span>Building: <?php echo $building;?> </span>
-		<span>Floor: <?php echo $floor;?> </span>
+		
 		<span><?php echo "<img src='QRimg/" . $qrImg . ".png'>" ?></span>
 
 		<span><i><?php echo $qrImg; ?></i></span>
+
+		<?php 
+			if($userStatus == "Admin"){
+
+			}else{
+				?>
+				<form action="" method="POST">
+					<button name="locationReport" type="submit" value="<?php echo $dataEquipment['id']; ?>">Report</button>
+				</form>
+				<?php
+			}
+		 ?>
 
 
 		<span class="status"><?php echo $equipmentStatus; ?></span>

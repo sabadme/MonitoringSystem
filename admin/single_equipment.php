@@ -1,3 +1,4 @@
+
 <div class="equipments-container">
 <div class="top-container">
         <strong>Single Equipments</strong>
@@ -41,7 +42,11 @@
                     <span>Name</span>
                     <input type="text" name="equipment_name">
                     <span>Type</span>
-                    <input type="text" name="equipmentType" required>
+                    <select name="equipmentType">
+                        <option>EE</option>
+                        <option>OF</option>
+                    </select>
+               
 
 
                 </div>
@@ -54,19 +59,20 @@
                     <input type="file" name="imgs" class="file"/>
                 </div>
             </div>
-            <button class="addbtn" type="submit" name="save_equipment">SAVE</button>
+            <button type="submit" name="save_equipment">SAVE</button>
     </div>
 
-        </form>
+        </form> 
         
 
-        <input type="text" class="search" id="myInput1"  placeholder="Search names..">
+      <!--   <input type="text" class="search" id="myInput1"  placeholder="Search names.."> -->
 
         <div class="table-container" id="wrapper">
             <table id='myTable'>
                 <thead>
                 <th>Code</th>
                 <th>Name</th>
+                <th>Status</th>
                 <th>Registered</th>
                 <th>Expiration</th>
                 <th></th>

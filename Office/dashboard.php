@@ -26,9 +26,10 @@ $data_officeName = mysql_fetch_array($sql_officeName);
 
             <table id="myTable">
                 <thead>
-                        <th>Venue</th>
+                        <th data-type="Venue">Venue</th>
                         <th>Date Start</th>
                         <th>Date End</th>
+                        <th>Status</th>
                 </thead>
 
                 <tbody>
@@ -44,27 +45,47 @@ $data_officeName = mysql_fetch_array($sql_officeName);
     </div>
     <a href="logout.php" class="logout"></a>
 </div>
-	<div class="new-equipments-container">
-		<strong> My Equipments </strong>
-	   
+
+
+    <div class="new-equipments-container">
+        <strong> My Booking </strong>
+       
        <table id="myTable">
         <thead>
             <tr>
                 <th></th>
-                <th>Name</th>
-                <th>Qr Code</th>
+                <th>Room</th>
+                <th>Date Start</th>
+                <th>Date End</th>
+                <th>Equipment</th>
+     
+            </tr>
+        </thead>
+           <?php include"office/myBooking.php"; ?>
+       </table>
+        
+    </div>
+        <div class="new-equipments-container">
+        <strong> My Equipments </strong>
+       
+       <table id="myTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Equipment</th>
+                <th>Code</th>
                 <th>Registered Date</th>
                 <th>Expiry Date</th>
-                <th>Assigned</th>
-              
+                
+     
             </tr>
         </thead>
            <?php include"office/office_equipment.php"; ?>
        </table>
 
-			
-		
-	</div>
+            
+        
+    </div>
 </div>
 
 

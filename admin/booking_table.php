@@ -2,7 +2,7 @@
 
 $status=$_SESSION['status'];
 include"admin/connection.php";
-
+$count="0";
 $booking=mysql_query("SELECT DISTINCT `booker`,`date_start`,`date_end`,`time_start`,`time_end`,`venue`,`sem` FROM booking ORDER BY id desc");
 while($data_booking=mysql_fetch_array($booking)){
     $booker=$data_booking['booker'];
@@ -11,11 +11,21 @@ while($data_booking=mysql_fetch_array($booking)){
     $time=$data_booking['time_start'];
     $time_e=$data_booking['time_end'];
 
+    $count++;
+    
 
     $booking_status=mysql_query("SELECT * FROM booking WHERE booker='$booker' And date_start='$date' And date_end='$date_e' And time_start='$time' And time_end='$time_e'");
     $data_status=mysql_fetch_array($booking_status);
     $statuss=$data_status['status'];
     $booker_name=$data_status['booker'];
+
+//time start
+    $timestamp = strtotime($time);
+
+
+//time end
+     $timestamps = strtotime($time_e);
+     
 
     $sql_bookerName=mysql_query("SELECT * FROM tbl_login WHERE account='$booker_name'");
     $data_bookerName=mysql_fetch_array($sql_bookerName);
@@ -27,22 +37,43 @@ while($data_booking=mysql_fetch_array($booking)){
         <td><?php echo $data_booking['sem']; ?></td>
         <td><?php echo $data_booking['date_start']; ?></td>
         <td><?php echo $data_booking['date_end']; ?></td>
-        <td><?php echo date('H:i:s',strtotime($data_booking['time_start'])); ?></td>
-        <td><?php echo date('H:i:s',strtotime($data_booking['time_end'])); ?></td>
+        <td><?php echo date("H:i:A", $timestamp); ?></td>
+        <td><?php echo date("H:i:A", $timestamps); ?></td>
         <td>
             <ul>
             <?php
-            $venue=mysql_query("SELECT * FROM booking  WHERE booker='$booker' And date_start='$date' And date_end='$date_e' And time_start='$time' And time_end='$time_e'");
-            while($data_venue=mysql_fetch_array($venue)){
+                          $venue=mysql_query("SELECT * FROM booking  WHERE booker='$booker' And date_start='$date' And date_end='$date_e' And time_start='$time' And time_end='$time_e'");
+                $data_venue=mysql_fetch_array($venue);
 
                 $equipmentID = $data_venue['equipment'];
 
-            $sql_equipment = mysql_query("SELECT * FROM equipment WHERE id='$equipmentID'");
-            $dataSql_equipment = mysql_fetch_array($sql_equipment);
+           $sql_equipment = mysql_query("SELECT * FROM equipment WHERE id='$equipmentID'");
+                      $dataSql_equipment = mysql_fetch_array($sql_equipment);
+                      $equipmentBook = $dataSql_equipment['id'];
+
             
             ?>
-            <li><?php echo $dataSql_equipment['equipment_name']; ?></li>
-            <?php } ?>
+            <li>
+
+              <?php 
+
+
+
+                if($equipmentBook == ""){
+
+                }else{
+                    ?>
+                    <form action="" method="POST">
+                        <button name="equipmentBookingView" type="submit" value="<?php echo $equipmentBook; ?>">View</button>
+                    </form>
+              
+                    <?php
+                }
+            
+               ?>
+                   
+            </li>
+         
                 </ul>
         </td>
        
@@ -66,3 +97,4 @@ while($data_booking=mysql_fetch_array($booking)){
 }
 
  ?>
+ 

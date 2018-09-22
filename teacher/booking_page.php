@@ -76,7 +76,7 @@
 
             <div class="equipments-field">
                 <label>Select Equipment(s)</label>
-                <input class="search" type="text" placeholder="search equipments..."/>
+                   <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
                 <div class="equipments-wrapper">
                     <?php
                     include "admin/connection.php";
@@ -95,7 +95,7 @@
 
 
                         ?>
-                        <div>
+                        <div class="target">
                             <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
                             <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
                             
@@ -158,14 +158,14 @@ $(document).ready(function(){
     $('.search-venue input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".Vresult");
+        var resultDropdown = $(this).siblings(".Vresult").css('display', 'block');
         if(inputVal.length){
             $.get("admin/backend-search-venue.php", {term: inputVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdown.html(data);
             });
         } else{
-            resultDropdown.empty();
+            resultDropdown.empty().css('display', 'none');
         }
     });
     

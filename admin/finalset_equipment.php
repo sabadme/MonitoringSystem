@@ -95,7 +95,7 @@ if (!$conn) {
     die("Connection failed: " . mysql_connect_error());
 }
 
-$update_status="UPDATE equipment SET `status`='Set',`set_name`='$setName' WHERE id='$check'";
+$update_status="UPDATE equipment SET `status`='Set',`set_name`='$setName',`carrier`='Set' WHERE id='$check'";
 
 if (mysql_query($update_status)) {?>
 
@@ -113,7 +113,7 @@ if (mysql_query($update_status)) {?>
 }
 }
 mysql_close($conn);
-  include "admin/view_equipment_set.php";
+
 }
 
  ?>

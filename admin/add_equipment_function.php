@@ -33,10 +33,31 @@ if(isset($_REQUEST['save_equipment'])){
 	$equipment_end=$_REQUEST['equipment_end'];
 	$equipmentType =$_REQUEST['equipmentType'];
 
+	$servername ="localhost";
+$username="root";
+$password="";
+$db="monitoringsystemdatabase";
+
+
+$conn =mysql_connect($servername,$username,$password);
+mysql_select_db($db);
+
+$status="Unassigned";
+$insert=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up to date','None','Single')");
+		if($insert){
+			
+			?> <script> 
+		 alert("Record Successfully Added in UserSubmit table"); </script>
+		 <?php 
+		 include"admin/single_equipment.php";
+		}else {
+		  echo "Error adding record"; 
+		}		
+
 
 	 	$qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$str'>";
     ?><div style="display:none"><?php echo $qrimg;?></div> <?php
-    echo "<canvas id='myCanvas' style='visibility:hidden' />";
+    echo "<canvas id='myCanvas' style='visibility:hidden; position: absolute;' />";
 
     echo "
 
@@ -71,25 +92,7 @@ if(isset($_REQUEST['save_equipment'])){
     ";	
 
 
-$servername ="localhost";
-$username="root";
-$password="";
-$db="monitoringsystemdatabase";
 
-
-$conn =mysql_connect($servername,$username,$password);
-mysql_select_db($db);
-
-$status="Unassigned";
-$insert=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up to date','None')");
-		if($insert){
-			
-			?> <script> 
-		 alert("Record Successfully Added in UserSubmit table"); </script>
-		 <?php 
-		}else {
-		  echo "Error adding record"; 
-		}		
 
 
 

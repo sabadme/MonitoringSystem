@@ -30,8 +30,10 @@ if(isset($_REQUEST['check_list'])){
 
 	 	 	 if($check==$id){
 	 	 	       $equipment_status="Set";
+	 	 	       $set_name=$data_status['set_name'];
 	 	     }else{
 	 	 	       $equipment_status="None";
+	 	 	       $set_name=$data_status['set_name'];
 	 	     }
 
 
@@ -53,7 +55,7 @@ if(isset($_REQUEST['check_list'])){
 					}
 
 	 	 	}else{
-	 	 		$insert_room=mysql_query("INSERT INTO rooms_equipment VALUES(0,'$roomName','$check','$uptodate','$equipment_status')");
+	 	 		$insert_room=mysql_query("INSERT INTO rooms_equipment VALUES(0,'$roomName','$check','$uptodate','$equipment_status','$set_name')");
 				 echo mysql_error();  
 			  if($insert_room){
 					

@@ -12,7 +12,7 @@ include"admin/connection.php";
 $null="null";	
 $status="Office";
 $under="Admin";
-$ed_status="0";
+$ed_status="Pending";
 $middlename="null";
 
 $add_office=mysql_query("INSERT INTO tbl_login VALUES(0,'$account','$usernames','$passwords','$null','$null','$status','$under','$ed_status','$middlename','building','$floor')");

@@ -33,6 +33,8 @@ include"admin/save_venue.php";
 include"admin/officeModal_function.php";
 
 include"teacher/bookingEquipmentUpdate.php";
+include"admin/addNewGroupFunction.php";
+
 
 
 if (isset($_REQUEST['dashboard'])) {
@@ -126,7 +128,7 @@ if (isset($_REQUEST['dashboard'])) {
 }    else if(isset($_REQUEST['login'])){
   include "admin/auto_update.php";
 }   else if(isset($_REQUEST['add_user'])){
-  include "admin/users.php";
+  include "admin/add_user_design.php";
 }    else if(isset($_REQUEST['setTeachersRoom'])){
   include "admin/setTeachersRoom_design.php"  ;
 } /*   else if(isset($_REQUEST['ViewTeachers'])){
@@ -137,8 +139,6 @@ if (isset($_REQUEST['dashboard'])) {
   include "admin/teacherroom.php";
 }    else if(isset($_REQUEST['unassgnedView'])){
   include "admin/unassigned_dateView.php";  
-} else if (isset($_REQUEST['save_equipment'])) {
-   include "admin/single_equipment.php";
 } else if (isset($_REQUEST['unassigedTeachersRoom'])) {
     include "admin/unassigedTeachersRoom.php";
  }else if (isset($_REQUEST['update_broken_status'])) {
@@ -181,8 +181,18 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/add_user_design.php";
  }else if (isset($_REQUEST['officeupdate'])) {
     include "admin/add_office_design.php";
- }else if (isset($_REQUEST['saveGroupEquipementSet'])) {
+ }/*else if (isset($_REQUEST['saveGroupEquipementSet'])) {
     include "admin/groupSet.php";
+ }*/else if (isset($_REQUEST['update_equipment_single'])) {
+    include "admin/single_equipment.php";
+ } else if (isset($_REQUEST['Add_equipment_setFinal'])) {
+    include "admin/view_equipment_set.php";
+ }else if (isset($_REQUEST['viewGroupEquipment'])) {
+    include "admin/viewDistinctgroup.php";
+ }else if (isset($_REQUEST['addNewGroup'])) {
+    include "admin/addNewGroup.php";
+ }else if (isset($_REQUEST['equipmentBookingView'])) {
+    include "admin/booking_EquipmentView.php";
  }else {
     include "dashboard.php"; 
 }

@@ -59,6 +59,7 @@ if(isset($_REQUEST['equipment'])){
 
 }
 }else{
+	$equip="";
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$accountname','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
 	echo mysql_error();  
   if($insert){
@@ -87,6 +88,7 @@ if(isset($_REQUEST['equipment'])){
 }
 }
 }else{
+	$equip="";
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$accountname','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
 	echo mysql_error();  
   if($insert){
@@ -116,6 +118,7 @@ if(isset($_REQUEST['equipment'])){
 }
 }
 }else{
+	$equip="";
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$accountname','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
 	echo mysql_error();  
   if($insert){
@@ -144,6 +147,7 @@ if(isset($_REQUEST['equipment'])){
 }
 }
 }else{
+	$equip="";
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$accountname','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
 	echo mysql_error();  
   if($insert){
@@ -181,6 +185,7 @@ if(isset($_REQUEST['equipment'])){
 }
 }
 }else{
+	$equip="";
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$accountname','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
 	echo mysql_error();  
   if($insert){
@@ -211,6 +216,7 @@ if(isset($_REQUEST['equipment'])){
 }
 }
 }else{
+	$equip="";
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$accountname','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
 	echo mysql_error();  
   if($insert){

@@ -51,6 +51,7 @@
 					<option value="" disabled selected>Please Select..</option>
 					<option>Teacher</option>
 					<option>Student Assistant</option>
+					<option>Technician</option>
 				</select>
 				<span>Userame</span>
 				<input type="text" name="username">

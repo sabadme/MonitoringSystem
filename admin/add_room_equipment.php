@@ -53,7 +53,7 @@
                     while($data_set=mysql_fetch_array($select_set)){
                         $set_set_name=$data_set['set_name'];
 
-                $select_Setname=mysql_query("SELECT DISTINCT set_name,img_filename FROM equipmentset WHERE set_name='$set_set_name' And assigned_unassigned='Unassigned'");
+                $select_Setname=mysql_query("SELECT DISTINCT set_name,img_filename,assigned_unassigned FROM equipmentset WHERE set_name='$set_set_name' And assigned_unassigned='Unassigned'");
                         while($data_setname=mysql_fetch_array($select_Setname)){
                         $img_filenames=$data_setname['img_filename'];
                         $set_name=$data_setname['set_name'];

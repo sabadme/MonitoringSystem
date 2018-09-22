@@ -18,6 +18,8 @@ if(isset($_REQUEST['check_list'])){
 	 for ($i=0; $i < count($check_list) ; $i++) { 
 	 	 $check=$check_list[$i];
 
+	
+
 	 	 $select_status=mysql_query("SELECT * FROM equipmentset WHERE id='$check'");
 	 	 $data_status=mysql_fetch_array($select_status);
 	 	 	$id=$data_status['id'];
@@ -35,7 +37,7 @@ if(isset($_REQUEST['check_list'])){
 
 
 
-				 $insert_room=mysql_query("INSERT INTO rooms_equipment VALUES(0,'$officename','$check','$uptodate','$equipment_status')");
+				 $insert_room=mysql_query("INSERT INTO rooms_equipment VALUES(0,'$officename','$check','$uptodate','$equipment_status','$set_name')");
 				 echo mysql_error();  
 			  if($insert_room){
 				

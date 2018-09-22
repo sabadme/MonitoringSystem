@@ -1,9 +1,17 @@
 
-
  <?php 
 if(isset($_REQUEST['saveGroupEquipementSet'])){
 
 	$numbersOfEquipemnt=$_REQUEST['numbersOfEquipemnt'];
+
+		$servername ="localhost";
+		$username="root";
+		$password="";
+		$db="monitoringsystemdatabase";
+
+
+		$conn =mysql_connect($servername,$username,$password);
+		mysql_select_db($db);
 
 	$file=$_FILES['imgs'];
 	$name=$_FILES['imgs'] ['name'];
@@ -39,6 +47,22 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 			$equipment_start=$_REQUEST['equipment_start'];
 			$equipment_end=$_REQUEST['equipment_end'];
 			$equipmentType = $_REQUEST['equipmentType'];
+
+
+
+		$status="Unassigned";
+
+		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None','Group')");
+		echo mysql_error();  
+		if($upload_image){
+			
+			?> <script> 
+		
+		 <?php 
+		 include "admin/groupSet.php";
+		}else {
+		  echo "Error adding record"; 
+		}		
 
 		echo mysql_error();  
 	 	$qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$str'>";
@@ -78,27 +102,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
     ";
 
-		$servername ="localhost";
-		$username="root";
-		$password="";
-		$db="monitoringsystemdatabase";
-
-
-		$conn =mysql_connect($servername,$username,$password);
-		mysql_select_db($db);
-
-		$status="Unassigned";
-
-		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None')");
-		echo mysql_error();  
-		if($upload_image){
-			
-			?> <script> 
-		 alert("Record Successfully Added in UserSubmit table"); </script>
-		 <?php 
-		}else {
-		  echo "Error adding record"; 
-		}		
+	
 
 		$qrimg = "";
 		$str = "";
@@ -106,6 +110,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
 
 	}
+
 
 }
 ?>

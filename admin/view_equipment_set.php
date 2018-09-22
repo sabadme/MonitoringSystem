@@ -39,6 +39,7 @@
                         <th></th>
                         <th>Code</th>
                         <th>Name</th>
+                        <th>Status</th>
                         <th>Registered</th>
                         <th>Expiration</th>
                         <th>Action</th>

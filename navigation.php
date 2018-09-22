@@ -81,6 +81,11 @@ if ($status == "Admin") {
                              <li><button title="Venue" class="venue" name="venue" type="submit"><span>Venue </span></button></li>
                         </ul>
                 </li>
+                    <li>
+                    <button title="Set Room" type="submit" name="setTeachersRoom" class="setroom">
+                    <span>Assigned Room</span>
+                    </button>
+                </li>
 
               
                <!--  <li>
@@ -143,6 +148,27 @@ if ($status == "Admin") {
                     <button class="reports" name="viewrooms" type="submit" value="<?php echo $id; ?>"><span>Rooms</span></button>
                 </li>
 
+            </ul>
+        </form>
+    </nav>
+    <?php
+}else if($status == "Technician"){
+    ?>
+      <nav class="main-nav">
+        <img src="images/monitor.png">
+        <form action="" method="POST">
+            <ul class="menu">
+
+                <li>
+                    <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>"><span>DASHBOARD</span></button>
+                </li>
+                 <li>
+                     <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>
+                </li>
+                 <li>
+                     <button title="Message" class="scanner" name="openScanner"> <span>Message</span></button>
+                </li>
+                
             </ul>
         </form>
     </nav>

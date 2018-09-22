@@ -1,4 +1,20 @@
+<?php           
+ include"admin/connection.php";
 
+ $sql_broken = mysql_query("SELECT * FROM equipment WHERE equipment_status ='Broken'");
+ $dataBroken = mysql_fetch_array($sql_broken);
+ $equipmentBroken = $dataBroken['equipment_status'];
+
+ if($equipmentBroken == ""){
+    ?>
+    <script>
+        alert("No broken equipment.");
+    </script>
+    <?php
+    include "dashboard.php"; 
+ }else{
+
+ ?>
 <div class="accounts-container">
     <div class="top-container">
             <strong>Broken</strong>
@@ -52,7 +68,7 @@
 
                         <tbody>
                         <?php
-                     include"admin/connection.php";
+                    
                         $get_image = mysql_query("SELECT * FROM equipment WHERE equipment_status='Broken'");
                         while ($data_image = mysql_fetch_array($get_image)) {
                             $image_status = $data_image['equipment_status'];
@@ -84,6 +100,9 @@
         </div>
     </div>
 </div>
+<?php   
+}
+ ?>
 <script>
     function searchTable() {
         var input, filter, found, table, tr, td, i, j;

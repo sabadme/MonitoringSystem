@@ -46,8 +46,11 @@
                             <input type="text" name="numbersOfEquipemnt" placeholder="Quantity">
                             <span>Equipment Name</span>
                             <input type="text" name="equipment_name" placeholder="Equipment Name">
-                            <span>Equipment Name</span>
-                            <input type="text" name="equipmentType" placeholder="Equipment Type">
+                            <span>Equipment Type</span>
+                            <select name="equipmentType">
+                                <option>EE</option>
+                                <option>OF</option>
+                            </select>
                         </div>
 
                         <div class="user-box-input">
@@ -72,13 +75,16 @@
                     <thead>
                     <th>Code</th>
                     <th>Name</th>
+                    <th>Type</th>
+                    <th>Quantity</th>
                     <th>Registered</th>
                     <th>Expiration</th>
+                    <th></th>
                     <th></th>
                     </thead>
 
                     <tbody>
-                    <?php include "admin/equipment_table.php"; ?>
+                    <?php include "admin/groupTable.php"; ?>
                     </tbody>
                 </table>
             </div>

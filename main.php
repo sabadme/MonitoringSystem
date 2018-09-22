@@ -152,6 +152,9 @@ if(isset($status)){
             }else if ($status == "Student Assistant") {
                 $accountname;
                 include "student/function.php";
+            }else if($status == "Technician"){
+                $accountname;
+                include"Technician/function.php";
             }
 
             ?>
@@ -337,9 +340,9 @@ if(isset($status)){
     jQuery(document).ready(function () {
         $('.block-loader').fadeOut("slow");
         $('body').addClass('loaded');
-        $("#count").load('admin/notif_count.php');
+     /*   $("#count").load('admin/notif_count.php');*/
         $("#teacherBookingApproved").load('teacher/approvedCount.php');
-        $("#bok_count").load('admin/booking_count.php');
+        /*$("#bok_count").load('admin/booking_count.php');*/
         addActive();
         empty();
         tabActive();
@@ -391,6 +394,7 @@ if(isset($status)){
         });
     });
 </script>
+
 <!-- <script>
     $(function(){
         $(document).on("click" ,".equipmentModal" , function(){
@@ -406,7 +410,7 @@ if(isset($status)){
         });
     });
 </script> -->
-<!--  <script>
+<script>
  
 setInterval(function() {
     
@@ -419,8 +423,52 @@ $(document).ready(function(){
  });
 
     
-});
-</script> -->
+},1000);
+</script> 
+
+<script>
+ 
+setInterval(function() {
+    
+$(document).ready(function(){
+    <?php 
+
+     ?>
+     $("#bok_count").load('admin/booking_count.php');
+
+ });
+
+    
+},1000);
+</script> 
+<script>
+    //technician report modal
+
+    $(function() {
+        $(document).on("click" , ".reportClass" , function (){
+            var reportClass = ($(this).attr("value"));
+           
+            document.getElementById("reportModalValue").value = reportClass;
+        });
+    });
+
+ 
+</script>
+<script>
+       function reportSendComment (){
+        var doneOrnot = $("select#doneOrnot").val();
+        var reportMessage = $("textarea#reportMessage").val();
+        var reportModalValue = $("input#reportModalValue").val();
+
+        $.ajax({
+            url : "Technician/reportSend.php",
+            method : "POST",
+            data : 'doneOrnot=' + doneOrnot + '&reportMessage=' + reportMessage + '&reportModalValue=' + reportModalValue,
+        });
+    }
+</script>
+<script>
+
 
 
 

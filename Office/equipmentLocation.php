@@ -132,7 +132,7 @@ if(isset($_REQUEST['equipmentLocation'])){
 		alert("Unable to locate equipment.")
 	</script>
 	<?php
-	include"admin/scanner.php";
+	include"Office/scanner.php";
 }
 }
 ?>

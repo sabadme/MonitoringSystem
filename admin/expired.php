@@ -1,3 +1,20 @@
+<?php           
+ include"admin/connection.php";
+
+ $sql_broken = mysql_query("SELECT * FROM equipment WHERE equipment_status ='Expired'");
+ $dataBroken = mysql_fetch_array($sql_broken);
+ $equipmentBroken = $dataBroken['equipment_status'];
+
+ if($equipmentBroken == ""){
+    ?>
+    <script>
+        alert("No expired equipment.");
+    </script>
+    <?php
+    include "dashboard.php"; 
+ }else{
+
+ ?>
 <div class="accounts-container">
     <div class="top-container">
             <strong>Expired</strong>
@@ -50,7 +67,7 @@
 
                       include"admin/connection.php";
 
-                        $get_image = mysql_query("SELECT * FROM equipment");
+                        $get_image = mysql_query("SELECT * FROM equipment WHERE equipment_status='Expired'");
                         while ($data_image = mysql_fetch_array($get_image)) {
                             $image_status = $data_image['equipment_status'];
                             $image_filename = $data_image['equipment_filename'];
@@ -78,6 +95,10 @@
         </div>
     </div>
 </div>
+<?php   
+}
+ ?>
+
 
 
 

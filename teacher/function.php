@@ -30,7 +30,11 @@ if(isset($_REQUEST['dashboard'])){
 }else if (isset($_REQUEST['closeCam'])) {
     include "teacher/scanner.php";
 }else if (isset($_REQUEST['equipmentLocation'])) {
-    include "teacher/equipmentLocation.php";
+    include "admin/equipmentLocation.php";
+}else if (isset($_REQUEST['equipmentBookingView'])) {
+    include "admin/booking_EquipmentView.php";
+}else if (isset($_REQUEST['viewEquipmentBooking'])) {
+    include "Office/bookingVenue_page.php";
 }else{
 	include"teacher/dashboard.php";
 }

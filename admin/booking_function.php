@@ -1,5 +1,8 @@
 <?php 
 if(isset($_REQUEST['save_booking'])){
+
+
+	
 	$booker=$_REQUEST['booker'];
 	$venue=$_REQUEST['venue'];
 	$sem=$_REQUEST['sem'];
@@ -33,20 +36,26 @@ if($sem==$sem_db){
 	if($venue_db==$venue){
 if($datestart > $d_e && $dateend > $d_e){
 if(isset($_REQUEST['equipment'])){
-	 $equipment=$_REQUEST['equipment'];
+		 $equipment=$_REQUEST['equipment'];
 
 	 for ($i=0; $i < count($equipment) ; $i++) { 
-	 		 	echo $equip=$equipment[$i];
+	 		 	echo $equip=$equipment[$i];	
 
-	$insert=mysql_query("INSERT INTO booking VALUES(0,'$booker','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
-	echo mysql_error();  
-  if($insert){
 	
-	?>
- <?php 
-}else {
-  echo "Error adding record"; 
-}
+	 		 		$insert=mysql_query("INSERT INTO booking VALUES(0,'$booker','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");
+						echo mysql_error();  
+					  if($insert){
+						
+						?>
+					 <?php 
+					}else {
+					  echo "Error adding record"; 
+					}
+	 		 
+	 		 
+
+
+
 }
 }else{
 	$insert=mysql_query("INSERT INTO booking VALUES(0,'$booker','$venue','$sem','$datestart','$dateend','$timestart','$tameend','$equip','Pending','0','1')");

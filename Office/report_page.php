@@ -3,6 +3,8 @@ if(isset($_REQUEST['equipment_report'])){
     $equipment_report=$_REQUEST['equipment_report'];
 
 include"admin/connection.php";
+    
+    
 
     $sql_booking = mysql_query("SELECT * FROM booking WHERE equipment='$equipment_report'");
     $data_booking = mysql_fetch_array($sql_booking);
@@ -29,7 +31,7 @@ include"admin/connection.php";
 
         $equipment_Set=mysql_query("SELECT * FROM equipmentset WHERE id='$name'");
         $dataEquipment_set=mysql_fetch_array($equipment_Set);
-        $image_filename=$dataEquipment_set['img_filename'];
+       echo $image_filename=$dataEquipment_set['img_filename'];
         $qr_value=$dataEquipment_set['setQr_code'];
         $equipment_name = $dataEquipment_set['set_name'];
 

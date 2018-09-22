@@ -36,6 +36,7 @@ if (mysql_query($update_statuss)) {?>
     <?php
 }
 mysql_close($conn);
+
 }
 
  ?>

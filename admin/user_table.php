@@ -8,9 +8,10 @@ while($data_table=mysql_fetch_array($user_table)){
 	$count++;
 	$firstname=$data_table['firstname'];
 	 $status=$data_table['ED_status'];
-	 $id=$data_table['id'];
+	 $id=$data_table['id'];	
 
-	if($firstname != "null"){
+	if($firstname != "None" ){
+		if($firstname != "null"){ 
 ?>
 <tr>
 <td><?php echo $data_table['firstname']; ?></td>
@@ -35,7 +36,7 @@ if($status=="Enabled"){
  <td><form action="" method="POST"><button name="teacherroom" class="action" value="<?php echo $data_table['id']; ?>">Room</button></form></td>
 </tr>
 <?php
-
+}
 }
 }
  ?>

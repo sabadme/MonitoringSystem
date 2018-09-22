@@ -1,3 +1,20 @@
+<?php           
+ include"admin/connection.php";
+
+ $sql_broken = mysql_query("SELECT * FROM equipment WHERE status ='Assigned'");
+ $dataBroken = mysql_fetch_array($sql_broken);
+ $equipmentBroken = $dataBroken['status'];
+
+ if($equipmentBroken == ""){
+    ?>
+    <script>
+        alert("No expired equipment.");
+    </script>
+    <?php
+    include "dashboard.php"; 
+ }else{
+
+ ?>
 <div class="accounts-container">
     <div class="top-container">
             <strong>Assigned</strong>
@@ -66,7 +83,7 @@
                         <tr>
                             <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $image_filename . "'>" ?></td>
                             <td><?php echo $data_assigned['equipment_name']; ?></td>
-                            <td><?php echo $data_assigned['equipment_status']; ?></td>
+                            <td><?php echo $data_assigned['status']; ?></td>
 
                         </tr>
                         <?php
@@ -79,6 +96,9 @@
     </div>
     </div>
 </div>
+<?php           
+}
+ ?>
 
 <script>
     function searchTable() {

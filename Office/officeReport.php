@@ -42,6 +42,7 @@
 					<th>Equipment</th>
 					<th>Equipment Name</th>
 					<th>Equipment Code</th>
+                    <th>Assigned</th>
 					<th>Report</th>
 				</thead>
 
