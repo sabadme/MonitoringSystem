@@ -56,17 +56,17 @@
 
 			<div class="aboutus" id="about">
 				<h1>ABOUT US</h1>
-				<p>The Facility Management System for LCC-B is an online based system that 
-				will digitize the process of facilities and equipment monitoring, inventory updates, 
-				maintenance reports, and booking. It gives the users the ability to do these 
-				procedures and transactions conveniently. 
-				It features registered school facilities and equipment, their 
-				generated QR code (Quick Response Code Technology), and the complete details 
-				regarding their maintenance and repair records. Monitoring systems are ideally 
-				used by schools when they are monitoring school equipment, usually for the 
-				purpose of repair and maintenance updates; regularly checking the facility and 
-				equipment’s condition. It allows the administrator to supervise the maintenance 
-				without it becoming time-consuming and tedious. The QR Code will help the administrator in checking the equipment 
+				<p>The Facility Management System for LCC-B is an online based system that
+				will digitize the process of facilities and equipment monitoring, inventory updates,
+				maintenance reports, and booking. It gives the users the ability to do these
+				procedures and transactions conveniently.
+				It features registered school facilities and equipment, their
+				generated QR code (Quick Response Code Technology), and the complete details
+				regarding their maintenance and repair records. Monitoring systems are ideally
+				used by schools when they are monitoring school equipment, usually for the
+				purpose of repair and maintenance updates; regularly checking the facility and
+				equipment’s condition. It allows the administrator to supervise the maintenance
+				without it becoming time-consuming and tedious. The QR Code will help the administrator in checking the equipment
 				status and repair records.
 				</p>
 			</div>
@@ -79,7 +79,7 @@
 						<img src="images/scaning.png">
 						<div>				
 							<span>MANAGE EQUIPMENTS</span>
-							<p>The system created to assist in managing facilities and equipment. The administrator can add an equipment individually, by set, and by group. The equipment can then be assigned to a room. 
+							<p>The system created to assist in managing facilities and equipment. The administrator can add an equipment individually, by set, and by group. The equipment can then be assigned to a room.
 							</p>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 
 						<div>
 							<span>GENERATE / PRINT QR CODES</span>
-							<p>The added facilities and equipment has an auto-generated Quick Response Code Technology, or a QR Code. The administrator can print the QR Code as a sticker which will be attached to the equipment. An instant scan on the QR Code gives the administrator direct access to the repair and maintenance records of the school facilities and equipment. 
+							<p>The added facilities and equipment has an auto-generated Quick Response Code Technology, or a QR Code. The administrator can print the QR Code as a sticker which will be attached to the equipment. An instant scan on the QR Code gives the administrator direct access to the repair and maintenance records of the school facilities and equipment.
 							</p>
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 						<img src="images/monitoring.png">
 						<div>
 							<span>FACILITY EQUIPMENT MONITORING</span>
-							<p>The administrator can update and facility and equipment data digitally. LCC-B offices and teaching personnel can use the system to send repair and maintenance reports to the administrator in the event of an equipment malfunction. They can also use the system for facilities and equipment booking. 
+							<p>The administrator can update and facility and equipment data digitally. LCC-B offices and teaching personnel can use the system to send repair and maintenance reports to the administrator in the event of an equipment malfunction. They can also use the system for facilities and equipment booking.
 							</p>
 						</div>
 					</div>

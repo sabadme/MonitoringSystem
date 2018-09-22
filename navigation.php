@@ -22,7 +22,7 @@ if ($status == "Admin") {
                      <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>
                 </li>
                 <li class="parent">
-                    <!-- <button title="Accounts" class="adduser" name="accounts" type="submit"><span>Accounts</span></button> -->
+
                     <span title="Accounts" class="adduser" name="accounts">Accounts</span>
 
                         <ul>
@@ -45,7 +45,7 @@ if ($status == "Admin") {
                              <li><button title="Group Equipment" class="groupSet" name="groupSet" type="submit"><span>Group Equipment</span></button></li>
                         
                             <li class="parent">
-                                   <span title="Add Equipments" class="equips">
+                                   <span title="Equipment List">
                                         <span>Equipment List</span>
                                     </span>
                                     <ul>
@@ -75,10 +75,10 @@ if ($status == "Admin") {
                     </span>
 
                        <ul>
-                            <li class="parent"><button title="Room" class="rooms" name="rooms" type="submit"><span>Room</span></button>
+                            <li class="parent"><button title="Room" name="rooms" type="submit"><span>Room</span></button>
                             </li>
 
-                             <li><button title="Venue" class="venue" name="venue" type="submit"><span>Venue </span></button></li>
+                             <li><button title="Venue" name="venue" type="submit"><span>Venue </span></button></li>
                         </ul>
                 </li>
                     <li>
@@ -145,7 +145,7 @@ if ($status == "Admin") {
                     <button class="reports" name="reports" type="submit"><span>Reports</span></button>
                 </li>
                 <li>
-                    <button class="reports" name="viewrooms" type="submit" value="<?php echo $id; ?>"><span>Rooms</span></button>
+                    <button class="rooms" name="viewrooms" type="submit" value="<?php echo $id; ?>"><span>Rooms</span></button>
                 </li>
 
             </ul>
@@ -168,7 +168,7 @@ if ($status == "Admin") {
                  <li>
                      <button title="Message" class="scanner" name="openScanner"> <span>Message</span></button>
                 </li>
-                
+
             </ul>
         </form>
     </nav>

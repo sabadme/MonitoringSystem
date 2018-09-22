@@ -95,6 +95,7 @@ video {
   padding: 0;
   border: 0;
   vertical-align: baseline;
+  font-weight: normal;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -198,6 +199,7 @@ button {
   width: 100%;
   margin-top: 20px;
   max-width: 150px;
+  font-family: 'Oswald-reg';
 }
 button:focus {
   outline: none;
@@ -284,7 +286,7 @@ td {
   text-align: center;
   font-size: 1.0714285714285714rem;
   text-transform: capitalize;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   vertical-align: middle;
 }
 td:first-child {
@@ -303,7 +305,7 @@ th {
   margin: 0 0 20px;
   padding: 10px;
   font-size: 0.8571428571428571rem;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   width: 100%;
   max-width: 250px;
   border: 1px solid #b4b4b4;
@@ -323,7 +325,7 @@ select:focus {
 }
 .title {
   display: block;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   font-size: 2.142857142857143rem;
   color: #000;
   text-transform: uppercase;

@@ -22,7 +22,8 @@ if(isset($status)){
         <script type="text/javascript" src="js/jQuery.print.js"></script>
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
         <script type="text/javascript" src="js/jquery.simplePagination.js"></script>
-          <script type="text/javascript" src="js/instascan.min.js"></script>
+        <script type="text/javascript" src="js/instascan.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
     <style>

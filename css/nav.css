@@ -18,7 +18,11 @@
   -o-flex-direction: column;
   flex-direction: column;
 }
+.main-nav .menu li.parent.active > span:after {
+  content: '\e90c';
+}
 .main-nav .menu li.parent > span {
+  position: relative;
   margin: 0;
   font-family: sans-serif;
   display: -webkit-box;
@@ -26,6 +30,9 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  align-items: center;
   color: #fff;
   background: none;
   border: 0;
@@ -54,10 +61,19 @@
   content: '\e900';
 }
 .main-nav .menu li.parent > span.equips:before {
-  content: '\e90b';
+  content: '\e905';
 }
 .main-nav .menu li.parent > span.facilities:before {
   content: '\e90b';
+}
+.main-nav .menu li.parent > span:after {
+  position: absolute;
+  right: 16px;
+  content: '\e90d';
+  display: inline-block;
+  font-family: 'monitoring';
+  font-size: 0.9285714285714286rem;
+  color: #fff;
 }
 .main-nav .menu li.parent ul {
   display: none;
@@ -65,6 +81,22 @@
 .main-nav .menu li.parent.active > ul {
   display: block;
   background: #48556e;
+}
+.main-nav .menu li.parent.active > ul > li.parent > span {
+  font-size: 0.8571428571428571rem;
+  padding: 15px 49px;
+}
+.main-nav .menu li.parent.active > ul > li.parent > span:before {
+  display: none;
+}
+.main-nav .menu li.parent.active > ul > li.parent > span:after {
+  right: 48px;
+}
+.main-nav .menu li.parent.active > ul > li.parent > span:hover {
+  background: #52617d;
+}
+.main-nav .menu li.parent.active > ul > li.parent button {
+  padding: 15px 62px;
 }
 .main-nav .menu li.parent.active > ul button {
   padding: 15px 49px;
@@ -95,8 +127,8 @@
 }
 .main-nav .menu li.booking-btn .counter {
   position: absolute;
-  top: 17px;
-  right: 15px;
+  top: 24px;
+  left: 23px;
   font-size: 0.7142857142857143rem;
   color: #fff;
   padding: 3px 5px;
@@ -113,6 +145,9 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
+  -o-align-items: center;
+  align-items: center;
   color: #fff;
   background: none;
   border: 0;
@@ -149,11 +184,8 @@
 .main-nav .menu li button.addequipment:before {
   content: '\e90c';
 }
-.main-nav .menu li button.manage:before {
-  content: '\e905';
-}
 .main-nav .menu li button.reports:before {
-  content: '\e911';
+  content: '\e908';
 }
 .main-nav .menu li button.notifs:before {
   content: '\e90a';
@@ -165,7 +197,7 @@
   content: '\e910';
 }
 .main-nav .menu li button.rooms:before {
-  content: '\e90e';
+  content: '\e90b';
 }
 .main-nav .menu li button span {
   vertical-align: middle;
