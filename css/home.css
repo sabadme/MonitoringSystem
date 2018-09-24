@@ -19,11 +19,11 @@
   border-right: 0;
 }
 .home-index .aboutus {
-  padding: 20px;
+  padding: 30px;
 }
 .home-index .aboutus h1 {
   text-transform: uppercase;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   line-height: 1;
   font-weight: 600;
   padding: 20px 0;
@@ -33,14 +33,14 @@
   padding: 20px 0;
   line-height: 1.4;
   font-size: 1.2857142857142858rem;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
 }
 .home-index .whats-container {
-  padding: 20px;
+  padding: 30px;
 }
 .home-index .whats-container h1 {
   text-transform: uppercase;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   line-height: 1;
   font-weight: 600;
 }
@@ -69,11 +69,8 @@
   margin-bottom: 20px;
   padding: 10px;
 }
-.home-index .page-text-container .page-text div {
-  /*text-align: center;*/
-}
 .home-index .page-text-container .page-text div span {
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   text-transform: capitalize;
   font-size: 1.5714285714285714rem;
   display: block;
@@ -81,10 +78,11 @@
   font-weight: 600;
 }
 .home-index .page-text-container .page-text div p {
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   text-transform: capitalize;
   font-size: 1.0714285714285714rem;
   padding: 14px;
+  line-height: 1.4;
 }
 @media only screen and (max-device-width: 640px) {
   .home-index header .login-container {

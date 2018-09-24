@@ -29,3 +29,25 @@
 .scanner-container .scan-wrapper video {
   height: 200px;
 }
+.library-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 30px;
+  border: 1px solid #b4b4b4;
+  flex-wrap: wrap;
+}
+.library-container .qr-equipment {
+  width: 18%;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.library-container .qr-equipment span {
+  display: block;
+}
+.library-container .qr-equipment:nth-child(5n + 1) {
+  margin-left: 0;
+}

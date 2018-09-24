@@ -96,6 +96,8 @@ video {
   border: 0;
   vertical-align: baseline;
   font-weight: normal;
+  letter-spacing: 1px;
+  font-family: 'Oswald-reg';
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -200,6 +202,7 @@ button {
   margin-top: 20px;
   max-width: 150px;
   font-family: 'Oswald-reg';
+  letter-spacing: 1px;
 }
 button:focus {
   outline: none;
@@ -238,6 +241,7 @@ form input {
   margin-bottom: 20px;
   width: 100%;
   border: 1px solid #b4b4b4;
+  font-family: 'Oswald-reg';
 }
 form input[type="date"],
 form input[type="time"] {
@@ -257,7 +261,7 @@ thead {
 }
 tbody {
   display: block;
-  max-height: 250px;
+  max-height: 550px;
   overflow-y: auto;
 }
 tbody::-webkit-scrollbar {
@@ -318,6 +322,7 @@ select {
   padding: 10px;
   width: 100%;
   margin-bottom: 20px;
+  font-family: 'Oswald-reg';
 }
 select:focus {
   outline: none;

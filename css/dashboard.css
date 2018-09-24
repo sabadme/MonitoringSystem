@@ -26,7 +26,7 @@
   clear: right;
 }
 .dashboard-container .new-rooms-container > strong {
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   text-transform: uppercase;
   display: block;
   padding: 15px;
@@ -53,7 +53,7 @@
   width: 100%;
 }
 .dashboard-container .new-rooms-container .new-rooms-block span {
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   display: block;
   margin-bottom: 10px;
 }
@@ -76,4 +76,34 @@
 }
 .dashboard-container .new-rooms-container .new-rooms-block .target:nth-child(3n + 1) {
   margin-left: 0;
+}
+.dashboard-container .counter-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20px;
+}
+.dashboard-container .counter-container .counter-label {
+  border: 2px solid powderblue;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #283142;
+  border-radius: 20px;
+}
+.dashboard-container .counter-container .counter-label img {
+  width: 48px;
+  height: 48px;
+}
+.dashboard-container .counter-container .counter-label span {
+  display: block;
+  margin: 20px;
+  color: yellow;
+}
+.dashboard-container .counter-container .counter-label label {
+  display: block;
+  margin: 15px 0;
+  color: #fff;
 }

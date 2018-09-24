@@ -193,6 +193,18 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/addNewGroup.php";
  }else if (isset($_REQUEST['equipmentBookingView'])) {
     include "admin/booking_EquipmentView.php";
+ }else if (isset($_REQUEST['book-master'])) {
+    include "admin/book_masterlist.php";
+ }else if (isset($_REQUEST['book-approved'])) {
+    include "admin/book_approved.php";
+ }else if (isset($_REQUEST['book-pending'])) {
+    include "admin/book_pending.php";
+ }else if (isset($_REQUEST['book-ongoing'])) {
+    include "admin/book_ongoing.php";
+ }else if (isset($_REQUEST['book-finished'])) {
+    include "admin/book_finished.php";
+ }else if (isset($_REQUEST['qr-library'])) {
+    include "admin/qr_library.php";
  }else {
     include "dashboard.php"; 
 }

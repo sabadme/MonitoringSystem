@@ -24,7 +24,7 @@
 .main-nav .menu li.parent > span {
   position: relative;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -62,6 +62,12 @@
 }
 .main-nav .menu li.parent > span.equips:before {
   content: '\e905';
+}
+.main-nav .menu li.parent > span.scanner:before {
+  content: '\e907';
+}
+.main-nav .menu li.parent > span.booking:before {
+  content: '\e901';
 }
 .main-nav .menu li.parent > span.facilities:before {
   content: '\e90b';
@@ -139,7 +145,7 @@
 }
 .main-nav .menu li button {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;

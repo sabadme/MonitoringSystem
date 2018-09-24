@@ -13,7 +13,7 @@ include"admin/connection.php";
             <table>
                 <thead>
                 <th>Room</th>
-                <th>Sigle Equipment</th>
+                <th>Single Equipment</th>
                 <th>Set Equipment</th>
             
                 </thead>

@@ -23,7 +23,7 @@
 			<div class="logo-container">
 				<img src="images/lccb.png" />
 
-				<span>Facility Equipment Monitoring System</span>
+				<span>Facility Management System</span>
 			</div>
 
 			<div class="login-container">

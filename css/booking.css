@@ -1,5 +1,6 @@
 .booking-container {
   padding: 20px;
+  width: 100%;
 }
 .booking-container .booking-wrapper {
   margin-bottom: 30px;
@@ -18,7 +19,7 @@
 }
 .booking-container .grid-container label {
   font-size: 0.7142857142857143rem;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   margin-bottom: 5px;
   display: inline-block;
   text-transform: uppercase;
@@ -72,7 +73,7 @@
 .booking-container .grid-container .field .search-venue .result > p,
 .booking-container .grid-container .field .search-box .Vresult > p,
 .booking-container .grid-container .field .search-venue .Vresult > p {
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   padding: 10px;
   color: #fff;
   cursor: pointer;
@@ -132,7 +133,7 @@
 }
 .booking-container .booking-table > strong {
   font-size: 1.2142857142857142rem;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   text-transform: uppercase;
   margin-bottom: 10px;
   display: block;

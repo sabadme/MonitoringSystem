@@ -18,8 +18,26 @@ if ($status == "Admin") {
                     <span>Dashboard</span>
                     </button>
                 </li>
-                <li>
-                     <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>
+                <li class="booking-btn">
+                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
+                    <span id="bok_count"  class="counter"></span>
+                </li>
+                <li class="parent">
+                    <span class="scanner">QR Code</span>
+                     <ul>
+                        <li><button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button></li>
+                        <li><button title="QR Library" name="qr-library"><span>QR Library</span></button></li>
+                    </ul>
+                </li>
+                <li class="parent">
+                    <span class="booking">Book List</span>
+                    <ul>
+                        <li><button name="book-master">Masterlist</button></li>
+                        <li><button name="book-pending">Pending</button></li>
+                        <li><button name="book-approved">Approved</button></li>
+                        <li><button name="book-ongoing">On-Going</button></li>
+                        <li><button name="book-finished" style="color:yellow;">History</button></li>
+                    </ul>
                 </li>
                 <li class="parent">
 
@@ -34,7 +52,7 @@ if ($status == "Admin") {
                 <li class="parent">
                 
                     <span title="Add Equipments" class="equips" name="add_equipment">
-                        <span>Equipments</span>
+                        <span>Add Equipments</span>
                     </span>
 
                     <ul>
@@ -62,11 +80,7 @@ if ($status == "Admin") {
                             </li>   
                         </ul>
                 </li>
-                <li class="booking-btn">
-                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
-                    <span id="bok_count"  class="counter"></span>
-
-                </li>
+                
              
                 <li class="parent">
 
@@ -75,7 +89,7 @@ if ($status == "Admin") {
                     </span>
 
                        <ul>
-                            <li class="parent"><button title="Room" name="rooms" type="submit"><span>Room</span></button>
+                            <li><button title="Room" name="rooms" type="submit"><span>Room</span></button>
                             </li>
 
                              <li><button title="Venue" name="venue" type="submit"><span>Venue </span></button></li>
@@ -86,15 +100,6 @@ if ($status == "Admin") {
                     <span>Assigned Room</span>
                     </button>
                 </li>
-
-              
-               <!--  <li>
-                    <button title="Notifications" class="notifs" name="notifs" type="submit">Notifications</button>
-                    <span id="count" class="counter"></span>
-
-                </li> -->
-
-
             </ul>
         </form>
           

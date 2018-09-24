@@ -31,6 +31,24 @@
         <a href="logout.php" class="logout" title="logout"></a>
     </div>
 
+    <div class="counter-container">
+        <div class="counter-label">
+            <span>FACILITY</span>
+            <img src="images/icons8-bungalow-48.png">
+            <label>56</label>
+        </div>
+        <div class="counter-label">
+            <span>ROOM</span>
+            <img src="images/icons8-door-40.png">
+            <label>32</label>
+        </div>
+        <div class="counter-label">
+            <span>OFFICE</span>
+            <img src="images/icons8-office-chair-48.png">            
+            <label>15</label>
+        </div>  
+    </div>
+
     <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
 
 	<div class="new-rooms-container">

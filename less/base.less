@@ -36,12 +36,16 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
     font-weight: normal;
+    letter-spacing: 1px;
+    font-family: @font-family-base;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 *,
 *:before,
 *:after {
@@ -61,21 +65,26 @@ body {
 	line-height: 1;
 	height: inherit;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 h1,
 h2,
 h3,
@@ -126,6 +135,7 @@ button {
     margin-top: 20px;
     max-width: 150px;
     font-family: @font-family-base;
+    letter-spacing: 1px;
 
     &:focus {
         outline: none;
@@ -176,6 +186,7 @@ form {
         margin-bottom: 20px;
         width: 100%;
         border: 1px solid @border-color;
+        font-family: @font-family-base;
 
         &[type="date"],
         &[type="time"] {
@@ -202,7 +213,7 @@ thead {
 tbody {
     .custom-scrollbar();
     display: block;
-    max-height: 250px;
+    max-height: 550px;
     overflow-y: auto;
 }
 
@@ -256,6 +267,7 @@ select {
     padding: 10px;
     width: 100%;
     margin-bottom: 20px;
+    font-family: @font-family-base;
 
     &:focus {
         outline: none;

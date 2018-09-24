@@ -7,6 +7,8 @@
   .inner-form-container {
     width: 100%;
     margin: 0 auto;
+    padding: 20px;
+    border: 1px solid @border-color;
 
     .equipmenu-box {
       .flex-layout;
@@ -24,6 +26,14 @@
           cursor: pointer;
         }
       }
+    }
+
+    label {
+      .font-size(13);
+      text-transform: uppercase;
+      font-family: @font-family-base;
+      display: inline-block;
+      margin-bottom: 5px;
     }
 
       span {
@@ -76,12 +86,6 @@
   .tabs {
     position: relative;
 
-    &.accounts {
-      li:nth-of-type(2) {
-        left: 100px;
-      }
-    }
-
     li {
       position: absolute;
       top: 0;
@@ -95,13 +99,17 @@
       }
 
       span {
-        font-family: sans-serif;
+        font-family: @font-family-base;
         .font-size(17);
         text-transform: uppercase;
       }
 
       &:nth-of-type(2) {
         left: 103px;
+      }
+
+      &:nth-of-type(3) {
+        left: 224px;
       }
 
       &.active {
@@ -113,31 +121,19 @@
 
         & + div {
           display: block;
-          padding-top: 47px;
+          padding-top: 48px;
         }
       }
     }
   }
 
   &.room-management {
-    label {
-      .font-size(15);
-      text-transform: uppercase;
-      font-family: @font-family-base;
-    }
-
     input {
       padding: 10px;
     }
 
     .inner-form-container {
       display: block;
-    }
-
-    .tabs {
-      li:nth-of-type(2) {
-        left: 115px;
-      }
     }
   }
 
@@ -159,41 +155,11 @@
     }
   }
 
-  &.registration,
-  &.list,
-  &.room-management {
-    .inner-form-container {
-      padding: 20px;
-      border: 1px solid @border-color;
-    }
-  }
-
-  &.with-banner {
-    .manage-inner-container {
-      .flex-layout;
-    }
-
-    .banner-container {
-      margin-left: 50px;
-    }
-  }
-
-  &.list {
+  &.venue-container {
     .tabs {
-      li {
-        &:nth-of-type(2) {
-          left: 113px;
-        }
-
-        &:nth-of-type(3) {
-          left: 229px;
-        }
-
-        &:nth-of-type(4) {
-          left: 382px;
-        }
+      li:nth-of-type(3) {
+        left: 227px;
       }
-
     }
   }
 }

@@ -41,7 +41,7 @@
                     <span>ADD ROOM</span>
                 </li>   
                 <?php include "admin/add_roomAccount.php"; ?>
-                <li style="margin-left: 250px;">
+                <li>
                     <span>ROOM EQUIPMENT</span>
                 </li>
                 <?php include "admin/add_room_equipment.php"; ?>
