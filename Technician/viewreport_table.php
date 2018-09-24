@@ -1,11 +1,15 @@
 <?php 
 include"admin/connection.php";
 $count ="0";
-$report=mysql_query("SELECT DISTINCT report_id,equipment_id FROM report ORDER BY id desc");
+$report=mysql_query("SELECT DISTINCT report_id FROM report ORDER BY id desc");
 while($data_report=mysql_fetch_array($report)){
-	$equipment_id=$data_report['equipment_id'];
+	
 	$report_id=$data_report['report_id'];
-	$count++;
+
+	$sqlGEt_equipmentID = mysql_query("SELECT * FROM report WHERE report_id='$report_id'");
+	$dataGet_equipmentID = mysql_fetch_array($sqlGEt_equipmentID);
+	$equipment_id=$dataGet_equipmentID['equipment_id'];
+
 
 	$user_report=mysql_query("SELECT * FROM tbl_login WHERE id='$report_id'");
 	$data_user=mysql_fetch_array($user_report);
@@ -27,9 +31,9 @@ while($data_report=mysql_fetch_array($report)){
 	?>
 	<tr>
 		<td><?php echo $data_user['account'] ?></td>
-		<td><?php echo $EquipmentName; ?></td>
+	
 		
-		<td><form action="" method="POST"><button value="<?php echo $report_id; ?>" name="viewCommentReport">View Comment</button></form></td>
+		<td><form action="" method="POST"><button value="<?php echo $report_id; ?>" name="viewCommentReport">View Messages</button></form></td>
 	</tr>
 	<?php
 }

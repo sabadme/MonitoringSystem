@@ -47,16 +47,17 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 			$equipment_start=$_REQUEST['equipment_start'];
 			$equipment_end=$_REQUEST['equipment_end'];
 			$equipmentType = $_REQUEST['equipmentType'];
+			$highANDlow = $_REQUEST['highANDlow'];
 
 
 
 		$status="Unassigned";
 
-		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None','Group')");
+		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None','Group','$highANDlow')");
 		echo mysql_error();  
 		if($upload_image){
 			
-			?> <script> 
+			?>
 		
 		 <?php 
 		 include "admin/groupSet.php";
@@ -113,4 +114,5 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
 
 }
+
 ?>

@@ -3,7 +3,7 @@
 <div class="report-container">
 
 	<div class="top-container">
-    <strong>REPORT FORM</strong>
+    <strong>My Equipments</strong>
 
     <div class="notifs-container">
         <strong class="notifs" value="<?php echo $accountname; ?>" id="valueNotif"></strong>

@@ -3,8 +3,15 @@ $accountname=$_SESSION['account'];
 if(isset($_REQUEST['send_report'])){
 	$send_report=$_REQUEST['send_report'];
 	$messagereport=$_REQUEST['messagereport'];
+	$technician = $_REQUEST['technician'];
+	$date = date("Y-m-d");  
+	$time = date("H:i:s");
 
 include"admin/connection.php";
+
+	$sql_account = mysql_query("SELECT * FROM tbl_login WHERE account='$technician'");
+	$data_account = mysql_fetch_array($sql_account);
+	$technicianID = $data_account['id'];
 
 	$get_equipment=mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$send_report'");
 	$data_equipment=mysql_fetch_array($get_equipment);
@@ -19,7 +26,7 @@ include"admin/connection.php";
 	$userid=$data_userId['id'];
 
 
-	$insert=mysql_query("INSERT INTO report VALUES(0,'$send_report','$userid','$messagereport','1','1')");echo mysql_error();     
+	$insert=mysql_query("INSERT INTO report VALUES(0,'$send_report','$userid','$technicianID','$messagereport','1','1','$date','$time','Not','Sent','None','Assigned')");echo mysql_error();     
   
 if($insert){ ?> <script> 
 

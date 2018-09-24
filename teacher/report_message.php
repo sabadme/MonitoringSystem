@@ -97,7 +97,18 @@ include"admin/connection.php";
                 
                  <span><b>Room: </b><?php echo $room; ?></span>
 
-                <form action="" method="POST">
+                <form action="" method="POST">   
+                <select name="technician">
+                    <?php   
+                        $technician = mysql_query("SELECT * FROM tbl_login WHERE Status='Technician'");
+                        while($data_technician = mysql_fetch_array($technician)){
+                            ?>
+                            <option><?php echo $data_technician['account']; ?></option>
+                            <?php
+                        }
+
+                     ?>
+                </select>   
                     <textarea placeholder="Status/Problem" name="messagereport"></textarea>
                     <button class="action" type="submit" name="send_report" value="<?php echo $equipment_report; ?>">Send</button>
                 </form>

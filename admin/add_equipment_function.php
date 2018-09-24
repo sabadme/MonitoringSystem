@@ -32,6 +32,7 @@ if(isset($_REQUEST['save_equipment'])){
 	$equipment_start=$_REQUEST['equipment_start'];
 	$equipment_end=$_REQUEST['equipment_end'];
 	$equipmentType =$_REQUEST['equipmentType'];
+	$highANDlow = $_REQUEST['highANDlow'];
 
 	$servername ="localhost";
 $username="root";
@@ -43,7 +44,7 @@ $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
 
 $status="Unassigned";
-$insert=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up to date','None','Single')");
+$insert=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up to date','None','Single','$highANDlow')");
 		if($insert){
 			
 			?> <script> 

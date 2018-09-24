@@ -147,7 +147,7 @@ if ($status == "Admin") {
                     <button class="booking" name="booking" type="submit"><span>Booking</span></button>
                 </li>
                 <li>
-                    <button class="reports" name="reports" type="submit"><span>Reports</span></button>
+                    <button class="equips" name="reports" type="submit"><span>Equipment</span></button>
                 </li>
                 <li>
                     <button class="rooms" name="viewrooms" type="submit" value="<?php echo $id; ?>"><span>Rooms</span></button>
@@ -165,7 +165,7 @@ if ($status == "Admin") {
             <ul class="menu">
 
                 <li>
-                    <button type="submit" name="dashboard" class="dashboard" value="<?php echo $id; ?>"><span>DASHBOARD</span></button>
+                    <button type="submit" name="report" class="reports" value="<?php echo $id; ?>"><span>Reports</span></button>
                 </li>
                  <li>
                      <button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button>

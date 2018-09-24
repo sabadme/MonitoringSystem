@@ -1,6 +1,6 @@
 <?php 
 if(isset($_REQUEST['viewrooms'])){
-	$viewrooms=$_REQUEST['viewrooms']
+	echo $viewrooms=$_REQUEST['viewrooms']
 
  ?>
 

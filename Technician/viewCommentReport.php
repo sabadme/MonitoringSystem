@@ -18,81 +18,145 @@ $dataAccount = mysql_fetch_array($sqlAccount);
 
 
 ?>
-<div class="manage-container view-reports with-banner">
+<div class="report-container">
 	<strong class="title"><?php echo $dataAccount['account']; ?></strong>
+	<div class="message-container">
+		<span>Messages</span>
+	<?php 
+	$sql_ReportEquipment = mysql_query("SELECT DISTINCT equipment_id,technician_id FROM report WHERE report_id='$viewCommentReport'");
+	while($data_ReportEquipment = mysql_fetch_array($sql_ReportEquipment)){
+		$equipment_id = $data_ReportEquipment['equipment_id'];
+		$technicianID = $data_ReportEquipment['technician_id'];
 
-	<div class="manage-inner-container">
+		
 
-		<div class="table-container" id="wrapper">
-			<div class="btndivstyle">
-			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search names..">
-			</div>
-				<table id="myTable">
-					<?php include"Technician/technicianReport_modal.php"; ?>
-				<thead>
-					<th>Message</th>
-					<th>Date</th>
-					<th>Time</th>
-					<th>Reply</th>
-					<th>Status</th>
-					<th></th>
-			
-				</thead>	
+		$sql_booking = mysql_query("SELECT * FROM booking WHERE equipment = '$equipment_id'");
+		$data_booking = mysql_fetch_array($sql_booking);
+		$bookingEquipment = $data_booking['equipment'];
 
-				<tbody>
-					<?php 
-					$count="0";
+
+		if($equipment_id == $bookingEquipment){
+			$roomName = $data_booking['venue'];
+
+			$sql_Equipment = mysql_query("SELECT * FROM equipment WHERE id='$equipment_id'");
+		$data_Equipment = mysql_fetch_array($sql_Equipment);
+		$equipmentName = $data_Equipment['equipment_name'];
+		$equipmentCode = $data_Equipment['equipment_code'];
+
+		}else{
+		$sql_Equipment = mysql_query("SELECT * FROM equipment WHERE id='$equipment_id'");
+		$data_Equipment = mysql_fetch_array($sql_Equipment);
+		$equipmentName = $data_Equipment['equipment_name'];
+		$equipmentCode = $data_Equipment['equipment_code'];
+
+		$sqlRooms_Assigned = mysql_query("SELECT * FROM rooms_equipment WHERE equipment='$equipment_id'");
+		$dataRooms_Assigned = mysql_fetch_array($sqlRooms_Assigned);
+		$roomName = $dataRooms_Assigned['room'];
+
+		}
+
+		$sql_rooms = mysql_query("SELECT * FROM rooms WHERE room='$roomName'");
+		$data_rooms = mysql_fetch_array($sql_rooms);
+		$roomName_check = $data_rooms['room'];
+		$building = $data_rooms['building'];
+			$floor = $data_rooms['floor'];
+
+			if($roomName_check == $roomName	){
+				$building = $data_rooms['building'];
+			$floor = $data_rooms['floor'];
+		}else{
+			$sql_account = mysql_query("SELECT * FROM tbl_login WHERE account='$roomName'");
+			$data_account = mysql_fetch_array($sql_account);
+			$building = $data_account['building'];
+			$floor = $data_account['floor'];
+
+		}
+
+
+	
+
+		 $sql_Status = mysql_query("SELECT * FROM report ORDER BY id desc");
+		 $dataStatus = mysql_fetch_array($sql_Status);
+		 $Status = $dataStatus['Status'];
+
+		 if($Status == "None"){
+		 	$Status = "WALEY PA";
+
+		 }else{
+		 	$Status;
+		 		
+		 	}
+
+		
+		?>
+		<br>
+		<span>Equipment name: <?php echo $equipmentName; ?></span>
+		<br>
+		<span>Equipment code: <?php echo $equipmentCode; ?></span>
+		<br>
+		<span>Assigned: <?php echo $roomName; ?> </span>
+		<br>	
+		<span>Building: <?php echo $building; ?></span>
+		<br>	
+		<span>Floor: <?php echo $floor; ?></span>
+		<br>	
+		<span>Status: <?php echo $Status; ?></span>
+		<br>
+		<span>Himoon Active :View</span><br>
+		<?php
+
+		$sqlComment = mysql_query("SELECT * FROM report WHERE equipment_id='$equipment_id' And report_id='$viewCommentReport' And technician_id='$technicianID' ORDER BY id asc");
+		while($dataComment = mysql_fetch_array($sqlComment)){
+			$SentItemCheck = $dataComment['technician_sentitems'];
+
+
+			if($SentItemCheck == "Not"){
+				$userNames = $dataComment['report_id'];
+				$commentDAte = $dataComment['report_date'];
+				$commentTime = $dataComment['report_time'];
+				$message = $dataComment['report_message'];
+
+				$sqlReport_account = mysql_query("SELECT * FROM tbl_login WHERE id='$userNames'");
+				$data_ReportAccount = mysql_fetch_array($sqlReport_account);
+				?>
+				<span><?php echo $data_ReportAccount['account']; ?> <?php echo $commentDAte; ?> <?php echo $commentTime; ?></span><br>
+				<span><?php echo $message; ?></span><br> 
+				<?php
+			}else{
+				$userNames = $dataComment['technician_id'];
+				$commentDAte = $dataComment['report_date'];
+				$commentTime = $dataComment['report_time'];
+				$message = $dataComment['report_message'];
+
+				$sqlReport_account = mysql_query("SELECT * FROM tbl_login WHERE id='$userNames'");
+				$data_ReportAccount = mysql_fetch_array($sqlReport_account);
 				
-					$sql_Report = mysql_query("SELECT * FROM report WHERE report_id='$viewCommentReport'");
-						while($dataReport = mysql_fetch_array($sql_Report)){
-							$count++;
-							$reportID = $dataReport['id'];
+					?>
+			<span><?php echo $data_ReportAccount['account']; ?> <?php echo $commentDAte; ?> <?php echo $commentTime; ?></span><br>
+			<span><?php echo $message; ?></span><br>
+			<?php
 
-							$sql_reportComment = mysql_query("SELECT * FROM reportcomment WHERE report_id='$reportID'");
-							$data_reportComment = mysql_fetch_array($sql_reportComment);
+			}
+		
 
-							$report_message = $data_reportComment['report_message'];
-							 $report_status = $data_reportComment['report_status'];
+		}
+	?>
+	<form action="" method="POST">
+	<select name="doneORnot">
+		<option>Tapus na</option>
+		<option>Nd pa</option>
+	</select>
+	<textarea name="commentTechnician">
+		
+	</textarea><br>
+	<button name="technicianReportSend" type="submit" value="<?php echo $equipment_id; ?>">Send</button>
+	</form>
+	<?php
 
-							if($report_message == ""){
-								$report_message = "None";
-							
-							}else{
-								$report_message;
-							
-							}
 
-							
-							?>
-							<tr>
-								
-								<td><?php echo $dataReport['report_message']; ?></td>
-								<td><?php echo $dataReport['report_date']; ?></td>
-								<td><?php echo $dataReport['report_time']; ?></td>
+	}
 
-								<td><?php echo $report_message; ?></td>
-								<?php 
-								if($report_status ==""){
-									?>
-								<td><?php echo"None"; ?></td>
-									<?php
-								}else{
-									?>
-									<td><?php echo $report_status; ?></td>
-									<?php
-								}
-								 ?>
-								<td><button id="<?php echo $count; ?>" value="<?php echo $dataReport['id']; ?>" class="reportClass" onClick="viewValueReport(<?php echo $dataReport['id']; ?>)">Comment</button></td>
-								
-							</tr>
-							<?php
-
-						}
-
-					 ?>
-				</tbody>
-			</table>
-		</div>
+	 ?>
 	</div>
 </div>
 
@@ -101,43 +165,5 @@ $dataAccount = mysql_fetch_array($sqlAccount);
 	
 }
  ?>
- <?php 	
-  $count;
-$scriptcount="0";
-for (	$i=0; 	$i <$count ; 	$i++) { 
-	 $scriptcount++;
 
-	?>
-
-<script>
-
-	var modal = document.getElementById('myModal');
-
-	var btn = document.getElementById(<?php echo $scriptcount; ?>);
-
-	var close = document.getElementsByClassName("close")[0];
-
-	$(btn).click(function(){
-		$(modal).css('display', 'block');
-	});
-
-	$(close).click(function(){
-		$(modal).css('display', 'none');
-	});
-
-	$(window).click(function(){
-		if (event.target == modal) {
-	        $(modal).css('display', 'none');
-	    }
-	});
-
-</script>
-
-<?php
-}
-
-
-  ?>
-
- 
 

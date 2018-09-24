@@ -46,6 +46,10 @@
                         <option>EE</option>
                         <option>OF</option>
                     </select>
+                    <div>
+                    <input type="radio" name="highANDlow" value="High Priority"><span>High Priority</span></input>
+                    <input type="radio" name="highANDlow" value="Low Priority"><span>Low Priority</span></input>
+                    </div>
                
 
 

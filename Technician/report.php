@@ -1,6 +1,6 @@
 
 <div class="manage-container view-reports with-banner">
-	<strong class="title">Notifications</strong>
+	<strong class="title">User Reports</strong>
 
 	<div class="manage-inner-container">
 
@@ -12,9 +12,8 @@
 					
 				<thead>
 					<th>Name</th>
-					<th>Equipment</th>
 					<th></th>
-					<th></th>
+					
 				</thead>	
 
 				<tbody>
