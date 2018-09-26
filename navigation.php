@@ -18,49 +18,38 @@ if ($status == "Admin") {
                     <span>Dashboard</span>
                     </button>
                 </li>
-                <li class="booking-btn">
-                    <button title="Booking" class="booking" name="booking" type="submit">Booking</button>
-                    <span id="bok_count"  class="counter"></span>
-                </li>
                 <li class="parent">
-                    <span class="scanner">QR Code</span>
-                     <ul>
-                        <li><button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button></li>
-                        <li><button title="QR Library" name="qr-library"><span>QR Library</span></button></li>
-                    </ul>
-                </li>
-                <li class="parent">
-                    <span class="booking">Book List</span>
+                    <span class="scanner">Booking</span>
                     <ul>
-                        <li><button name="book-master">Masterlist</button></li>
-                        <li><button name="book-pending">Pending</button></li>
-                        <li><button name="book-approved">Approved</button></li>
-                        <li><button name="book-ongoing">On-Going</button></li>
-                        <li><button name="book-finished" style="color:yellow;">History</button></li>
+                        <li class="booking-btn">
+                            <button title="Booking" class="booking" name="booking" type="submit">Book</button>
+                            <span id="bok_count"  class="counter"></span>
+                        </li>
+                        <li class="parent">
+                            <span class="booking">Book List</span>
+                            <ul>
+                                <li><button name="book-master">Masterlist</button></li>
+                                <li><button name="book-pending">Pending</button></li>
+                                <li><button name="book-approved">Approved</button></li>
+                                <li><button name="book-ongoing">On-Going</button></li>
+                                <li><button name="book-finished" style="color:yellow;">History</button></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-                <li class="parent">
-
-                    <span title="Accounts" class="adduser" name="accounts">Accounts</span>
-
-                        <ul>
-                            <li><button title="Users" class="users" name="adduser" type="submit"><span>Users</span></button></li>
-
-                             <li><button title="Offices" class="office" name="addoffice" type="submit"><span>Offices    </span></button></li>
-                        </ul>
                 </li>
                 <li class="parent">
                 
                     <span title="Add Equipments" class="equips" name="add_equipment">
-                        <span>Add Equipments</span>
+                        <span>Equipments</span>
                     </span>
 
-                    <ul>
-                            <li><button title="Single Equipment" class="single" name="single_equipment" type="submit"><span>Single Equipment</span></button></li>
+                    <ul>    
+                            <li><button><span>Masterlist</span></button></li>
+                            <li><button title="Single Equipment" class="single" name="single_equipment" type="submit"><span>Add Single Equipment</span></button></li>
 
-                             <li><button title="Set Equipment" type="submit" class="set" name="view_equipment_set"><span>Set Equipment</span></button></li>
+                             <li><button title="Set Equipment" type="submit" class="set" name="view_equipment_set"><span>Add Set Equipment</span></button></li>
 
-                             <li><button title="Group Equipment" class="groupSet" name="groupSet" type="submit"><span>Group Equipment</span></button></li>
+                             <li><button title="Group Equipment" class="groupSet" name="groupSet" type="submit"><span>Add Group Equipment</span></button></li>
                         
                             <li class="parent">
                                    <span title="Equipment List">
@@ -80,8 +69,23 @@ if ($status == "Admin") {
                             </li>   
                         </ul>
                 </li>
-                
-             
+                <li class="parent">
+                    <span class="scanner">QR Code</span>
+                     <ul>
+                        <li><button title="QR Scanner" class="scanner" name="openScanner"> <span>QR Scanner</span></button></li>
+                        <li><button title="QR Library" name="qr-library"><span>QR Library</span></button></li>
+                    </ul>
+                </li>
+                <li class="parent">
+
+                    <span title="Accounts" class="adduser" name="accounts">Accounts</span>
+
+                        <ul>
+                            <li><button title="Users" class="users" name="adduser" type="submit"><span>Users</span></button></li>
+
+                             <li><button title="Offices" class="office" name="addoffice" type="submit"><span>Offices    </span></button></li>
+                        </ul>
+                </li>            
                 <li class="parent">
 
                         <span title="Facilities" class="facilities" name="facilities">

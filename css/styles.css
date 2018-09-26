@@ -1406,7 +1406,7 @@ footer .right-container .copyright {
   width: 100%;
 }
 .dashboard-container .search {
-  float: right;
+  max-width: 100%;
 }
 .dashboard-container .overflow-container {
   max-height: 410px;
@@ -1427,6 +1427,10 @@ footer .right-container .copyright {
 }
 .dashboard-container .new-rooms-container {
   clear: right;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-top: 1px solid #b4b4b4;
+  border-bottom: 1px solid #b4b4b4;
 }
 .dashboard-container .new-rooms-container > strong {
   font-family: 'Oswald-reg';
@@ -1480,6 +1484,9 @@ footer .right-container .copyright {
 .dashboard-container .new-rooms-container .new-rooms-block .target:nth-child(3n + 1) {
   margin-left: 0;
 }
+.dashboard-container .equipment-dashboard {
+  margin: 20px 0;
+}
 .dashboard-container .counter-container {
   display: -webkit-box;
   display: -moz-box;
@@ -1488,8 +1495,26 @@ footer .right-container .copyright {
   display: flex;
   margin-bottom: 20px;
 }
+.dashboard-container .counter-container .countereq {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  background-color: #283142;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #283142;
+  width: 100%;
+  margin: 0 5px;
+}
+.dashboard-container .counter-container .countereq label {
+  margin-top: 5px;
+  display: block;
+}
 .dashboard-container .counter-container .counter-label {
-  border: 2px solid powderblue;
   width: 200px;
   text-align: center;
   margin: 0 auto;

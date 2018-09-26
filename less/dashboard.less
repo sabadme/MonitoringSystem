@@ -6,7 +6,7 @@
 	width: 100%;
 
 	.search {
-		float: right;
+		max-width: 100%;
 	}
 
 	.overflow-container {
@@ -17,6 +17,10 @@
 
 	.new-rooms-container {
 		clear: right;
+		padding: 15px;
+    	margin-bottom: 30px;
+    	border-top: 1px solid @border-color;
+    	border-bottom: 1px solid @border-color;
 
 		& > strong {
 			font-family: @font-family-base;
@@ -72,13 +76,33 @@
 			}
 		}
 	}
+	.equipment-dashboard {
+		margin: 20px 0;
+	}
 
 	.counter-container {
 		.flex-layout;
 		margin-bottom: 20px;
 
+		.countereq {
+			.flex-direction(column);
+			background-color: @cobalt;
+			color: @white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid @cobalt;
+			width: 100%;
+			margin: 0 5px;
+
+
+			label {
+				margin-top: 5px;
+				display: block;
+			}
+		}
+
 		.counter-label {
-			border: 2px solid powderblue;
 			width: 200px;
 			text-align: center;
 			margin: 0 auto;
