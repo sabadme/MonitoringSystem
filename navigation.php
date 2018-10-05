@@ -18,6 +18,12 @@ if ($status == "Admin") {
                     <span>Dashboard</span>
                     </button>
                 </li>
+                <li>
+                    <button title="Dashboard" type="submit" name="ep" class="dashboard">
+                    <span>ep</span>
+                    </button>
+                </li>
+
                 <li class="parent">
                     <span class="scanner">Booking</span>
                     <ul>

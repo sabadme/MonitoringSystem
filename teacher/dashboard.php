@@ -50,11 +50,10 @@ $data_teacherName = mysql_fetch_array($sql_teacherName);
     <table id="myTable">
         <thead>
             <tr>
-                <th></th>
+                <th>Image</th>
                 <th>Room Name</th>
-                <th>Building</th>
                 <th>Floor</th>
-                <th></th>
+                <th>Action</th>
             </tr>
         </thead>
        <?php include"teacher/rooms.php"; ?> 
@@ -69,7 +68,7 @@ $data_teacherName = mysql_fetch_array($sql_teacherName);
     <table id="myTable">
         <thead>
             <tr>
-                <th></th>
+                <th>Image</th>
                 <th>Venue</th>
                 <th>Building</th>
                 <th>Floor</th>

@@ -5,33 +5,38 @@
 	padding: 20px;
 	width: 100%;
 
-	.search {
-		max-width: 100%;
-	}
-
 	.overflow-container {
 		.custom-scrollbar;
 		max-height: 410px;
     	overflow-y: auto;
 	}
 
-	.new-rooms-container {
-		clear: right;
+	.sub-title {
+		.font-size(20);
+		font-family: @font-family-base;
+		text-transform: uppercase;
+		display: block;
 		padding: 15px;
-    	margin-bottom: 30px;
-    	border-top: 1px solid @border-color;
-    	border-bottom: 1px solid @border-color;
+		background: @cobalt;
+		color: @white;
+		margin-bottom: 30px;
+	}
 
-		& > strong {
-			font-family: @font-family-base;
-			text-transform: uppercase;
-			display: block;
-			padding: 15px;
-			background: @cobalt;
-			color: @white;
-			margin-bottom: 20px;
+	.dashboard-wrapper {
+		margin-top: 55px;
+
+		&:first-of-type {
+			margin-top: 0;
 		}
 
+		&:last-of-type {
+			margin-bottom: 70px;
+		}
+	}
+
+	.new-rooms-container {
+    	margin-bottom: 30px;
+    	
 		.new-rooms-block {
 			.flex-layout;
 			.flex-wrap(wrap);
@@ -76,9 +81,6 @@
 			}
 		}
 	}
-	.equipment-dashboard {
-		margin: 20px 0;
-	}
 
 	.counter-container {
 		.flex-layout;
@@ -93,16 +95,25 @@
 			padding: 20px;
 			border: 1px solid @cobalt;
 			width: 100%;
-			margin: 0 5px;
+			margin-left: 5px;
 
+			&:first-child {
+				margin-left: 0;
+			}
+
+			span {
+				display: block;
+				color: @white;
+			}
 
 			label {
 				margin-top: 5px;
 				display: block;
+				color: @white;
 			}
 		}
 
-		.counter-label {
+		/*.counter-label {
 			width: 200px;
 			text-align: center;
 			margin: 0 auto;
@@ -125,6 +136,6 @@
 				margin: 15px 0;
 				color: @white;
 			}			
-		}
+		}*/
 	}
 }

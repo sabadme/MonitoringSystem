@@ -21,7 +21,7 @@ if($equipmentID == ""){
 		?>
 	
 	<tr>
-		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipPic."'>" ?></td>
+		<td><?php echo "<img style='object-fit: cover; width: 150px;' src='EquipmentPicture/".$equipPic."'>" ?></td>
 		<td><?php echo $equipmentVenue; ?></td>
 		<td><?php echo $data_equipmentBooking['equipment_name']; ?></td>
 		<td><?php echo $data_equipmentBooking['equipment_code']; ?></td>
@@ -52,7 +52,7 @@ while($data_booking=mysql_fetch_array($get_booking)){
 	?>
 	
 	<tr>
-		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipment_filename."'>" ?></td>
+		<td><?php echo "<img style='object-fit: cover; width: 150px;' src='EquipmentPicture/".$equipment_filename."'>" ?></td>
 		<td><?php echo $facility; ?></td>
 		<td><?php echo $data_equipment['equipment_name']; ?></td>
 		<td><?php echo $data_equipment['equipment_code']; ?></td>
@@ -98,7 +98,7 @@ while($data_roomSet=mysql_fetch_array($sql_roomSet)){
 	?>
 		<tr>
 	
-		<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/".$equipment_filenameTR."'>" ?></td>
+		<td><?php echo "<img style='object-fit: cover; width: 150px;' src='EquipmentPicture/".$equipment_filenameTR."'>" ?></td>
 		<td><?php echo $facilities; ?></td>
 		<td><?php echo $equipment_nameTR; ?></td>
 		<td><?php echo $equipment_codeTR; ?></td>

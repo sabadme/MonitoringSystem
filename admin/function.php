@@ -205,6 +205,8 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/book_finished.php";
  }else if (isset($_REQUEST['qr-library'])) {
     include "admin/qr_library.php";
+ }else if (isset($_REQUEST['ep'])) {
+    include "admin/equipment_page.php";
  }else {
     include "dashboard.php"; 
 }

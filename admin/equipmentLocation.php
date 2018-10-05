@@ -209,7 +209,7 @@ if(isset($_REQUEST['equipmentLocation'])){
 
 		<span class="status"><?php echo $equipmentStatus; ?></span>
 
-	</div>	
+		</div>	
 	</div>
 </div>
 <?php

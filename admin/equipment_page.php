@@ -1,7 +1,6 @@
-
-<div class="accounts-container">
-<div class="top-container">
-    <strong>REPORTS</strong>
+<div class="equipments-container">
+	<div class="top-container">
+    <strong>equipmentName</strong>
 
     <div class="notifs-container">
         <strong id="adminNotifHide" class="notifs"></strong>
@@ -30,23 +29,36 @@
     </div>
     <a href="logout.php" class="logout"></a>
 </div>
-		<div class="table-container" id="wrapper">
-			<div class="btndivstyle">
-			<input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search names..">
+
+
+	<div class="EQ-Page">
+		<div class="EQ-Container">
+			<div class="EQ-Img">
+				<img src="images/lccb.png">
 			</div>
-				<table id="myTable">
-					
-				<thead>
-					<th>Name</th>
-					<th>View</th>
-					
-				</thead>	
+			<div class="EQ-Date">
+				<div>
+					<i>Date Start</i>
+					<span>09-12-32</span>
+				</div>
 
-				<tbody>
-					<?php include"Technician/viewreport_table.php"; ?>
-				</tbody>
-			</table>
+				<div>
+					<i>Date End</i>
+					<span>09-12-32</span>
+				</div>
+			</div>
 		</div>
+
+	<div class="EQ-Info">
+		<span>Room: </span>
+		<span>Building:</span>
+		<span>Floor:</span>
+		<span><img style="width: 100px;" src="images/lccb.png"></span>
+
+		<span><i>21mha9sd9pkasd</i></span>
+
+
+		<span class="status">Ass signed</span>
+		</div>	
+	</div>
 </div>
-
-

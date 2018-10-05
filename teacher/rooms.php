@@ -11,9 +11,8 @@ $roomsPic = $data_rooms['img'];
 
 ?>
 <tr>
-    <td><?php echo "<img style='width: 50px; height: 50px' src='RoomPicture/".$roomsPic."'>" ?></td>
-    <td><?php echo $data_rooms['room'];?></td>
-    <td><?php echo $data_rooms['building'];?></td>
+    <td><?php echo "<img style='object-fit: contain; width: 150px;' src='RoomPicture/".$roomsPic."'>" ?></td>
+    <td><?php echo $data_rooms['building'];?>-<?php echo $data_rooms['room'];?></td>
     <td><?php echo $data_rooms['floor'];?></td>
     <td><form action="" method="POST"><button name="room_page" type="submit" value="<?php echo $teachers_room; ?>">View</button></form></td>
 </tr>

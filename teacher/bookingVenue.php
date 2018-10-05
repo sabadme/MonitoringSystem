@@ -15,7 +15,7 @@ while($data_booking = mysql_fetch_array($sql_booking)){
 
 	?>
 	<tr>
-		<td><?php echo "<img style='width: 50px; height: 50px' src='RoomPicture/".$venueImg."'>" ?></td>
+		<td><?php echo "<img style='object-fit: contain; width: 150px;' src='RoomPicture/".$venueImg."'>" ?></td>
 		<td><?php echo $bookingVenue; ?></td>
 		<td><?php echo $building; ?></td>
 		<td><?php echo $floor; ?></td>

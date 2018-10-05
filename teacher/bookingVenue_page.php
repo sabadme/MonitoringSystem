@@ -72,7 +72,7 @@ if($image==$file_name){
                     $equipmentTimeBooking = $data_EquipmentBooking['equipment_end'];
                     ?>
                        <tr>
-                        <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $imageEquipmentBooking . "'>" ?></td>
+                        <td><?php echo "<img style='object-fit: cover; width: 50px; height: 50px' src='EquipmentPicture/" . $imageEquipmentBooking . "'>" ?></td>
                           <td><?php echo $equipmentNameBooking; ?></td>
                           <td><?php echo $equipmentDateBooking; ?></td>
                           <td><?php echo $equipmentTimeBooking; ?></td>

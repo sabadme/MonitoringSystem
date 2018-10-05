@@ -125,10 +125,6 @@
 			}
 
 		});
-
-		$('.login-form-container').mouseleave(function(){
-			$('.login').removeClass('active');
-		});
 	}
 
 	function links() {
