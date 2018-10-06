@@ -2,9 +2,12 @@
   background: #313a4b;
   z-index: 1;
 }
-.main-nav img {
+.main-nav .logo-block img {
   max-width: 250px;
   padding: 30px;
+}
+.main-nav .logo-block span {
+  display: none;
 }
 .main-nav .menu {
   display: -webkit-box;
@@ -85,6 +88,7 @@
   display: none;
 }
 .main-nav .menu li.parent.active > ul {
+  padding: 10px 0;
   display: block;
   background: #48556e;
 }
@@ -103,6 +107,9 @@
 }
 .main-nav .menu li.parent.active > ul > li.parent button {
   padding: 15px 62px;
+}
+.main-nav .menu li.parent.active > ul > li.parent > ul {
+  padding: 0;
 }
 .main-nav .menu li.parent.active > ul button {
   padding: 15px 49px;
@@ -215,10 +222,175 @@
   max-width: 30px;
   margin-right: 10px;
 }
-@media only screen and (max-device-width: 1064px) {
-  .main-nav .menu li {
-    -webkit-flex: 0 1 19%;
-    -ms-flex: 0 1 19%;
-    flex: 0 1 19%;
+@media only screen and (max-device-width: 1024px) {
+  .page-wrapper .page-main {
+    display: block;
+  }
+  .page-wrapper .main-nav > form {
+    display: none;
+  }
+  .page-wrapper .main-nav .logo-block {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+  }
+  .page-wrapper .main-nav .logo-block img {
+    max-width: 100px;
+    padding: 0;
+  }
+  .page-wrapper .main-nav .logo-block .icon-wrapper {
+    padding: 20px;
+  }
+  .page-wrapper .main-nav .logo-block span {
+    display: block;
+    color: #fff;
+    font-size: 1.4285714285714286rem;
+  }
+  .page-wrapper .main-nav .logo-block span.welcometext {
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    margin-left: 20px;
+    text-transform: uppercase;
+  }
+  .page-wrapper .main-nav .logo-block span.icon {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 24px;
+  }
+  .page-wrapper .main-nav .logo-block span.icon .icon-inner,
+  .page-wrapper .main-nav .logo-block span.icon .icon-inner:before,
+  .page-wrapper .main-nav .logo-block span.icon .icon-inner:after {
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    -webkit-transition: transform 0.15s ease;
+    -moz-transition: transform 0.15s ease;
+    -ms-transition: transform 0.15s ease;
+    -o-transition: transform 0.15s ease;
+    transition: transform 0.15s ease;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  .page-wrapper .main-nav .logo-block span.icon-inner:before,
+  .page-wrapper .main-nav .logo-block span.icon-inner:after {
+    content: '';
+  }
+  .page-wrapper .main-nav .logo-block span.icon-inner:before {
+    top: 10px;
+    -webkit-transition: opacity 0.125s ease 0.275s;
+    -moz-transition: opacity 0.125s ease 0.275s;
+    -ms-transition: opacity 0.125s ease 0.275s;
+    -o-transition: opacity 0.125s ease 0.275s;
+    transition: opacity 0.125s ease 0.275s;
+  }
+  .page-wrapper .main-nav .logo-block span.icon-inner:after {
+    top: 20px;
+    -webkit-transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -ms-transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .page-wrapper .main-nav .logo-block.active + form {
+    position: relative;
+    z-index: 1;
+    display: block;
+    border-top: 1px solid #fff;
+    padding: 0 20px;
+    -webkit-box-shadow: 0 1000046px 0 999999px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1000046px 0 999999px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1000046px 0 999999px rgba(0, 0, 0, 0.5);
+    background: #fff;
+  }
+  .page-wrapper .main-nav .logo-block.active .icon-inner,
+  .page-wrapper .main-nav .logo-block.active .icon-inner:before,
+  .page-wrapper .main-nav .logo-block.active .icon-inner:after {
+    background: #fff;
+  }
+  .page-wrapper .main-nav .logo-block.active .icon-inner {
+    -webkit-transform: translate3d(0, 10px, 0) rotate(135deg);
+    -ms-transform: translate3d(0, 10px, 0) rotate(135deg);
+    -o-transform: translate3d(0, 10px, 0) rotate(135deg);
+    -moz-transform: translate3d(0, 10px, 0) rotate(135deg);
+    transform: translate3d(0, 10px, 0) rotate(135deg);
+    transition-delay: 75ms;
+  }
+  .page-wrapper .main-nav .logo-block.active .icon-inner:before {
+    transition-delay: 0s;
+    opacity: 0;
+  }
+  .page-wrapper .main-nav .logo-block.active .icon-inner:after {
+    -webkit-transform: translate3d(0, -20px, 0) rotate(-270deg);
+    -ms-transform: translate3d(0, -20px, 0) rotate(-270deg);
+    -o-transform: translate3d(0, -20px, 0) rotate(-270deg);
+    -moz-transform: translate3d(0, -20px, 0) rotate(-270deg);
+    transform: translate3d(0, -20px, 0) rotate(-270deg);
+    transition-delay: 75ms;
+  }
+  .page-wrapper .main-nav .menu li:not(:first-child) > button {
+    padding: 0 0 20px;
+  }
+  .page-wrapper .main-nav .menu li:not(:first-child).parent > span {
+    padding: 0 0 20px;
+  }
+  .page-wrapper .main-nav .menu li > button {
+    font-size: 1.1428571428571428rem;
+    padding: 20px 0;
+    color: #283142;
+  }
+  .page-wrapper .main-nav .menu li > button:before {
+    color: #283142;
+  }
+  .page-wrapper .main-nav .menu li > button:hover {
+    background: transparent;
+  }
+  .page-wrapper .main-nav .menu li.parent > span {
+    font-size: 1.1428571428571428rem;
+    padding: 20px 0;
+    color: #283142;
+  }
+  .page-wrapper .main-nav .menu li.parent > span:hover {
+    background: transparent;
+  }
+  .page-wrapper .main-nav .menu li.parent > span:before {
+    color: #283142;
+  }
+  .page-wrapper .main-nav .menu li.parent > span:after {
+    color: #283142;
+  }
+  .page-wrapper .main-nav .menu li.parent.active ul {
+    background: transparent;
+    padding: 0 0 20px;
+  }
+  .page-wrapper .main-nav .menu li.parent.active ul button {
+    font-size: 1rem;
+    padding: 10px 35px;
+    border-top: 1px solid #efefef;
+  }
+  .page-wrapper .main-nav .menu li.parent.active ul button:hover {
+    background: transparent;
+  }
+  .page-wrapper .main-nav .menu li.parent.active ul > li.parent > span {
+    font-size: 1rem;
+    padding: 10px 35px;
+    border-top: 1px solid #efefef;
+  }
+  .page-wrapper .main-nav .menu li.parent.active ul > li.parent > span:hover {
+    background: transparent;
+  }
+  .page-wrapper .main-nav .menu li.parent.active ul > li.parent button {
+    padding: 10px 50px;
+    border-top: 0;
   }
 }

@@ -22,9 +22,12 @@
   /* Force table to not be like tables anymore */
   /* Hide table headers (but not display: none;, for accessibility) */
 }
+.main-index .top-container .notifs-container {
+  position: relative;
+}
 .main-index .top-container > span {
   font-size: 1.0714285714285714rem;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   text-transform: capitalize;
   margin-right: 15px;
 }
@@ -33,7 +36,7 @@
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   text-transform: uppercase;
 }
 .main-index .top-container .counter {
@@ -45,8 +48,8 @@
   background: #ff191b;
   border-radius: 25px;
   position: absolute;
-  top: 15px;
-  right: 60px;
+  top: -10px;
+  right: 10px;
 }
 .main-index .top-container .logout:after {
   content: '\e904';
@@ -139,7 +142,7 @@
   display: block;
   padding: 10px;
   text-transform: uppercase;
-  font-family: sans-serif;
+  font-family: 'Oswald-reg';
   border-bottom: 1px solid #ccc;
 }
 .main-index .top-container .notifs-container > .notifs-wrapper button {

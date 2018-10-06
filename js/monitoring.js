@@ -10,6 +10,17 @@
             }
 
         });
+
+        $('.logo-block .icon').click(function () {
+            if ($(this).parent().parent().hasClass('active')) {
+                $(this).parent().parent().removeClass('active');
+            }
+
+            else {
+                $(this).parent().parent().addClass('active');
+            }
+
+        });
     }
 
 //Hide notif count 

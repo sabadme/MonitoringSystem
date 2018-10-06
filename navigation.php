@@ -1,5 +1,14 @@
 
 <?php
+    $servername ="localhost";
+    $username="root";
+    $password="";
+    $db="monitoringsystemdatabase";
+
+
+    $conn =mysql_connect($servername,$username,$password);
+    mysql_select_db($db);
+
 if ($status == "Admin") {
 
 
@@ -9,8 +18,22 @@ if ($status == "Admin") {
 
     <nav class="main-nav">
 
-        <img src="images/monitor.png">
+        <div class="logo-block">
+            <a href="../monitoringsystem/main.php?id=1">
+                <img src="images/monitor.png">
+            </a>
+
+            <span class="welcometext">WELCOME <?php echo $status; ?></span>
+
+            <div class="icon-wrapper">
+                <span class="icon"><span class="icon-inner"></span></span>
+            </div>
+            <!-- <i class="fas fa-angle-down"></i> -->
+        </div>
+
+        
         <form action="" method="POST">
+            
             <ul class="menu">
 
                 <li>
@@ -118,7 +141,19 @@ if ($status == "Admin") {
 } else if ($status == "Office") {
     ?>
     <nav class="main-nav">
-        <img src="images/monitor.png">
+        <div class="logo-block">
+            <a href="../monitoringsystem/main.php?id=1">
+                <img src="images/monitor.png">
+            </a>
+
+            <span class="welcometext">WELCOME <?php echo $status; ?></span>
+
+            <div class="icon-wrapper">
+                <span class="icon"><span class="icon-inner"></span></span>
+            </div>
+            <!-- <i class="fas fa-angle-down"></i> -->
+        </div>
+
         <form action="" method="POST">
             <ul class="menu">
 
@@ -140,10 +175,24 @@ if ($status == "Admin") {
     </nav>
     <?php
 } else if($status == "Teacher") {
-
+    
+    $sql_teacherName = mysql_query("SELECT * FROM tbl_login WHERE id='$id'");
+    $data_teacherName = mysql_fetch_array($sql_teacherName);
     ?>
     <nav class="main-nav">
-        <img src="images/monitor.png">
+        <div class="logo-block">
+            <a href="../monitoringsystem/main.php?id=1">
+                <img src="images/monitor.png">
+            </a>
+
+            <span class="welcometext">WELCOME <?php echo $data_teacherName['account']; ?></span>
+
+            <div class="icon-wrapper">
+                <span class="icon"><span class="icon-inner"></span></span>
+            </div>
+            <!-- <i class="fas fa-angle-down"></i> -->
+        </div>
+
         <form action="" method="POST">
             <ul class="menu">
 
@@ -168,9 +217,24 @@ if ($status == "Admin") {
     </nav>
     <?php
 }else if($status == "Technician"){
+    $sql_technicianName = mysql_query("SELECT * FROM tbl_login WHERE id='$id'");
+    $data_technicianName = mysql_fetch_array($sql_technicianName);
+
     ?>
       <nav class="main-nav">
-        <img src="images/monitor.png">
+        <div class="logo-block">
+            <a href="../monitoringsystem/main.php?id=1">
+                <img src="images/monitor.png">
+            </a>
+
+            <span class="welcometext">WELCOME <?php echo $data_technicianName['account']; ?></span>
+
+            <div class="icon-wrapper">
+                <span class="icon"><span class="icon-inner"></span></span>
+            </div>
+            <!-- <i class="fas fa-angle-down"></i> -->
+        </div>
+
         <form action="" method="POST">
             <ul class="menu">
 
