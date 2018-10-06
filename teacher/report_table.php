@@ -3,7 +3,7 @@ $accountname=$_SESSION['account'];
 
 include"admin/connection.php";
 
-$bookingEquipment = mysql_query("SELECT * FROM booking WHERE booker='$accountname' And status='Approved'");
+$bookingEquipment = mysql_query("SELECT * FROM booking WHERE booker='$accountname' And status='Approved' And equipmentStatus='Not'");
 while($data_bookingEquipment = mysql_fetch_array($bookingEquipment)){
 	$equipmentID = $data_bookingEquipment['equipment'];
 	$equipmentVenue = $data_bookingEquipment['venue'];

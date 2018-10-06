@@ -82,7 +82,11 @@
                         ?>
                         <tr>
                             <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $image_filename . "'>" ?></td>
-                            <td><?php echo $data_assigned['equipment_name']; ?></td>
+                            <td>
+                                <form action="" method="POST">
+                                    <button title="<?php echo $data_assigned['equipment_name']; ?>" name="equipmentPage"  value="<?php echo $data_assigned['id']; ?>"><?php echo $data_assigned['equipment_name']; ?></button>
+                                </form>
+                            </td>
                             <td><?php echo $data_assigned['status']; ?></td>
 
                         </tr>

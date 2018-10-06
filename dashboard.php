@@ -33,90 +33,113 @@
     <div class="dashboard-wrapper">
 
         <div class="counter-container">
-            <div class="countereq">
-                <span style="color: yellowgreen">ASSIGNED</span>
-                <label>3156</label>
-            </div>
-            <div class="countereq">
-                <span style="color: @border-color">UNASSIGNED</span>
-                <label>7456</label>
-            </div>
-            <div class="countereq">
-                <span style="color: yellow">UP-TO-DATE</span>
-                <label>7456</label>
-            </div>
-            <div class="countereq">
-                <span style="color: chocolate">EXPIRED</span>
-                <label>156</label>            
-            </div>
-            <div class="countereq">
-                <span style="color: red">BROKEN</span>
-                <label>56</label>
-            </div>
+        <div class="countereq">
+            <span style="color: yellowgreen">ASSIGNED</span>
+            <?php include"admin/assignedEquipmentCount.php"; ?>
+            <label><?php echo $EquipmentAssinged; ?></label>
         </div>
-
-         <img style="width: 500px;display: block; margin: 0 auto; margin-bottom: 20px"
-    src="images/pie.png"><!-- http://www.chartjs.org/samples/latest/charts/pie.html -->
+        <div class="countereq">
+            <span style="color: @border-color">UNASSIGNED</span>
+            <?php include"admin/unassignedEquipmentCount.php"; ?>
+            <label><?php echo $EquipmentUnassigned;?></label>
+        </div>
+        <div class="countereq">
+            <span style="color: yellow">UP-TO-DATE</span>
+            <?php include"admin/uptodateEquipmentCount.php"; ?>
+            <label><?php echo $EquipmentUptodate; ?></label>
+        </div>
+        <div class="countereq">
+            <span style="color: chocolate">EXPIRED</span>
+            <?php include"admin/ExpiredEquipmentCount.php"; ?>
+            <label><?php echo $Expired; ?></label>            
+        </div>
+        <div class="countereq">
+            <span style="color: red">BROKEN</span>
+            <?php include"admin/BrokenEquupmentCount.php"; ?>
+            <label><?php echo $Broken; ?></label>
+        </div>
     </div>
-    
+
+        <?php include"PieChart/pieForm.php"; ?>
+         <!-- http://www.chartjs.org/samples/latest/charts/pie.html -->
+    </div>
+
     <div class="dashboard-wrapper">
         <strong class="sub-title">FACILITY AND ROOMS</strong>
 
-        <div class="counter-container">
-            <div class="countereq">
-                <span>FACILITY</span>
-                <!-- <img src="images/icons8-bungalow-48.png"> -->
-                <label>56</label>
-            </div>
-            <div class="countereq">
-                <span>ROOM</span>
-                <!-- <img src="images/icons8-door-40.png"> -->
-                <label>32</label>
-            </div>
-            <div class="countereq">
-                <span>OFFICE</span>
-                <!-- <img src="images/icons8-office-chair-48.png">  -->           
-                <label>15</label>
-            </div>  
+    <div class="counter-container">
+        <div class="countereq">
+            <form action="" method="POST">
+            <button name="facilitiesCount" type="submit">
+            <span>FACILITY</span>
+            <!-- <img src="images/icons8-bungalow-48.png"> -->
+            <?php include"admin/facilities_count.php"; ?>
+            <label><?php echo $count; ?></label>
+            </button>
+            </form>
         </div>
+        <div class="countereq">
+            <form action="" method="POST">
+                <button name="viewRoomCount" type="submit">
+                    <span>ROOM</span>
+                       <!--  <img src="images/icons8-door-40.png"> -->
+                    <?php include"admin/room_count.php"; ?>
+                    <label><?php echo $roomCount; ?></label>
+                </button>
+            </form>
+        </div>
+        <div class="countereq">
+            <form>
+            <button type="submit" name="viewOfficeCount">
+            <span>OFFICE</span>
+            <!-- <img src="images/icons8-office-chair-48.png"> -->
+            <?php include"admin/office_count.php"; ?>
+            <label><?php echo $officeCount; ?></label>
+            </button>
+            </form>
+        </div>  
+    </div>
 
-      
+
 
     	<div class="new-rooms-container">
         <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
     		<!-- <strong> FACILITIES AND ROOMS </strong> -->
-      
+
             <div class="overflow-container">
         		<div class="new-rooms-block">
 
 
-        			<?php include"admin/new_rooms.php"; ?>
-        		</div>
-            </div>
-    	</div>
-    </div>
+    			<?php include"admin/new_rooms.php"; ?>
+    		</div>
+        </div>
+	</div>
+
     <div class="dashboard-wrapper">
         <strong class="sub-title">BOOKING STATUS</strong>
-        
+
         <div class="counter-container">
             <div class="countereq">
                 <span>MASTERLIST</span>
-                <label>3156</label>
+                <?php include"admin/bookingMasterListCount.php"; ?>
+                <label><?php echo $bookingList; ?></label>
             </div>
             <div class="countereq">
                 <span>PENDING</span>
-                <label>7456</label>
+                <?php include"admin/bookingPendingList.php"; ?>
+                <label><?php echo $Pending; ?></label>
             </div>
             <div class="countereq">
-                <span >APPROVED</span>
-                <label>7456</label>
+                <span>APPROVED</span>
+                <?php include"admin/bookingApprovedList.php"; ?>
+                <label><?php echo $Approved; ?></label>
             </div>
             <div class="countereq">
                 <span style="color: green;">ON-GOING</span>
-                <label>156</label>            
+                <label>156</label>
             </div>
             <div class="countereq">
-                <span style="color: yellow">HISTORY</span>
+                <span style="color: yellow;">HISTORY</span>
                 <label>56</label>
             </div>
         </div>
@@ -125,6 +148,7 @@
 
         <div class="booking-dashboard">
         <table>
+        <thead>
         <tr>
             <th>Booker</th>
             <th>Venue</th>
@@ -132,59 +156,16 @@
             <th>Date Start</th>
             <th>Date End</th>
             <th>Time Start</th>
-            <th>Time End</th> 
-            <th>Status</th>       
-            <th>Equipments</th>        
+            <th>Time End</th>
+            <th>Status</th>
+            <th>Equipments</th>
             <th>Action</th>
         </tr>
-        <tr>
-            <td>Carlo</td>
-            <td>508</td>
-            <td>1st Sem</td>
-            <td>2018-09-05</td>
-            <td>2018-09-05</td>
-            <td>04:20 PM</td>
-            <td>04:20 PM</td>
-            <td>Pending</td>
-            <td><button>View</button></td>
-            <td><button>Approve</button></td>
-        </tr>
-        <tr>
-            <td>Carlo</td>
-            <td>508</td>
-            <td>1st Sem</td>
-            <td>2018-09-05</td>
-            <td>2018-09-05</td>
-            <td>04:20 PM</td>
-            <td>04:20 PM</td>
-            <td>Pending</td>
-            <td><button>View</button></td>
-            <td><button>Approve</button></td>
-        </tr>
-        <tr>
-            <td>Carlo</td>
-            <td>508</td>
-            <td>1st Sem</td>
-            <td>2018-09-05</td>
-            <td>2018-09-05</td>
-            <td>04:20 PM</td>
-            <td>04:20 PM</td>
-            <td>Pending</td>
-            <td><button>View</button></td>
-            <td><button>Approve</button></td>
-        </tr>
-        <tr>
-            <td>Carlo</td>
-            <td>508</td>
-            <td>1st Sem</td>
-            <td>2018-09-05</td>
-            <td>2018-09-05</td>
-            <td>04:20 PM</td>
-            <td>04:20 PM</td>
-            <td>Pending</td>
-            <td><button>View</button></td>
-            <td><button>Approve</button></td>
-        </tr>
+        </thead>
+        <tbody>
+       <?php include"admin/bookingTableDashboard.php"; ?>
+        </tbody>
+       
         </table>
         </div>
     </div>
@@ -195,111 +176,54 @@
         <div class="counter-container">
             <div class="countereq">
                 <span>EQUIPMENTS</span>
-                <label>4302</label>
+                <?php include"admin/equipmentCount.php"; ?>
+                <label><?php echo $equipmentlistCount; ?></label>
             </div>
             <div class="countereq">
                 <span>DEPLOYED</span><!-- ang assigned list ni di ang e butang ron -->
-                <label>1706</label>
+                <?php include"admin/deployed.php"; ?>
+                <label><?php echo $deploy; ?></label>
             </div>
             <div class="countereq">
                 <span>ON STOCK</span> <!-- ari ya ang unassigned -->
-                <label>2596</label>
-            </div>  
+                <?php include"admin/onstack.php"; ?>
+                <label><?php echo $Unassigned; ?></label>
+            </div>
         </div>
 
-        <input type="text" class="search" placeholder="Search">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" class="search">
 
         <div class="equipment-dashboard">
 
-        <table>
-        <tr>
-            <th>Name</th>
-            <th>QR ID</th>
-            <th>Manufacturer</th>
-            <th>Serial</th>
-            <th>Status</th>
-            <th>Condition</th>
-            <th>Room</th>    
-            <th>Floor</th>        
-            <th>View</th>
+    <table id="myTable">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>QR ID</th>
+        <th>Manufacturer</th>
+        <th>Serial</th>
+        <th>Status</th>
+        <th>Condition</th>
+        <th>Room</th>
+        <th>Building</th>
+        <th>Floor</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+ <?php  include"admin/equipmentLIST.php"; ?>
+    </tbody>
 
-        </tr>
-        <tr>
-            <td>EE-Aircon</td><!-- impon ang type sa ngalan -->
-            <td>z41qgda3</td>
-            <td>Toshiba</td>
-            <td>123212313</td>
-            <td>Deployed</td>
-            <td>Up to Date</td>
-            <td>501</td>
-            <td>5th Floor</td>
-            <td><button>View</button></td>
-        </tr>
-        <tr>
-            <td>EE-Aircon</td>
-            <td>z41qgda3</td>
-            <td>Toshiba</td>
-            <td>123212313</td>
-            <td>Deployed</td>
-            <td>Up to Date</td>
-            <td>501</td>
-            <td>5th Floor</td>
-            <td><button>View</button></td>
-        </tr>
-        <tr>
-            <td>EE-Aircon</td>
-            <td>z41qgda3</td>
-            <td>Toshiba</td>
-            <td>123212313</td>
-            <td>Deployed</td>
-            <td>Up to Date</td>
-            <td>501</td>
-            <td>5th Floor</td>
-            <td><button>View</button></td>
-        </tr>
-        </table>
-        </div>
-    </div>    
+    </table>
+    </div>
 </div>
-
-
-
-<!-- <script>
-	function loadCarousel() {
-        var itemListContainer = $('.new-equipments-block');
-            itemListContainer.show();   
-    }
-
-    function owlCarousel() {
-    	$('.new-equipments-block').owlCarousel({
-            nav: true,
-            loop: false,
-            margin: 5,
-            responsiveClass: true,
-            dots: false,
-            navText: ["<", ">"],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                380: {
-                    items: 2
-                },
-                690: {
-                    items: 3
-                },
-                768: {
-                    items: 2
-                },
-                979: {
-                    items: 4
-                }
-            }
-        });
-    }
-
-	jQuery(document).ready(function(){
-	 	loadCarousel();
-        owlCarousel();
-	});
-</script> -->
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

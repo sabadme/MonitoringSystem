@@ -1,7 +1,7 @@
 <?php 
 include"admin/connection.php";
 
-$sql_Assignedrooms = mysql_query("SELECT * FROM teachers_roomsset WHERE techears_id='$id'");
+$sql_Assignedrooms = mysql_query("SELECT * FROM teachers_roomsset WHERE techears_id='$id' And set_unset = 'Assigned'");
 while($data_Assignedrooms = mysql_fetch_array($sql_Assignedrooms)){
 $teachers_room = $data_Assignedrooms['teachers_room'];
 

@@ -42,7 +42,10 @@ if(isset($_REQUEST['viewSetEquipment'])){
   ?>
   <tr>
     <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
-    <td><?php echo $data_pic['equipment_name']; ?></td>
+    <td><form action="" method="POST">
+      <button name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
+      </form>
+    </td>
     <td><?php echo $data_pic['equipment_code']; ?></td>
     <td><?php echo $data_pic['equipment_start']; ?></td>
     <td><?php echo $data_pic['equipment_end']; ?></td>
@@ -111,7 +114,9 @@ if(isset($_REQUEST['viewSetEquipment'])){
   ?>
   <tr>
     <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
-    <td><?php echo $data_pic['equipment_name']; ?></td>
+    <td><form action="" method="POST">
+      <button name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
+      </form>
     <td><?php echo $data_pic['equipment_code']; ?></td>
     <td><?php echo $data_pic['equipment_start']; ?></td>
     <td><?php echo $data_pic['equipment_end']; ?></td>
@@ -185,7 +190,10 @@ if(isset($_REQUEST['viewSetEquipment'])){
   ?>
   <tr>
     <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
-    <td><?php echo $data_pic['equipment_name']; ?></td>
+    <td><form action="" method="POST">
+      <button name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
+      </form>
+    </td>
     <td><?php echo $data_pic['equipment_code']; ?></td>
     <td><?php echo $data_pic['equipment_start']; ?></td>
     <td><?php echo $data_pic['equipment_end']; ?></td>

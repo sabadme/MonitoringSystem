@@ -34,6 +34,7 @@ include"admin/officeModal_function.php";
 
 include"teacher/bookingEquipmentUpdate.php";
 include"admin/addNewGroupFunction.php";
+include"admin/returnEuipment.php";
 
 
 
@@ -205,6 +206,14 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/book_finished.php";
  }else if (isset($_REQUEST['qr-library'])) {
     include "admin/qr_library.php";
+ }else if (isset($_REQUEST['viewRoomCount'])) {
+    include "admin/rooms_manage.php";
+ }else if (isset($_REQUEST['facilitiesCount'])) {
+    include "admin/faciliteCount_table.php";
+ }else if (isset($_REQUEST['viewOfficeCount'])) {
+    include "admin/viewOfficeCount.php";
+ }else if (isset($_REQUEST['returnEuipment'])) {
+    include "admin/booking_EquipmentView.php";
  }else if (isset($_REQUEST['ep'])) {
     include "admin/equipment_page.php";
  }else {
