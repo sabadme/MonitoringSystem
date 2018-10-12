@@ -69,61 +69,6 @@
 			}
 		}
 
-		/* Force table to not be like tables anymore */
-		table, thead, tbody, th, td, tr { 
-			display: block;
-		}
-
-		/* Hide table headers (but not display: none;, for accessibility) */
-		thead tr { 
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
-
-		table {
-			border: 0;
-		}
-
-		tr { 
-			border-bottom: 1px solid #ccc;
-			padding: 10px;
-
-			&:last-child {
-				border-bottom: 0;
-			} 
-		}
-
-		td { 
-			border: none;
-			text-align: left;
-			padding: 0;
-			margin-bottom: 10px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		td:before {
-			.font-size(10);
-			display: block;
-			margin-bottom: 5px;
-			text-transform: uppercase;
-		}
-
-		td:nth-of-type(1):before { 
-			content: "Name"; 
-		}
-
-		td:nth-of-type(2):before { 
-			content: "Equipment"; 
-		}
-
-		td:nth-of-type(3):before { 
-			content: "Message"; 
-		}
-
 		.notifs {
 			&:hover {
 				opacity: 0.9;
@@ -174,3 +119,14 @@
 	}
 }
 
+@media all and (max-width : 679px) {
+	.main-index {
+		.top-container {
+			margin-bottom: 30px;
+
+			& > strong {
+				.font-size(18);
+			}
+		}
+	}
+}

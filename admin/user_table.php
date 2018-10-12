@@ -14,26 +14,27 @@ while($data_table=mysql_fetch_array($user_table)){
 		if($firstname != "null"){ 
 ?>
 <tr>
-<td><?php echo $data_table['firstname']; ?></td>
-<td><?php echo $data_table['middlename'] ?></td>
-<td><?php echo $data_table['lastname']; ?></td>
-<td><?php echo $data_table['Status']; ?></td>
-<td><?php echo $data_table['ED_status']; ?></td>
+<td data-th="First Name"><?php echo $data_table['firstname']; ?></td>
+<td data-th="Middle Name"><?php echo $data_table['middlename'] ?></td>
+<td data-th="Last Name"><?php echo $data_table['lastname']; ?></td>
+<td data-th="Employment"><?php echo $data_table['Status']; ?></td>
+<td data-th="Status"><?php echo $data_table['ED_status']; ?></td>
 <?php 
 if($status=="Enabled"){
  ?>
-  <td><form action="" method="POST"><button class="action disable" name="disable" type="submit" value="<?php echo $id; ?>">Disable</button></form></td>
+  <td  data-th="Action"><form action="" method="POST"><button class="action disable" name="disable" type="submit" value="<?php echo $id; ?>">Disable</button></form></td>
 <?php 
 }else{
 	?>
-	<td><form action="" method="POST"><button class="action enable" name="enable" type="submit" value="<?php echo $id; ?>">Enable</button></form></td>
+	<td data-th="Action"><form action="" method="POST"><button class="action enable" name="enable" type="submit" value="<?php echo $id; ?>">Enable</button></form></td>
 
 	<?php
 }
 
  ?>
- <td><button  id="<?php echo $count; ?>" class="teacherUpdates" value="<?php echo $data_table['id']; ?>">Update</button></td>
- <td><form action="" method="POST"><button name="teacherroom" class="action" value="<?php echo $data_table['id']; ?>">Room</button></form></td>
+ <td data-th="Action"><button id="<?php echo $count; ?>" class="teacherUpdates" value="<?php echo $data_table['id']; ?>">Update</button></td>
+
+ <td data-th="Action"><form action="" method="POST"><button name="teacherroom" class="action" value="<?php echo $data_table['id']; ?>">Room</button></form></td>
 </tr>
 <?php
 }

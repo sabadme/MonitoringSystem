@@ -106,13 +106,13 @@ $tt= $t->format('H:i:A');
 
         ?>
             <tr>
-                <td><?php echo $dataBooking['booker']; ?></td>
-                <td><?php echo $dataBooking['venue']; ?></td>
-                <td><?php echo $dataBooking['sem']; ?></td>
-                <td><?php echo $dataBooking['date_start']; ?></td>
-              <td><?php echo date("H:i:A", $timestamp); ?></td> 
-                <td><?php echo $dataBooking['date_end']; ?></td>
-                 <td><?php echo date("H:i:A", $timestamps); ?></td>
+                <td data-th="Booker"><?php echo $dataBooking['booker']; ?></td>
+                <td data-th="Venue"><?php echo $dataBooking['venue']; ?></td>
+                <td data-th="Semester"><?php echo $dataBooking['sem']; ?></td>
+                <td data-th="Date Start"><?php echo $dataBooking['date_start']; ?></td>
+                <td data-th="Date End"><?php echo $dataBooking['date_end']; ?></td>
+                <td data-th="Time Start"><?php echo date("H:i:A", $timestamp); ?></td> 
+                <td data-th="Time End"><?php echo date("H:i:A", $timestamps); ?></td>
                 <?php 
                 if($equipmentID == ""){
                     ?>
@@ -120,27 +120,27 @@ $tt= $t->format('H:i:A');
                     <?php
                 }else{
                     ?>
-                    <td><form action="" method="POST"><button name="equipmentBookingView" type="submit" value="<?php echo $equipmentID; ?>">View</button></form></td>
+                    <td data-th="Action"><form action="" method="POST"><button name="equipmentBookingView" type="submit" value="<?php echo $equipmentID; ?>">View</button></form></td>
                     <?php
                 }
                  ?>
                 
                 
                 
-                <td><?php echo $dataBooking['status']; ?></td>
+                <td data-th="Status"><?php echo $dataBooking['status']; ?></td>
             </tr>
             <?php
 
     }else if($dd > $dateEnd && $timeEnd > $tt){
          ?>
             <tr>
-                <td><?php echo $dataBooking['booker']; ?></td>
-                <td><?php echo $dataBooking['venue']; ?></td>
-                <td><?php echo $dataBooking['sem']; ?></td>
-                <td><?php echo $dataBooking['date_start']; ?></td>
-              <td><?php echo date("H:i:A", $timestamp); ?></td> 
-                <td><?php echo $dataBooking['date_end']; ?></td>
-                 <td><?php echo date("H:i:A", $timestamps); ?></td>
+                <td data-th="Booker"><?php echo $dataBooking['booker']; ?></td>
+                <td data-th="Venue"><?php echo $dataBooking['venue']; ?></td>
+                <td data-th="Semester"><?php echo $dataBooking['sem']; ?></td>
+                <td data-th="Date Start"><?php echo $dataBooking['date_start']; ?></td>
+                <td data-th="Date End"><?php echo $dataBooking['date_end']; ?></td>
+                <td data-th="Time Start"><?php echo date("H:i:A", $timestamp); ?></td> 
+                <td data-th="Time End"><?php echo date("H:i:A", $timestamps); ?></td>
                 <?php 
                 if($equipmentID == ""){
                     ?>
@@ -148,14 +148,14 @@ $tt= $t->format('H:i:A');
                     <?php
                 }else{
                     ?>
-                    <td><form action="" method="POST"><button name="equipmentBookingView" type="submit" value="<?php echo $equipmentID; ?>">View</button></form></td>
+                    <td data-th="Action"><form action="" method="POST"><button name="equipmentBookingView" type="submit" value="<?php echo $equipmentID; ?>">View</button></form></td>
                     <?php
                 }
                  ?>
                 
                 
                 
-                <td><?php echo $dataBooking['status']; ?></td>
+                <td data-th="Status"><?php echo $dataBooking['status']; ?></td>
             </tr>
             <?php
     }

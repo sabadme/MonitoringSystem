@@ -8,12 +8,11 @@ while($data_rooms=mysql_fetch_array($sql_rooms)){
 	$uniqueID++;
 	?>
 	<tr>
-		<td><?php echo "<img style='width: 50px; height: 50px' src='RoomPicture/" . $img_filenames . "'>" ?></td>
-		<td><?php echo $data_rooms['room']; ?></td>
-		<td><?php echo $data_rooms['building']; ?></td>
-		<td><?php echo $data_rooms['floor']; ?></td>
-		<td><button class="actions" value="<?php echo $data_rooms['id']; ?>" id="<?php echo $uniqueID; ?>">Update</button></td>
-		
+		<td data-th="Image"><?php echo "<img style='width: 150px; src='RoomPicture/" . $img_filenames . "'>" ?></td>
+		<td data-th="Room"><?php echo $data_rooms['room']; ?></td>
+		<td data-th="Building"><?php echo $data_rooms['building']; ?></td>
+		<td data-th="Floor"><?php echo $data_rooms['floor']; ?></td>
+		<td data-th="Action"><button class="actions" value="<?php echo $data_rooms['id']; ?>" id="<?php echo $uniqueID; ?>">Update</button></td>
 	</tr>
 	<?php
 }

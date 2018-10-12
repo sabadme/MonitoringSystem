@@ -50,18 +50,18 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 
 	?>
 	<tr>	
-		<td><?php echo $dataEquipment['equipment_name']; ?></td>
-		<td><?php echo $dataEquipment['equipment_code']; ?></td>
-		<td>wala pa</td>
-		<td>wala pa</td>
-		<td><?php echo $dataEquipment['equipment_status']; ?></td>
+		<td data-th="Name"><?php echo $dataEquipment['equipment_name']; ?></td>
+		<td data-th="QR ID"><?php echo $dataEquipment['equipment_code']; ?></td>
+		<td data-th="Manufacturer">wala pa</td>
+		<td data-th="Serial">wala pa</td>
+		<td data-th="Condition"><?php echo $dataEquipment['equipment_status']; ?></td>
 		
 		<?php 	
 			if($equipmentStatus	== "Assigned"){
 				?>
-				<td><?php echo $roomS; ?></td>
-				<td><?php echo $building ?></td>
-				<td><?php echo $floor;?></td>
+				<td data-th="Room"><?php echo $roomS; ?></td>
+				<td data-th="Building"><?php echo $building ?></td>
+				<td data-th="Floor"><?php echo $floor;?></td>
 				<?php
 			}else if($equipmentStatus == "Set"){
 				$sqlSet = mysql_query("SELECT * FROM equipmentset WHERE assigned_unassigned='Assigned'");
@@ -75,17 +75,17 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 				$sqlRoomsetAssigned = mysql_query("SELECT * FROM rooms WHERE room='$setRoomname'");
 				$dataRoomsetAssigned = mysql_fetch_array($sqlRoomsetAssigned);
 				?>
-				<td>daad<?php echo $dataRoomsetAssigned['room']; ?></td>
-				<td>dad<?php echo $dataRoomsetAssigned['building']; ?></td>
-				<td>da<?php echo $dataRoomsetAssigned['floor']; ?></td>
+				<td data-th="Room"><?php echo $dataRoomsetAssigned['room']; ?></td>
+				<td data-th="Building"><?php echo $dataRoomsetAssigned['building']; ?></td>
+				<td data-th="Floor"><?php echo $dataRoomsetAssigned['floor']; ?></td>
 				<?php
 
 			}
 			else{
 				?>
-				<td>None</td>
-				<td>None</td>
-				<td>None</td>
+				<td data-th="Room">None</td>
+				<td data-th="Building">None</td>
+				<td data-th="Floor">None</td>
 				<?php
 			}
 		 ?>

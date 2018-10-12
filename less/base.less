@@ -124,59 +124,76 @@ a:link {
 }
 
 button {
-    background: @cobalt;
-    padding: 10px 15px;
-    border: 0;
-    color: @white;
-    .font-size(14);
-    text-transform: uppercase;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
-    max-width: 150px;
-    font-family: @font-family-base;
-    letter-spacing: 1px;
+    &:not(.equipment-name) {
+        background: @cobalt;
+        padding: 5px 15px;
+        border: 0;
+        color: @white;
+        .font-size(14);
+        text-transform: uppercase;
+        cursor: pointer;
+        width: 100%;
+        max-width: 150px;
+        font-family: @font-family-base;
+        letter-spacing: 1px;
 
-    &:focus {
-        outline: none;
-    }
-
-    &:hover {
-        background: lighten(@cobalt, 5%);
-    }
-
-    &.action {
-        .font-size(12);
-        max-width: 110px;
-
-        &.disable {
-            background: darkred;
-
-            &:hover {
-             background: lighten(darkred, 5%);
-            }
+        &:focus {
+            outline: none;
         }
 
-        &.enable {
-            background: darkgreen;
-
-            &:hover {
-                background: lighten(darkgreen, 5%);
-            }
+        &:hover {
+            background: lighten(@cobalt, 5%);
         }
 
-         &.tertiary {
-           background: none;
-           color: red;
-           border: 1px solid;
+        &.action {
+            .font-size(12);
+            max-width: 110px;
 
-           &:hover {
-             background: red;
-             color: @white;
-           }
+            &.disable {
+                background: darkred;
+
+                &:hover {
+                 background: lighten(darkred, 5%);
+                }
+            }
+
+            &.enable {
+                background: darkgreen;
+
+                &:hover {
+                    background: lighten(darkgreen, 5%);
+                }
+            }
+
+             &.tertiary {
+               background: none;
+               color: red;
+               border: 1px solid;
+
+               &:hover {
+                 background: red;
+                 color: @white;
+               }
+            }
+        }
+    }
+
+    &.equipment-name {
+        text-decoration: underline;
+        .font-size(14);
+        background: none;
+        border: 0;
+        font-family: @font-family-base;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        &:hover {
+            color: @cobalt;
         }
     }
 }
+
+
 
 form {
 
@@ -204,6 +221,7 @@ table {
     width: 100%;
     border: 1px solid @color-gray;
     border-top: 0;
+    margin-bottom: 10px;
 }
 
 thead {
@@ -213,7 +231,7 @@ thead {
 tbody {
     .custom-scrollbar();
     display: block;
-    max-height: 550px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -224,7 +242,6 @@ thead, tbody tr {
 }
 
 th, td {
-    /*width: 1%;*/
     padding: 8px;
     text-align: center;
     .font-size(15);
@@ -238,7 +255,7 @@ td:first-child {
 }
 
 tr:nth-child(even) {
-    /*background-color: #f2f2f2;*/
+    background-color: #f2f2f2;
 }
 
 th {
@@ -357,7 +374,7 @@ select {
     }
 }
 
-@media only screen and (max-device-width : 1024px) {
+@media all and (max-width : 1024px) {
 	@root-font_size: 13;
 
     :root {
@@ -365,15 +382,64 @@ select {
     }
 }
 
-@media only screen and (max-device-width : 640px) {
+@media all and (max-width : 679px) {
 	@root-font_size: 15;
 
     :root {
         font-size: ~"@{root-font_size}px";
     }
+
+    table, thead, tbody, th, td, tr { 
+        .flex-layout;
+        .flex-wrap(wrap);
+        .flex-align(center);
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table {
+        border: 0;
+    }
+
+    tbody {
+        padding-right: 10px;
+    }
+    
+    tr { 
+        padding: 10px;
+    }
+
+    tr {
+        border: 1px solid @color-gray;
+        margin-bottom: 20px;
+    }
+    
+    td { 
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding: 15px 15px 15px 50%;
+        text-align: left;
+    }
+    
+    td:before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 50%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: right;
+        content: attr(data-th) ' : ';
+    }
 }
 
-@media only screen and (max-device-width : 480px) {
+@media all and (max-width : 480px) {
 	@root-font_size: 16;
 
     :root {

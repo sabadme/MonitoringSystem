@@ -10,7 +10,7 @@ while($dataGroup_equipment = mysql_fetch_array($sqlGroup_Equipment)){
 <td> <?php 	echo $dataGroup_equipment['equipment_code']; ?></td>
 <td>
 		<form action="" method="POST">
-			<button title="<?php echo $dataGroup_equipment['equipment_name']; ?>" name="equipmentPage" value="<?php echo $dataGroup_equipment['id']; ?>"><?php echo $dataGroup_equipment['equipment_name']; ?></button>
+			<button class="equipment-name" title="<?php echo $dataGroup_equipment['equipment_name']; ?>" name="equipmentPage" value="<?php echo $dataGroup_equipment['id']; ?>"><?php echo $dataGroup_equipment['equipment_name']; ?></button>
 		</form>
 	</td>
 <td><?php echo $dataGroup_equipment['status']; ?></td>

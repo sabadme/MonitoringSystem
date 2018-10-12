@@ -141,3 +141,24 @@
 .booking-container .booking-table td {
   font-size: 0.7857142857142857rem;
 }
+@media only screen and (max-device-width: 679px) {
+  .booking-container .grid-container {
+    display: block;
+  }
+  .booking-container .grid-container .equipments-field .search {
+    max-width: 100%;
+  }
+  .booking-container .grid-container .equipments-field label {
+    font-size: 0.8571428571428571rem;
+  }
+  .booking-container .grid-container .field {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .booking-container .grid-container .field label {
+    font-size: 0.8571428571428571rem;
+  }
+  .booking-container .grid-container .field input {
+    margin-bottom: 19px;
+  }
+}

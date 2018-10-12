@@ -13,12 +13,12 @@ $office_name=$data_office['account'];
 
 	?>
 	<tr>
-		<td><?php echo $data_office['account']; ?></td>
-		<td><?php echo $ed_status; ?></td>
+		<td data-th="Office"><?php echo $data_office['account']; ?></td>
+		<td data-th="Status"><?php echo $ed_status; ?></td>
 		<?php 
 		if($ed_status=="Enabled"){
 		 ?>
-		<td><form action="" method="POST"><button class="action disable" name="officedisable" type="submit" value="<?php echo $data_office['id']; ?>">Disable</button></form></td>
+		<td data-th="Action"><form action="" method="POST"><button class="action disable" name="officedisable" type="submit" value="<?php echo $data_office['id']; ?>">Disable</button></form></td>
 		<?php 
 		}else{
 			?>
@@ -27,9 +27,9 @@ $office_name=$data_office['account'];
 		}
 		 ?>
 		
-		<td><form action="" method="POST"><button class="action secondary" type="submit" name="officeequipmentassign" value="<?php echo $office_id; ?>">Equipments</button></form></td>
-		<td><form action="" method="POST"><button class="action tertiary" name="office_equipment_table" type="submit" value="<?php echo $office_name; ?>">Manage</button></form></td>
-		<td><button class="openOfficeUpdateModal" id="<?php echo $count; ?>"  name="office_update" value="<?php echo $data_office['id']; ?>">Update</button></td>
+		<td data-th="Action"><form action="" method="POST"><button class="action secondary" type="submit" name="officeequipmentassign" value="<?php echo $office_id; ?>">Equipments</button></form></td>
+		<td data-th="Action"><form action="" method="POST"><button class="action tertiary" name="office_equipment_table" type="submit" value="<?php echo $office_name; ?>">Manage</button></form></td>
+		<td data-th="Action"><button class="openOfficeUpdateModal" id="<?php echo $count; ?>"  name="office_update" value="<?php echo $data_office['id']; ?>">Update</button></td>
 	</tr>
 	<?php
 }

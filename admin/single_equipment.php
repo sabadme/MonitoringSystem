@@ -74,8 +74,8 @@
         <div class="table-container" id="wrapper">
             <table id='myTable'>
                 <thead>
-                <th>Code</th>
                 <th>Name</th>
+                <th>Code</th>
                 <th>Status</th>
                 <th>Registered</th>
                 <th>Expiration</th>

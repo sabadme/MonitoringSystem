@@ -1,4 +1,4 @@
-<div class="manage-container room-management with-banner">
+<div class="manage-container room-management">
     <div class="top-container">
         <strong>ROOM</strong>
         
@@ -28,7 +28,7 @@
 
         </div>
         <a href="logout.php" class="logout"></a>
-</div>
+    </div>
 
     <div class="manage-inner-container">
         <div class="tabs-container">
@@ -45,6 +45,10 @@
                     <span>ROOM EQUIPMENT</span>
                 </li>
                 <?php include "admin/add_room_equipment.php"; ?>
+                <li>
+                    <span>DESIGNATE ROOM</span>
+                </li>
+                <?php include "admin/setTeachersRoom_design.php"; ?>
 
             
             </ul>

@@ -91,6 +91,9 @@
 .manage-container .tabs li:nth-of-type(3) {
   left: 224px;
 }
+.manage-container .tabs li:nth-of-type(4) {
+  left: 400px;
+}
 .manage-container .tabs li.active {
   background: #283142;
 }

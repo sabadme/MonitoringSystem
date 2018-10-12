@@ -24,18 +24,16 @@ $sql_Assigned = mysql_query("SELECT `status`,  COUNT(*) AS `count` FROM equipmen
   $Expired = $data_Expired['count'];
 
  ?>
-<!DOCTYPE html>
-<html lang="en-US">
-<body>
 
-<h1>My Web Page</h1>
 <input type="hidden" id="assigned" value="<?php echo $Unassigned; ?>">
 
-<div id="piechart"></div>
+<div class="chart-wrapper">
+<div id="piechart" class="pie-inner"></div>
+</div>
 
-<script type="text/javascript" src="PieChart/pie.js"></script>
 
-<script type="text/javascript">
+
+<script type="text/javascript" src="PieChart/pie.js">
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -64,14 +62,28 @@ function drawChart() {
   
 ]);
 
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'My Average Day', 'width':550, 'height':400};
+  /*// Optional; add a title and set the width and height of the chart
+  var options = {'title':'Equipment Status Pie Chart', 'width':100%, 'height':100%};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
-</script>
+  chart.draw(data, options);*/
 
-</body>
-</html>
+  var options = {
+    title: 'My Daily Activities'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
+
+  $(window).on("throttledresize", function (event) {
+      var options = {
+          width: '100%',
+          height: '100%'
+      };
+
+      var data = google.visualization.arrayToDataTable([]);
+      drawChart(data, options);
+  });
+</script>

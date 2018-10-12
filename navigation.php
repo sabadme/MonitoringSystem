@@ -74,7 +74,7 @@ if ($status == "Admin") {
 
                     <ul>    
                             <li><button><span>Masterlist</span></button></li>
-                            <li><button title="Single Equipment" class="single" name="single_equipment" type="submit"><span>Add Single Equipment</span></button></li>
+                            <li><button title="Single Equipment" class="single" name="single_equipment" type="submit"><span>Add Equipment</span></button></li>
 
                              <li><button title="Set Equipment" type="submit" class="set" name="view_equipment_set"><span>Add Set Equipment</span></button></li>
 
@@ -128,11 +128,11 @@ if ($status == "Admin") {
                              <li><button title="Venue" name="venue" type="submit"><span>Venue </span></button></li>
                         </ul>
                 </li>
-                    <li>
+                   <!--  <li>
                     <button title="Set Room" type="submit" name="setTeachersRoom" class="setroom">
                     <span>Assigned Room</span>
                     </button>
-                </li>
+                </li> -->
             </ul>
         </form>
           

@@ -41,15 +41,15 @@ if(isset($_REQUEST['viewSetEquipment'])){
   }else{
   ?>
   <tr>
-    <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
+    <td data-th="Image"><?php echo "<img style='width: 150px; src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
     <td><form action="" method="POST">
-      <button name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
+      <button class="equipment-name" name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
       </form>
     </td>
-    <td><?php echo $data_pic['equipment_code']; ?></td>
-    <td><?php echo $data_pic['equipment_start']; ?></td>
-    <td><?php echo $data_pic['equipment_end']; ?></td>
-    <td><form action="" method="POST"><button name="drop_equipmentSet" type="submit" value="<?php echo $data_equipment['quipment_id']; ?>">Drop</button></form></td>
+    <td data-th="QR Code"><?php echo $data_pic['equipment_code']; ?></td>
+    <td data-th="Date Start"><?php echo $data_pic['equipment_start']; ?></td>
+    <td data-th="Date End"><?php echo $data_pic['equipment_end']; ?></td>
+    <td data-th="Action"><form action="" method="POST"><button name="drop_equipmentSet" type="submit" value="<?php echo $data_equipment['quipment_id']; ?>">Drop</button></form></td>
   </tr>
 
   <?php
@@ -113,14 +113,14 @@ if(isset($_REQUEST['viewSetEquipment'])){
   }else{
   ?>
   <tr>
-    <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
-    <td><form action="" method="POST">
-      <button name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
+    <td  data-th="Image"><?php echo "<img style='width: 150px; src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
+    <td  data-th="Equipment"><form action="" method="POST">
+      <button class="equipment-name" name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
       </form>
-    <td><?php echo $data_pic['equipment_code']; ?></td>
-    <td><?php echo $data_pic['equipment_start']; ?></td>
-    <td><?php echo $data_pic['equipment_end']; ?></td>
-    <td><form action="" method="POST"><button name="drop_equipmentSet" type="submit" value="<?php echo $data_equipment['quipment_id']; ?>">Drop</button></form></td>
+    <td data-th="QR Code"><?php echo $data_pic['equipment_code']; ?></td>
+    <td data-th="Date Start"><?php echo $data_pic['equipment_start']; ?></td>
+    <td data-th="Date End"><?php echo $data_pic['equipment_end']; ?></td>
+    <td  data-th="Action"><form action="" method="POST"><button name="drop_equipmentSet" type="submit" value="<?php echo $data_equipment['quipment_id']; ?>">Drop</button></form></td>
   </tr>
 
   <?php
@@ -191,7 +191,7 @@ if(isset($_REQUEST['viewSetEquipment'])){
   <tr>
     <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
     <td><form action="" method="POST">
-      <button name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
+      <button class="equipment-name" name="equipmentPage" type="submit" value="<?php echo $data_pic['id']; ?>"><u><?php echo $data_pic['equipment_name']; ?></u></button>
       </form>
     </td>
     <td><?php echo $data_pic['equipment_code']; ?></td>

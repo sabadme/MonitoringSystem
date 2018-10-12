@@ -222,7 +222,7 @@
   max-width: 30px;
   margin-right: 10px;
 }
-@media only screen and (max-device-width: 1024px) {
+@media all and (max-width: 1024px) {
   .page-wrapper .page-main {
     display: block;
   }
@@ -392,5 +392,21 @@
   .page-wrapper .main-nav .menu li.parent.active ul > li.parent button {
     padding: 10px 50px;
     border-top: 0;
+  }
+}
+@media all and (max-width: 679px) {
+  .page-wrapper .main-nav .logo-block {
+    padding: 15px 10px;
+  }
+  .page-wrapper .main-nav .logo-block img {
+    max-width: 50px;
+    padding: 0;
+  }
+  .page-wrapper .main-nav .logo-block span.welcometext {
+    font-size: 1.1428571428571428rem;
+    margin-left: 10px;
+  }
+  .page-wrapper .main-nav .logo-block .icon-wrapper {
+    padding: 10px;
   }
 }

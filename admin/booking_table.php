@@ -32,14 +32,14 @@ while($data_booking=mysql_fetch_array($booking)){
 
     ?>
     <tr>
-        <td><?php echo $data_bookerName['account']; ?></td>
-        <td><?php echo $data_booking['venue']; ?></td>
-        <td><?php echo $data_booking['sem']; ?></td>
-        <td><?php echo $data_booking['date_start']; ?></td>
-        <td><?php echo $data_booking['date_end']; ?></td>
-        <td><?php echo date("H:i:A", $timestamp); ?></td>
-        <td><?php echo date("H:i:A", $timestamps); ?></td>
-        <td>
+        <td data-th="Account"><?php echo $data_bookerName['account']; ?></td>
+        <td data-th="Venue"><?php echo $data_booking['venue']; ?></td>
+        <td data-th="Semester"><?php echo $data_booking['sem']; ?></td>
+        <td data-th="Date Start"><?php echo $data_booking['date_start']; ?></td>
+        <td data-th="Date End"><?php echo $data_booking['date_end']; ?></td>
+        <td data-th="Time Start"><?php echo date("H:i:A", $timestamp); ?></td>
+        <td data-th="Time End"><?php echo date("H:i:A", $timestamps); ?></td>
+        <td data-th="Action">
             <ul>
             <?php
                           $venue=mysql_query("SELECT * FROM booking  WHERE booker='$booker' And date_start='$date' And date_end='$date_e' And time_start='$time' And time_end='$time_e'");
@@ -80,11 +80,11 @@ while($data_booking=mysql_fetch_array($booking)){
         <?php 
         if($statuss=="Pending" And $status=="Admin"){
             ?>
-            <td><form action="" method="POST"><button class="action" type="submit" name="approve_booking" value="<?php echo $data_status['id']; ?>">Approve</button></form></td>
+            <td data-th="Action"><form action="" method="POST"><button class="action" type="submit" name="approve_booking" value="<?php echo $data_status['id']; ?>">Approve</button></form></td>
             <?php
         }else{
             ?>
-            <td><?php echo $statuss; ?></td>
+            <td data-th="Status"><?php echo $statuss; ?></td>
             <?php
         }
          ?>

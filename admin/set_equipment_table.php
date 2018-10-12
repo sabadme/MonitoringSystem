@@ -13,7 +13,7 @@ while($data_equipmentSet=mysql_fetch_array($sql_equipmentSet)){
 	<td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $equipment_filename . "'>" ?></td>
 	<td>
 		<form action="" method="POST">
-			<button title="<?php echo $data_equipmentSet['equipment_name']; ?>" name="equipmentPage"  value="<?php echo $data_equipmentSet['id']; ?>"><?php echo $data_equipmentSet['equipment_name']; ?></button>
+			<button class="equipment-name" title="<?php echo $data_equipmentSet['equipment_name']; ?>" name="equipmentPage"  value="<?php echo $data_equipmentSet['id']; ?>"><?php echo $data_equipmentSet['equipment_name']; ?></button>
 		</form>
 	</td>
 	<td><?php echo $data_equipmentSet['equipment_start']; ?></td>

@@ -76,7 +76,7 @@
                         <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $image_filename . "'>" ?></td>
                         <td>
                             <form action="" method="POST">
-                                <button title="<?php echo $data_image['equipment_name']; ?>" name="equipmentPage"  value="<?php echo $data_image['id']; ?>"><?php echo $data_image['equipment_name']; ?></button>
+                                <button class="equipment-name" title="<?php echo $data_image['equipment_name']; ?>" name="equipmentPage"  value="<?php echo $data_image['id']; ?>"><?php echo $data_image['equipment_name']; ?></button>
                             </form>
                         </td>
                         <td><?php echo $data_image['equipment_status']; ?></td>

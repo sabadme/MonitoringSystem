@@ -36,10 +36,10 @@
                         if ($status == "Unassigned") {  
                                ?>
                             <tr>
-                                <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $get_equipmentcode . "'>" ?></td>
-                                <td><?php echo $data_equipment['equipment_name']; ?></td>
-                                <td><?php echo $data_equipment['equipment_code']; ?></td>
-                                <td><input type="checkbox" value="<?php echo $data_equipment['id']; ?>"
+                                <td data-th="Image"><?php echo "<img style='width: 150px;' src='EquipmentPicture/" . $get_equipmentcode . "'>" ?></td>
+                                <td data-th="Name"><?php echo $data_equipment['equipment_name']; ?></td>
+                                <td data-th="QR Code"><?php echo $data_equipment['equipment_code']; ?></td>
+                                <td data-th="Action"><input type="checkbox" value="<?php echo $data_equipment['id']; ?>"
                                            name="check_list[]"></td>
                             </tr>
                             <?php
@@ -65,10 +65,10 @@
                        
  ?>
                             <tr>
-                                <td><?php echo "<img style='width: 50px; height: 50px' src='EquipmentPicture/" . $img_filenames . "'>" ?></td>
-                                <td><?php echo $data_setname['set_name']; ?></td>
-                                <td>NOne</td>
-                                <td><input type="checkbox" value="<?php echo $data_equipmentID['id']; ?>" name="check_list[]"></td>
+                                <td data-th="Image"><?php echo "<img style='width: 150px;' src='EquipmentPicture/" . $img_filenames . "'>" ?></td>
+                                <td data-th="Set"><?php echo $data_setname['set_name']; ?></td>
+                                <td data-th="What?">NOne</td>
+                                <td data-th="Action"><input type="checkbox" value="<?php echo $data_equipmentID['id']; ?>" name="check_list[]"></td>
                             </tr>
                             <?php
                     

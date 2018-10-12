@@ -18,14 +18,14 @@
         <div class="table-container" id="wrapper">
             <table>
                 <thead>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Registered</th>
-                <th>Expiration</th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Registered</th>
+                    <th>Expiration</th>
                 </thead>
 
                 <tbody>
-                <?php include"admin/equipment_table.php"; ?>
+                    <?php include"admin/equipment_table.php"; ?>
                 </tbody>
             </table>
         </div>

@@ -1,5 +1,5 @@
 <div class="accounts-container">
-<div class="top-container">
+	<div class="top-container">
         <strong>Users</strong>
 
         <div class="notifs-container">
@@ -30,9 +30,7 @@
         <a href="logout.php" class="logout"></a>
     </div>
 
-<div class="form-container">
-	<div class="inner-form-container">
-		
+	<div class="form-container">		
 		<div class="box-container">
 		
 		<form class="manage-form" action="" method="POST">
@@ -61,10 +59,11 @@
 			</div>
 			<button class="addbtn" type="submit" name="add_user">Add</button>
 		</div>
-			
+	</div>
 		</form>
-		<?php include"admin/userUpdate_modal.php"; ?>
+			<?php include"admin/userUpdate_modal.php"; ?>
 		<input type="text" class="search" id="myInput1"  placeholder="Search names..">	
+
 		<div class="table-container" id="wrapper">
 			
 				<table id="myTable1">
@@ -85,7 +84,7 @@
 			</table>
 		</div>
 	</div>
-</div>
+
 <script>
 	function searchTable() {
         $(".search").on("keyup", function() {
@@ -113,4 +112,3 @@ $(document).ready(function(){
 	searchTable();
 });
 </script>
-</div>

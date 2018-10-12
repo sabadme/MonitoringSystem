@@ -264,7 +264,7 @@
 	}
 }
 
-@media only screen and (max-device-width : 1024px) { 
+@media all and (max-width : 1024px) { 
 	.page-wrapper {
 		.page-main {
 			display: block;
@@ -450,4 +450,28 @@
 			}
 		}	
 	}  
+}
+
+@media all and (max-width : 679px) { 
+	.page-wrapper {
+		.main-nav {
+			.logo-block {
+				padding: 15px 10px;
+
+    			img {
+    				max-width: 50px;
+    				padding: 0;
+    			}
+
+    			span.welcometext {
+    				.font-size(16);
+    				margin-left: 10px;
+    			}
+
+    			.icon-wrapper {
+    				padding: 10px;
+    			}
+    		}	
+		}
+	}
 }

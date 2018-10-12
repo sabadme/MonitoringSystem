@@ -28,14 +28,14 @@ include"admin/connection.php";
                     ?>
                 <tr>
                  
-                    <td><?php echo $data_room['room']; ?></td>
+                    <td data-th="Rooms"><?php echo $data_room['room']; ?></td>
                 
-                    <td>
+                    <td data-th="Action">
                         <form action="" method="POST">
                         <button class="action secondary" name="view_roomE" type="submit" value="<?php echo $rooms; ?>">View</button>
                         </form>
                     </td>
-                    <td>
+                    <td data-th="Action">
                         <form action="" method="POST">
                         <button class="action secondary" name="view_roomSet" type="submit" value="<?php echo $rooms; ?>">View</button>
                         </form>

@@ -31,10 +31,10 @@ include"admin/connection.php";
 
                     ?>
                 <tr>
-                    <td><input type="checkbox" name="SelectedRoom[]" value="<?php echo $rooms; ?>"></td>
-                    <td><?php echo $data_room['room']; ?></td>
+                    <td data-th="Select"><input type="checkbox" name="SelectedRoom[]" value="<?php echo $rooms; ?>"></td>
+                    <td data-th="Room"><?php echo $data_room['room']; ?></td>
                 
-                    <td>
+                    <td data-th="Action">
                         <form action="" method="POST">
                         <button class="action secondary" name="view_roomE" type="submit" value="<?php echo $rooms; ?>">View</button>
                         </form>
