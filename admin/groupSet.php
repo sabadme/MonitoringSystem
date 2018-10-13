@@ -36,7 +36,7 @@
                 <form action="" method="POST" enctype="multipart/form-data">
 
                     <span>Upload</span>
-                    <input type="file" name="imgs" class="file"/>
+                    <input type="file" name="imgs[]" multiple/>
 
                    
                     <div class="user-box">

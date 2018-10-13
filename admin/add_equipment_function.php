@@ -10,7 +10,7 @@ if(isset($_REQUEST['save_equipment'])){
 	}
 
 	$file=$_FILES['imgs'];
-	$name=$_FILES['imgs'] ['name'];
+/*	$name=$_FILES['imgs'] ['name'];
 	$size=$_FILES['imgs'] ['size'];	
 	$type=$_FILES['imgs'] ['type'];
 	$error=$_FILES['imgs'] ['error'];
@@ -25,7 +25,7 @@ if(isset($_REQUEST['save_equipment'])){
 	else{
 		move_uploaded_file($tmp,"EquipmentPicture/".$name);
 		
-	}
+	}*/
 
 	
 	$equipment_name=$_REQUEST['equipment_name'];
@@ -44,12 +44,60 @@ $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
 
 $status="Unassigned";
-$insert=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up to date','None','Single','$highANDlow')");
+$insert=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','None','$status','Up to date','None','Single','$highANDlow')");
 		if($insert){
 			
 			?> <script> 
 		 alert("Record Successfully Added in UserSubmit table"); </script>
-		 <?php 
+
+
+		 <?php
+
+		 // MULTIPLE UPLOAD IMAGES 
+		extract($_POST);
+    $error=array();
+    $txtGalleryName	="";
+    $extension=array("jpeg","jpg","png","gif");
+    foreach($_FILES["imgs"]["tmp_name"] as $key=>$tmp_name)
+            {
+                $file_name=$_FILES["imgs"]["name"][$key];
+                $file_tmp=$_FILES["imgs"]["tmp_name"][$key];
+                $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+                if(in_array($ext,$extension))
+                {
+                    if(!file_exists("EquipmentPicture/".$txtGalleryName."/".$file_name))
+                    {
+                        /*move_uploaded_file($file_tmp=$_FILES["imgs"]["tmp_name"][$key],"QRimg/".."/".$file_name);	*/
+                        move_uploaded_file($file_tmp,"EquipmentPicture/".$file_name);	
+
+               
+				$insertMultipleImg=mysql_query("INSERT INTO equipmentimage VALUES(0,'$str','$file_name')");
+						if($insertMultipleImg){
+						}else{
+							echo"Error";
+						}
+                    }
+                    else
+                    {
+                        $filename=basename($file_name,$ext);
+                        $newFileName=$filename.time().".".$ext;
+                        move_uploaded_file($file_tmp,"EquipmentPicture/".$file_name);	
+
+                        $insertMultipleImg=mysql_query("INSERT INTO equipmentimage VALUES(0,'$str','$file_name')");
+						if($insertMultipleImg){
+						}else{
+							echo"Error";
+						}
+                    }
+                }
+                else
+                {
+                    array_push($error,"$file_name, ");
+                }
+            }
+
+            //CLOSING
+
 		 include"admin/single_equipment.php";
 		}else {
 		  echo "Error adding record"; 

@@ -56,14 +56,11 @@
         mysql_select_db($db);
 
 
-$d = new DateTime();
- $dd =$d->format('Y-m-d');
-   ?>
-   <br>
-     <?php
-$t = new DateTime();
-$tt= $t->format('H:i:A');
+date_default_timezone_set('Asia/Manila');
+ $dd= date('Y-m-d');
 
+date_default_timezone_set('Asia/Manila');
+ $tt=date('H:i:A');
 
 
         $sql_booking = mysql_query("SELECT * FROM booking WHERE status='Approved' ORDER BY id desc");

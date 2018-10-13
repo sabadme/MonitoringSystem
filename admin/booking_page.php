@@ -1,3 +1,4 @@
+
 <div class="booking-container">
     <div class="top-container">
         <strong>Booking</strong>
@@ -96,6 +97,18 @@
                 <!-- <input id="Search" class="search" type="text" placeholder="search equipments..."/> -->
                 <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search" class="search">
                 <div class="equipments-wrapper">
+                    <table id="myTable">
+                        <thead> 
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Registered</th>
+                                <th>Expired</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
                     <?php
                     include "admin/connection.php";
                     
@@ -113,15 +126,16 @@
 
 
                         ?>
+                        <tr>
+                            <td><?php echo $data_equipment['equipment_name'];?></td>
+                            <td><?php echo $data_equipment['equipment_code'];?></td>
+                            <td><?php echo $data_equipment['equipment_start'];?></td>
+                            <td><?php echo $data_equipment['equipment_end'];?></td>
+                            <td> <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/></td>
+                        </tr>
+                      
 
-                        <div class="target">
-                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
-
-                            <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
-                            
-                            
-                            
-                        </div>
+                 
 
                         <?php
                     }
@@ -134,6 +148,8 @@
                     
 
                     ?>
+                    </tbody>
+                </table>
                     </div>
                 </div>
             </div>
@@ -142,7 +158,7 @@
                 <button type="submit" name="save_booking">Book</button>
             </form>
         </div>
-        <div class="booking-table">
+ <!--        <div class="booking-table">
             <strong class="subtitle">Booking Information</strong>
             <div class="table-container" id="wrapper">
                 <table>
@@ -163,7 +179,15 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> -->
+            <!--    <div class="target">
+                            <input type="checkbox" name="equipment[]" id="<?php echo $data_equipment['id']; ?>" value="<?php echo $data_equipment['id']; ?>"/>
+
+                            <label for="<?php echo $data_equipment['id']; ?>"><?php echo $data_equipment['equipment_name']; ?></label> 
+                            
+                            
+                            
+                        </div> -->
     </div>
 </div>
 <script type="text/javascript">

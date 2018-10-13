@@ -35,6 +35,8 @@ if(isset($_REQUEST['dashboard'])){
     include "admin/booking_EquipmentView.php";
 }else if (isset($_REQUEST['viewEquipmentBooking'])) {
     include "Office/bookingVenue_page.php";
+}else if (isset($_REQUEST['viewreportreply'])) {
+    include "teacher/viewreportreply.php";
 }else{
 	include"teacher/dashboard.php";
 }

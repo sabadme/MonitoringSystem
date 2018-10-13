@@ -60,7 +60,7 @@
                     <span>Expiree Date</span>
                     <input type="date" name="equipment_end">
                     <span>Upload Image</span>
-                    <input type="file" name="imgs" class="file"/>
+                    <input type="file" name="imgs[]" multiple/>
                 </div>
             </div>
             <button type="submit" name="save_equipment">SAVE</button>

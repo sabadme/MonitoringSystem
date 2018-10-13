@@ -59,7 +59,7 @@
                 <label><?php echo $Broken; ?></label>
             </div>
         </div>
-      <!--  <?php //include"PieChart/pieForm.php"; ?> -->
+    <?php include"PieChart/pieForm.php"; ?> 
     </div>
 
     <div class="dashboard-wrapper">

@@ -56,13 +56,26 @@
         mysql_select_db($db);
 
 
+
+
+ 
+date_default_timezone_set('Asia/Manila');
+ $dd= date('Y-m-d');
+
+date_default_timezone_set('Asia/Manila');
+ $tt=date('H:i:A');
+ 
+
+/* $dd = date("Y-m-d H:i:s");
+  date('Y-m-d H:i:A');
+
 $d = new DateTime();
-$dd =$d->format('Y-m-d');
+echo $dd =$d->format('Y-m-d');
    ?>
    <br>
-     <?php
-$t = new DateTime();
-$tt= $t->format('H:i:A');
+     <?php 
+$t = new DateTime();    
+ $tt= $t->format('H:i:A');*/
 
 
 
@@ -106,7 +119,8 @@ $tt= $t->format('H:i:A');
 
     }else if($dd < $dateEnd And $timeEnd > $tt){
 
-    }else if($dd < $dateEnd ){
+    }else if($dd == $dateStart And $dd < $dateEnd){
+            
         ?>
             <tr>
                 <td data-th="Booker"><?php echo $dataBooking['booker']; ?></td>
@@ -132,7 +146,7 @@ $tt= $t->format('H:i:A');
             </tr>
             <?php
 
-    }else if($dd < $dateEnd && $timeEnd > $tt){
+    }else if($dd < $dd == $dateStart And $dd < $dateEnd And $timeEnd > $tt){
          ?>
             <tr>
                 <td><?php echo $dataBooking['booker']; ?></td>

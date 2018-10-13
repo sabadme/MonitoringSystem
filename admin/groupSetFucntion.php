@@ -13,7 +13,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 		$conn =mysql_connect($servername,$username,$password);
 		mysql_select_db($db);
 
-	$file=$_FILES['imgs'];
+/*	$file=$_FILES['imgs'];
 	$name=$_FILES['imgs'] ['name'];
 	$size=$_FILES['imgs'] ['size'];	
 	$type=$_FILES['imgs'] ['type'];
@@ -29,7 +29,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 	else{
 		move_uploaded_file($tmp,"EquipmentPicture/".$name);
 		
-	}
+	}*/
 
 
 	for( $j=0; $j< $numbersOfEquipemnt; $j++){
@@ -51,19 +51,7 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
 
 
-		$status="Unassigned";
-
-		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None','Group','$highANDlow')");
-		echo mysql_error();  
-		if($upload_image){
 			
-			?>
-		
-		 <?php 
-		 include "admin/groupSet.php";
-		}else {
-		  echo "Error adding record"; 
-		}		
 
 		echo mysql_error();  
 	 	$qrimg = "<img id='generated_img' src='module_qr/php/qr_img.php?d=$str'>";
@@ -103,11 +91,70 @@ if(isset($_REQUEST['saveGroupEquipementSet'])){
 
     ";
 
+    $status="Unassigned";
+
+		$upload_image=mysql_query("INSERT INTO equipment VALUES(0,'$str','$equipment_name','$equipmentType','$equipment_start','$equipment_end','$name','$status','Up To Date','None','Group','$highANDlow')");
+		echo mysql_error();  
+		if($upload_image){
+			
+		 // MULTIPLE UPLOAD IMAGES 
+	extract($_POST);
+    $error=array();
+    $txtGalleryName	="";
+    $extension=array("jpeg","jpg","png","gif");
+    foreach($_FILES["imgs"]["tmp_name"] as $key=>$tmp_name)
+            {
+                $file_name=$_FILES["imgs"]["name"][$key];
+                $file_tmp=$_FILES["imgs"]["tmp_name"][$key];
+                $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+                if(in_array($ext,$extension))
+                {
+                    if(!file_exists("EquipmentPicture/".$txtGalleryName."/".$file_name))
+                    {
+                        /*move_uploaded_file($file_tmp=$_FILES["imgs"]["tmp_name"][$key],"QRimg/".."/".$file_name);	*/
+                        move_uploaded_file($file_tmp,"EquipmentPicture/".$file_name);	
+
+               
+				$insertMultipleImg=mysql_query("INSERT INTO equipmentimage VALUES(0,'$str','$file_name')");
+						if($insertMultipleImg){
+						}else{
+							echo"Error";
+						}
+                    }
+                    else
+                    {
+                        $filename=basename($file_name,$ext);
+                        $newFileName=$filename.time().".".$ext;
+                        move_uploaded_file($file_tmp,"EquipmentPicture/".$file_name);	
+
+                        $insertMultipleImg=mysql_query("INSERT INTO equipmentimage VALUES(0,'$str','$file_name')");
+						if($insertMultipleImg){
+						}else{
+							echo"Error";
+						}
+                    }
+                }
+                else
+                {
+                    array_push($error,"$file_name, ");
+                }
+            }
+
+            //CLOSING
+
+		 include "admin/groupSet.php";
+		}else {
+		  echo "Error adding record"; 
+		}	
+
 	
 
 		$qrimg = "";
 		$str = "";
-		//end of QR code     	
+		//end of QR code     
+
+
+
 
 
 	}

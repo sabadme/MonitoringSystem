@@ -31,8 +31,8 @@ $sql_Assigned = mysql_query("SELECT `status`,  COUNT(*) AS `count` FROM equipmen
 <div id="piechart" class="pie-inner"></div>
 </div>
 
-
-
+<!-- <script type="text/javascript" src="PieChart/"></script>
+ -->
 <script type="text/javascript" src="PieChart/pie.js">
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
@@ -50,16 +50,6 @@ function drawChart() {
   ['Expired', <?php echo $Expired; ?>]
 
 
-]);
-  console.log([
-  ['Task', 'Hours per Day'],
-  ['Assigned',  <?php echo $Assigned; ?>],
-  ['Broken', <?php echo $broken; ?>],
-  ['Unassigned', <?php echo $Unassigned; ?>],
-  ['Up To Date', <?php echo $Uptodate; ?>],
-  ['Expired', <?php echo $Expired; ?>]
-
-  
 ]);
 
   /*// Optional; add a title and set the width and height of the chart

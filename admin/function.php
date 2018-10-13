@@ -214,8 +214,14 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/viewOfficeCount.php";
  }else if (isset($_REQUEST['returnEuipment'])) {
     include "admin/booking_EquipmentView.php";
- }else if (isset($_REQUEST['ep'])) {
+ }else if (isset($_REQUEST['equipmentPage'])) {
     include "admin/equipment_page.php";
+ }else if (isset($_REQUEST['reportedEquipment'])) {
+    include "admin/reportedEquipment.php";
+ }else if (isset($_REQUEST['viewEquipmentReport'])) {
+    include "admin/viewEquipmentReport.php";
+ }else if (isset($_REQUEST['calendarBooking'])) {
+    include "calendarbooking/event-tests.php";
  }else {
     include "dashboard.php"; 
 }

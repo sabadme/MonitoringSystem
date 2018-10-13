@@ -41,11 +41,12 @@ if ($status == "Admin") {
                     <span>Dashboard</span>
                     </button>
                 </li>
-                <li>
-                    <button title="Dashboard" type="submit" name="ep" class="dashboard">
-                    <span>ep</span>
+                  <li>
+                    <button title="Dashboard" type="submit" name="calendarBooking" class="dashboard">
+                    <span>Calendar Booking TRY</span>
                     </button>
                 </li>
+
 
                 <li class="parent">
                     <span class="scanner">Booking</span>
@@ -128,11 +129,17 @@ if ($status == "Admin") {
                              <li><button title="Venue" name="venue" type="submit"><span>Venue </span></button></li>
                         </ul>
                 </li>
-                   <!--  <li>
+           <!--     <li>
+                     <li>
                     <button title="Set Room" type="submit" name="setTeachersRoom" class="setroom">
                     <span>Assigned Room</span>
                     </button>
-                </li> -->
+                </li>-->
+                <li>
+                    <button title="Reported Equipments" type="submit" name="reportedEquipment" class="reportedequipment">
+                    <span>Reported Equipments</span>
+                    </button>
+                </li>
             </ul>
         </form>
           
@@ -210,6 +217,9 @@ if ($status == "Admin") {
                 </li>
                 <li>
                     <button class="rooms" name="viewrooms" type="submit" value="<?php echo $id; ?>"><span>Rooms</span></button>
+                </li>
+                 <li>
+                    <button class="report" name="viewreportreply" type="submit" value="<?php echo $id; ?>"><span>REPORT</span></button>
                 </li>
 
             </ul>

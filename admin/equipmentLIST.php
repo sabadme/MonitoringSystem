@@ -50,12 +50,22 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 
 	?>
 	<tr>	
+		<td>
+			<form action="" method="POST">
+			<button type="submit" class="equipment-name" name="equipmentPage" value="<?php echo $dataEquipment['id']; ?>"><?php echo $dataEquipment['equipment_name']; ?></button>
+			</form>
+		</td>
+
+		<td><?php echo $dataEquipment['equipment_code']; ?></td>
+		<td>wala pa</td>
+		<td>wala pa</td>
+		<td><?php echo $dataEquipment['equipment_status']; ?></td>
 		<td data-th="Name"><?php echo $dataEquipment['equipment_name']; ?></td>
 		<td data-th="QR ID"><?php echo $dataEquipment['equipment_code']; ?></td>
 		<td data-th="Manufacturer">wala pa</td>
 		<td data-th="Serial">wala pa</td>
 		<td data-th="Condition"><?php echo $dataEquipment['equipment_status']; ?></td>
-		
+
 		<?php 	
 			if($equipmentStatus	== "Assigned"){
 				?>
@@ -89,7 +99,8 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 				<?php
 			}
 		 ?>
-		
+
+
 	</tr>
 	<?php
 
@@ -97,3 +108,40 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 }		
 
  ?>		
+
+ <script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+<script>
+  var slideIndex2 = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("imgimg");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex2++;
+    if (slideIndex2 > x.length) {slideIndex2 = 1} 
+    x[slideIndex2-1].style.display = "block"; 
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>

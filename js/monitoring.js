@@ -243,7 +243,7 @@ $(document).ready(function(){
 },1000);
 
  
-setInterval(function() {
+setInterval(function() {    
     
 $(document).ready(function(){
    
