@@ -45,6 +45,19 @@
                 }
                  ?>                
                 <td data-th="Status"><?php echo $dataBooking['status']; ?></td>
+                <form action="" method="POST">
+                <td data-th="choice">
+                    
+                        <select name="choice">
+                            <option>Approved</option>
+                            <option>Cancel</option>
+                        </select>       
+                </td>
+                <td>
+                    <button name="submitChoice" type="submit" value="<?php echo $dataBooking['id']; ?>">Submit</button>
+                    
+                </td>
+                </form>
             </tr>
             <?php
         }

@@ -157,6 +157,8 @@
             <th>Time End</th>
             <th>Equipments</th>
             <th>Status</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -207,7 +209,8 @@
         <th>Room</th>
         <th>Building</th>
         <th>Floor</th>
-        <th>View</th>
+        <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>

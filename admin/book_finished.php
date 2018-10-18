@@ -150,8 +150,6 @@ date_default_timezone_set('Asia/Manila');
                 }
                  ?>
                 
-                
-                
                 <td data-th="Status"><?php echo $dataBooking['status']; ?></td>
             </tr>
             <?php

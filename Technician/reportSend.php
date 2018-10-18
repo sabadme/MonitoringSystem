@@ -27,12 +27,25 @@ $dataReport = mysql_fetch_array($sqlReport);
 $userReport = $dataReport['report_id'];
 
 
-$insert=mysql_query("INSERT INTO report VALUES(0,'$technicianEQUIPEMENT','$userReport','$technicianID','$commentTechnician','1','1','$date','$time','Sent','Not','$doneORnot','Assigned')");echo mysql_error();     
+$insert=mysql_query("INSERT INTO report VALUES(0,'$technicianEQUIPEMENT','$userReport','$technicianID','$commentTechnician','1','0','$date','$time','Sent','Not','$doneORnot','Assigned')");echo mysql_error();     
   
 if($insert){ ?> <script> 
-
  alert("Record Successfully Added"); </script>
  <?php
+ if($doneORnot == "Fixed"){
+
+ 	$sqlReport_ID = mysql_query("SELECT * FROM report ORDER BY id desc");
+ 	$data_reportID = mysql_fetch_array($sqlReport_ID);
+ 	$reportTableID = $data_reportID['id'];
+
+$insert=mysql_query("INSERT INTO admin_notif VALUES(0,'$reportTableID','$technicianID','$technicianEQUIPEMENT','None','None','None','Resolved Minor')");echo mysql_error();     
+  
+if($insert){ 
+
+}else{
+
+ }
+}
 }else {
   echo "Error adding record"; 
 }

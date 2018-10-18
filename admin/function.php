@@ -15,26 +15,25 @@ include "admin/notification_update.php";
 include "admin/finalset_equipment.php";
 include "admin/upda_single_equipment_function.php";
 include "admin/sa_update_function.php";
-/*include "admin/office_update_function.php";*/
 include "admin/drop_equipmentSet.php";
 include"admin/add_new_set_function.php";
 include"admin/edit_set_equipment_fucntion.php";
 include"admin/groupSetFucntion.php";
 include"admin/SaveSet_TeachersRoom.php";
 include"admin/unassigned_function.php";
-/*include"admin/assigned_update.php";*/
 include"admin/Update_assigned.php";
 include"admin/update_broken_status.php";
 include"admin/add_roomAccount_function.php";
-/*include"admin/scanner.php";*/
 include"admin/updateEquipmentset.php";
 include"admin/add_venue_function.php";
 include"admin/save_venue.php";
 include"admin/officeModal_function.php";
+include"admin/submitChoice.php";
 
 include"teacher/bookingEquipmentUpdate.php";
 include"admin/addNewGroupFunction.php";
 include"admin/returnEuipment.php";
+include"admin/book-pendingApproved.php";
 
 
 
@@ -222,6 +221,12 @@ if (isset($_REQUEST['dashboard'])) {
     include "admin/viewEquipmentReport.php";
  }else if (isset($_REQUEST['calendarBooking'])) {
     include "calendarbooking/event-tests.php";
+ }else if (isset($_REQUEST['updateEquipmentstatus'])) {
+    include "admin/updateEquipmentstatus.php";
+ }else if (isset($_REQUEST['equipmenthistoy'])) {
+    include "equipmenthistoy.php";
+ }else if (isset($_REQUEST['updateEquipmentstatus'])) {
+    include "admin/updateEquipmentstatus.php";
  }else {
     include "dashboard.php"; 
 }

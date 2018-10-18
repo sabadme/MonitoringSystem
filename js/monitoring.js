@@ -1,5 +1,4 @@
-
-    function addActive() {
+function addActive() {
         $('.login, .notifs, .viewbtn').click(function () {
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
@@ -277,3 +276,13 @@ $(document).ready(function(){
             data : 'doneOrnot=' + doneOrnot + '&reportMessage=' + reportMessage + '&reportModalValue=' + reportModalValue,
         });
     }
+
+setInterval(function() {
+    $.get('admin/endedBooking.php', function(data) {
+    });
+
+}, 1000);
+
+
+
+

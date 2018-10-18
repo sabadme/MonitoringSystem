@@ -1,5 +1,4 @@
 <?php 	
-
 $servername ="localhost";
 $username="root";
 $password="";
@@ -9,7 +8,7 @@ $db="monitoringsystemdatabase";
 $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
 
-$sqlEquipment = mysql_query("SELECT * FROM equipment WHERE equipment_status = 'Up to date'");
+$sqlEquipment = mysql_query("SELECT * FROM equipment");
 while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 	$equipmentID = $dataEquipment['id'];
 	 $equipmentStatus = $dataEquipment['status'];
@@ -50,20 +49,19 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 
 	?>
 	<tr>	
-		<td>
+		<td data-th="Name">
 			<form action="" method="POST">
 			<button type="submit" class="equipment-name" name="equipmentPage" value="<?php echo $dataEquipment['id']; ?>"><?php echo $dataEquipment['equipment_name']; ?></button>
 			</form>
 		</td>
 
 		<td><?php echo $dataEquipment['equipment_code']; ?></td>
-		<td>wala pa</td>
-		<td>wala pa</td>
-		<td><?php echo $dataEquipment['equipment_status']; ?></td>
-		<td data-th="Name"><?php echo $dataEquipment['equipment_name']; ?></td>
-		<td data-th="QR ID"><?php echo $dataEquipment['equipment_code']; ?></td>
 		<td data-th="Manufacturer">wala pa</td>
 		<td data-th="Serial">wala pa</td>
+		<!-- <td data-th="Name"><?php echo $dataEquipment['equipment_name']; ?></td> -->
+		<td data-th="QR ID"><?php echo $dataEquipment['equipment_code']; ?></td>
+	<!-- 	<td data-th="Manufacturer">wala pa</td>
+		<td data-th="Serial">wala pa</td> -->
 		<td data-th="Condition"><?php echo $dataEquipment['equipment_status']; ?></td>
 
 		<?php 	
@@ -99,8 +97,17 @@ while($dataEquipment = mysql_fetch_array($sqlEquipment)){
 				<?php
 			}
 		 ?>
-
-
+		 <td>
+		 	<form action="" method="POST">
+		 		<select name="statusEquipment">
+		 			<option>Up To Date</option>
+		 			<option>Broken</option>
+		 		</select>
+		 </td>
+		 <td>
+		 		<button name="updateEquipmentstatus" type="submit" value="<?php echo $equipmentID; ?>">Update</button>
+		 	</form>
+		 </td>
 	</tr>
 	<?php
 

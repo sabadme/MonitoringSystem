@@ -10,22 +10,7 @@ if(isset($_REQUEST['save_equipment'])){
 	}
 
 	$file=$_FILES['imgs'];
-/*	$name=$_FILES['imgs'] ['name'];
-	$size=$_FILES['imgs'] ['size'];	
-	$type=$_FILES['imgs'] ['type'];
-	$error=$_FILES['imgs'] ['error'];
-	$tmp=$_FILES['imgs'] ['tmp_name'];
-	
-	if ($error > 0) {
-		die("Error uploading File! Code $error.");
-	}
-	if ($type=="video/avi") {
-		die("That Format is not allowed!");
-	}
-	else{
-		move_uploaded_file($tmp,"EquipmentPicture/".$name);
-		
-	}*/
+
 
 	
 	$equipment_name=$_REQUEST['equipment_name'];

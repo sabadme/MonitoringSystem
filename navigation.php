@@ -140,6 +140,13 @@ if ($status == "Admin") {
                     <span>Reported Equipments</span>
                     </button>
                 </li>
+
+                <li>
+                    <button title="Equipment History" type="submit" name="equipmenthistoy" class="reportedequipment">
+                    <span>Equipment History</span>
+                    </button>
+                </li>
+
             </ul>
         </form>
           

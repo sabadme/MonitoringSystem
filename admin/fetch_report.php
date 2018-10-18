@@ -1,6 +1,4 @@
 <?php
-//fetch.php;
-
 $servername ="localhost";
 $username="root";
 $password="";
@@ -9,10 +7,6 @@ $db="monitoringsystemdatabase";
 
 $conn =mysql_connect($servername,$username,$password);
 mysql_select_db($db);
-
-
-
-
 
 $query=mysql_query("SELECT * FROM report WHERE report_notif='1' ORDER BY id desc");
 $output = '';
@@ -30,8 +24,5 @@ $output .= '
 	</div>
 	';
 }
- 
-/*<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>*/
  echo $output;
-
 ?>

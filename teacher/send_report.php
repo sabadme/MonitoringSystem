@@ -31,10 +31,27 @@ include"admin/connection.php";
 if($insert){ ?> <script> 
 
  alert("Record Successfully Added"); </script>
+
  <?php
+
+  $sql_reportID = mysql_query("SELECT * FROM report ORDER BY id desc");
+ $data_reportID = mysql_fetch_array($sql_reportID);
+ $reportID = $data_reportID['id'];
+
+ 	$insert_adminNotif=mysql_query("INSERT INTO admin_notif VALUES(0,'$reportID','$userid','$send_report','None','None','None','Report')");echo mysql_error();     
+if($insert_adminNotif){ 
+
 }else {
   echo "Error adding record"; 
 }
+
+}else {
+  echo "Error adding record"; 
+}
+
+
+
+
 }
 
  ?>

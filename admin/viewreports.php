@@ -16,7 +16,7 @@
 				</thead>	
 
 				<tbody>
-					<?php include"admin/viewreport_table.php"; ?>
+					<?php include"admin/viewreport_tables.php"; ?>
 				</tbody>
 			</table>
 		</div>

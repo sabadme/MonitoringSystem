@@ -115,7 +115,7 @@ if(isset($status)){
             }, 1000);
             function load_last_notification(){
                $.ajax({
-                url: "admin/fetch_report.php",
+                url: "admin/adminNotif.php",
                 method:"POST",
 
                 success: function(data){

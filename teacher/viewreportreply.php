@@ -7,7 +7,7 @@
 		</thead>
 		<tbody>
 <?php 
-include"admin/connection.php";
+include"admin/connection.php";	
 $count ="0";
 $report=mysql_query("SELECT DISTINCT report_id FROM report ORDER BY id desc");
 while($data_report=mysql_fetch_array($report)){
