@@ -1,30 +1,54 @@
+<link rel="stylesheet" href="css/footer.css">
+
 <footer>
-	
-<div class="topfooter">
-
-	<div class="left-container">
-		<!-- <a href="#" title="About Us">ABOUT</a>
-		<a href="#" title="Guide">GUIDE</a>
-		<a href="#" title="Contact Us">CONTACT</a>
- -->
- 		<img src="images/lccb.png">
-	</div>
-
-	<div class="right-container">
-		<p>"Community of Friends"</p>
-
-		<div class="dept-logo">
-			<img src="images/sbit.png">	
-			<img src="images/SARFAID.png">
-			<img src="images/SLATE.png">		
-			<img src="images/SHTM.png">
-			<img src="images/lccb.png">
-		</div>
-		<p class="copyright">Copyright Ⓒ 2017 Runikaperdihan Inc. All Rights Reserved</p>
-	</div>
-
-	
-
-</div>
-
+    <div class="wrapper">
+        <div class="footerGridContainer">
+            <div class="footergridcol">
+                <p>Properties for Sale</p>
+                <ul>
+                    <li><a href="#">Manville Royale</a></li>
+                    <li><a href="#">Manville Royale</a></li>
+                    <li><a href="#">Manville Royale</a></li>
+                    <li><a href="#">Manville Royale</a></li>
+                    <li><a href="#">Manville Royale</a></li>
+                </ul>
+            </div>
+            <div class="footergridcol">
+                <p>Properties for Rent</p>
+                <ul>
+                    <li><a href="#">Manville Royale Rentals</a></li>
+                    <li><a href="#">Manville Royale Rentals</a></li>
+                    <li><a href="#">Manville Royale Rentals</a></li>
+                    <li><a href="#">Manville Royale Rentals</a></li>
+                    <li><a href="#">Manville Royale Rentals</a></li>
+                </ul>
+            </div>
+            <div class="footergridcol">
+                <p>Developers</p>
+                <ul>
+                    <li><a href="#">Carmela Genteroles
+                    <li><a href="#">Christian Anthony Gemelo</li></a>
+                </ul>
+            </div>
+            <div class="footergridcol">
+                <p>Contact Us</p>
+                <ul>
+                    <li><i>ProjCheck</i><br>Bacolod City, Philippines</li>
+                    <br>
+                    <li><i>Questions? Call</i></li>
+                    <li>(091)-234-5000 / (454)-353-9000<br>(+63) 0987 654 3210</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="socialbar">
+            <p>Follow Us:</p>
+            <a href="facebook.com"><img src="img/facebookicon.png" alt="facebook"></a>
+            <a href="twitter.com"><img src="img/twittericon.png" alt="twitter"></a>
+            <a href="instagram.com"><img src="img/instagramicon.png" alt="instagram"></a>
+            <a href="plus.google.com"><img src="img/googleplusicon.png" alt="google plus"></a>
+        </div>
+        <hr>
+        <p id="followus">Copyright © 2018 ProjCheck. All rights reserved.</p>
+    </div>
 </footer>

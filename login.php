@@ -16,15 +16,15 @@ if(isset($_REQUEST['login'])){
 $user=$_REQUEST['username'];
 $pass=$_REQUEST['password'];
 
-include"admin/connection.php";
+include"admin/connect.php";
 
-$sql=mysql_query("SELECT * FROM tbl_login WHERE username='$user' And password='$pass'");
+$sql=mysql_query("SELECT * FROM tbl_users WHERE username='$user' And password='$pass'");
 $sql_row=mysql_fetch_array($sql);
 
 $id=$sql_row['id'];
-$account=$sql_row['account'];
-$ed_status=$sql_row['ED_status'];
-$status=$sql_row['Status'];
+$account=$sql_row['firstname'];
+$status=$sql_row['status'];
+$ed_status =$sql_row['ED_status'];
 
 if($user==$sql_row['username'] && $pass==$sql_row['password']){
 

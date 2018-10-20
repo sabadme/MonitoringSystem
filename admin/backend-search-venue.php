@@ -1,7 +1,7 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "monitoringsystemdatabase");
+$link = mysqli_connect("localhost", "root", "", "db_projcheck");
  
 // Check connection
 if($link === false){
@@ -13,7 +13,7 @@ if(isset($_REQUEST['term'])){
 
 
 
-    $sql = "SELECT *  FROM rooms WHERE room LIKE ?";
+    $sql = "SELECT *  FROM tbl_users WHERE  status='Contractor' ANd  firstname LIKE ? ";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -30,7 +30,10 @@ if(isset($_REQUEST['term'])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQL_ASSOC)){
-                    echo "<p>" . $row["room"] . "</p>";               
+
+
+
+                    echo "<p>" . $row["firstname"] . "</p>";               
                 }
             } else{
                 echo "<p>No matches found</p>";

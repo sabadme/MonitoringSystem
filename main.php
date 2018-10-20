@@ -13,7 +13,7 @@ if(isset($status)){
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Monitoring</title>
+        <title>ProjCheck</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
@@ -95,63 +95,29 @@ if(isset($status)){
                 <?php include "login.php"; ?>
             </div>
 
-        </header>
+        </header>       
 
 
         <div class="page-main">
 
-            <?php include "navigation.php"; ?>
+            <?php include "navigation.php"; ?>  
             <?php
             if ($status == "Admin") {
-
-   ?>
-
-        <script>
-            //notifacation pop up
-        $(document).ready(function(){
-
-            setInterval(function(){
-            load_last_notification();
-            }, 1000);
-            function load_last_notification(){
-               $.ajax({
-                url: "admin/adminNotif.php",
-                method:"POST",
-
-                success: function(data){
-                    /*console.log(data)*/
-                $(".content").html(data);
-                // alert(data)
-                }
-            })
-            }
-
-
-        });
-        </script>
-
-
-        <?php
-
                 ?>
                 <?php include "admin/function.php"; ?>
                 <?php
-            } else if ($status == "Office") {
+            } else if ($status == "Contractor") {
                 $accountname;
 
                 ?>
-                <?php include "Office/function.php"; ?>
+                <?php include "Contractor/function.php"; ?>
                 <?php
-            } else if ($status == "Teacher") {
+            } else if ($status == "Supplier") {
                 $accountname;
-                $id;
-                include "teacher/function.php";
-            }else if ($status == "Student Assistant") {
-                $accountname;
-                include "student/function.php";
-            }else if($status == "Technician"){
-                $accountname;
-                include"Technician/function.php";
+
+                ?>
+                <?php include "Supplier/function.php"; ?>
+                <?php
             }
 
             ?>

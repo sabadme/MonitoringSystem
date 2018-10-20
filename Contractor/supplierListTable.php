@@ -2,7 +2,7 @@
 <?php 
 include"admin/connect.php";
 
-$dir_path="ProjectPic/";
+$dir_path="CompanyPic/";
 $option="";
 
 if(is_dir($dir_path)){
@@ -13,13 +13,13 @@ if(is_dir($dir_path)){
             
              } 
 
-$profile_display=mysql_query("SELECT * FROM tbl_project  ORDER BY id DESC");
+$profile_display=mysql_query("SELECT * FROM tbl_users  ORDER BY id DESC");
 while($data_profile_display=mysql_fetch_array($profile_display)){
      $image=$data_profile_display['Pic'];
-     $companyname=$data_profile_display['contructCost'];
+     $companyname=$data_profile_display['firstname'];
 
    
-     $roomID=$data_profile_display['id'];
+  
 
  
 if($image==$file_name){
@@ -27,10 +27,10 @@ if($image==$file_name){
 ?>
 <div class="target" id="equipments">
     <span ><b>Name:  </b><?php echo $companyname; ?></span>
-    <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "ProjectPic/$image" ?>);">
+    <img src="images/placeholder-grid.png" style="background-image: url(<?php echo "CompanyPic/$image" ?>);">
     
     <form action="" method="POST">
-    <button name="projectPage" type="submit" value="<?php echo $data_profile_display['id']; ?>">View </button>
+    <button name="viewSupplierItems" type="submit" value="<?php echo $data_profile_display['id']; ?>">View </button>
     </form>
 </div>
 <?php

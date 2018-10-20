@@ -9,7 +9,7 @@ include "admin/enable.php";
 include "admin/disable.php";
 include "admin/office_disabled.php";
 include "admin/office_enable.php";
-include "admin/booking_function.php";
+include "admin/booking_function.php";   
 include "admin/booking_approved.php";
 include "admin/notification_update.php";  
 include "admin/finalset_equipment.php";
@@ -28,12 +28,13 @@ include"admin/updateEquipmentset.php";
 include"admin/add_venue_function.php";
 include"admin/save_venue.php";
 include"admin/officeModal_function.php";
-include"admin/submitChoice.php";
-
+include"admin/submitChoice.php";    
 include"teacher/bookingEquipmentUpdate.php";
 include"admin/addNewGroupFunction.php";
 include"admin/returnEuipment.php";
 include"admin/book-pendingApproved.php";
+include"admin/save_project.php";
+include"admin/save_contructor.php";
 
 
 
@@ -227,6 +228,16 @@ if (isset($_REQUEST['dashboard'])) {
     include "equipmenthistoy.php";
  }else if (isset($_REQUEST['updateEquipmentstatus'])) {
     include "admin/updateEquipmentstatus.php";
+ }else if (isset($_REQUEST['addProject'])) {
+    include "admin/addProject.php";
+ }else if (isset($_REQUEST['save_project'])) {
+    include "admin/addProject.php";
+ }else if (isset($_REQUEST['addContructor'])) {
+    include "admin/addContructor.php";
+ }else if (isset($_REQUEST['save_contructor'])) {
+    include "admin/addContructor.php";
+ }else if (isset($_REQUEST['projectPage'])) {
+    include "admin/project_page.php";
  }else {
     include "dashboard.php"; 
 }

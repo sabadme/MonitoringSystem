@@ -1,6 +1,6 @@
-<div class="dashboard-container">
+<div class="dashboard-container">   
     <div class="top-container">
-        <strong>PROJECTS</strong>
+        <strong>Dashboard</strong>
         
         <div class="notifs-container">
             <strong id="adminNotifHide" class="notifs"></strong>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="dashboard-wrapper">
-        <strong class="sub-title"></strong>
+        <strong class="sub-title">Supplier list</strong>
 
 
 
@@ -46,7 +46,7 @@
         		<div class="new-rooms-block">
 
 
-    			<?php include"admin/new_rooms.php"; ?>
+    			<?php include"Contractor/supplierListTable.php"; ?>
     		</div>
         </div>
 	</div>

@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PROJECTS</title>
+	<link rel="stylesheet" type="text/css" href="css/style1000.css">
+	<link rel="stylesheet" type="text/css" href="css/lightslider.css"">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/lightslider.js"></script>
+    <script>
+         $(document).ready(function() {
+            $("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:5,
+                slideMargin: 0,
+                speed:500,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+        });
+    </script>
+</head>
+<header>
+	<div class="header">
+		<img src="images/Projcheck-logotype.png">
+	</div>
+</header>
+<body>
+	<div class="project-container">
+		<div class="project-tile">
+			<div class="ppthumb">
+				<img src="images/girl.png">
+				<span>Company Name</span>
+			</div>
+
+			<h1>Project Name</h1>
+			
+			<div class="item">            
+	            <div class="clearfix" style="max-width: 100%">
+	                <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+	                    <li data-thumb="images/banner.png"> 
+	                        <img src="images/banner.png">
+	                    </li>
+	                    <li data-thumb="images/banner.png"> 
+	                        <img src="images/banner.png">
+	                    </li>
+	                    <li data-thumb="images/banner.png"> 
+	                        <img src="images/banner.png">
+	                    </li>
+	                    <li data-thumb="images/banner.png"> 
+	                        <img src="images/banner.png">
+	                    </li>
+	                    <li data-thumb="images/banner.png"> 
+	                        <img src="images/banner.png">
+	                    </li>
+	                    <li data-thumb="images/banner.png"> 
+	                        <img src="images/banner.png">
+	                    </li>
+	                </ul>
+	            </div>
+		    </div>
+			<label>PHP 20,400,000</label>
+			<div class="commentbox"">
+				<span style="border-right: 1px solid">Like</span>
+				<span style="border-right: 1px solid" class="btn">Comment</span>
+				<span>Share</span>
+			</div>
+			<div class="hidden-comment">
+				<input type="text" placeholder="Name">
+				<textarea placeholder="Comment.."></textarea>
+				<button>Submit</button>
+			</div>
+		</div>
+
+
+		<!-- <div class="project-tile">
+			<div class="ppthumb">
+				<img src="images/te.png">
+				<span>Company Name</span>
+			</div>
+
+			<h1>Project Name</h1>
+			
+			<img src="images/banner.png" style="margin:0 auto;">
+			<label>PHP 20,400,000</label>	
+		</div>
+		<div class="project-tile">
+			<div class="ppthumb">
+				<img src="images/te.png">
+				<span>Company Name</span>
+			</div>
+
+			<h1>Project Name</h1>
+			
+			<img src="images/banner.png" style="margin:0 auto;">
+			<label>PHP 20,400,000</label>	
+		</div> -->
+	</div>
+
+</body>
+	<footer>
+		<div class="foot">
+			<p>Copyright Ⓒ 2017 Kaperdihan. All Rights Reserved</p>
+		</div>
+	</footer>
+</html>
+
+<script>
+
+
+ $('.btn').click(function () {
+            if ($(this).parent().hasClass('active')) {
+                $(this).parent().removeClass('active');
+            }
+
+            else {
+                $(this).parent().addClass('active');
+            }
+
+        });
+</script>
+
+
+<style>
+	.header {
+	background: royalblue;/*
+	border-bottom: 1px solid;*/
+	width: 100%;
+	margin: 0 auto;
+	color: white;
+}
+
+.header img {
+	width: 100px;
+	margin: 0 auto;
+	display: block;
+}
+/*
+.header span {
+	padding: 20px;
+	font-size: 36px;
+	font-family: "Courier New";
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	text-transform: uppercase;
+	color: #fff;
+}*/
+
+.project-container {
+	padding: 20px;
+	width: 100%;
+	    max-width: 70%;
+	height: auto;
+	margin: 0 auto;
+}
+.project-tile {
+	/*padding: 20px;*/
+	display: block; 
+	border: 1px solid;
+	margin-bottom: 20px;
+	background: #e7e7e7;
+
+}
+
+.project-tile img {
+	width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: bottom;
+    /* max-width: 70%; */
+    display: block;
+}
+
+.project-tile h1 {
+	padding: 20px;
+	font-size: 36px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.project-tile label {
+	display: block;
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+}
+
+.ppthumb {
+	display: flex;
+	padding: 5px;
+	border-bottom: 1px solid;
+	background: darkslategrey;
+	color: #fff;
+}
+
+.ppthumb img {
+	width: 50px;
+	height: 50px;
+	margin: auto 10px;
+}
+
+.ppthumb span {
+	padding: 12px 10px 10px 0;
+    font-size: 20px;
+}
+
+.commentbox {
+	display: flex;
+	border-top: 1px solid black;/*
+	border-bottom: 1px solid black;*/
+
+}
+
+.commentbox span {
+	padding: 10px;
+	width: 33.33%;
+	text-align: center;
+}
+
+.commentbox span:hover {
+	background: darkslategrey;
+	color: white;
+	cursor: pointer;
+}
+
+
+.hidden-comment {
+	border-top: 1px solid;
+	padding: 20px;
+	display: none;
+}
+
+.hidden-comment input {
+	padding: 5px;
+}
+
+.hidden-comment textarea {
+	resize: none;
+    width: 100%;
+    padding: 5px;
+    display: block;
+    margin: 10px 0;
+    max-width: 99%;
+    height: 139px;
+}
+
+.hidden-comment button {
+	background-color: darkslategrey; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.active + .hidden-comment {
+	display: block;
+}
+</style>

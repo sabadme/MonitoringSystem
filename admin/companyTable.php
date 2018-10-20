@@ -21,8 +21,6 @@ while($data_table=mysql_fetch_array($user_table)){
 ?>
 <tr>
 <td data-th="First Name"><?php echo $data_table['firstname']; ?></td>
-<td data-th="Middle Name"><?php echo $data_table['middlename'] ?></td>
-<td data-th="Last Name"><?php echo $data_table['lastname']; ?></td>
 <td data-th="Employment"><?php echo $data_table['status']; ?></td>
 
 </tr>
